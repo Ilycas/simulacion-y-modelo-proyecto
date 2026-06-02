@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bylsoyawfw17x"]
 
 [node name="Bloque_Central" type="CSGCombiner3D" unique_id=1241290368]
+use_collision = true
 
 [node name="Bloque" type="CSGBox3D" parent="." unique_id=1643083679]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.47727203, 0.7659426, -2.8616333)
