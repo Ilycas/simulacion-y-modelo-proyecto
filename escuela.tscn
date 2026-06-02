@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bhc3htsqyd8aw" path="res://estudiante.gd" id="1_awtwk"]
 [ext_resource type="Texture2D" uid="uid://b3lwrvtx1elab" path="res://Plano.png" id="2_7pst4"]
+[ext_resource type="PackedScene" uid="uid://c6tihpamj7gw2" path="res://primer_piso.tscn" id="3_jdjiw"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_8fxs5"]
 
@@ -74,77 +75,8 @@ pixel_size = 0.201
 axis = 1
 texture = ExtResource("2_7pst4")
 
-[node name="Primer Piso" type="CSGCombiner3D" parent="." unique_id=6549887]
+[node name="Primer Piso" parent="." unique_id=1846529155 instance=ExtResource("3_jdjiw")]
 transform = Transform3D(0.57015145, 0, 0, 0, 1, 0, 0, 0, 0.9695643, -1.7965441, 54.865444, 4.016754)
-
-[node name="Bloque_Sur" type="CSGBox3D" parent="Primer Piso" unique_id=1424546691]
-transform = Transform3D(0.9042316, 0, 0, 0, 1, 0, 0, 0, 0.99999166, -15.2253065, -54.254246, -41.50849)
-size = Vector3(162.23413, 3, 33.309)
-
-[node name="Recepcion" type="CSGBox3D" parent="Primer Piso/Bloque_Sur" unique_id=1874985062]
-transform = Transform3D(0.87582594, 0, 0, 0, 1, 0, 0, 0, 1, 67.25933, 0.3247118, 0.38549805)
-operation = 2
-size = Vector3(31.234, 3, 32.376)
-
-[node name="Hueco_Aula1" type="CSGBox3D" parent="Primer Piso/Bloque_Sur" unique_id=67480054]
-transform = Transform3D(0.99999964, 0, 0, 0, 0.9999908, 0, 0, 0, 0.99999034, 41.80918, 0.42743295, 8.333864)
-operation = 2
-size = Vector3(23.148895, 3, 16.479252)
-
-[node name="Control_estudio" type="CSGBox3D" parent="Primer Piso/Bloque_Sur" unique_id=1862829836]
-transform = Transform3D(0.99999964, 0, 0, 0, 0.9999908, 0, 0, 0, 0.99999034, 41.80918, 0.42743295, -8.195595)
-operation = 2
-size = Vector3(23.148895, 3, 16.479252)
-
-[node name="Hueco_Aula2" type="CSGBox3D" parent="Primer Piso/Bloque_Sur" unique_id=1189169300]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.957115, 0.37458324, 0.38589478)
-operation = 2
-size = Vector3(24.287, 3, 32.375)
-
-[node name="Hueco_Aula3" type="CSGBox3D" parent="Primer Piso/Bloque_Sur" unique_id=1304811612]
-transform = Transform3D(0.99999976, 0, 0, 0, 1, 0, 0, 0, 0.9999878, -15.250357, 0.3193407, 0.3858719)
-operation = 2
-size = Vector3(41.267666, 3, 32.375)
-
-[node name="Hueco_Aula4" type="CSGBox3D" parent="Primer Piso/Bloque_Sur" unique_id=887179806]
-transform = Transform3D(0.9999998, 0, 0, 0, 1, 0, 0, 0, 0.9999931, -58.667866, 0.3952074, 0.3858757)
-operation = 2
-size = Vector3(44.050102, 3, 32.375)
-
-[node name="Puerta_recepcion" type="CSGBox3D" parent="Primer Piso" unique_id=1820512266]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.05703, -54.24401, -57.736897)
-operation = 2
-size = Vector3(4.079297, 2.1, 0.85388184)
-
-[node name="Puerta_Control_estudio" type="CSGBox3D" parent="Primer Piso" unique_id=1263323182]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 32.890297, -54.24401, -50.869057)
-operation = 2
-size = Vector3(2, 2.1, 0.854)
-
-[node name="Puerta_Aula1" type="CSGBox3D" parent="Primer Piso" unique_id=1969441182]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.3711392e-08, 28.765785, -54.24401, -25.599293)
-operation = 2
-size = Vector3(2, 2.1, 2.5)
-
-[node name="Puerta_Aula2" type="CSGBox3D" parent="Primer Piso" unique_id=700673188]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 0.99999994, 0, -4.3711392e-08, 8.509639, -54.24401, -25.599293)
-operation = 2
-size = Vector3(2, 2.1, 2.5)
-
-[node name="Puerta_Aula3" type="CSGBox3D" parent="Primer Piso" unique_id=1623413251]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 0.99999994, 0, -4.3711392e-08, -14.374019, -54.24401, -25.599295)
-operation = 2
-size = Vector3(2, 2.1, 2.5)
-
-[node name="Puerta_Aula4" type="CSGBox3D" parent="Primer Piso" unique_id=1766500379]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 0.99999994, 0, -4.3711392e-08, -57.867077, -54.24401, -25.599297)
-operation = 2
-size = Vector3(2, 2.1, 2.5)
-
-[node name="Puerta_recepcion2" type="CSGBox3D" parent="Primer Piso" unique_id=180481720]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.05703, -54.24401, -24.903818)
-operation = 2
-size = Vector3(4.079297, 2.1, 0.85388184)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1309356646]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 56.73352, 0)
