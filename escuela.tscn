@@ -6,6 +6,18 @@
 [ext_resource type="PackedScene" uid="uid://2w0tdp533ecb" path="res://bloque_oeste.tscn" id="4_oxlh1"]
 [ext_resource type="PackedScene" uid="uid://bylsoyawfw17x" path="res://bloque_central.tscn" id="5_mt2cc"]
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mt2cc"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_dgm2e"]
+sky_material = SubResource("ProceduralSkyMaterial_mt2cc")
+
+[sub_resource type="Environment" id="Environment_nq0on"]
+background_mode = 2
+sky = SubResource("Sky_dgm2e")
+tonemap_mode = 2
+
 [sub_resource type="BoxMesh" id="BoxMesh_8fxs5"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_awtwk"]
@@ -29,24 +41,31 @@ height = 1.6
 
 [node name="Escuela" type="Node3D" unique_id=479217386]
 
-[node name="Router" type="Node3D" parent="." unique_id=1120018570]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0773392, 1.1719966, 12.609097)
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=802890740]
+environment = SubResource("Environment_nq0on")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Router" unique_id=472395533]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2117702403]
+transform = Transform3D(-0.25, 0.86602545, 0.43301272, 0.8660256, -5.9604645e-08, 0.49999988, 0.43301266, 0.5000001, -0.7499999, -5.900272, 30.16484, 10.2195635)
+shadow_enabled = true
+
+[node name="Router" type="Node3D" parent="." unique_id=1120018570]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.28524, 1.1719966, -21.564373)
+
+[node name="Router" type="MeshInstance3D" parent="Router" unique_id=472395533]
 mesh = SubResource("BoxMesh_8fxs5")
 
-[node name="ZonaCalorFuerte" type="MeshInstance3D" parent="Router" unique_id=840467088]
+[node name="ZonaCalorFuerte" type="MeshInstance3D" parent="Router/Router" unique_id=840467088]
 transform = Transform3D(8, 0, 0, 0, 0.1, 0, 0, 0, 8, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_awtwk")
 cast_shadow = 0
 mesh = SubResource("CylinderMesh_awtwk")
 
-[node name="ZonaCalorPromedio" type="MeshInstance3D" parent="Router" unique_id=2113290615]
+[node name="ZonaCalorPromedio" type="MeshInstance3D" parent="Router/Router" unique_id=2113290615]
 transform = Transform3D(16, 0, 0, 0, 0.1, 0, 0, 0, 16, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_7pst4")
 mesh = SubResource("CylinderMesh_awtwk")
 
-[node name="ZonaCalorDebil" type="MeshInstance3D" parent="Router" unique_id=1808827795]
+[node name="ZonaCalorDebil" type="MeshInstance3D" parent="Router/Router" unique_id=1808827795]
 transform = Transform3D(24, 0, 0, 0, 0.1, 0, 0, 0, 24, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_jdjiw")
 mesh = SubResource("CylinderMesh_awtwk")
