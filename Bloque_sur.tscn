@@ -8,7 +8,7 @@ transform = Transform3D(0.9042316, 0, 0, 0, 1, 0, 0, 0, 0.99999166, -15.2253065,
 size = Vector3(162.23413, 3, 33.309)
 
 [node name="Recepcion" type="CSGBox3D" parent="Bloque_Sur" unique_id=1510002706]
-transform = Transform3D(0.87582594, 0, 0, 0, 1, 0, 0, 0, 1, 67.25933, 0.3247118, 0.38549805)
+transform = Transform3D(0.87582594, 0, 0, 0, 1, 0, 0, 0, 1, 67.25933, 0.32471085, 0.38549805)
 operation = 2
 size = Vector3(31.234, 3, 32.376)
 
@@ -18,22 +18,22 @@ operation = 2
 size = Vector3(23.148895, 3, 16.479252)
 
 [node name="Control_estudio" type="CSGBox3D" parent="Bloque_Sur" unique_id=1060674655]
-transform = Transform3D(0.99999964, 0, 0, 0, 0.9999908, 0, 0, 0, 0.99999034, 41.80918, 0.42743295, -8.195595)
+transform = Transform3D(0.9999997, 0, 0, 0, 0.9999908, 0, 0, 0, 0.99999034, 41.80918, 0.427433, -7.83897)
 operation = 2
-size = Vector3(23.148895, 3, 16.479252)
+size = Vector3(23.148895, 3, 15.765993)
 
 [node name="Hueco_Aula2" type="CSGBox3D" parent="Bloque_Sur" unique_id=1855819950]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.957115, 0.37458324, 0.38589478)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.957115, 0.3745842, 0.38589478)
 operation = 2
 size = Vector3(24.287, 3, 32.375)
 
 [node name="Hueco_Aula3" type="CSGBox3D" parent="Bloque_Sur" unique_id=1210699969]
-transform = Transform3D(0.99999976, 0, 0, 0, 1, 0, 0, 0, 0.9999878, -15.250357, 0.3193407, 0.3858719)
+transform = Transform3D(0.9999998, 0, 0, 0, 1, 0, 0, 0, 0.9999878, -15.250355, 0.31933975, 0.3858719)
 operation = 2
 size = Vector3(41.267666, 3, 32.375)
 
 [node name="Hueco_Aula4" type="CSGBox3D" parent="Bloque_Sur" unique_id=1427524256]
-transform = Transform3D(0.9999998, 0, 0, 0, 1, 0, 0, 0, 0.9999931, -58.667866, 0.3952074, 0.3858757)
+transform = Transform3D(0.9999998, 0, 0, 0, 1, 0, 0, 0, 0.9999932, -58.667866, 0.39520645, 0.3858757)
 operation = 2
 size = Vector3(44.050102, 3, 32.375)
 
@@ -41,6 +41,16 @@ size = Vector3(44.050102, 3, 32.375)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.05703, -54.24401, -57.736897)
 operation = 2
 size = Vector3(4.079297, 2.1, 0.85388184)
+
+[node name="Puerta_Aula5" type="CSGBox3D" parent="." unique_id=2126019366]
+transform = Transform3D(-4.3711392e-08, 0, -1, 0, 1, 0, 0.9999999, 0, -4.3711392e-08, 57.917942, -54.33132, -32.19225)
+operation = 2
+size = Vector3(2, 2.1, 2.5)
+
+[node name="Puerta_Aula6" type="CSGBox3D" parent="." unique_id=286325267]
+transform = Transform3D(-4.3711392e-08, 0, -1, 0, 1, 0, 0.9999999, 0, -4.3711392e-08, 57.917942, -54.33132, -50.528553)
+operation = 2
+size = Vector3(2, 2.1, 2.5)
 
 [node name="Puerta_Control_estudio" type="CSGBox3D" parent="." unique_id=1559069146]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 32.890297, -54.24401, -50.869057)

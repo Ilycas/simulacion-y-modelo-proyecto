@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://2w0tdp533ecb"]
+
+[node name="Bloque_Oeste" type="CSGCombiner3D" unique_id=1846418678]
+
+[node name="Bloque" type="CSGBox3D" parent="." unique_id=1267439583]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.064842, 0.40891027, 0.82424927)
+size = Vector3(12.823, 3, 106.02)
+
+[node name="Pasillo" type="CSGBox3D" parent="Bloque" unique_id=1137253972]
+transform = Transform3D(0.99999964, 0, 0, 0, 0.9999908, 0, 0, 0, 0.99999034, -4.665058, 0.42743295, -0.25741607)
+operation = 2
+size = Vector3(3.1746502, 3, 104.74521)
+
+[node name="Hueco_Aula7" type="CSGBox3D" parent="Bloque" unique_id=8979484]
+transform = Transform3D(0.99999964, 0, 0, 0, 0.9999908, 0, 0, 0, 0.99999034, 1.6503601, 0.42743295, 39.974358)
+operation = 2
+size = Vector3(8.478142, 3, 24.27771)
+
+[node name="Hueco_Aula8" type="CSGBox3D" parent="Bloque" unique_id=215051285]
+transform = Transform3D(0.99999964, 0, 0, 0, 0.9999908, 0, 0, 0, 0.99999034, 1.6503601, 0.42743295, 13.921901)
+operation = 2
+size = Vector3(8.478142, 3, 27.402832)
+
+[node name="Hueco_Aula9" type="CSGBox3D" parent="Bloque" unique_id=259940433]
+transform = Transform3D(0.99999964, 0, 0, 0, 0.9999908, 0, 0, 0, 0.99999034, 1.6503601, 0.42743295, -11.366522)
+operation = 2
+size = Vector3(8.478142, 3, 22.91504)
+
+[node name="Hueco_Aula10" type="CSGBox3D" parent="Bloque" unique_id=302069075]
+transform = Transform3D(0.99999964, 0, 0, 0, 0.9999908, 0, 0, 0, 0.99999034, 1.6503601, 0.42743295, -37.87746)
+operation = 2
+size = Vector3(8.478142, 3, 29.504396)
+
+[node name="Entrada A" type="CSGBox3D" parent="Bloque" unique_id=1973921478]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.3711392e-08, -4.0996895, 0, -52.812946)
+operation = 2
+size = Vector3(0.59716797, 2.1, 1.4257813)
+
+[node name="Entrada Aula10" type="CSGBox3D" parent="Bloque" unique_id=412486902]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -2.7701378, 0, -26.429865)
+operation = 2
+size = Vector3(0.7105713, 2.1, 1.4257813)
+
+[node name="Entrada Aula9" type="CSGBox3D" parent="Bloque" unique_id=1044978989]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -2.77014, 0, -2.6668053)
+operation = 2
+size = Vector3(0.7105713, 2.1, 1.4257813)
+
+[node name="Entrada Aula8" type="CSGBox3D" parent="Bloque" unique_id=865681484]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -2.7701423, 0, 24.701143)
+operation = 2
+size = Vector3(0.7105713, 2.1, 1.4257813)
+
+[node name="Entrada Aula7" type="CSGBox3D" parent="Bloque" unique_id=1807663131]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -2.7701445, 0, 49.45692)
+operation = 2
+size = Vector3(0.7105713, 2.1, 1.4257813)
+
+[node name="Entrada B" type="CSGBox3D" parent="Bloque" unique_id=2138003523]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.3711392e-08, -6.1881905, 0.32974863, 49.282513)
+operation = 2
+size = Vector3(5.6706543, 2.7594972, 1.4257813)
+
+[node name="Puerta_Aula2" type="CSGBox3D" parent="Bloque" unique_id=1196435564]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.3711392e-08, -4.0996895, 0, -52.11153)
+operation = 2
+size = Vector3(2, 2.1, 1.4257813)

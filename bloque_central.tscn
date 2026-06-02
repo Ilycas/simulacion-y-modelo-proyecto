@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://bylsoyawfw17x"]
+
+[node name="Bloque_Central" type="CSGCombiner3D" unique_id=1241290368]
+
+[node name="Bloque" type="CSGBox3D" parent="." unique_id=1643083679]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.47727203, 0.7659426, -2.8616333)
+size = Vector3(10.436, 2.869629, 99.012)
+
+[node name="Hueco_Aula8" type="CSGBox3D" parent="Bloque" unique_id=686432359]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.109752655, 0.14328432, -41.251373)
+operation = 2
+size = Vector3(9.799534, 3, 15.727615)
+
+[node name="Hueco_Administracion" type="CSGBox3D" parent="Bloque" unique_id=148489703]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.111846924, 0.14328432, -25.194214)
+operation = 2
+size = Vector3(9.795342, 3, 15.727615)
+
+[node name="Mantenimiento" type="CSGBox3D" parent="Bloque" unique_id=2010316591]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.109752655, 0.14328432, -11.289003)
+operation = 2
+size = Vector3(9.799534, 3, 11.7211075)
+
+[node name="Hueco_Aula4" type="CSGBox3D" parent="Bloque" unique_id=189441573]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.109752655, 0.14328432, 4.459401)
+operation = 2
+size = Vector3(9.799534, 3, 19.135822)
+
+[node name="Hueco_Aula5" type="CSGBox3D" parent="Bloque" unique_id=1780561273]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.109752655, 0.14328432, 22.882412)
+operation = 2
+size = Vector3(9.799534, 3, 17.23112)
+
+[node name="Hueco_Aula6" type="CSGBox3D" parent="Bloque" unique_id=841411992]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.109752655, 0.14328432, 40.63696)
+operation = 2
+size = Vector3(9.799534, 3, 17.466022)
+
+[node name="Puerta_Aula3" type="CSGBox3D" parent="Bloque" unique_id=1204090589]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.3711392e-08, -4.9158554, -0.06555557, -42.127674)
+operation = 2
+size = Vector3(2.0161133, 2.1, 0.71487427)
+
+[node name="Puerta_Administracion" type="CSGBox3D" parent="Bloque" unique_id=1449084957]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.3711392e-08, -4.9158554, -0.06555557, -24.341146)
+operation = 2
+size = Vector3(2.010254, 2.1, 0.71487427)
+
+[node name="Puerta_mantenimiento" type="CSGBox3D" parent="Bloque" unique_id=1792192670]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.3711392e-08, -4.9508204, -0.06555557, -15.653199)
+operation = 2
+size = Vector3(2, 2.1, 0.80651855)
+
+[node name="Puerta_Aula4" type="CSGBox3D" parent="Bloque" unique_id=1894821612]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.3711392e-08, -4.9508214, -0.06555557, 9.930923)
+operation = 2
+size = Vector3(2, 2.1, 0.80651855)
+
+[node name="Puerta_Aula5" type="CSGBox3D" parent="Bloque" unique_id=1839180688]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.3711392e-08, -4.9508224, -0.06555557, 27.653772)
+operation = 2
+size = Vector3(2, 2.1, 0.80651855)
+
+[node name="Puerta_Aula6" type="CSGBox3D" parent="Bloque" unique_id=1078733190]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.3711392e-08, -4.950823, -0.06555557, 36.667717)
+operation = 2
+size = Vector3(2, 2.1, 0.80651855)

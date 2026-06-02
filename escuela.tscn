@@ -2,7 +2,9 @@
 
 [ext_resource type="Script" uid="uid://bhc3htsqyd8aw" path="res://estudiante.gd" id="1_awtwk"]
 [ext_resource type="Texture2D" uid="uid://b3lwrvtx1elab" path="res://Plano.png" id="2_7pst4"]
-[ext_resource type="PackedScene" uid="uid://c6tihpamj7gw2" path="res://primer_piso.tscn" id="3_jdjiw"]
+[ext_resource type="PackedScene" uid="uid://c6tihpamj7gw2" path="res://Bloque_sur.tscn" id="3_jdjiw"]
+[ext_resource type="PackedScene" uid="uid://2w0tdp533ecb" path="res://bloque_oeste.tscn" id="4_oxlh1"]
+[ext_resource type="PackedScene" uid="uid://bylsoyawfw17x" path="res://bloque_central.tscn" id="5_mt2cc"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_8fxs5"]
 
@@ -75,8 +77,11 @@ pixel_size = 0.201
 axis = 1
 texture = ExtResource("2_7pst4")
 
-[node name="Primer Piso" parent="." unique_id=1846529155 instance=ExtResource("3_jdjiw")]
-transform = Transform3D(0.57015145, 0, 0, 0, 1, 0, 0, 0, 0.9695643, -1.7965441, 54.865444, 4.016754)
+[node name="Bloque_sur" parent="." unique_id=1846529155 instance=ExtResource("3_jdjiw")]
+transform = Transform3D(0.57015145, 0, 0, 0, 1, 0, 0, 0, 0.9695643, -1.4780607, 54.86968, 4.016754)
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1309356646]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 56.73352, 0)
+[node name="Bloque_Oeste" parent="." unique_id=1846418678 instance=ExtResource("4_oxlh1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.17840767, -0.1729126)
+
+[node name="Bloque_Central" parent="." unique_id=1241290368 instance=ExtResource("5_mt2cc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.00224, 0, 0)
