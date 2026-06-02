@@ -70,6 +70,9 @@ transform = Transform3D(24, 0, 0, 0, 0.1, 0, 0, 0, 24, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_jdjiw")
 mesh = SubResource("CylinderMesh_awtwk")
 
+[node name="RayCast3D" type="RayCast3D" parent="Router/Router" unique_id=316226275]
+collide_with_areas = true
+
 [node name="Estudiante" type="Node3D" parent="." unique_id=2047578850 node_paths=PackedStringArray("nodo_router", "nodo_paquete")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.3575, 0.9649887, -61.79018)
 script = ExtResource("1_awtwk")
