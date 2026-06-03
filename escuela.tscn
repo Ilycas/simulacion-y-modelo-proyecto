@@ -76,10 +76,11 @@ mesh = SubResource("CylinderMesh_awtwk")
 [node name="RayCast3D" type="RayCast3D" parent="Router/Router" unique_id=316226275]
 collide_with_areas = true
 
-[node name="Estudiante" type="Node3D" parent="." unique_id=2047578850 node_paths=PackedStringArray("nodo_router", "nodo_paquete")]
+[node name="Estudiante" type="Node3D" parent="." unique_id=2047578850 node_paths=PackedStringArray("nodo_router", "nodo_raycast", "nodo_paquete")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.3575, 0.9649887, -61.79018)
 script = ExtResource("1_awtwk")
 nodo_router = NodePath("../Router")
+nodo_raycast = NodePath("../Router/Router/RayCast3D")
 nodo_paquete = NodePath("../Paquete")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Estudiante" unique_id=1037988441]
