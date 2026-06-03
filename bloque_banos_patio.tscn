@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://c6vm45srdiuqd"]
+
+[node name="Baños_Niño_Niña" type="CSGCombiner3D" unique_id=1743570536]
+
+[node name="Base_Baño" type="CSGBox3D" parent="." unique_id=1296478100]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.49021, 0.6033977, -15.248456)
+size = Vector3(11.131758, 2.5958476, 9.76486)
+
+[node name="Resta_Baño" type="CSGBox3D" parent="." unique_id=1136542667]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.42547, 0.8414678, -13.044569)
+operation = 2
+size = Vector3(10.234, 2.2745342, 4.349365)
+
+[node name="Resta_Baño2" type="CSGBox3D" parent="." unique_id=826302942]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.42547, 0.8414678, -17.686779)
+operation = 2
+size = Vector3(10.234, 2.2745342, 4.349365)
+
+[node name="Puerta_Baño_Niña" type="CSGBox3D" parent="." unique_id=66203085]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.229002, 0.43884784, -13.036)
+operation = 2
+size = Vector3(1, 2, 0.9)
+
+[node name="Puertas_Baño_Niño" type="CSGBox3D" parent="." unique_id=1121974236]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.229002, 0.588232, -17.556425)
+operation = 2
+size = Vector3(1, 2, 0.9)

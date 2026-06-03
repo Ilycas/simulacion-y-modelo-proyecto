@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://ue6f1tepnr4d"]
+
+[node name="Bloque_Patio" type="CSGCombiner3D" unique_id=456839349]
+
+[node name="Pared_Patio" type="CSGBox3D" parent="." unique_id=1237847820]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4464188, -0.31009078, -1.7742805)
+size = Vector3(81.05296, 2.5595703, 65.364655)
+
+[node name="Resta_Pared_Patio" type="CSGBox3D" parent="Pared_Patio" unique_id=702256518]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3344593, 0.4782803, 0.20217896)
+operation = 2
+size = Vector3(79.54764, 2.5622864, 64.04242)
+
+[node name="Suelo_Pisto_Cancha" type="CSGBox3D" parent="." unique_id=261663753]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.7649689, -0.2724682, -1.3517361)
+size = Vector3(79.685, 0.2, 64.28819)

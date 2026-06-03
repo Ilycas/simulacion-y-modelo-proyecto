@@ -5,6 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://c6tihpamj7gw2" path="res://Bloque_sur.tscn" id="3_jdjiw"]
 [ext_resource type="PackedScene" uid="uid://2w0tdp533ecb" path="res://bloque_oeste.tscn" id="4_oxlh1"]
 [ext_resource type="PackedScene" uid="uid://bylsoyawfw17x" path="res://bloque_central.tscn" id="5_mt2cc"]
+[ext_resource type="PackedScene" uid="uid://c6vm45srdiuqd" path="res://bloque_banos_patio.tscn" id="6_dgm2e"]
+[ext_resource type="PackedScene" uid="uid://b110raehnfrfs" path="res://baños_adolescentes.tscn" id="7_nq0on"]
+[ext_resource type="PackedScene" uid="uid://ue6f1tepnr4d" path="res://bloque_patio.tscn" id="8_lmequ"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mt2cc"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -93,7 +96,7 @@ transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 10.009709, 2.5459337, 2
 mesh = SubResource("SphereMesh_awtwk")
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=891488879]
-transform = Transform3D(-0.49274227, 6.5681137e-15, -7.8032976e-08, 3.5011444e-15, 1, -7.803299e-08, 4.307689e-08, -8.742278e-08, -0.8925933, -0.11734772, -0.6015835, -0.047368485)
+transform = Transform3D(-0.49274227, 6.5681137e-15, -7.8032976e-08, 3.5011444e-15, 1, -7.803299e-08, 4.307689e-08, -8.742278e-08, -0.8925933, -0.34938622, -0.6360779, 0.19277006)
 offset = Vector2(0, -0.1)
 pixel_size = 0.201
 axis = 1
@@ -107,3 +110,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.17840767, -0.1729126)
 
 [node name="Bloque_Central" parent="." unique_id=1241290368 instance=ExtResource("5_mt2cc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.00224, 0, 0)
+
+[node name="Baños_Niño_Niña" parent="." unique_id=1743570536 instance=ExtResource("6_dgm2e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.207361, 0, 0)
+
+[node name="Baños_Adolescentes" parent="." unique_id=242204458 instance=ExtResource("7_nq0on")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.207361, 0, 0)
+
+[node name="Bloque_Patio" parent="." unique_id=456839349 instance=ExtResource("8_lmequ")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.2997, 0.50118065, 23.710278)
