@@ -34,7 +34,8 @@ albedo_color = Color(1, 0, 0, 0.39215687)
 inner_radius = 0.8
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_awtwk"]
-height = 1.6
+radius = 0.4
+height = 0.8
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_awtwk"]
 radius = 0.3
@@ -75,17 +76,214 @@ mesh = SubResource("TorusMesh_wkv31")
 script = ExtResource("1_ak8b8")
 retraso_inicio = 1.2
 
+[node name="Router2" type="Node3D" parent="." unique_id=407979191]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.28524, 1.1719966, 14.545727)
+
+[node name="Router" type="MeshInstance3D" parent="Router2" unique_id=1784435748]
+mesh = SubResource("BoxMesh_8fxs5")
+
+[node name="RayCast3D" type="RayCast3D" parent="Router2/Router" unique_id=1868658371]
+
+[node name="Onda Wifi" type="MeshInstance3D" parent="Router2/Router" unique_id=576524471]
+transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 1, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_ak8b8")
+mesh = SubResource("TorusMesh_wkv31")
+script = ExtResource("1_ak8b8")
+
+[node name="Onda Wifi2" type="MeshInstance3D" parent="Router2/Router" unique_id=855894705]
+transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 1, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_ak8b8")
+mesh = SubResource("TorusMesh_wkv31")
+script = ExtResource("1_ak8b8")
+retraso_inicio = 0.6
+
+[node name="Onda Wifi3" type="MeshInstance3D" parent="Router2/Router" unique_id=911453464]
+transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 1, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_ak8b8")
+mesh = SubResource("TorusMesh_wkv31")
+script = ExtResource("1_ak8b8")
+retraso_inicio = 1.2
+
+[node name="Router3" type="Node3D" parent="." unique_id=1036892502]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.350033, 1.1719966, -2.3924732)
+
+[node name="Router" type="MeshInstance3D" parent="Router3" unique_id=112288902]
+mesh = SubResource("BoxMesh_8fxs5")
+
+[node name="RayCast3D" type="RayCast3D" parent="Router3/Router" unique_id=765871107]
+
+[node name="Onda Wifi" type="MeshInstance3D" parent="Router3/Router" unique_id=1260398123]
+transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 1, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_ak8b8")
+mesh = SubResource("TorusMesh_wkv31")
+script = ExtResource("1_ak8b8")
+
+[node name="Onda Wifi2" type="MeshInstance3D" parent="Router3/Router" unique_id=1812755301]
+transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 1, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_ak8b8")
+mesh = SubResource("TorusMesh_wkv31")
+script = ExtResource("1_ak8b8")
+retraso_inicio = 0.6
+
+[node name="Onda Wifi3" type="MeshInstance3D" parent="Router3/Router" unique_id=625602733]
+transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 1, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_ak8b8")
+mesh = SubResource("TorusMesh_wkv31")
+script = ExtResource("1_ak8b8")
+retraso_inicio = 1.2
+
+[node name="Router4" type="Node3D" parent="." unique_id=2048875633]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.350033, 1.1719966, 30.169714)
+
+[node name="Router" type="MeshInstance3D" parent="Router4" unique_id=260892238]
+mesh = SubResource("BoxMesh_8fxs5")
+
+[node name="RayCast3D" type="RayCast3D" parent="Router4/Router" unique_id=1425226362]
+
+[node name="Onda Wifi" type="MeshInstance3D" parent="Router4/Router" unique_id=940947700]
+transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 1, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_ak8b8")
+mesh = SubResource("TorusMesh_wkv31")
+script = ExtResource("1_ak8b8")
+
+[node name="Onda Wifi2" type="MeshInstance3D" parent="Router4/Router" unique_id=1057114068]
+transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 1, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_ak8b8")
+mesh = SubResource("TorusMesh_wkv31")
+script = ExtResource("1_ak8b8")
+retraso_inicio = 0.6
+
+[node name="Onda Wifi3" type="MeshInstance3D" parent="Router4/Router" unique_id=1126117129]
+transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 1, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_ak8b8")
+mesh = SubResource("TorusMesh_wkv31")
+script = ExtResource("1_ak8b8")
+retraso_inicio = 1.2
+
+[node name="Router5" type="Node3D" parent="." unique_id=1765089118]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.12507, 1.1719966, 43.711662)
+
+[node name="Router" type="MeshInstance3D" parent="Router5" unique_id=2101230298]
+mesh = SubResource("BoxMesh_8fxs5")
+
+[node name="RayCast3D" type="RayCast3D" parent="Router5/Router" unique_id=60085868]
+
+[node name="Onda Wifi" type="MeshInstance3D" parent="Router5/Router" unique_id=81027504]
+transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 1, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_ak8b8")
+mesh = SubResource("TorusMesh_wkv31")
+script = ExtResource("1_ak8b8")
+
+[node name="Onda Wifi2" type="MeshInstance3D" parent="Router5/Router" unique_id=997973615]
+transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 1, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_ak8b8")
+mesh = SubResource("TorusMesh_wkv31")
+script = ExtResource("1_ak8b8")
+retraso_inicio = 0.6
+
+[node name="Onda Wifi3" type="MeshInstance3D" parent="Router5/Router" unique_id=1877310682]
+transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 1, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_ak8b8")
+mesh = SubResource("TorusMesh_wkv31")
+script = ExtResource("1_ak8b8")
+retraso_inicio = 1.2
+
+[node name="Router6" type="Node3D" parent="." unique_id=146257151]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.358995, 1.1719966, -21.93763)
+
+[node name="Router" type="MeshInstance3D" parent="Router6" unique_id=202637024]
+mesh = SubResource("BoxMesh_8fxs5")
+
+[node name="RayCast3D" type="RayCast3D" parent="Router6/Router" unique_id=911399886]
+
+[node name="Onda Wifi" type="MeshInstance3D" parent="Router6/Router" unique_id=1774294850]
+transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 1, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_ak8b8")
+mesh = SubResource("TorusMesh_wkv31")
+script = ExtResource("1_ak8b8")
+
+[node name="Onda Wifi2" type="MeshInstance3D" parent="Router6/Router" unique_id=2031387340]
+transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 1, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_ak8b8")
+mesh = SubResource("TorusMesh_wkv31")
+script = ExtResource("1_ak8b8")
+retraso_inicio = 0.6
+
+[node name="Onda Wifi3" type="MeshInstance3D" parent="Router6/Router" unique_id=221730548]
+transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 1, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_ak8b8")
+mesh = SubResource("TorusMesh_wkv31")
+script = ExtResource("1_ak8b8")
+retraso_inicio = 1.2
+
+[node name="Router7" type="Node3D" parent="." unique_id=1401643570]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.59632, 1.1719966, -49.030403)
+
+[node name="Router" type="MeshInstance3D" parent="Router7" unique_id=1228520175]
+mesh = SubResource("BoxMesh_8fxs5")
+
+[node name="RayCast3D" type="RayCast3D" parent="Router7/Router" unique_id=887190753]
+
+[node name="Onda Wifi" type="MeshInstance3D" parent="Router7/Router" unique_id=807214956]
+transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 1, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_ak8b8")
+mesh = SubResource("TorusMesh_wkv31")
+script = ExtResource("1_ak8b8")
+
+[node name="Onda Wifi2" type="MeshInstance3D" parent="Router7/Router" unique_id=2058003338]
+transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 1, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_ak8b8")
+mesh = SubResource("TorusMesh_wkv31")
+script = ExtResource("1_ak8b8")
+retraso_inicio = 0.6
+
+[node name="Onda Wifi3" type="MeshInstance3D" parent="Router7/Router" unique_id=1199451792]
+transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 1, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_ak8b8")
+mesh = SubResource("TorusMesh_wkv31")
+script = ExtResource("1_ak8b8")
+retraso_inicio = 1.2
+
+[node name="Router8" type="Node3D" parent="." unique_id=1878797508]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.7539, 1.1719966, -23.00138)
+
+[node name="Router" type="MeshInstance3D" parent="Router8" unique_id=1036063946]
+mesh = SubResource("BoxMesh_8fxs5")
+
+[node name="RayCast3D" type="RayCast3D" parent="Router8/Router" unique_id=2121461357]
+
+[node name="Onda Wifi" type="MeshInstance3D" parent="Router8/Router" unique_id=1796255509]
+transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 1, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_ak8b8")
+mesh = SubResource("TorusMesh_wkv31")
+script = ExtResource("1_ak8b8")
+
+[node name="Onda Wifi2" type="MeshInstance3D" parent="Router8/Router" unique_id=1947850904]
+transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 1, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_ak8b8")
+mesh = SubResource("TorusMesh_wkv31")
+script = ExtResource("1_ak8b8")
+retraso_inicio = 0.6
+
+[node name="Onda Wifi3" type="MeshInstance3D" parent="Router8/Router" unique_id=2130691073]
+transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 1, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_ak8b8")
+mesh = SubResource("TorusMesh_wkv31")
+script = ExtResource("1_ak8b8")
+retraso_inicio = 1.2
+
 [node name="Estudiante" type="CharacterBody3D" parent="." unique_id=2047578850 node_paths=PackedStringArray("nodo_router", "nodo_raycast")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.3575, 0.9649887, -61.79018)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.14361, 0.6830344, -60.973846)
 script = ExtResource("1_awtwk")
 nodo_router = NodePath("../Router")
 nodo_raycast = NodePath("RayCast3D")
 escena_paquete = ExtResource("3_wkv31")
+velocidad_caminar = 15.0
 
 [node name="RayCast3D" type="RayCast3D" parent="Estudiante" unique_id=316226275]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Estudiante" unique_id=1037988441]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.33517587, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2620544, -0.33517587, 4.445694)
 mesh = SubResource("CapsuleMesh_awtwk")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Estudiante" unique_id=1834572890]

@@ -1,42 +1,6 @@
 [gd_scene format=3 uid="uid://c6tihpamj7gw2"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_madera_sur_x"]
-size = Vector3(0.3, 3, 32.4)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_madera_sur_z"]
-size = Vector3(21, 3, 0.3)
-
 [node name="Bloque_Sur" type="CSGCombiner3D" unique_id=1846529155]
-groups = ["concreto"]
-use_collision = true
-
-[node name="Pared_Madera_Sur_1" type="StaticBody3D" parent="."]
-groups = ["madera"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.054, -53.88, -41.12)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Pared_Madera_Sur_1"]
-shape = SubResource("BoxShape3D_madera_sur_x")
-
-[node name="Pared_Madera_Sur_2" type="StaticBody3D" parent="."]
-groups = ["madera"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.162, -53.88, -41.12)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Pared_Madera_Sur_2"]
-shape = SubResource("BoxShape3D_madera_sur_x")
-
-[node name="Pared_Madera_Sur_3" type="StaticBody3D" parent="."]
-groups = ["madera"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.018, -53.88, -41.12)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Pared_Madera_Sur_3"]
-shape = SubResource("BoxShape3D_madera_sur_x")
-
-[node name="Pared_Madera_Sur_4" type="StaticBody3D" parent="."]
-groups = ["madera"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.58, -53.88, -41.44)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Pared_Madera_Sur_4"]
-shape = SubResource("BoxShape3D_madera_sur_z")
 
 [node name="Bloque_Sur" type="CSGBox3D" parent="." unique_id=1819738529]
 transform = Transform3D(0.9042316, 0, 0, 0, 1, 0, 0, 0, 0.99999166, -15.2253065, -54.254246, -41.50849)

@@ -1,28 +1,8 @@
 [gd_scene format=3 uid="uid://2w0tdp533ecb"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_madera_oeste"]
-size = Vector3(8.757065, 2.5497253, 0.31019288)
-
 [node name="Bloque_Oeste" type="CSGCombiner3D" unique_id=1846418678]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.72, 0.836, 28.554)
-use_collision = true
-
-[node name="Pared_Madera_Oeste_2" type="StaticBody3D" parent="." unique_id=975473199]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.72, 0.836, 0.98)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Pared_Madera_Oeste_2" unique_id=403217485]
-shape = SubResource("BoxShape3D_madera_oeste")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Pared_Madera_Oeste_2" unique_id=1467521164]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.22829342, 27.569118)
-shape = SubResource("BoxShape3D_madera_oeste")
-
-[node name="Pared_Madera_Oeste_3" type="StaticBody3D" parent="." unique_id=2105221854]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.72, 0.836, -22.031544)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Pared_Madera_Oeste_3" unique_id=1962211989]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.18441164, -6.0087104)
-shape = SubResource("BoxShape3D_madera_oeste")
+operation = 2
 
 [node name="Bloque" type="CSGBox3D" parent="." unique_id=1267439583]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.064842, 0.40891027, 0.82424927)
@@ -114,11 +94,11 @@ operation = 2
 size = Vector3(0.7105713, 2.1, 1.4257813)
 
 [node name="Entrada B" type="CSGBox3D" parent="." unique_id=2138003523]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.3711392e-08, 41.837036, 0.32974857, 49.282516)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.3711392e-08, 44, 0.53329474, 50.079796)
 operation = 2
-size = Vector3(5.6706543, 2.7594972, 1.4257813)
+size = Vector3(5.6706543, 2.3524048, 1.4257813)
 
 [node name="Puerta_Aula2" type="CSGBox3D" parent="." unique_id=1196435564]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.3711392e-08, 43.925537, 0, -52.11153)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.3711392e-08, 43.925537, 0.46654063, -51.9897)
 operation = 2
-size = Vector3(2, 2.1, 1.4257813)
+size = Vector3(0.4250183, 2.2328858, 1.4257813)

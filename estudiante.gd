@@ -1,8 +1,8 @@
-extends Node3D
+extends CharacterBody3D
 
 @export var nodo_router : Node3D
 @export var nodo_raycast : RayCast3D
-@export var escena_paquete : PackedScene # <-- NUEVO: Aquí cargaremos el archivo paquete.tscn
+@export var escena_paquete : PackedScene
 @export var radio_cobertura : float = 12.0
 @export var velocidad_caminar : float = 5.0
 var velocidad_paquete_actual : float = 15.0
@@ -10,50 +10,77 @@ var velocidad_paquete_actual : float = 15.0
 var mesh_visual : MeshInstance3D
 var material_estudiante : StandardMaterial3D
 
-var cooldown_red : float = 0.0 # Controla la tasa de transferencia (fire rate)
+var cooldown_red : float = 0.0
+var routers: Array[Node3D] = []
+var router_raycasts: Dictionary = {}
 
 func _ready() -> void:
 	mesh_visual = get_node("MeshInstance3D")
 	material_estudiante = StandardMaterial3D.new()
 	mesh_visual.material_override = material_estudiante
+	for child in get_parent().get_children():
+		if child is Node3D and child.name.begins_with("Router"):
+			routers.append(child)
+			var ray = child.get_node("Router/RayCast3D") as RayCast3D
+			if ray:
+				router_raycasts[child] = ray
+
+func get_nearest_router() -> Node3D:
+	var nearest: Node3D = null
+	var nearest_dist_sq: float = INF
+	for router in routers:
+		var d_sq = global_position.distance_squared_to(router.global_position)
+		if d_sq < nearest_dist_sq:
+			nearest_dist_sq = d_sq
+			nearest = router
+	return nearest
+
+func _physics_process(delta: float) -> void:
+	var input_dir := Vector3.ZERO
+	if Input.is_physical_key_pressed(KEY_D):
+		input_dir.x -= 1
+	if Input.is_physical_key_pressed(KEY_A):
+		input_dir.x += 1
+	if Input.is_physical_key_pressed(KEY_S):
+		input_dir.z -= 1
+	if Input.is_physical_key_pressed(KEY_W):
+		input_dir.z += 1
+
+	if input_dir != Vector3.ZERO:
+		input_dir = input_dir.normalized()
+
+	velocity = input_dir * velocidad_caminar
+	move_and_slide()
 
 func _process(delta: float) -> void:
-	# --- 1. CONTROLES DE MOVIMIENTO ---
-	if Input.is_physical_key_pressed(KEY_D):
-		global_position.x -= velocidad_caminar * delta
-	if Input.is_physical_key_pressed(KEY_A):
-		global_position.x += velocidad_caminar * delta
-	if Input.is_physical_key_pressed(KEY_S):
-		global_position.z -= velocidad_caminar * delta
-	if Input.is_physical_key_pressed(KEY_W):
-		global_position.z += velocidad_caminar * delta
-
-	# Reducir el tiempo de recarga del envío
 	if cooldown_red > 0.0:
 		cooldown_red -= delta
 
-	# --- 2. CÁLCULO FÍSICO DE ATENUACIÓN ACUMULATIVA (RAYCAST SEGURO POR RID) ---
-	var multiplicador_senal_total : float = 1.0 
-	
-	if nodo_router and nodo_raycast:
-		# APUNTAR AL PECHO: Sumamos 1 metro en Y para que el rayo no raspe el piso
-		nodo_raycast.target_position = nodo_raycast.to_local(global_position + Vector3(0, 1, 0))
-		
+	var router = get_nearest_router()
+	if not router:
+		return
+
+	var ray: RayCast3D = router_raycasts.get(router)
+
+	var multiplicador_senal_total : float = 1.0
+
+	if ray:
+		ray.target_position = ray.to_local(global_position + Vector3(0, 1, 0))
+
 		var evaluando_trayectoria : bool = true
 		var excepciones_del_frame : Array = []
-		
-		var limite_seguridad : int = 5 # Lo bajamos a 5. Rara vez hay 5 paredes seguidas.
+
+		var limite_seguridad : int = 5
 		var iteracion : int = 0
-		
+
 		while evaluando_trayectoria and iteracion < limite_seguridad:
-			iteracion += 1 
-			nodo_raycast.force_raycast_update()
-			
-			if nodo_raycast.is_colliding():
-				var colisor = nodo_raycast.get_collider()
-				
-				# Protecciones de choque amigo
-				if colisor == self or colisor == nodo_router:
+			iteracion += 1
+			ray.force_raycast_update()
+
+			if ray.is_colliding():
+				var colisor = ray.get_collider()
+
+				if colisor == self or colisor == router:
 					evaluando_trayectoria = false
 				else:
 					if colisor.is_in_group("ventana"):
@@ -62,91 +89,71 @@ func _process(delta: float) -> void:
 						multiplicador_senal_total *= 0.70
 					else:
 						multiplicador_senal_total *= 0.25
-					
-					# TRUCO DE OPTIMIZACIÓN: Usar el RID en lugar del nodo
-					var rid_colision = nodo_raycast.get_collider_rid()
-					nodo_raycast.add_exception_rid(rid_colision)
+
+					var rid_colision = ray.get_collider_rid()
+					ray.add_exception_rid(rid_colision)
 					excepciones_del_frame.append(rid_colision)
 			else:
 				evaluando_trayectoria = false
-				
+
 			if iteracion >= limite_seguridad:
-				evaluando_trayectoria = false # Abortamos en silencio
-		
-		# Limpiamos el rayo para el siguiente frame usando los RIDs
+				evaluando_trayectoria = false
+
 		for rid in excepciones_del_frame:
-			nodo_raycast.remove_exception_rid(rid)
+			ray.remove_exception_rid(rid)
 
-	
-
-# --- 3. CÁLCULO DE CALIDAD DE RED (DISTANCIA + OBSTÁCULOS) ---
 	var distancia = 0.0
-	var calidad_red = 0.0 # <-- NUEVO: La declaramos aquí afuera para que la Sección 4 pueda verla
-	
-	if nodo_router:
-		distancia = global_position.distance_to(nodo_router.global_position)
-		
-		var fuerza_distancia = 1.0 - (distancia / radio_cobertura)
-		if fuerza_distancia < 0.0:
-			fuerza_distancia = 0.0
-			
-		# LA FÓRMULA MÁGICA: Le quitamos el 'var' porque ya la declaramos arriba
-		calidad_red = fuerza_distancia * multiplicador_senal_total
-		
-		if distancia <= radio_cobertura:
-			# La velocidad ahora es súper dinámica (máximo 30 Mbps, escalando hacia abajo según la calidad exacta)
-			velocidad_paquete_actual = 30.0 * calidad_red
-			if velocidad_paquete_actual < 2.0:
-				velocidad_paquete_actual = 2.0 # Seguro anti-congelamiento de paquetes
-				
-			# Colores dinámicos basados en la Calidad Total
-			if calidad_red > 0.5:
-				material_estudiante.albedo_color = Color(1.0, 0.0, 0.0, 1.0) # Verde (Óptimo)
-			elif calidad_red > 0.15:
-				material_estudiante.albedo_color = Color(1.0, 1.0, 0.0, 1.0) # Amarillo (Intermitente/Medio)
-			else:
-				material_estudiante.albedo_color = Color(0.0, 1.0, 0.0, 1.0) # Rojo (Crítico/Lento)
+	var calidad_red = 0.0
+
+	distancia = global_position.distance_to(router.global_position)
+
+	var fuerza_distancia = 1.0 - (distancia / radio_cobertura)
+	if fuerza_distancia < 0.0:
+		fuerza_distancia = 0.0
+
+	calidad_red = fuerza_distancia * multiplicador_senal_total
+
+	if distancia <= radio_cobertura:
+		velocidad_paquete_actual = 30.0 * calidad_red
+		if velocidad_paquete_actual < 2.0:
+			velocidad_paquete_actual = 2.0
+
+		if calidad_red > 0.5:
+			material_estudiante.albedo_color = Color(1.0, 0.0, 0.0, 1.0)
+		elif calidad_red > 0.15:
+			material_estudiante.albedo_color = Color(1.0, 1.0, 0.0, 1.0)
 		else:
-			velocidad_paquete_actual = 0.0
-			material_estudiante.albedo_color = Color(0.8, 0.8, 0.8, 1) # Gris (Sin cobertura)
-			
-# Aplicar el castigo combinado de todas las paredes atravesadas
-		if distancia <= radio_cobertura:
-			velocidad_paquete_actual = velocidad_paquete_actual * multiplicador_senal_total
-			
-			# NUEVO: Evitar que el paquete se congele. Si va muy lento, forzamos a 2.0
-			if velocidad_paquete_actual < 2.0:
-				velocidad_paquete_actual = 2.0
-	# --- 4. ENVÍO DE DATOS (CON PÉRDIDA DE PAQUETES Y LAG) ---
+			material_estudiante.albedo_color = Color(0.0, 1.0, 0.0, 1.0)
+	else:
+		velocidad_paquete_actual = 0.0
+		material_estudiante.albedo_color = Color(0.8, 0.8, 0.8, 1)
+
+	if distancia <= radio_cobertura:
+		velocidad_paquete_actual = velocidad_paquete_actual * multiplicador_senal_total
+		if velocidad_paquete_actual < 2.0:
+			velocidad_paquete_actual = 2.0
+
 	if Input.is_physical_key_pressed(KEY_SPACE) and cooldown_red <= 0.0:
-		if nodo_router and distancia <= radio_cobertura:
-			
-			# 1. SIMULACIÓN DE LAG (JITTER): 
-			# Señal perfecta = 0.2s de retardo. Señal pésima = hasta 1.2s de retardo entre paquetes.
-			var lag_adicional = (1.0 - calidad_red) * 1.0 
+		if distancia <= radio_cobertura:
+			var lag_adicional = (1.0 - calidad_red) * 1.0
 			cooldown_red = 0.2 + lag_adicional
-			
-			# 2. SIMULACIÓN DE PÉRDIDA DE PAQUETES (Packet Loss):
+
 			var probabilidad_perdida = 0.0
-			
+
 			if calidad_red > 0.5:
-				probabilidad_perdida = 0.0 # Zona Verde: 0% de pérdida (Conexión estable)
+				probabilidad_perdida = 0.0
 			elif calidad_red > 0.15:
-				probabilidad_perdida = 0.3 # Zona Amarilla: 30% de probabilidad de perder el paquete
+				probabilidad_perdida = 0.3
 			else:
-				probabilidad_perdida = 0.7 # Zona Roja: 70% de probabilidad de pérdida (Conexión crítica)
-				
-			# 3. TIRAR LOS DADOS: randf() genera un número aleatorio entre 0.0 y 1.0
+				probabilidad_perdida = 0.7
+
 			if randf() > probabilidad_perdida:
-				# EL PAQUETE SOBREVIVIÓ A LA INTERFERENCIA
 				if escena_paquete:
 					var nuevo_paquete = escena_paquete.instantiate()
 					get_parent().add_child(nuevo_paquete)
 					nuevo_paquete.global_position = global_position + Vector3(0, 1, 0)
-					
-					var destino_elevado = nodo_router.global_position + Vector3(0, 1, 0)
+
+					var destino_elevado = router.global_position + Vector3(0, 1, 0)
 					nuevo_paquete.disparar(destino_elevado, self)
 			else:
-				# EL PAQUETE FUE DESTRUIDO POR MALA SEÑAL
-				# Aquí podrías instanciar un efecto visual de chispas rojas, por ahora lo vemos en consola
 				print("❌ ¡Packet Loss! El paquete se corrompió antes de llegar al router.")
