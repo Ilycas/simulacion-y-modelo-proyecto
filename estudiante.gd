@@ -81,31 +81,34 @@ func _process(delta: float) -> void:
 
 # --- 3. CÁLCULO DE CALIDAD DE RED (DISTANCIA + OBSTÁCULOS) ---
 	var distancia = 0.0
-	var calidad_red = 0.0 # <-- NUEVO: La declaramos aquí afuera para que la Sección 4 pueda verla
+	var calidad_red = 0.0 
 	
 	if nodo_router:
 		distancia = global_position.distance_to(nodo_router.global_position)
 		
+		# Calculamos la fuerza base de la señal según qué tan lejos estás
 		var fuerza_distancia = 1.0 - (distancia / radio_cobertura)
 		if fuerza_distancia < 0.0:
 			fuerza_distancia = 0.0
 			
-		# LA FÓRMULA MÁGICA: Le quitamos el 'var' porque ya la declaramos arriba
-		calidad_red = fuerza_distancia * multiplicador_senal_total
+		# LA FÓRMULA MÁGICA: Distancia combinada con los materiales que atravesó
+		var atenuacion_real = max(multiplicador_senal_total, 0.10)
+		calidad_red = fuerza_distancia * atenuacion_real
 		
 		if distancia <= radio_cobertura:
-			# La velocidad ahora es súper dinámica (máximo 30 Mbps, escalando hacia abajo según la calidad exacta)
+			# La velocidad ahora es súper dinámica (máximo 30 Mbps)
 			velocidad_paquete_actual = 30.0 * calidad_red
+			
 			if velocidad_paquete_actual < 2.0:
 				velocidad_paquete_actual = 2.0 # Seguro anti-congelamiento de paquetes
 				
 			# Colores dinámicos basados en la Calidad Total
 			if calidad_red > 0.5:
-				material_estudiante.albedo_color = Color(1.0, 0.0, 0.0, 1.0) # Verde (Óptimo)
+				material_estudiante.albedo_color = Color(0, 1, 0, 1) # Verde (Óptimo)
 			elif calidad_red > 0.15:
-				material_estudiante.albedo_color = Color(1.0, 1.0, 0.0, 1.0) # Amarillo (Intermitente/Medio)
+				material_estudiante.albedo_color = Color(1, 1, 0, 1) # Amarillo (Medio)
 			else:
-				material_estudiante.albedo_color = Color(0.0, 1.0, 0.0, 1.0) # Rojo (Crítico/Lento)
+				material_estudiante.albedo_color = Color(1, 0, 0, 1) # Rojo (Crítico/Lento)
 		else:
 			velocidad_paquete_actual = 0.0
 			material_estudiante.albedo_color = Color(0.8, 0.8, 0.8, 1) # Gris (Sin cobertura)
