@@ -5,6 +5,7 @@ extends Node3D
 @export var escena_paquete : PackedScene # <-- NUEVO: Aquí cargaremos el archivo paquete.tscn
 @export var radio_cobertura : float = 12.0
 @export var velocidad_caminar : float = 5.0
+var velocidad_paquete_actual : float = 15.0
 
 var mesh_visual : MeshInstance3D
 var material_estudiante : StandardMaterial3D
@@ -54,54 +55,46 @@ func _process(delta: float) -> void:
 					multiplicador_material = 0.25
 					nombre_material = "Concreto"
 
-	# --- 3. MAPA DE CALOR ---
+	
+
+	# --- 3. MAPA DE CALOR Y CÁLCULO DE VELOCIDAD DINÁMICA ---
 	var distancia = 0.0
 	if nodo_router:
 		distancia = global_position.distance_to(nodo_router.global_position)
 		var zona1_fuerte = radio_cobertura / 3.0
 		var zona2_promedio = (radio_cobertura / 3.0) * 2.0
 		
+		# Calcular velocidad teórica por pura distancia
 		if distancia <= zona1_fuerte:
+			velocidad_paquete_actual = 30.0
 			material_estudiante.albedo_color = Color(1.0, 0.0, 0.0, 1.0) if multiplicador_material > 0.5 else Color(1, 1, 0, 1)
 		elif distancia <= zona2_promedio:
+			velocidad_paquete_actual = 15.0
 			material_estudiante.albedo_color = Color(1, 1, 0, 1) if multiplicador_material > 0.5 else Color(0.0, 1.0, 0.0, 1.0)
 		elif distancia <= radio_cobertura:
+			velocidad_paquete_actual = 5.0
 			material_estudiante.albedo_color = Color(0.0, 1.0, 0.0, 1.0) if multiplicador_material > 0.5 else Color(0.8, 0.8, 0.8, 1)
 		else:
+			velocidad_paquete_actual = 0.0
 			material_estudiante.albedo_color = Color(0.8, 0.8, 0.8, 1)
+
+		# Aplicar castigo por material de inmediato si hay obstáculo
+		if hay_obstaculo and distancia <= radio_cobertura:
+			velocidad_paquete_actual = velocidad_paquete_actual * multiplicador_material
 
 	# --- 4. ENVÍO DE DATOS CONTINUO ---
 	if Input.is_physical_key_pressed(KEY_SPACE) and cooldown_red <= 0.0:
 		if nodo_router and distancia <= radio_cobertura:
-			
-			var velocidad_paquete = 0.0
-			var zona1_fuerte = radio_cobertura / 3.0
-			var zona2_promedio = (radio_cobertura / 3.0) * 2.0
-			
-			if distancia <= zona1_fuerte:
-				velocidad_paquete = 30.0
-			elif distancia <= zona2_promedio:
-				velocidad_paquete = 15.0
-			else:
-				velocidad_paquete = 5.0
-			
-			if hay_obstaculo:
-				velocidad_paquete = velocidad_paquete * multiplicador_material
-				print("Atenuación: ", nombre_material, " | Retención: ", multiplicador_material * 100, "%")
-			
-			# ¡AQUÍ ESTÁ LA MAGIA! Generamos un clon del paquete
 			if escena_paquete:
 				var nuevo_paquete = escena_paquete.instantiate()
-				get_parent().add_child(nuevo_paquete) # Lo soltamos en el mundo 3D
-				
-				# Lo posicionamos a la altura del pecho del estudiante
+				get_parent().add_child(nuevo_paquete)
 				nuevo_paquete.global_position = global_position + Vector3(0, 1, 0)
 				
-				# Le decimos a dónde ir y a qué velocidad
 				var destino_elevado = nodo_router.global_position + Vector3(0, 1, 0)
-				nuevo_paquete.disparar(destino_elevado, velocidad_paquete)
 				
-				# Reiniciamos el tiempo para permitir el próximo envío rápido (3 paquetes por seg)
-				cooldown_red = 0.3 
+				# ¡CAMBIO CLAVE!: En vez de pasarle un número fijo, le pasamos "self" (todo el estudiante)
+				nuevo_paquete.disparar(destino_elevado, self)
+				
+				cooldown_red = 0.3
 		else:
 			print("ERROR: Fuera de cobertura.")
