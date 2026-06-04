@@ -1,34 +1,37 @@
 extends MeshInstance3D
 
-@export var radio_maximo: float = 12.0 # Debe coincidir con tu radio_cobertura
-@export var tiempo_expansion: float = 2.0 # Segundos que tarda en desaparecer
-@export var grosor_onda: float = 0.5 # Qué tan alto es el anillo
+@export var radio_maximo: float = 12.0
+@export var tiempo_expansion: float = 2.0
+@export var grosor_onda: float = 0.5
+@export var retraso_inicio: float = 0.0 # <-- NUEVO: Para que las multi-ondas no salgan al mismo tiempo
 
 func _ready() -> void:
-	# Asegurarnos de que el material es único para poder animar su transparencia
+	# Duplicamos el material para que cada onda tenga su propio ciclo de color
 	if material_override:
 		material_override = material_override.duplicate()
+	
+	# Si configuraste un retraso, la onda espera antes de empezar a latir
+	if retraso_inicio > 0:
+		await get_tree().create_timer(retraso_inicio).timeout
+		
 	animar_onda()
 
 func animar_onda() -> void:
-	# 1. Reiniciar la onda al centro (tamaño pequeño)
 	scale = Vector3(0.1, grosor_onda, 0.1)
 	
-	# 2. Reiniciar la opacidad al 100%
 	var mat = material_override as StandardMaterial3D
 	if mat:
-		mat.albedo_color.a = 1.0 
+		# 1. Nace fuerte: Verde puro y totalmente opaco (Alpha 1.0)
+		mat.albedo_color = Color(1.0, 0.0, 0.0, 0.392) 
 		
-	# 3. Crear el animador (Tween)
 	var tween = get_tree().create_tween()
-	tween.set_parallel(true) # Hace que el tamaño y la transparencia se animen AL MISMO TIEMPO
+	tween.set_parallel(true) 
 	
-	# 4. Crecer el anillo hasta el radio máximo
 	tween.tween_property(self, "scale", Vector3(radio_maximo, grosor_onda, radio_maximo), tiempo_expansion)
 	
-	# 5. Desvanecer el anillo a medida que crece (Alpha llega a 0)
 	if mat:
-		tween.tween_property(mat, "albedo_color:a", 0.0, tiempo_expansion).set_ease(Tween.EASE_OUT)
+		# 2. Muere débil: Rojo puro y totalmente transparente (Alpha 0.0)
+		var color_final = Color(0.0, 1.0, 0.0, 0.0)
+		tween.tween_property(mat, "albedo_color", color_final, tiempo_expansion).set_ease(Tween.EASE_OUT)
 	
-	# 6. Cuando termine la animación, volver a llamarse a sí misma (Bucle infinito)
 	tween.chain().tween_callback(animar_onda)
