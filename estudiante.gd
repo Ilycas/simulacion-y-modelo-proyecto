@@ -66,11 +66,11 @@ func _process(delta: float) -> void:
 		
 		# Simplificamos el degradado: Si la señal es menor al 50% por culpa del material, pinta rojo.
 		if distancia <= zona1_fuerte:
-			material_estudiante.albedo_color = Color(0, 1, 0, 1) if multiplicador_material > 0.5 else Color(1, 1, 0, 1)
+			material_estudiante.albedo_color = Color(1.0, 0.0, 0.0, 1.0) if multiplicador_material > 0.5 else Color(1, 1, 0, 1)
 		elif distancia <= zona2_promedio:
-			material_estudiante.albedo_color = Color(1, 1, 0, 1) if multiplicador_material > 0.5 else Color(1, 0, 0, 1)
+			material_estudiante.albedo_color = Color(1, 1, 0, 1) if multiplicador_material > 0.5 else Color(0.0, 1.0, 0.0, 1.0)
 		elif distancia <= radio_cobertura:
-			material_estudiante.albedo_color = Color(1, 0, 0, 1) if multiplicador_material > 0.5 else Color(0.8, 0.8, 0.8, 1)
+			material_estudiante.albedo_color = Color(0.0, 0.529, 0.0, 1.0) if multiplicador_material > 0.5 else Color(0.8, 0.8, 0.8, 1)
 		else:
 			material_estudiante.albedo_color = Color(0.8, 0.8, 0.8, 1)
 
