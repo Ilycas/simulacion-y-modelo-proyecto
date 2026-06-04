@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://2w0tdp533ecb"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_madera_oeste"]
-size = Vector3(8.5, 2.9, 0.4)
+size = Vector3(8.684448, 2.9, 0.4)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ventana_oeste"]
-size = Vector3(0.3, 1.5, 2)
+size = Vector3(0.5210937, 1.5255432, 7.0672607)
 
 [node name="Bloque_Oeste" type="CSGCombiner3D" unique_id=1846418678]
 groups = ["concreto"]
@@ -20,7 +20,7 @@ shape = SubResource("BoxShape3D_madera_oeste")
 
 [node name="Pared_Madera_Oeste_2" type="StaticBody3D" parent="."]
 groups = ["madera"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.72, 0.836, 0.980)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.72, 0.836, 0.98)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Pared_Madera_Oeste_2"]
 shape = SubResource("BoxShape3D_madera_oeste")
@@ -32,14 +32,64 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.72, 0.836, -22.151)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Pared_Madera_Oeste_3"]
 shape = SubResource("BoxShape3D_madera_oeste")
 
-# --- VENTANAS ---
-[node name="Ventana_Oeste_1" type="StaticBody3D" parent="."]
+# --- VENTANAS FACHADA INTERIOR (PASILLO) ---
+[node name="Ventana_Salon_13_1" type="StaticBody3D" parent="."]
 groups = ["ventana"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.5, 0.84, 40.8)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.1948, 0.737, 35.900)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ventana_Oeste_1"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ventana_Salon_13_1"]
 shape = SubResource("BoxShape3D_ventana_oeste")
 
+[node name="Ventana_Salon_13_2" type="StaticBody3D" parent="."]
+groups = ["ventana"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.1948, 0.737, 44.539)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ventana_Salon_13_2"]
+shape = SubResource("BoxShape3D_ventana_oeste")
+
+[node name="Ventana_Salon_10_1" type="StaticBody3D" parent="."]
+groups = ["ventana"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.1948, 0.737, -44.185)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ventana_Salon_10_1"]
+shape = SubResource("BoxShape3D_ventana_oeste")
+
+[node name="Ventana_Salon_10_2" type="StaticBody3D" parent="."]
+groups = ["ventana"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.1948, 0.737, -35.547)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ventana_Salon_10_2"]
+shape = SubResource("BoxShape3D_ventana_oeste")
+
+[node name="Ventana_Salon_11_1" type="StaticBody3D" parent="."]
+groups = ["ventana"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.1948, 0.737, -16.859)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ventana_Salon_11_1"]
+shape = SubResource("BoxShape3D_ventana_oeste")
+
+[node name="Ventana_Salon_11_2" type="StaticBody3D" parent="."]
+groups = ["ventana"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.1948, 0.737, -8.220)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ventana_Salon_11_2"]
+shape = SubResource("BoxShape3D_ventana_oeste")
+
+[node name="Ventana_Salon_12_1" type="StaticBody3D" parent="."]
+groups = ["ventana"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.1948, 0.737, 8.070)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ventana_Salon_12_1"]
+shape = SubResource("BoxShape3D_ventana_oeste")
+
+[node name="Ventana_Salon_12_2" type="StaticBody3D" parent="."]
+groups = ["ventana"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.1948, 0.737, 16.709)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ventana_Salon_12_2"]
+shape = SubResource("BoxShape3D_ventana_oeste")
+
+# --- VENTANAS FACHADA EXTERIOR ---
 [node name="Ventana_Oeste_2" type="StaticBody3D" parent="."]
 groups = ["ventana"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.5, 0.84, 14.7)
@@ -109,6 +159,46 @@ size = Vector3(0.7105713, 2.1, 1.4257813)
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -2.7701423, 0, 24.701143)
 operation = 2
 size = Vector3(0.7105713, 2.1, 1.4257813)
+
+[node name="Ventana Aula 8" type="CSGBox3D" parent="Bloque" unique_id=1232064127]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -2.776741, 0.2825173, 35.112312)
+operation = 2
+size = Vector3(0.7105713, 1.4987304, 7.0959473)
+
+[node name="Ventana Aula 9" type="CSGBox3D" parent="Bloque" unique_id=1003054234]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -2.7701416, 0.30063474, 43.69709)
+operation = 2
+size = Vector3(0.7105713, 1.4987304, 7.0959473)
+
+[node name="Ventana Aula 10" type="CSGBox3D" parent="Bloque" unique_id=1959803595]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -2.776741, 0.2825173, 7.288101)
+operation = 2
+size = Vector3(0.7105713, 1.4987304, 7.0959473)
+
+[node name="Ventana Aula 11" type="CSGBox3D" parent="Bloque" unique_id=1333465422]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -2.7701416, 0.30063474, 15.872879)
+operation = 2
+size = Vector3(0.7105713, 1.4987304, 7.0959473)
+
+[node name="Ventana Aula 12" type="CSGBox3D" parent="Bloque" unique_id=1270996217]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -2.776741, 0.2825173, -17.650427)
+operation = 2
+size = Vector3(0.7105713, 1.4987304, 7.0959473)
+
+[node name="Ventana Aula 13" type="CSGBox3D" parent="Bloque" unique_id=2094287361]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -2.7701416, 0.30063474, -9.065649)
+operation = 2
+size = Vector3(0.7105713, 1.4987304, 7.0959473)
+
+[node name="Salon 10 Hueco Ventana 1" type="CSGBox3D" parent="Bloque" unique_id=1834214208]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -2.776741, 0.2825173, -44.98552)
+operation = 2
+size = Vector3(0.7105713, 1.4987304, 7.0959473)
+
+[node name="Salon 10 Hueco Ventana 2" type="CSGBox3D" parent="Bloque" unique_id=1193448479]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -2.7701416, 0.30063474, -36.40074)
+operation = 2
+size = Vector3(0.7105713, 1.4987304, 7.0959473)
 
 [node name="Entrada Aula7" type="CSGBox3D" parent="Bloque" unique_id=1807663131]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -2.7701445, 0, 49.45692)
