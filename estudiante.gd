@@ -1,4 +1,4 @@
-extends Node3D
+extends CharacterBody3D
 
 @export var nodo_router : Node3D
 @export var nodo_raycast : RayCast3D
@@ -12,7 +12,20 @@ var material_estudiante : StandardMaterial3D
 var paquete_viajando : bool = false
 var velocidad_paquete : float = 15.0
 
+var zona1_fuerte: float
+var zona2_promedio: float
+
 func _ready() -> void:
+	if not nodo_router:
+		push_error("Estudiante: nodo_router no asignado")
+	if not nodo_raycast:
+		push_error("Estudiante: nodo_raycast no asignado")
+	if not nodo_paquete:
+		push_error("Estudiante: nodo_paquete no asignado")
+	
+	zona1_fuerte = radio_cobertura / 3.0
+	zona2_promedio = (radio_cobertura / 3.0) * 2.0
+	
 	mesh_visual = get_node("MeshInstance3D")
 	material_estudiante = StandardMaterial3D.new()
 	mesh_visual.material_override = material_estudiante
@@ -20,16 +33,21 @@ func _ready() -> void:
 	if nodo_paquete:
 		nodo_paquete.visible = false
 
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	# --- 1. CONTROLES DE MOVIMIENTO ---
+	var mov := Vector3.ZERO
 	if Input.is_physical_key_pressed(KEY_D):
-		global_position.x -= velocidad_caminar * delta
+		mov.x -= 1
 	if Input.is_physical_key_pressed(KEY_A):
-		global_position.x += velocidad_caminar * delta
+		mov.x += 1
 	if Input.is_physical_key_pressed(KEY_S):
-		global_position.z -= velocidad_caminar * delta
+		mov.z -= 1
 	if Input.is_physical_key_pressed(KEY_W):
-		global_position.z += velocidad_caminar * delta
+		mov.z += 1
+	velocity = mov.normalized() * velocidad_caminar
+	move_and_slide()
+
+func _process(delta: float) -> void:
 
 	# --- 2. CÁLCULO FÍSICO DE ATENUACIÓN (RAYCAST Y MATERIALES) ---
 	var hay_obstaculo : bool = false
@@ -61,9 +79,6 @@ func _process(delta: float) -> void:
 	var distancia = 0.0
 	if nodo_router:
 		distancia = global_position.distance_to(nodo_router.global_position)
-		var zona1_fuerte = radio_cobertura / 3.0
-		var zona2_promedio = (radio_cobertura / 3.0) * 2.0
-		
 		# Simplificamos el degradado: Si la señal es menor al 50% por culpa del material, pinta rojo.
 		if distancia <= zona1_fuerte:
 			material_estudiante.albedo_color = Color(1.0, 0.0, 0.0, 1.0) if multiplicador_material > 0.5 else Color(1, 1, 0, 1)
@@ -77,9 +92,6 @@ func _process(delta: float) -> void:
 	# --- 4. DISPARO DE PAQUETE ---
 	if Input.is_physical_key_pressed(KEY_SPACE) and not paquete_viajando:
 		if nodo_router and distancia <= radio_cobertura:
-			
-			var zona1_fuerte = radio_cobertura / 3.0
-			var zona2_promedio = (radio_cobertura / 3.0) * 2.0
 			
 			if distancia <= zona1_fuerte:
 				velocidad_paquete = 30.0

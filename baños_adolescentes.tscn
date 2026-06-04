@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://b110raehnfrfs"]
 
 [node name="Baños_Adolescentes" type="CSGCombiner3D" unique_id=242204458]
+groups = ["concreto"]
+use_collision = true
 
 [node name="Base_Baño_Adolescentes" type="CSGBox3D" parent="." unique_id=1504780181]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.59253, 0.18821406, 41.124664)

@@ -40,6 +40,10 @@ albedo_color = Color(0, 1, 0, 0.27450982)
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_awtwk"]
 height = 1.6
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_awtwk"]
+height = 1.6
+radius = 0.3
+
 [sub_resource type="SphereMesh" id="SphereMesh_awtwk"]
 
 [node name="Escuela" type="Node3D" unique_id=479217386]
@@ -74,9 +78,10 @@ material_override = SubResource("StandardMaterial3D_jdjiw")
 mesh = SubResource("CylinderMesh_awtwk")
 
 [node name="RayCast3D" type="RayCast3D" parent="Router/Router" unique_id=316226275]
-collide_with_areas = true
+collide_with_areas = false
+collide_with_bodies = true
 
-[node name="Estudiante" type="Node3D" parent="." unique_id=2047578850 node_paths=PackedStringArray("nodo_router", "nodo_raycast", "nodo_paquete")]
+[node name="Estudiante" type="CharacterBody3D" parent="." unique_id=2047578850 node_paths=PackedStringArray("nodo_router", "nodo_raycast", "nodo_paquete")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.3575, 0.9649887, -61.79018)
 script = ExtResource("1_awtwk")
 nodo_router = NodePath("../Router")
@@ -86,6 +91,9 @@ nodo_paquete = NodePath("../Paquete")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Estudiante" unique_id=1037988441]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.33517587, 0)
 mesh = SubResource("CapsuleMesh_awtwk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Estudiante" unique_id=1834572890]
+shape = SubResource("CapsuleShape3D_awtwk")
 
 [node name="Camera3D" type="Camera3D" parent="Estudiante" unique_id=304028374]
 transform = Transform3D(-0.99961126, -0.014953511, 0.023538534, 0.012683293, 0.50793386, 0.8613031, -0.024835559, 0.8612665, -0.5075468, 0, 30.080816, 0)
