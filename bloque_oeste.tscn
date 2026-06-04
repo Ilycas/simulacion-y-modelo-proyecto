@@ -29,9 +29,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.064842, 0.40891027, 0.8242
 size = Vector3(12.823, 3, 106.02)
 
 [node name="Pasillo" type="CSGBox3D" parent="Bloque" unique_id=1137253972]
-transform = Transform3D(0.99999964, 0, 0, 0, 0.9999908, 0, 0, 0, 0.99999034, -4.665058, 0.42743295, -0.25741607)
+transform = Transform3D(0.99999964, 0, 0, 0, 0.9999908, 0, 0, 0, 0.99999034, -4.7539673, 0.427433, -0.25741577)
 operation = 2
-size = Vector3(3.1746502, 3, 104.74521)
+size = Vector3(3.3524618, 3, 104.74521)
 
 [node name="Hueco_Aula7" type="CSGBox3D" parent="Bloque" unique_id=8979484]
 transform = Transform3D(0.99999964, 0, 0, 0, 0.9999908, 0, 0, 0, 0.99999034, 1.6503601, 0.42743295, 39.974358)
