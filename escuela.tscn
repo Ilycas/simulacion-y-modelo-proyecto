@@ -44,6 +44,15 @@ height = 1.6
 height = 1.6
 radius = 0.3
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_pared_madera"]
+size = Vector3(10, 2.9, 0.4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pared_madera_oeste"]
+size = Vector3(8.5, 2.9, 0.4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ventana"]
+size = Vector3(12, 1.5, 0.3)
+
 [sub_resource type="SphereMesh" id="SphereMesh_awtwk"]
 
 [node name="Escuela" type="Node3D" unique_id=479217386]
@@ -128,3 +137,90 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.207361, 0, 0)
 
 [node name="Bloque_Patio" parent="." unique_id=456839349 instance=ExtResource("8_lmequ")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.2997, 0.50118065, 23.710278)
+
+# --- PAREDES INTERNAS DE MADERA (Bloque Central) ---
+[node name="Pared_Madera_Central_1" type="StaticBody3D" parent="."]
+groups = ["madera"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.59, 0.91, -36.09)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pared_Madera_Central_1"]
+shape = SubResource("BoxShape3D_pared_madera")
+
+[node name="Pared_Madera_Central_2" type="StaticBody3D" parent="."]
+groups = ["madera"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.59, 0.91, -20.10)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pared_Madera_Central_2"]
+shape = SubResource("BoxShape3D_pared_madera")
+
+[node name="Pared_Madera_Central_3" type="StaticBody3D" parent="."]
+groups = ["madera"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.59, 0.91, -8.13)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pared_Madera_Central_3"]
+shape = SubResource("BoxShape3D_pared_madera")
+
+[node name="Pared_Madera_Central_4" type="StaticBody3D" parent="."]
+groups = ["madera"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.59, 0.91, 11.29)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pared_Madera_Central_4"]
+shape = SubResource("BoxShape3D_pared_madera")
+
+[node name="Pared_Madera_Central_5" type="StaticBody3D" parent="."]
+groups = ["madera"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.59, 0.91, 28.84)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pared_Madera_Central_5"]
+shape = SubResource("BoxShape3D_pared_madera")
+
+# --- PAREDES INTERNAS DE MADERA (Bloque Oeste) ---
+[node name="Pared_Madera_Oeste_1" type="StaticBody3D" parent="."]
+groups = ["madera"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.72, 1.01, 28.38)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pared_Madera_Oeste_1"]
+shape = SubResource("BoxShape3D_pared_madera_oeste")
+
+[node name="Pared_Madera_Oeste_2" type="StaticBody3D" parent="."]
+groups = ["madera"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.72, 1.01, 0.81)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pared_Madera_Oeste_2"]
+shape = SubResource("BoxShape3D_pared_madera_oeste")
+
+[node name="Pared_Madera_Oeste_3" type="StaticBody3D" parent="."]
+groups = ["madera"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.72, 1.01, -22.32)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pared_Madera_Oeste_3"]
+shape = SubResource("BoxShape3D_pared_madera_oeste")
+
+# --- VENTANAS ---
+[node name="Ventana_Central_1" type="StaticBody3D" parent="."]
+groups = ["ventana"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.6, 0.91, -44.0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ventana_Central_1"]
+shape = SubResource("BoxShape3D_ventana")
+
+[node name="Ventana_Central_2" type="StaticBody3D" parent="."]
+groups = ["ventana"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.6, 0.91, 38.0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ventana_Central_2"]
+shape = SubResource("BoxShape3D_ventana")
+
+[node name="Ventana_Oeste_1" type="StaticBody3D" parent="."]
+groups = ["ventana"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.7, 1.01, 45.0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ventana_Oeste_1"]
+shape = SubResource("BoxShape3D_ventana")
+
+[node name="Ventana_Oeste_2" type="StaticBody3D" parent="."]
+groups = ["ventana"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.7, 1.01, -43.0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ventana_Oeste_2"]
+shape = SubResource("BoxShape3D_ventana")
