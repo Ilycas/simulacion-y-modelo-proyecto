@@ -64,6 +64,20 @@ material_override = SubResource("StandardMaterial3D_ak8b8")
 mesh = SubResource("TorusMesh_wkv31")
 script = ExtResource("1_ak8b8")
 
+[node name="Onda Wifi2" type="MeshInstance3D" parent="Router/Router" unique_id=584485503]
+transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 1, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_ak8b8")
+mesh = SubResource("TorusMesh_wkv31")
+script = ExtResource("1_ak8b8")
+retraso_inicio = 0.6
+
+[node name="Onda Wifi3" type="MeshInstance3D" parent="Router/Router" unique_id=1029987583]
+transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 1, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_ak8b8")
+mesh = SubResource("TorusMesh_wkv31")
+script = ExtResource("1_ak8b8")
+retraso_inicio = 1.2
+
 [node name="Estudiante" type="CharacterBody3D" parent="." unique_id=2047578850 node_paths=PackedStringArray("nodo_router", "nodo_raycast", "nodo_paquete")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.3575, 0.9649887, -61.79018)
 script = ExtResource("1_awtwk")
