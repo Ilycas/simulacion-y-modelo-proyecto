@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bhc3htsqyd8aw" path="res://estudiante.gd" id="1_awtwk"]
 [ext_resource type="Texture2D" uid="uid://b3lwrvtx1elab" path="res://Plano.png" id="2_7pst4"]
 [ext_resource type="PackedScene" uid="uid://c6tihpamj7gw2" path="res://Bloque_sur.tscn" id="3_jdjiw"]
+[ext_resource type="PackedScene" uid="uid://cvqiiw1vx312y" path="res://paquete.tscn" id="3_wkv31"]
 [ext_resource type="PackedScene" uid="uid://2w0tdp533ecb" path="res://bloque_oeste.tscn" id="4_oxlh1"]
 [ext_resource type="PackedScene" uid="uid://bylsoyawfw17x" path="res://bloque_central.tscn" id="5_mt2cc"]
 [ext_resource type="PackedScene" uid="uid://c6vm45srdiuqd" path="res://bloque_banos_patio.tscn" id="6_dgm2e"]
@@ -38,8 +39,6 @@ height = 1.6
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_awtwk"]
 radius = 0.3
 height = 1.6
-
-[sub_resource type="SphereMesh" id="SphereMesh_awtwk"]
 
 [node name="Escuela" type="Node3D" unique_id=479217386]
 
@@ -78,12 +77,12 @@ mesh = SubResource("TorusMesh_wkv31")
 script = ExtResource("1_ak8b8")
 retraso_inicio = 1.2
 
-[node name="Estudiante" type="CharacterBody3D" parent="." unique_id=2047578850 node_paths=PackedStringArray("nodo_router", "nodo_raycast", "nodo_paquete")]
+[node name="Estudiante" type="CharacterBody3D" parent="." unique_id=2047578850 node_paths=PackedStringArray("nodo_router", "nodo_raycast")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.3575, 0.9649887, -61.79018)
 script = ExtResource("1_awtwk")
 nodo_router = NodePath("../Router")
 nodo_raycast = NodePath("../Router/Router/RayCast3D")
-nodo_paquete = NodePath("../Paquete")
+escena_paquete = ExtResource("3_wkv31")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Estudiante" unique_id=1037988441]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.33517587, 0)
@@ -94,12 +93,6 @@ shape = SubResource("CapsuleShape3D_awtwk")
 
 [node name="Camera3D" type="Camera3D" parent="Estudiante" unique_id=304028374]
 transform = Transform3D(-0.99961126, -0.014953511, 0.023538534, 0.012683293, 0.50793386, 0.8613031, -0.024835559, 0.8612665, -0.5075468, 0, 30.080816, 0)
-
-[node name="Paquete" type="Node3D" parent="." unique_id=503589229]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 10.009709, 2.5459337, 22.604027)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Paquete" unique_id=553433420]
-mesh = SubResource("SphereMesh_awtwk")
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=891488879]
 transform = Transform3D(-0.49274227, 6.5681137e-15, -7.8032976e-08, 3.5011444e-15, 1, -7.803299e-08, 4.307689e-08, -8.742278e-08, -0.8925933, -0.34938622, -0.6360779, 0.19277006)

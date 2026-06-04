@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cvqiiw1vx312y"]
+
+[ext_resource type="Script" uid="uid://b7riu738o1p1l" path="res://paquete.gd" id="1_v833x"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_awtwk"]
+
+[node name="Paquete" type="Node3D" unique_id=1597256316]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+script = ExtResource("1_v833x")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1747015801]
+mesh = SubResource("SphereMesh_awtwk")
