@@ -62,6 +62,7 @@ func _process(delta: float) -> void:
 			var colisor = nodo_raycast.get_collider()
 			if colisor != self:
 				hay_obstaculo = true
+				print("Colisiona con: ", colisor.name, " | grupos: ", colisor.get_groups())
 				
 				# SISTEMA DE DETECCIÓN DE MATERIALES MEDIANTE GRUPOS
 				if colisor.is_in_group("ventana"):

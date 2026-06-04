@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://dlf5sdhwkuqdn"]
 
-[ext_resource type="Script" uid="uid://cbbb1kpq5loeg" path="res://onda_wi_fi.gd" id="1_ak8b8"]
 [ext_resource type="Script" uid="uid://bhc3htsqyd8aw" path="res://estudiante.gd" id="1_awtwk"]
 [ext_resource type="Texture2D" uid="uid://b3lwrvtx1elab" path="res://Plano.png" id="2_7pst4"]
 [ext_resource type="PackedScene" uid="uid://c6tihpamj7gw2" path="res://Bloque_sur.tscn" id="3_jdjiw"]
@@ -24,31 +23,28 @@ tonemap_mode = 2
 
 [sub_resource type="BoxMesh" id="BoxMesh_8fxs5"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ak8b8"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_awtwk"]
 transparency = 1
-shading_mode = 0
-albedo_color = Color(1, 0, 0, 0.39215687)
+albedo_color = Color(0.972549, 0, 0, 0.39215687)
 
-[sub_resource type="TorusMesh" id="TorusMesh_wkv31"]
-inner_radius = 0.8
+[sub_resource type="CylinderMesh" id="CylinderMesh_awtwk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7pst4"]
+transparency = 1
+albedo_color = Color(1, 1, 0, 0.39215687)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jdjiw"]
+transparency = 1
+albedo_color = Color(0, 1, 0, 0.27450982)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_awtwk"]
 height = 1.6
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_awtwk"]
-radius = 0.3
 height = 1.6
+radius = 0.3
 
 [sub_resource type="SphereMesh" id="SphereMesh_awtwk"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_pared_madera"]
-size = Vector3(10, 2.9, 0.4)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_pared_madera_oeste"]
-size = Vector3(8.5, 2.9, 0.4)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_ventana"]
-size = Vector3(12, 1.5, 0.3)
 
 [node name="Escuela" type="Node3D" unique_id=479217386]
 
@@ -65,13 +61,25 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.28524, 1.1719966, -21.5643
 [node name="Router" type="MeshInstance3D" parent="Router" unique_id=472395533]
 mesh = SubResource("BoxMesh_8fxs5")
 
-[node name="RayCast3D" type="RayCast3D" parent="Router/Router" unique_id=316226275]
+[node name="ZonaCalorFuerte" type="MeshInstance3D" parent="Router/Router" unique_id=840467088]
+transform = Transform3D(8, 0, 0, 0, 0.1, 0, 0, 0, 8, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_awtwk")
+cast_shadow = 0
+mesh = SubResource("CylinderMesh_awtwk")
 
-[node name="OndaWiFi" type="MeshInstance3D" parent="Router/Router" unique_id=1073161663]
-transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 1, 0, 0, 0)
-material_override = SubResource("StandardMaterial3D_ak8b8")
-mesh = SubResource("TorusMesh_wkv31")
-script = ExtResource("1_ak8b8")
+[node name="ZonaCalorPromedio" type="MeshInstance3D" parent="Router/Router" unique_id=2113290615]
+transform = Transform3D(16, 0, 0, 0, 0.1, 0, 0, 0, 16, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_7pst4")
+mesh = SubResource("CylinderMesh_awtwk")
+
+[node name="ZonaCalorDebil" type="MeshInstance3D" parent="Router/Router" unique_id=1808827795]
+transform = Transform3D(24, 0, 0, 0, 0.1, 0, 0, 0, 24, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_jdjiw")
+mesh = SubResource("CylinderMesh_awtwk")
+
+[node name="RayCast3D" type="RayCast3D" parent="Router/Router" unique_id=316226275]
+collide_with_areas = false
+collide_with_bodies = true
 
 [node name="Estudiante" type="CharacterBody3D" parent="." unique_id=2047578850 node_paths=PackedStringArray("nodo_router", "nodo_raycast", "nodo_paquete")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.3575, 0.9649887, -61.79018)
@@ -119,69 +127,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.207361, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.207361, 0, 0)
 
 [node name="Bloque_Patio" parent="." unique_id=456839349 instance=ExtResource("8_lmequ")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.59, 0.91, -36.09)
-
-[node name="Pared_Madera_Central_1#CollisionShape3D" type="CollisionShape3D" parent="." unique_id=475695634]
-shape = SubResource("BoxShape3D_pared_madera")
-
-[node name="Pared_Madera_Central_2" type="StaticBody3D" parent="." unique_id=763766321]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.59, 0.91, -20.1)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Pared_Madera_Central_2" unique_id=1346073273]
-shape = SubResource("BoxShape3D_pared_madera")
-
-[node name="Pared_Madera_Central_3" type="StaticBody3D" parent="." unique_id=1437768452]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.59, 0.91, -8.13)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Pared_Madera_Central_3" unique_id=2140398541]
-shape = SubResource("BoxShape3D_pared_madera")
-
-[node name="Pared_Madera_Central_4" type="StaticBody3D" parent="." unique_id=1521558212]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.59, 0.91, 11.29)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Pared_Madera_Central_4" unique_id=1080938801]
-shape = SubResource("BoxShape3D_pared_madera")
-
-[node name="Pared_Madera_Central_5" type="StaticBody3D" parent="." unique_id=1939664973]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.59, 0.91, 28.84)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Pared_Madera_Central_5" unique_id=1903288864]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.72, 1.01, 28.38)
-shape = SubResource("BoxShape3D_pared_madera")
-
-[node name="Pared_Madera_Oeste_1#CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1213331271]
-shape = SubResource("BoxShape3D_pared_madera_oeste")
-
-[node name="Pared_Madera_Oeste_2" type="StaticBody3D" parent="." unique_id=1400632755]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.72, 1.01, 0.81)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Pared_Madera_Oeste_2" unique_id=1152042795]
-shape = SubResource("BoxShape3D_pared_madera_oeste")
-
-[node name="Pared_Madera_Oeste_3" type="StaticBody3D" parent="." unique_id=1029475166]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.72, 1.01, -22.32)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Pared_Madera_Oeste_3" unique_id=1204210321]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.6, 0.91, -44)
-shape = SubResource("BoxShape3D_pared_madera_oeste")
-
-[node name="Ventana_Central_1#CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1638883707]
-shape = SubResource("BoxShape3D_ventana")
-
-[node name="Ventana_Central_2" type="StaticBody3D" parent="." unique_id=1722978746]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.6, 0.91, 38)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ventana_Central_2" unique_id=835946058]
-shape = SubResource("BoxShape3D_ventana")
-
-[node name="Ventana_Oeste_1" type="StaticBody3D" parent="." unique_id=908647389]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.7, 1.01, 45)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ventana_Oeste_1" unique_id=345591901]
-shape = SubResource("BoxShape3D_ventana")
-
-[node name="Ventana_Oeste_2" type="StaticBody3D" parent="." unique_id=735269505]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.7, 1.01, -43)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ventana_Oeste_2" unique_id=722275012]
-shape = SubResource("BoxShape3D_ventana")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.2997, 0.50118065, 23.710278)
