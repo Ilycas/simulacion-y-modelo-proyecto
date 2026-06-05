@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c6vm45srdiuqd"]
 
 [ext_resource type="Material" uid="uid://bssw4dufxr2kg" path="res://Textura_Pared1.tres" id="1_fn3n4"]
-[ext_resource type="Material" uid="uid://ckrv12s6l76lw" path="res://Textura_Pared2.tres" id="2_k7mxc"]
+[ext_resource type="Material" uid="uid://k6tqnh1wmvba" path="res://Textura_Pared2.tres" id="2_k7mxc"]
 [ext_resource type="Material" uid="uid://ctj3kcfj0gvjy" path="res://Textura_Piso.tres" id="3_k7mxc"]
 
 [node name="Baños_Niño_Niña" type="CSGCombiner3D" unique_id=1743570536]

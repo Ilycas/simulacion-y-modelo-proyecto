@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://c6vm45srdiuqd" path="res://bloque_banos_patio.tscn" id="6_dgm2e"]
 [ext_resource type="PackedScene" uid="uid://b110raehnfrfs" path="res://baños_adolescentes.tscn" id="7_nq0on"]
 [ext_resource type="PackedScene" uid="uid://ue6f1tepnr4d" path="res://bloque_patio.tscn" id="8_lmequ"]
+[ext_resource type="Material" uid="uid://st5dmlv4ry53" path="res://Textura_Piso_Pasillo.tres" id="11_4qkwh"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mt2cc"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -261,3 +262,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.207361, 0, 0)
 
 [node name="Bloque_Patio" parent="." unique_id=456839349 instance=ExtResource("8_lmequ")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.622911, -0.14500761, 23.710278)
+
+[node name="Piso_Pasillo1" type="CSGBox3D" parent="." unique_id=1827170110]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.2754, -0.79383063, -15.277748)
+size = Vector3(61.75869, 0.43017578, 9.6138)
+material = ExtResource("11_4qkwh")
+
+[node name="Piso_Pasillo2" type="CSGBox3D" parent="." unique_id=669832686]
+transform = Transform3D(0.0044420734, 0.004010827, 0.99998206, -0.0009357907, 0.99999154, -0.004006704, -0.9999896, -0.00091795746, 0.004445793, 26.279953, -0.8191785, 7.845841)
+size = Vector3(55.717022, 0.43017578, 9.938615)
+material = ExtResource("11_4qkwh")
