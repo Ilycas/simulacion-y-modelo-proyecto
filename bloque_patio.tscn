@@ -1,18 +1,38 @@
 [gd_scene format=3 uid="uid://ue6f1tepnr4d"]
 
+[ext_resource type="Texture2D" uid="uid://cv05xekd1v67i" path="res://FutsalPitch.png" id="1_1e1fs"]
+[ext_resource type="Material" uid="uid://r7pg12264wq3" path="res://Textura_Piso_Patio.tres" id="1_5b3jp"]
+
 [node name="Bloque_Patio" type="CSGCombiner3D" unique_id=456839349]
-groups = ["concreto"]
 use_collision = true
 
 [node name="Pared_Patio" type="CSGBox3D" parent="." unique_id=1237847820]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4464188, -0.31009078, -1.7742805)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4464188, -0.30583835, -1.7742805)
 size = Vector3(81.05296, 2.5595703, 65.364655)
 
-[node name="Resta_Pared_Patio" type="CSGBox3D" parent="Pared_Patio" unique_id=702256518]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3344593, 0.4782803, 0.20217896)
+[node name="Resta_Patio" type="CSGBox3D" parent="Pared_Patio" unique_id=702256518]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2930584, 1.1777489, 0.20217896)
 operation = 2
-size = Vector3(79.54764, 2.5622864, 64.04242)
+size = Vector3(79.63044, 2.5622864, 64.04242)
+
+[node name="Resta_Pared_Patio" type="CSGBox3D" parent="Pared_Patio" unique_id=1976901076]
+transform = Transform3D(-0.36064613, 6.1631472e-15, -5.3199805e-08, 2.5625449e-15, 0.9383436, -5.3199813e-08, 3.1528682e-08, -8.20326e-08, -0.60853493, 9.72276, 0.5945377, -32.244198)
+operation = 2
+size = Vector3(170.89911, 1.5010376, 1.4539795)
+
+[node name="Resta_Pared_Patio2" type="CSGBox3D" parent="." unique_id=1167732671]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.581722, 0.28407884, -11.270588)
+operation = 2
+size = Vector3(1.0264893, 1.3945179, 46.369347)
 
 [node name="Suelo_Pisto_Cancha" type="CSGBox3D" parent="." unique_id=261663753]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.7649689, -0.2724682, -1.3517361)
-size = Vector3(79.685, 0.2, 64.28819)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3223495, -0.5050093, -1.8097172)
+size = Vector3(80.57024, 0.2, 65.204155)
+material = ExtResource("1_5b3jp")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=550758717]
+transform = Transform3D(-0.36064613, 6.1631472e-15, -5.3199805e-08, 2.5625449e-15, 0.9383436, -5.3199813e-08, 3.1528682e-08, -8.20326e-08, -0.60853493, -6.803342, -0.31597328, -0.27747154)
+offset = Vector2(0, -0.1)
+pixel_size = 0.201
+axis = 1
+texture = ExtResource("1_1e1fs")

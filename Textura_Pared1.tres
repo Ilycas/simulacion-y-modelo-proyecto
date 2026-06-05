@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bssw4dufxr2kg"]
+
+[ext_resource type="Texture2D" uid="uid://bwgv65bpcr12w" path="res://rough_concrete_diff_1k.jpg" id="1_70ofj"]
+
+[resource]
+albedo_texture = ExtResource("1_70ofj")
+uv1_scale = Vector3(2, 2, 4)
+uv1_triplanar_sharpness = 0.8705512

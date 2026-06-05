@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://r7pg12264wq3"]
+
+[ext_resource type="Texture2D" uid="uid://cqnto0nxap8d0" path="res://pavement_02_diff_1k.jpg" id="1_v68xg"]
+
+[resource]
+albedo_texture = ExtResource("1_v68xg")
+uv1_scale = Vector3(8, 6, 1)

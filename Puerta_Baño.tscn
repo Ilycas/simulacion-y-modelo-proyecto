@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cwacsfgq5qvbo"]
 
 [ext_resource type="Script" uid="uid://k6j1y3fpvf2v" path="res://puerta_baño.gd" id="1_hudsm"]
+[ext_resource type="Material" uid="uid://dvd3fiygc3y75" path="res://Textura_Puerta.tres" id="2_74h3f"]
 
 [sub_resource type="Animation" id="Animation_l77ll"]
 resource_name = "Abrir"
@@ -68,6 +69,7 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0
 [node name="CSGBox3D" type="CSGBox3D" parent="Pivote" unique_id=1472905646]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.015380835, 0.1750375, -0.5485306)
 size = Vector3(1.0848389, 1.8406982, 0.22607422)
+material = ExtResource("2_74h3f")
 
 [node name="Animacion_Puerta" type="AnimationPlayer" parent="." unique_id=2141712218]
 root_node = NodePath("../Pivote/CSGBox3D")

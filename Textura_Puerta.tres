@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dvd3fiygc3y75"]
+
+[ext_resource type="Texture2D" uid="uid://cjfy5e1t457oc" path="res://oak_veneer_01_diff_1k.jpg" id="1_f8s0k"]
+
+[resource]
+albedo_color = Color(0.97789305, 0.852212, 0.7775966, 1)
+albedo_texture = ExtResource("1_f8s0k")
+uv1_scale = Vector3(1, 1, 2)
+uv1_triplanar = true
