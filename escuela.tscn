@@ -219,7 +219,7 @@ mesh = SubResource("TorusMesh_wkv31")
 script = ExtResource("1_ak8b8")
 retraso_inicio = 1.2
 
-[node name="Estudiante" type="CharacterBody3D" parent="." unique_id=2047578850 node_paths=PackedStringArray("lista_routers")]
+[node name="Estudiante" type="CharacterBody3D" parent="." unique_id=2047578850 node_paths=PackedStringArray("lista_routers") groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.3575, 0.9649887, -61.79018)
 script = ExtResource("1_awtwk")
 lista_routers = [NodePath("../Router/Router"), NodePath("../Router/Router2"), NodePath("../Router/Router3"), NodePath("../Router/Router4"), NodePath("../Router/Router5"), NodePath("../Router/Router6"), NodePath("../Router/Router7")]

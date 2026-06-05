@@ -1,29 +1,43 @@
 [gd_scene format=3 uid="uid://b110raehnfrfs"]
 
+[ext_resource type="Material" uid="uid://bssw4dufxr2kg" path="res://prueba_textura.tres" id="1_bnu1g"]
+[ext_resource type="PackedScene" uid="uid://cwacsfgq5qvbo" path="res://Puerta_Baño.tscn" id="2_okreg"]
+[ext_resource type="Texture2D" uid="uid://1jwheo6krf2" path="res://Asset_18.png" id="2_uthnx"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mabxo"]
+albedo_texture = ExtResource("2_uthnx")
+
 [node name="Baños_Adolescentes" type="CSGCombiner3D" unique_id=242204458]
-groups = ["concreto"]
 use_collision = true
 
 [node name="Base_Baño_Adolescentes" type="CSGBox3D" parent="." unique_id=1504780181]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.59253, 0.18821406, 41.124664)
 size = Vector3(9.790098, 2.6150265, 10.786316)
+material = ExtResource("1_bnu1g")
+
+[node name="Puerta_Baño_Adolescente2" type="CSGBox3D" parent="Base_Baño_Adolescentes" unique_id=1740501427]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4250336, 0.183985, -5.467865)
+operation = 2
+size = Vector3(1, 1.8305054, 1)
+
+[node name="Puerta_Baño_Adolescente" type="CSGBox3D" parent="Base_Baño_Adolescentes" unique_id=1878975258]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4832077, 0.183985, -5.467865)
+operation = 2
+size = Vector3(1, 1.8305054, 1)
 
 [node name="Resta_Baño_Adolescente" type="CSGBox3D" parent="Base_Baño_Adolescentes" unique_id=520390372]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3810043, 0.2729358, -0.028316498)
 operation = 2
 size = Vector3(4.2620115, 2.104, 10.244153)
-
-[node name="Puerta_Baño_Adolescente" type="CSGBox3D" parent="Base_Baño_Adolescentes" unique_id=1878975258]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4832058, 0.183985, -5.467865)
-operation = 2
-size = Vector3(1, 1.8305054, 1)
+material = SubResource("StandardMaterial3D_mabxo")
 
 [node name="Resta_Baño_Adolescente2" type="CSGBox3D" parent="Base_Baño_Adolescentes" unique_id=1972688624]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4026184, 0.2729358, -0.028316498)
 operation = 2
 size = Vector3(4.2620115, 2.104, 10.244153)
 
-[node name="Puerta_Baño_Adolescente2" type="CSGBox3D" parent="Base_Baño_Adolescentes" unique_id=1740501427]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4250355, 0.183985, -5.467865)
-operation = 2
-size = Vector3(1, 1.8305054, 1)
+[node name="Base_Puerta" parent="Base_Baño_Adolescentes" unique_id=1107398468 instance=ExtResource("2_okreg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9823112, 0, -5.287277)
+
+[node name="Base_Puerta2" parent="Base_Baño_Adolescentes" unique_id=630711346 instance=ExtResource("2_okreg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9521828, 0, -5.287277)

@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://cwacsfgq5qvbo"]
+
+[ext_resource type="Script" uid="uid://k6j1y3fpvf2v" path="res://puerta_baño.gd" id="1_hudsm"]
+
+[sub_resource type="Animation" id="Animation_l77ll"]
+resource_name = "Abrir"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 1.5707964, 0), Vector3(0, 3.1415927, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_hudsm"]
+resource_name = "Cerrar"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 3.1415927, 0), Vector3(0, 1.5707964, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_74h3f"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.5707964, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y6a1f"]
+_data = {
+&"Abrir": SubResource("Animation_l77ll"),
+&"Cerrar": SubResource("Animation_hudsm"),
+&"RESET": SubResource("Animation_74h3f")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_74h3f"]
+size = Vector3(1.3992004, 0.9042969, 2.422226)
+
+[node name="Base_Puerta" type="Node3D" unique_id=1107398468]
+script = ExtResource("1_hudsm")
+
+[node name="Pivote" type="Node3D" parent="." unique_id=875727445]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Pivote" unique_id=1472905646]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.015380835, 0.1750375, -0.5485306)
+size = Vector3(1.0848389, 1.8406982, 0.22607422)
+
+[node name="Animacion_Puerta" type="AnimationPlayer" parent="." unique_id=2141712218]
+root_node = NodePath("../Pivote/CSGBox3D")
+libraries/ = SubResource("AnimationLibrary_y6a1f")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1150786176]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1635614261]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.48832703, 0.047851563, 0.04940033)
+shape = SubResource("BoxShape3D_74h3f")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
