@@ -1,0 +1,11 @@
+extends Node
+
+@export var ancho_banda : float = 300.0
+
+var ancho_banda_entrada : float = 300.0
+
+func _ready() -> void:
+	ancho_banda_entrada = ancho_banda
+
+func obtener_ancho_banda_global() -> float:
+	return ancho_banda_entrada

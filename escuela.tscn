@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://b110raehnfrfs" path="res://baños_adolescentes.tscn" id="7_nq0on"]
 [ext_resource type="PackedScene" uid="uid://ue6f1tepnr4d" path="res://bloque_patio.tscn" id="8_lmequ"]
 [ext_resource type="Material" uid="uid://b74hesk0ogrpg" path="res://Textura_Piso_Pasillo.tres" id="11_4qkwh"]
+[ext_resource type="Script" uid="uid://d11t2acqbsfl6" path="res://antena_principal.gd" id="11_ie88l"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mt2cc"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -29,6 +30,49 @@ height = 1.6
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_awtwk"]
 radius = 0.3
 height = 1.6
+
+[sub_resource type="GDScript" id="GDScript_4qkwh"]
+script/source = "extends Node3D
+
+# --- ENLACES JERÁRQUICOS ---
+@export var antena_principal : Node # Aquí arrastraremos la Antena_Principal
+@export var limite_ancho_banda : float = 50.0 # Límite máximo para ESTE router individual
+
+var ancho_banda_disponible : float = 50.0
+var usuarios_conectados : int = 0
+
+func _process(delta: float) -> void:
+	usuarios_conectados = 0
+	
+	# Contamos cuántos estudiantes/NPCs están enganchados a este router específico
+	var todos_usuarios = get_tree().get_nodes_in_group(\"usuarios_red\")
+	for usuario in todos_usuarios:
+		if \"router_conectado\" in usuario and usuario.router_conectado == self:
+			usuarios_conectados += 1
+			
+	# --- CÁLCULO DE AFECTACIÓN EN CASCADA ---
+	var proporcion_activa = 1.0 # 1.0 significa que la señal global está al 100%
+	
+	if is_instance_valid(antena_principal):
+		var internet_global = antena_principal.obtener_ancho_banda_global()
+		var contrato_global = antena_principal.ancho_banda_contratado
+		
+		# Si el internet global cae (ej. de 300 Mbps a 150 Mbps), la proporción será 0.5
+		if contrato_global > 0:
+			proporcion_activa = internet_global / contrato_global
+			
+	# El router calcula su ancho de banda real actual basándose en la salud de la antena
+	var ancho_banda_real_router = limite_ancho_banda * proporcion_activa
+
+	# --- REPARTICIÓN EQUITATIVA (Saturación local) ---
+	if usuarios_conectados > 0:
+		ancho_banda_disponible = ancho_banda_real_router / float(usuarios_conectados)
+	else:
+		ancho_banda_disponible = ancho_banda_real_router
+"
+
+[sub_resource type="BoxMesh" id="BoxMesh_4qkwh"]
+size = Vector3(0.1, 0.1, 0.3)
 
 [node name="Escuela" type="Node3D" unique_id=479217386]
 
@@ -91,3 +135,15 @@ material = ExtResource("11_4qkwh")
 transform = Transform3D(0.0044420734, 0.004010827, 0.99998206, -0.0009357907, 0.99999154, -0.004006704, -0.9999896, -0.00091795746, 0.004445793, 26.279953, -0.8191785, 7.845841)
 size = Vector3(55.717022, 0.43017578, 9.938615)
 material = ExtResource("11_4qkwh")
+
+[node name="Antena_Principal" type="MeshInstance3D" parent="." unique_id=229683432]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.612465, 0)
+script = ExtResource("11_ie88l")
+
+[node name="Router" type="Node3D" parent="." unique_id=1684531925]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.612465, 0)
+script = SubResource("GDScript_4qkwh")
+
+[node name="Router1" type="MeshInstance3D" parent="Router" unique_id=1438304448]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.810661, -8.545342, -29.644033)
+mesh = SubResource("BoxMesh_4qkwh")
