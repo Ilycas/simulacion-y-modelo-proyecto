@@ -7,35 +7,31 @@ size = Vector3(0.3, 3, 32.4)
 size = Vector3(21, 3, 0.3)
 
 [node name="Bloque_Sur" type="CSGCombiner3D" unique_id=1846529155]
-groups = ["concreto"]
 use_collision = true
 
-[node name="Pared_Madera_Sur_1" type="StaticBody3D" parent="."]
-groups = ["madera"]
+[node name="Pared_Madera_Sur_1" type="StaticBody3D" parent="." unique_id=1310419839]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.054, -53.88, -41.12)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Pared_Madera_Sur_1"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pared_Madera_Sur_1" unique_id=1084704549]
 shape = SubResource("BoxShape3D_madera_sur_x")
 
-[node name="Pared_Madera_Sur_2" type="StaticBody3D" parent="."]
-groups = ["madera"]
+[node name="Pared_Madera_Sur_2" type="StaticBody3D" parent="." unique_id=1804123598]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.162, -53.88, -41.12)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Pared_Madera_Sur_2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pared_Madera_Sur_2" unique_id=1125046784]
 shape = SubResource("BoxShape3D_madera_sur_x")
 
-[node name="Pared_Madera_Sur_3" type="StaticBody3D" parent="."]
-groups = ["madera"]
+[node name="Pared_Madera_Sur_3" type="StaticBody3D" parent="." unique_id=1451844910]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.018, -53.88, -41.12)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Pared_Madera_Sur_3"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pared_Madera_Sur_3" unique_id=993000994]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.813574, 0, 0)
 shape = SubResource("BoxShape3D_madera_sur_x")
 
-[node name="Pared_Madera_Sur_4" type="StaticBody3D" parent="."]
-groups = ["madera"]
+[node name="Pared_Madera_Sur_4" type="StaticBody3D" parent="." unique_id=899019402]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.58, -53.88, -41.44)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Pared_Madera_Sur_4"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pared_Madera_Sur_4" unique_id=2013105735]
 shape = SubResource("BoxShape3D_madera_sur_z")
 
 [node name="Bloque_Sur" type="CSGBox3D" parent="." unique_id=1819738529]
@@ -63,14 +59,14 @@ operation = 2
 size = Vector3(24.287, 3, 32.375)
 
 [node name="Hueco_Aula3" type="CSGBox3D" parent="Bloque_Sur" unique_id=1210699969]
-transform = Transform3D(0.9999998, 0, 0, 0, 1, 0, 0, 0, 0.9999878, -15.250355, 0.31933975, 0.3858719)
+transform = Transform3D(0.9999998, 0, 0, 0, 0.9999974, 0, 0, 0, 0.9999878, -8.107515, 0.31933975, 0.3858719)
 operation = 2
-size = Vector3(41.267666, 3, 32.375)
+size = Vector3(26.981977, 3, 32.375)
 
 [node name="Hueco_Aula4" type="CSGBox3D" parent="Bloque_Sur" unique_id=1427524256]
-transform = Transform3D(0.9999998, 0, 0, 0, 1, 0, 0, 0, 0.9999932, -58.667866, 0.39520645, 0.3858757)
+transform = Transform3D(0.9999998, 0, 0, 0, 0.99999595, 0, 0, 0, 0.9999932, -33.122963, 0.39520645, 0.3858757)
 operation = 2
-size = Vector3(44.050102, 3, 32.375)
+size = Vector3(21.35696, 3, 32.375)
 
 [node name="Puerta_recepcion" type="CSGBox3D" parent="." unique_id=1376986176]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.05703, -54.24401, -57.736897)
@@ -108,7 +104,7 @@ operation = 2
 size = Vector3(2, 2.1, 2.5)
 
 [node name="Puerta_Aula4" type="CSGBox3D" parent="." unique_id=901010825]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 0.99999994, 0, -4.3711392e-08, -57.867077, -54.24401, -25.599297)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 0.99999994, 0, -4.3711392e-08, -38.778732, -54.24401, -25.599297)
 operation = 2
 size = Vector3(2, 2.1, 2.5)
 
@@ -116,3 +112,43 @@ size = Vector3(2, 2.1, 2.5)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.05703, -54.24401, -24.903818)
 operation = 2
 size = Vector3(4.079297, 2.1, 0.85388184)
+
+[node name="Ventana1" type="CSGBox3D" parent="." unique_id=376898728]
+transform = Transform3D(1, 0, -3.5527137e-15, 0, 1, 0, 0, 0, 1, 27.084642, -54.366592, -57.76794)
+operation = 2
+size = Vector3(7.7158203, 1.8214477, 1.809021)
+
+[node name="Ventana2" type="CSGBox3D" parent="." unique_id=1268255294]
+transform = Transform3D(1, 0, -3.5527137e-15, 0, 1, 0, 0, 0, 1, 17.8763, -54.366592, -57.76794)
+operation = 2
+size = Vector3(7.7158203, 1.8214477, 1.809021)
+
+[node name="Ventana3" type="CSGBox3D" parent="." unique_id=1343850036]
+transform = Transform3D(1, 0, -3.5527137e-15, 0, 1, 0, 0, 0, 1, 5.1161137, -54.366592, -57.76794)
+operation = 2
+size = Vector3(7.7158203, 1.8214477, 1.809021)
+
+[node name="Ventana4" type="CSGBox3D" parent="." unique_id=1710357487]
+transform = Transform3D(1, 0, -3.5527137e-15, 0, 1, 0, 0, 0, 1, -4.092228, -54.366592, -57.76794)
+operation = 2
+size = Vector3(7.7158203, 1.8214477, 1.809021)
+
+[node name="Ventana5" type="CSGBox3D" parent="." unique_id=1634956651]
+transform = Transform3D(1, 0, -3.5527137e-15, 0, 1, 0, 0, 0, 1, -18.265997, -54.366592, -57.76794)
+operation = 2
+size = Vector3(7.7158203, 1.8214477, 1.809021)
+
+[node name="Ventana6" type="CSGBox3D" parent="." unique_id=147164535]
+transform = Transform3D(1, 0, -3.5527137e-15, 0, 1, 0, 0, 0, 1, -27.474339, -54.366592, -57.76794)
+operation = 2
+size = Vector3(7.7158203, 1.8214477, 1.809021)
+
+[node name="Ventana7" type="CSGBox3D" parent="." unique_id=801326189]
+transform = Transform3D(1, 0, -3.5527137e-15, 0, 1, 0, 0, 0, 1, -40.742355, -54.366592, -57.76794)
+operation = 2
+size = Vector3(7.7158203, 1.8214477, 1.809021)
+
+[node name="Ventana8" type="CSGBox3D" parent="." unique_id=1319682237]
+transform = Transform3D(1, 0, -3.5527137e-15, 0, 1, 0, 0, 0, 1, -49.9507, -54.366592, -57.76794)
+operation = 2
+size = Vector3(7.7158203, 1.8214477, 1.809021)

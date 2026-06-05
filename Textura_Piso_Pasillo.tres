@@ -1,4 +1,4 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://st5dmlv4ry53"]
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b74hesk0ogrpg"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_epp4u"]
 load_path = "res://.godot/imported/herringbone_brick_03_diff_1k.jpg-8c9bdfa7188d0c643375f376b39a0428.s3tc.ctex"
