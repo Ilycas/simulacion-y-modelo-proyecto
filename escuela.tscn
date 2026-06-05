@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://c6vm45srdiuqd" path="res://bloque_banos_patio.tscn" id="6_dgm2e"]
 [ext_resource type="PackedScene" uid="uid://b110raehnfrfs" path="res://baños_adolescentes.tscn" id="7_nq0on"]
 [ext_resource type="PackedScene" uid="uid://ue6f1tepnr4d" path="res://bloque_patio.tscn" id="8_lmequ"]
-[ext_resource type="Material" uid="uid://st5dmlv4ry53" path="res://Textura_Piso_Pasillo.tres" id="11_4qkwh"]
+[ext_resource type="Material" uid="uid://b74hesk0ogrpg" path="res://Textura_Piso_Pasillo.tres" id="11_4qkwh"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mt2cc"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -42,7 +42,7 @@ shadow_enabled = true
 [node name="Estudiante" type="CharacterBody3D" parent="." unique_id=2047578850 node_paths=PackedStringArray("lista_routers") groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.3575, 0.9649887, -61.79018)
 script = ExtResource("1_awtwk")
-lista_routers = [NodePath(""), NodePath(""), NodePath(""), NodePath(""), NodePath(""), NodePath(""), NodePath("")]
+lista_routers = [null, null, null, null, null, null, null]
 escena_paquete = ExtResource("3_wkv31")
 
 [node name="RayCast3D" type="RayCast3D" parent="Estudiante" unique_id=316226275]
