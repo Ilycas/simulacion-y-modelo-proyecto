@@ -1,4 +1,4 @@
-extends Node
+extends MeshInstance3D
 
 @export var ancho_banda : float = 300.0
 

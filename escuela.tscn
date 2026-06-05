@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://ue6f1tepnr4d" path="res://bloque_patio.tscn" id="8_lmequ"]
 [ext_resource type="Material" uid="uid://b74hesk0ogrpg" path="res://Textura_Piso_Pasillo.tres" id="11_4qkwh"]
 [ext_resource type="Script" uid="uid://d11t2acqbsfl6" path="res://antena_principal.gd" id="11_ie88l"]
+[ext_resource type="Script" uid="uid://b430aew4ucqde" path="res://Onda_wifi.gd" id="12_ie88l"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mt2cc"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -55,7 +56,7 @@ func _process(delta: float) -> void:
 	
 	if is_instance_valid(antena_principal):
 		var internet_global = antena_principal.obtener_ancho_banda_global()
-		var contrato_global = antena_principal.ancho_banda_contratado
+		var contrato_global = antena_principal.ancho_banda
 		
 		# Si el internet global cae (ej. de 300 Mbps a 150 Mbps), la proporción será 0.5
 		if contrato_global > 0:
@@ -74,6 +75,16 @@ func _process(delta: float) -> void:
 [sub_resource type="BoxMesh" id="BoxMesh_4qkwh"]
 size = Vector3(0.1, 0.1, 0.3)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ie88l"]
+transparency = 1
+albedo_color = Color(1, 0, 0, 0.39215687)
+
+[sub_resource type="TorusMesh" id="TorusMesh_dt7fy"]
+material = SubResource("StandardMaterial3D_ie88l")
+inner_radius = 0.706
+outer_radius = 0.596
+ring_segments = 31
+
 [node name="Escuela" type="Node3D" unique_id=479217386]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=802890740]
@@ -86,7 +97,7 @@ shadow_enabled = true
 [node name="Estudiante" type="CharacterBody3D" parent="." unique_id=2047578850 node_paths=PackedStringArray("lista_routers") groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.3575, 0.9649887, -61.79018)
 script = ExtResource("1_awtwk")
-lista_routers = [null, null, null, null, null, null, null]
+lista_routers = [NodePath("../Router")]
 escena_paquete = ExtResource("3_wkv31")
 
 [node name="RayCast3D" type="RayCast3D" parent="Estudiante" unique_id=316226275]
@@ -140,10 +151,17 @@ material = ExtResource("11_4qkwh")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.612465, 0)
 script = ExtResource("11_ie88l")
 
-[node name="Router" type="Node3D" parent="." unique_id=1684531925]
+[node name="Router" type="Node3D" parent="." unique_id=1684531925 node_paths=PackedStringArray("antena_principal")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.612465, 0)
 script = SubResource("GDScript_4qkwh")
+antena_principal = NodePath("../Antena_Principal")
+limite_ancho_banda = 100.0
 
 [node name="Router1" type="MeshInstance3D" parent="Router" unique_id=1438304448]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.810661, -8.545342, -29.644033)
 mesh = SubResource("BoxMesh_4qkwh")
+
+[node name="ZonaCalorFuerte" type="MeshInstance3D" parent="Router/Router1" unique_id=207612879]
+transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_dt7fy")
+script = ExtResource("12_ie88l")
