@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://ue6f1tepnr4d" path="res://bloque_patio.tscn" id="8_lmequ"]
 [ext_resource type="Material" uid="uid://b74hesk0ogrpg" path="res://Textura_Piso_Pasillo.tres" id="11_4qkwh"]
 [ext_resource type="Script" uid="uid://d11t2acqbsfl6" path="res://antena_principal.gd" id="11_ie88l"]
-[ext_resource type="Script" uid="uid://b430aew4ucqde" path="res://Onda_wifi.gd" id="12_ie88l"]
+[ext_resource type="Script" uid="uid://b430aew4ucqde" path="res://onda_wifi.gd" id="12_ie88l"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mt2cc"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)

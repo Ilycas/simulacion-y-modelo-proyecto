@@ -3,8 +3,8 @@
 [ext_resource type="Material" uid="uid://bssw4dufxr2kg" path="res://Textura_Pared1.tres" id="1_bnu1g"]
 [ext_resource type="Material" uid="uid://ctj3kcfj0gvjy" path="res://Textura_Piso.tres" id="2_1ffyo"]
 [ext_resource type="PackedScene" uid="uid://cwacsfgq5qvbo" path="res://Puerta_Baño.tscn" id="2_okreg"]
-[ext_resource type="Texture2D" uid="uid://1jwheo6krf2" path="res://Asset_18.png" id="2_uthnx"]
 [ext_resource type="Material" uid="uid://dvd3fiygc3y75" path="res://Textura_Puerta.tres" id="3_mabxo"]
+[ext_resource type="Texture2D" uid="uid://bdbkt13tt5diu" path="res://Asset 4.png" id="4_mabxo"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_uthnx"]
 load_path = "res://.godot/imported/WoodFloor005_1K-PNG_Color.png-ca06d8faefb3d72c5010f6424b562c47.s3tc.ctex"
@@ -12,13 +12,13 @@ load_path = "res://.godot/imported/WoodFloor005_1K-PNG_Color.png-ca06d8faefb3d72
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1ffyo"]
 albedo_texture = SubResource("CompressedTexture2D_uthnx")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mabxo"]
-albedo_texture = ExtResource("2_uthnx")
-uv1_scale = Vector3(5, 6, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d7lyb"]
+albedo_texture = ExtResource("4_mabxo")
+uv1_triplanar = true
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_okreg"]
-albedo_texture = ExtResource("2_uthnx")
-uv1_scale = Vector3(5, 6, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_unmlh"]
+albedo_texture = ExtResource("4_mabxo")
+uv1_triplanar = true
 
 [node name="Baños_Adolescentes" type="CSGCombiner3D" unique_id=242204458]
 use_collision = true
@@ -56,13 +56,13 @@ material = ExtResource("3_mabxo")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3810043, 0.2729358, -0.028316498)
 operation = 2
 size = Vector3(4.2620115, 2.104, 10.244153)
-material = SubResource("StandardMaterial3D_mabxo")
+material = SubResource("StandardMaterial3D_d7lyb")
 
 [node name="Resta_Baño_Adolescente2" type="CSGBox3D" parent="Base_Baño_Adolescentes" unique_id=1972688624]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4026184, 0.2729358, -0.028316498)
 operation = 2
 size = Vector3(4.2620115, 2.104, 10.244153)
-material = SubResource("StandardMaterial3D_okreg")
+material = SubResource("StandardMaterial3D_unmlh")
 
 [node name="Base_Puerta" parent="Base_Baño_Adolescentes" unique_id=1107398468 instance=ExtResource("2_okreg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9823112, 0, -5.287277)

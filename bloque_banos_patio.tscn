@@ -1,8 +1,24 @@
 [gd_scene format=3 uid="uid://c6vm45srdiuqd"]
 
 [ext_resource type="Material" uid="uid://bssw4dufxr2kg" path="res://Textura_Pared1.tres" id="1_fn3n4"]
-[ext_resource type="Material" uid="uid://k6tqnh1wmvba" path="res://Textura_Pared2.tres" id="2_k7mxc"]
-[ext_resource type="Material" uid="uid://ctj3kcfj0gvjy" path="res://Textura_Piso.tres" id="3_k7mxc"]
+[ext_resource type="Texture2D" uid="uid://bdbkt13tt5diu" path="res://Asset 4.png" id="2_k7mxc"]
+[ext_resource type="Texture2D" uid="uid://dut5446mpxycr" path="res://WoodFloor005_1K-PNG_Color.png" id="3_k7mxc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8t8c5"]
+albedo_texture = ExtResource("2_k7mxc")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u43yo"]
+albedo_texture = ExtResource("2_k7mxc")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aoo5m"]
+albedo_texture = ExtResource("3_k7mxc")
+uv1_scale = Vector3(0.3, 0.3, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wbbsh"]
+albedo_texture = ExtResource("3_k7mxc")
+uv1_scale = Vector3(0.3, 0.3, 1)
 
 [node name="Baños_Niño_Niña" type="CSGCombiner3D" unique_id=1743570536]
 use_collision = true
@@ -16,13 +32,13 @@ material = ExtResource("1_fn3n4")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.42547, 0.8414678, -13.044569)
 operation = 2
 size = Vector3(10.234, 2.2745342, 4.349365)
-material = ExtResource("2_k7mxc")
+material = SubResource("StandardMaterial3D_8t8c5")
 
 [node name="Resta_Baño2" type="CSGBox3D" parent="." unique_id=826302942]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.42547, 0.8414678, -17.686779)
 operation = 2
 size = Vector3(10.234, 2.2745342, 4.349365)
-material = ExtResource("2_k7mxc")
+material = SubResource("StandardMaterial3D_u43yo")
 
 [node name="Puerta_Baño_Niña" type="CSGBox3D" parent="." unique_id=66203085]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.229002, 0.6014455, -13.036)
@@ -37,9 +53,9 @@ size = Vector3(1, 1.840332, 0.9)
 [node name="Piso_Baño_Niños" type="CSGBox3D" parent="." unique_id=245975387]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -36.437664, -0.19748217, -13.051415)
 size = Vector3(102.508606, 0.001, 43.268677)
-material = ExtResource("3_k7mxc")
+material = SubResource("StandardMaterial3D_aoo5m")
 
 [node name="Piso_Baño_Niños2" type="CSGBox3D" parent="." unique_id=1688760063]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -36.407745, -0.19748217, -17.704323)
 size = Vector3(103.106964, 0.001, 44.911804)
-material = ExtResource("3_k7mxc")
+material = SubResource("StandardMaterial3D_wbbsh")

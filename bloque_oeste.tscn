@@ -1,7 +1,25 @@
 [gd_scene format=3 uid="uid://2w0tdp533ecb"]
 
+[ext_resource type="Texture2D" uid="uid://bdbkt13tt5diu" path="res://Asset 4.png" id="1_esgtk"]
+[ext_resource type="Texture2D" uid="uid://dut5446mpxycr" path="res://WoodFloor005_1K-PNG_Color.png" id="2_ijlh2"]
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_madera_oeste"]
 size = Vector3(8.757065, 2.5497253, 0.31019288)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ijlh2"]
+albedo_texture = ExtResource("1_esgtk")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gom2m"]
+albedo_texture = ExtResource("2_ijlh2")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fbuob"]
+albedo_texture = ExtResource("1_esgtk")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pk4t3"]
+albedo_texture = ExtResource("1_esgtk")
+uv1_triplanar = true
 
 [node name="Bloque_Oeste" type="CSGCombiner3D" unique_id=1846418678]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.72, 0.836, 28.554)
@@ -27,11 +45,85 @@ shape = SubResource("BoxShape3D_madera_oeste")
 [node name="Bloque" type="CSGBox3D" parent="." unique_id=1267439583]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.064842, 0.40891027, 0.82424927)
 size = Vector3(12.823, 3, 106.02)
+material = SubResource("StandardMaterial3D_ijlh2")
+
+[node name="Piso_Bloque_Oeste" type="CSGBox3D" parent="Bloque" unique_id=847973997]
+transform = Transform3D(0.99999964, 0, 0, 0, 0.9999908, 0, 0, 0, 0.99999034, 1.6547241, -0.5869144, -40.56784)
+operation = 2
+size = Vector3(8.415802, 1, 22.286804)
+material = SubResource("StandardMaterial3D_gom2m")
+
+[node name="Piso_Bloque_Oeste12" type="CSGBox3D" parent="Bloque" unique_id=2096700763]
+transform = Transform3D(0.99999964, 0, 0, 0, 0.9999908, 0, 0, 0, 0.99999034, 1.6547241, -0.5869144, -14.784047)
+operation = 2
+size = Vector3(8.415802, 1, 27.223618)
+material = SubResource("StandardMaterial3D_gom2m")
+
+[node name="Piso_Bloque_Oeste2" type="CSGBox3D" parent="Bloque" unique_id=242813243]
+transform = Transform3D(0.99999964, 0, 0, 0, 0.9999908, 0, 0, 0, 0.99999034, -4.7661743, -0.5869144, -47.21059)
+operation = 2
+size = Vector3(3.3170815, 1, 10.836453)
+material = SubResource("StandardMaterial3D_gom2m")
+
+[node name="Piso_Bloque_Oeste3" type="CSGBox3D" parent="Bloque" unique_id=244779743]
+transform = Transform3D(0.99999964, 0, 0, 0, 0.9999908, 0, 0, 0, 0.99999034, -4.7661743, -0.5869144, -36.50106)
+operation = 2
+size = Vector3(3.3170815, 1, 10.836453)
+material = SubResource("StandardMaterial3D_gom2m")
+
+[node name="Piso_Bloque_Oeste4" type="CSGBox3D" parent="Bloque" unique_id=124048715]
+transform = Transform3D(0.99999964, 0, 0, 0, 0.9999908, 0, 0, 0, 0.99999034, -4.7661743, -0.5869144, -25.875862)
+operation = 2
+size = Vector3(3.3170815, 1, 10.836453)
+material = SubResource("StandardMaterial3D_gom2m")
+
+[node name="Piso_Bloque_Oeste5" type="CSGBox3D" parent="Bloque" unique_id=1614263623]
+transform = Transform3D(0.99999964, 0, 0, 0, 0.9999908, 0, 0, 0, 0.99999034, -4.7661743, -0.5869144, -15.106812)
+operation = 2
+size = Vector3(3.3170815, 1, 10.836453)
+material = SubResource("StandardMaterial3D_gom2m")
+
+[node name="Piso_Bloque_Oeste6" type="CSGBox3D" parent="Bloque" unique_id=2133335557]
+transform = Transform3D(0.99999964, 0, 0, 0, 0.9999908, 0, 0, 0, 0.99999034, -4.7661743, -0.5869144, -4.4988804)
+operation = 2
+size = Vector3(3.3170815, 1, 10.836453)
+material = SubResource("StandardMaterial3D_gom2m")
+
+[node name="Piso_Bloque_Oeste7" type="CSGBox3D" parent="Bloque" unique_id=444523860]
+transform = Transform3D(0.99999964, 0, 0, 0, 0.9999908, 0, 0, 0, 0.99999034, -4.7661743, -0.5869144, 6.035675)
+operation = 2
+size = Vector3(3.3170815, 1, 10.836453)
+material = SubResource("StandardMaterial3D_gom2m")
+
+[node name="Piso_Bloque_Oeste8" type="CSGBox3D" parent="Bloque" unique_id=1737188670]
+transform = Transform3D(0.99999964, 0, 0, 0, 0.9999908, 0, 0, 0, 0.99999034, -4.7661743, -0.5869144, 16.82166)
+operation = 2
+size = Vector3(3.3170815, 1, 10.836453)
+material = SubResource("StandardMaterial3D_gom2m")
+
+[node name="Piso_Bloque_Oeste9" type="CSGBox3D" parent="Bloque" unique_id=475926931]
+transform = Transform3D(0.99999964, 0, 0, 0, 0.9999908, 0, 0, 0, 0.99999034, -4.7661743, -0.5869144, 27.538517)
+operation = 2
+size = Vector3(3.3170815, 1, 10.836453)
+material = SubResource("StandardMaterial3D_gom2m")
+
+[node name="Piso_Bloque_Oeste10" type="CSGBox3D" parent="Bloque" unique_id=1155660655]
+transform = Transform3D(0.99999964, 0, 0, 0, 0.9999908, 0, 0, 0, 0.99999034, -4.7661743, -0.5869144, 39.28141)
+operation = 2
+size = Vector3(3.3170815, 1, 12.688612)
+material = SubResource("StandardMaterial3D_gom2m")
+
+[node name="Piso_Bloque_Oeste11" type="CSGBox3D" parent="Bloque" unique_id=1987276568]
+transform = Transform3D(0.99999964, 0, 0, 0, 0.9999908, 0, 0, 0, 0.99999034, -4.2935944, -0.5869144, 45.748825)
+operation = 2
+size = Vector3(2.3719196, 1, 12.688612)
+material = SubResource("StandardMaterial3D_gom2m")
 
 [node name="Pasillo" type="CSGBox3D" parent="Bloque" unique_id=1137253972]
 transform = Transform3D(0.99999964, 0, 0, 0, 0.9999908, 0, 0, 0, 0.99999034, -4.7539673, 0.427433, -0.25741577)
 operation = 2
 size = Vector3(3.3524618, 3, 104.74521)
+material = SubResource("StandardMaterial3D_fbuob")
 
 [node name="Hueco_Aula7" type="CSGBox3D" parent="Bloque" unique_id=8979484]
 transform = Transform3D(0.99999964, 0, 0, 0, 0.9999908, 0, 0, 0, 0.99999034, 1.6503601, 0.42743295, 39.974358)
@@ -52,6 +144,7 @@ size = Vector3(8.478142, 3, 27.402832)
 transform = Transform3D(0.99999964, 0, 0, 0, 0.9999908, 0, 0, 0, 0.99999034, 1.6503601, 0.427433, -40.56543)
 operation = 2
 size = Vector3(8.478142, 3, 22.30835)
+material = SubResource("StandardMaterial3D_pk4t3")
 
 [node name="Entrada Aula10" type="CSGBox3D" parent="." unique_id=412486902]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 45.255096, 0, -26.429865)
@@ -119,6 +212,6 @@ operation = 2
 size = Vector3(5.6706543, 2.7594972, 1.4257813)
 
 [node name="Puerta_Aula2" type="CSGBox3D" parent="." unique_id=1196435564]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.3711392e-08, 43.925537, 0, -52.11153)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.3711392e-08, 43.29023, 0.40281993, -52.11153)
 operation = 2
-size = Vector3(2, 2.1, 1.4257813)
+size = Vector3(2, 2.1230226, 1.4257813)
