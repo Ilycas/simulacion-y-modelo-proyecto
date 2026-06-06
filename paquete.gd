@@ -1,27 +1,30 @@
 extends Node3D
 
-var destino: Vector3
-var estudiante_ref : Node3D # Guardamos la conexión con el estudiante
-var activo: bool = false
+var destino_final : Vector3
+var estudiante_emisor : Node3D
+var velocidad_vuelo : float = 8.0
 
-# Ahora recibimos la referencia directa del estudiante
-func disparar(target_pos: Vector3, estudiante: Node3D) -> void:
-	destino = target_pos
-	estudiante_ref = estudiante
-	activo = true
+# Esta función es la que llama el estudiante al presionar Espacio
+func disparar(destino: Vector3, emisor: Node3D) -> void:
+	destino_final = destino
+	estudiante_emisor = emisor
 
 func _process(delta: float) -> void:
-	if activo:
-		# Velocidad por defecto en caso de error
-		var velocidad_dinamica = 15.0 
-		
-		# Si el estudiante sigue existiendo en el mapa, le leemos su velocidad actual
-		if is_instance_valid(estudiante_ref):
-			velocidad_dinamica = estudiante_ref.velocidad_paquete_actual
-		
-		# Moverse usando la velocidad que tiene el estudiante EN ESTE FRAME EXACTO
-		global_position = global_position.move_toward(destino, velocidad_dinamica * delta)
-		
-		# Si llega al destino, se elimina
-		if global_position.distance_to(destino) < 0.2:
-			queue_free()
+	# --- 1. VALIDACIÓN DE CONEXIÓN EN TIEMPO REAL ---
+	if is_instance_valid(estudiante_emisor):
+		# Si el estudiante se quedó sin router en pleno vuelo...
+		if estudiante_emisor.router_conectado == null:
+			print("❌ PAQUETE DESCARTADO: Se perdió la conexión en pleno tránsito.")
+			queue_free() # Destruye el paquete inmediatamente
+			return # Corta la ejecución para que no intente moverse
+			
+	# --- 2. MOVIMIENTO HACIA EL DESTINO ---
+	# Si seguimos conectados, el paquete vuela normalmente
+	var direccion = global_position.direction_to(destino_final)
+	global_position += direccion * velocidad_vuelo * delta
+	
+	# --- 3. RECEPCIÓN EXITOSA ---
+	# Si el paquete llega a menos de medio metro del router, se consume
+	if global_position.distance_to(destino_final) < 0.5:
+		# Aquí podrías sumar puntos o estadísticas en el futuro
+		queue_free()

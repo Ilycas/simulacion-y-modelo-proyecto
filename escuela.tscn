@@ -81,9 +81,11 @@ albedo_color = Color(1, 0, 0, 0.39215687)
 
 [sub_resource type="TorusMesh" id="TorusMesh_dt7fy"]
 material = SubResource("StandardMaterial3D_ie88l")
-inner_radius = 0.706
-outer_radius = 0.596
+inner_radius = 0.9
 ring_segments = 31
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dt7fy"]
+transparency = 1
 
 [node name="Escuela" type="Node3D" unique_id=479217386]
 
@@ -152,16 +154,29 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.612465, 0)
 script = ExtResource("11_ie88l")
 
 [node name="Router" type="Node3D" parent="." unique_id=1684531925 node_paths=PackedStringArray("antena_principal")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.612465, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.668327, 0.017786026, -28.728266)
 script = SubResource("GDScript_4qkwh")
 antena_principal = NodePath("../Antena_Principal")
 limite_ancho_banda = 100.0
 
-[node name="Router1" type="MeshInstance3D" parent="Router" unique_id=1438304448]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.810661, -8.545342, -29.644033)
+[node name="Router1" type="MeshInstance3D" parent="Router" unique_id=1809310275]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29029083, -0.0035955906, -0.107782364)
 mesh = SubResource("BoxMesh_4qkwh")
 
-[node name="ZonaCalorFuerte" type="MeshInstance3D" parent="Router/Router1" unique_id=207612879]
+[node name="ZonaCalorFuerte" type="MeshInstance3D" parent="Router/Router1" unique_id=1325505840]
+transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_dt7fy")
+surface_material_override/0 = SubResource("StandardMaterial3D_dt7fy")
+script = ExtResource("12_ie88l")
+
+[node name="ZonaCalorPromedio" type="MeshInstance3D" parent="Router/Router1" unique_id=87933291]
 transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("TorusMesh_dt7fy")
 script = ExtResource("12_ie88l")
+escala_actual = 4.0
+
+[node name="ZonaCalorDebil" type="MeshInstance3D" parent="Router/Router1" unique_id=320763857]
+transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_dt7fy")
+script = ExtResource("12_ie88l")
+escala_actual = 8.0

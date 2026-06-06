@@ -1,37 +1,41 @@
 extends MeshInstance3D
 
-@export var radio_maximo: float = 12.0
-@export var tiempo_expansion: float = 2.0
-@export var grosor_onda: float = 0.5
-@export var retraso_inicio: float = 0.0 # <-- NUEVO: Para que las multi-ondas no salgan al mismo tiempo
+@export var radio_maximo : float = 12.0 
+@export var velocidad_expansion : float = 5.0
+
+@export var escala_actual : float = 0.1
+var material_onda : StandardMaterial3D
 
 func _ready() -> void:
-	# Duplicamos el material para que cada onda tenga su propio ciclo de color
-	if material_override:
-		material_override = material_override.duplicate()
-	
-	# Si configuraste un retraso, la onda espera antes de empezar a latir
-	if retraso_inicio > 0:
-		await get_tree().create_timer(retraso_inicio).timeout
-		
-	animar_onda()
+	# Como ya declaramos que somos un MeshInstance3D, Godot compilará esto sin chistar
+	material_onda = self.get_active_material(0).duplicate()
+	self.material_override = material_onda
 
-func animar_onda() -> void:
-	scale = Vector3(0.1, grosor_onda, 0.1)
+func _process(delta: float) -> void:
+	# 1. Expandir la onda
+	escala_actual += velocidad_expansion * delta
+	scale = Vector3(escala_actual, 1.0, escala_actual)
 	
-	var mat = material_override as StandardMaterial3D
-	if mat:
-		# 1. Nace fuerte: Verde puro y totalmente opaco (Alpha 1.0)
-		mat.albedo_color = Color(1.0, 0.0, 0.0, 1.0) 
+	var porcentaje_distancia = escala_actual / radio_maximo
+	
+	# 2. SISTEMA DE MAPA DE CALOR (Rojo -> Amarillo -> Verde)
+	var color_actual = Color(1, 1, 1) 
+	
+	if porcentaje_distancia < 0.33:
+		color_actual = Color(0.8, 0.1, 0.1) # Rojo (Fuerte)
+	elif porcentaje_distancia < 0.66:
+		color_actual = Color(0.8, 0.8, 0.1) # Amarillo (Promedio)
+	else:
+		color_actual = Color(0.1, 0.8, 0.1) # Verde (Débil)
+	
+	# 3. Calcular el desvanecimiento y aplicarlo
+	var porcentaje_vida = 1.0 - porcentaje_distancia
+	if porcentaje_vida < 0.0: porcentaje_vida = 0.0
+	color_actual.a = porcentaje_vida 
+	
+	if material_onda:
+		material_onda.albedo_color = color_actual
 		
-	var tween = get_tree().create_tween()
-	tween.set_parallel(true) 
-	
-	tween.tween_property(self, "scale", Vector3(radio_maximo, grosor_onda, radio_maximo), tiempo_expansion)
-	
-	if mat:
-		# 2. Muere débil: Rojo puro y totalmente transparente (Alpha 0.0)
-		var color_final = Color(0.0, 1.0, 0.0, 0.0)
-		tween.tween_property(mat, "albedo_color", color_final, tiempo_expansion).set_ease(Tween.EASE_OUT)
-	
-	tween.chain().tween_callback(animar_onda)
+	# 4. Reiniciar el bucle
+	if escala_actual >= radio_maximo:
+		escala_actual = 0.1
