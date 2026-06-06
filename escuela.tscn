@@ -11,7 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://ue6f1tepnr4d" path="res://bloque_patio.tscn" id="8_lmequ"]
 [ext_resource type="Material" uid="uid://b74hesk0ogrpg" path="res://Textura_Piso_Pasillo.tres" id="11_4qkwh"]
 [ext_resource type="Script" uid="uid://d11t2acqbsfl6" path="res://antena_principal.gd" id="11_ie88l"]
-[ext_resource type="Script" uid="uid://b430aew4ucqde" path="res://Onda_wifi.gd" id="12_ie88l"]
+[ext_resource type="Script" uid="uid://b430aew4ucqde" path="res://onda_wifi.gd" id="12_ie88l"]
+[ext_resource type="Script" uid="uid://cd5qt4h4wycc3" path="res://spawner.gd" id="13_spawner"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mt2cc"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -85,6 +86,17 @@ inner_radius = 0.706
 outer_radius = 0.596
 ring_segments = 31
 
+[sub_resource type="NavigationMesh" id="NavigationMesh_fase1"]
+vertices = PackedVector3Array(-51.725, -0.0802449, -51.879997, -51.725, -0.0802449, -20.379997, -50.975, -0.0802449, -20.129997, 54.025, -0.0802449, -51.879997, -50.975, -0.0802449, -10.629997, -58.725, -0.0802449, -10.379997, -58.725, -0.0802449, 54.120003, 42.525, -0.0802449, 54.120003, 42.775, -0.0802449, 53.370003, 54.025, -0.0802449, 53.370003)
+polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(6, 5, 4), PackedInt32Array(7, 6, 8), PackedInt32Array(8, 6, 4), PackedInt32Array(8, 4, 3), PackedInt32Array(3, 9, 8), PackedInt32Array(4, 2, 3)]
+geometry_source_geometry_mode = 1
+agent_height = 1.8
+agent_radius = 0.4
+agent_max_climb = 0.3
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_destino"]
+radius = 1.0
+
 [node name="Escuela" type="Node3D" unique_id=479217386]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=802890740]
@@ -137,12 +149,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.207361, 0, 0)
 [node name="Bloque_Patio" parent="." unique_id=456839349 instance=ExtResource("8_lmequ")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.622911, -0.14500761, 23.710278)
 
-[node name="Piso_Pasillo1" type="CSGBox3D" parent="." unique_id=1827170110]
+[node name="Piso_Pasillo1" type="CSGBox3D" parent="." unique_id=1827170110 groups=["navigation_mesh_source_group"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.2754, -0.79383063, -15.277748)
 size = Vector3(61.75869, 0.43017578, 9.6138)
 material = ExtResource("11_4qkwh")
 
-[node name="Piso_Pasillo2" type="CSGBox3D" parent="." unique_id=669832686]
+[node name="Piso_Pasillo2" type="CSGBox3D" parent="." unique_id=669832686 groups=["navigation_mesh_source_group"]]
 transform = Transform3D(0.0044420734, 0.004010827, 0.99998206, -0.0009357907, 0.99999154, -0.004006704, -0.9999896, -0.00091795746, 0.004445793, 26.279953, -0.8191785, 7.845841)
 size = Vector3(55.717022, 0.43017578, 9.938615)
 material = ExtResource("11_4qkwh")
@@ -165,3 +177,116 @@ mesh = SubResource("BoxMesh_4qkwh")
 transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("TorusMesh_dt7fy")
 script = ExtResource("12_ie88l")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=-1294967295]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.009050369, 0.005130768, -0.002281189)
+navigation_mesh = SubResource("NavigationMesh_fase1")
+
+[node name="Pisos_Nav" type="Node3D" parent="." unique_id=-1294967286]
+
+[node name="Piso_Patio" type="CSGBox3D" parent="Pisos_Nav" unique_id=-1294967285 groups=["navigation_mesh_source_group"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.94, -0.55, 21.9)
+visible = false
+cast_shadow = 0
+size = Vector3(80.57, 0.1, 65.2)
+
+[node name="Piso_Banos_Ninios" type="CSGBox3D" parent="Pisos_Nav" unique_id=-1294967284 groups=["navigation_mesh_source_group"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.7, -0.55, -15.25)
+visible = false
+cast_shadow = 0
+size = Vector3(11.13, 0.1, 9.76)
+
+[node name="Piso_Banos_Adolescentes" type="CSGBox3D" parent="Pisos_Nav" unique_id=-1294967283 groups=["navigation_mesh_source_group"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.38, -0.55, 41.12)
+visible = false
+cast_shadow = 0
+size = Vector3(9.79, 0.1, 10.79)
+
+[node name="Piso_Aulas_Central" type="CSGBox3D" parent="Pisos_Nav" unique_id=-1294967282 groups=["navigation_mesh_source_group"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.48, -0.55, -2.86)
+visible = false
+cast_shadow = 0
+size = Vector3(10.44, 0.1, 99.01)
+
+[node name="Piso_Aulas_Oeste" type="CSGBox3D" parent="Pisos_Nav" unique_id=-1294967281 groups=["navigation_mesh_source_group"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.06, -0.55, 0.65)
+visible = false
+cast_shadow = 0
+size = Vector3(12.82, 0.1, 106.02)
+
+[node name="Piso_Aulas_Sur" type="CSGBox3D" parent="Pisos_Nav" unique_id=-1294967280 groups=["navigation_mesh_source_group"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.16, -0.55, -36.23)
+visible = false
+cast_shadow = 0
+size = Vector3(83.64, 0.1, 32.3)
+
+[node name="Piso_Pasillo_Bloque_Oeste" type="CSGBox3D" parent="Pisos_Nav" unique_id=-1294967279 groups=["navigation_mesh_source_group"]]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 32.14, -0.55, 50.65)
+visible = false
+cast_shadow = 0
+size = Vector3(8.08, 0.1, 21.72)
+
+[node name="Destinos" type="Node3D" parent="." unique_id=-1294967276]
+
+[node name="Entrada" type="Marker3D" parent="Destinos" unique_id=-1294967275 groups=["destino"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.615894, 0, -34.89274)
+
+[node name="Area3D" type="Area3D" parent="Destinos/Entrada" unique_id=-1294967274]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Destinos/Entrada/Area3D" unique_id=-1294967273]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.677143, 0, -3.7616043)
+shape = SubResource("SphereShape3D_destino")
+
+[node name="Patio" type="Marker3D" parent="Destinos" unique_id=-1294967272 groups=["destino"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.251327, -19.8688, 23.851137)
+
+[node name="Area3D" type="Area3D" parent="Destinos/Patio" unique_id=-1294967271]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Destinos/Patio/Area3D" unique_id=-1294967270]
+shape = SubResource("SphereShape3D_destino")
+
+[node name="Banos" type="Marker3D" parent="Destinos" unique_id=-1294967269 groups=["destino"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.527756, 0, -15.25)
+
+[node name="Area3D" type="Area3D" parent="Destinos/Banos" unique_id=-1294967268]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Destinos/Banos/Area3D" unique_id=-1294967267]
+shape = SubResource("SphereShape3D_destino")
+
+[node name="AulaCentral" type="Marker3D" parent="Destinos" unique_id=-1294967266 groups=["destino"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.48, 0, 15.362742)
+
+[node name="Area3D" type="Area3D" parent="Destinos/AulaCentral" unique_id=-1294967265]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Destinos/AulaCentral/Area3D" unique_id=-1294967264]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 17.542316)
+shape = SubResource("SphereShape3D_destino")
+
+[node name="BloqueOeste" type="Marker3D" parent="Destinos" unique_id=-1294967263 groups=["destino"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.849453, 0, 25.819052)
+
+[node name="Area3D" type="Area3D" parent="Destinos/BloqueOeste" unique_id=-1294967262]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Destinos/BloqueOeste/Area3D" unique_id=-1294967261]
+shape = SubResource("SphereShape3D_destino")
+
+[node name="BloqueSur" type="Marker3D" parent="Destinos" unique_id=-1294967260 groups=["destino"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.16, 0, -34.436783)
+
+[node name="Area3D" type="Area3D" parent="Destinos/BloqueSur" unique_id=-1294967259]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Destinos/BloqueSur/Area3D" unique_id=-1294967258]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.707465, 0, -5.5039825)
+shape = SubResource("SphereShape3D_destino")
+
+[node name="BloqueBanos" type="Marker3D" parent="Destinos" unique_id=-1294967257 groups=["destino"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.819887, 0.29611683, 33.05599)
+
+[node name="Area3D" type="Area3D" parent="Destinos/BloqueBanos" unique_id=-1294967256]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Destinos/BloqueBanos/Area3D" unique_id=-1294967255]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.090954)
+shape = SubResource("SphereShape3D_destino")
+
+[node name="Spawner" type="Node3D" parent="." unique_id=-1294967246]
+script = ExtResource("13_spawner")
