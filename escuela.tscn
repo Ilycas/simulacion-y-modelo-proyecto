@@ -10,8 +10,10 @@
 [ext_resource type="PackedScene" uid="uid://b110raehnfrfs" path="res://baños_adolescentes.tscn" id="7_nq0on"]
 [ext_resource type="PackedScene" uid="uid://ue6f1tepnr4d" path="res://bloque_patio.tscn" id="8_lmequ"]
 [ext_resource type="Material" uid="uid://b74hesk0ogrpg" path="res://Textura_Piso_Pasillo.tres" id="11_4qkwh"]
+[ext_resource type="Material" uid="uid://bbh4tjblu7u7i" path="res://material_antena.tres" id="11_dt7fy"]
 [ext_resource type="Script" uid="uid://d11t2acqbsfl6" path="res://antena_principal.gd" id="11_ie88l"]
 [ext_resource type="Script" uid="uid://b430aew4ucqde" path="res://onda_wifi.gd" id="12_ie88l"]
+[ext_resource type="Script" uid="uid://bwsvopgn6l3u8" path="res://enlace_visual.gd" id="14_bideo"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mt2cc"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -31,6 +33,13 @@ height = 1.6
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_awtwk"]
 radius = 0.3
 height = 1.6
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ie88l"]
+bottom_radius = 0.1
+height = 8.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_ie88l"]
+size = Vector3(0.8, 1.5, 0.3)
 
 [sub_resource type="GDScript" id="GDScript_4qkwh"]
 script/source = "extends Node3D
@@ -86,6 +95,8 @@ ring_segments = 31
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dt7fy"]
 transparency = 1
+
+[sub_resource type="BoxMesh" id="BoxMesh_wogku"]
 
 [node name="Escuela" type="Node3D" unique_id=479217386]
 
@@ -150,8 +161,22 @@ size = Vector3(55.717022, 0.43017578, 9.938615)
 material = ExtResource("11_4qkwh")
 
 [node name="Antena_Principal" type="MeshInstance3D" parent="." unique_id=229683432]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.612465, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.58249, 6.1824417, -33.454254)
+mesh = SubResource("CylinderMesh_ie88l")
+surface_material_override/0 = ExtResource("11_dt7fy")
 script = ExtResource("11_ie88l")
+
+[node name="panel" type="MeshInstance3D" parent="Antena_Principal" unique_id=1830056418]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0.62402534)
+mesh = SubResource("BoxMesh_ie88l")
+
+[node name="panel2" type="MeshInstance3D" parent="Antena_Principal" unique_id=419668463]
+transform = Transform3D(-0.50000006, 0, 0.8660254, 0, 1, 0, -0.8660254, 0, -0.50000006, 0.52928174, 4, -0.305581)
+mesh = SubResource("BoxMesh_ie88l")
+
+[node name="panel3" type="MeshInstance3D" parent="Antena_Principal" unique_id=827080602]
+transform = Transform3D(-0.4999999, 0, -0.86602545, 0, 1, 0, 0.86602545, 0, -0.4999999, -0.47528997, 4, -0.27440873)
+mesh = SubResource("BoxMesh_ie88l")
 
 [node name="Router" type="Node3D" parent="." unique_id=1684531925 node_paths=PackedStringArray("antena_principal")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.668327, 0.017786026, -28.728266)
@@ -180,3 +205,9 @@ transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("TorusMesh_dt7fy")
 script = ExtResource("12_ie88l")
 escala_actual = 8.0
+
+[node name="Enlace_antena_router" type="MeshInstance3D" parent="." unique_id=1074172153 node_paths=PackedStringArray("nodo_origen", "nodo_destino")]
+mesh = SubResource("BoxMesh_wogku")
+script = ExtResource("14_bideo")
+nodo_origen = NodePath("../Antena_Principal")
+nodo_destino = NodePath("../Router")
