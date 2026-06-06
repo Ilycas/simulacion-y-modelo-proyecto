@@ -147,62 +147,62 @@ size = Vector3(8.478142, 3, 22.30835)
 material = SubResource("StandardMaterial3D_pk4t3")
 
 [node name="Entrada Aula10" type="CSGBox3D" parent="." unique_id=412486902]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 45.255096, 0, -26.429865)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 45.255096, 0.57234097, -30.805557)
 operation = 2
 size = Vector3(0.7105713, 2.1, 1.4257813)
 
 [node name="Entrada Aula9" type="CSGBox3D" parent="." unique_id=1044978989]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 45.25509, 0, -2.6668053)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 45.25509, 0.57234097, -2.6668053)
 operation = 2
 size = Vector3(0.7105713, 2.1, 1.4257813)
 
 [node name="Entrada Aula8" type="CSGBox3D" parent="." unique_id=865681484]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 45.25509, 0, 24.701141)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 45.25509, 0.57234097, 24.701141)
 operation = 2
 size = Vector3(0.7105713, 2.1, 1.4257813)
 
 [node name="Ventana Aula 8" type="CSGBox3D" parent="." unique_id=1232064127]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 45.24849, 0.28251737, 35.112312)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 45.24849, 0.6434192, 35.112312)
 operation = 2
 size = Vector3(0.7105713, 1.4987304, 7.0959473)
 
 [node name="Ventana Aula 9" type="CSGBox3D" parent="." unique_id=1003054234]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 45.25509, 0.3006348, 43.69709)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 45.25509, 0.66153663, 43.69709)
 operation = 2
 size = Vector3(0.7105713, 1.4987304, 7.0959473)
 
 [node name="Ventana Aula 10" type="CSGBox3D" parent="." unique_id=1959803595]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 45.24849, 0.28251737, 7.288101)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 45.24849, 0.6434192, 7.288101)
 operation = 2
 size = Vector3(0.7105713, 1.4987304, 7.0959473)
 
 [node name="Ventana Aula 11" type="CSGBox3D" parent="." unique_id=1333465422]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 45.25509, 0.3006348, 15.872879)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 45.25509, 0.66153663, 15.872879)
 operation = 2
 size = Vector3(0.7105713, 1.4987304, 7.0959473)
 
 [node name="Ventana Aula 12" type="CSGBox3D" parent="." unique_id=1270996217]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 45.24849, 0.28251737, -17.650427)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 45.24849, 0.6434192, -17.650427)
 operation = 2
 size = Vector3(0.7105713, 1.4987304, 7.0959473)
 
 [node name="Ventana Aula 13" type="CSGBox3D" parent="." unique_id=2094287361]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 45.25509, 0.3006348, -9.065649)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 45.25509, 0.66153663, -9.065649)
 operation = 2
 size = Vector3(0.7105713, 1.4987304, 7.0959473)
 
 [node name="Salon 10 Hueco Ventana 1" type="CSGBox3D" parent="." unique_id=1834214208]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 45.24849, 0.28251737, -44.98552)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 45.24849, 0.6434192, -44.98552)
 operation = 2
 size = Vector3(0.7105713, 1.4987304, 7.0959473)
 
 [node name="Salon 10 Hueco Ventana 2" type="CSGBox3D" parent="." unique_id=1193448479]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 45.25509, 0.3006348, -36.40074)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 45.25509, 0.66153663, -36.40074)
 operation = 2
 size = Vector3(0.7105713, 1.4987304, 7.0959473)
 
 [node name="Entrada Aula7" type="CSGBox3D" parent="." unique_id=1807663131]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 45.25508, 0, 49.456924)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 45.25508, 0.57234097, 49.456924)
 operation = 2
 size = Vector3(0.7105713, 2.1, 1.4257813)
 
