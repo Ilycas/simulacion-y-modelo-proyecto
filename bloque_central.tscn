@@ -130,6 +130,18 @@ operation = 2
 size = Vector3(9.77124, 1, 19.036877)
 material = SubResource("StandardMaterial3D_tschq")
 
+[node name="Piso_Bloque_Central5" type="CSGBox3D" parent="Bloque" unique_id=330975908]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09854126, -0.9018223, 22.85149)
+operation = 2
+size = Vector3(9.77124, 1, 17.14942)
+material = SubResource("StandardMaterial3D_tschq")
+
+[node name="Piso_Bloque_Central6" type="CSGBox3D" parent="Bloque" unique_id=1250602487]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09854126, -0.9018223, 40.604263)
+operation = 2
+size = Vector3(9.77124, 1, 17.384281)
+material = SubResource("StandardMaterial3D_tschq")
+
 [node name="Hueco_Aula8" type="CSGBox3D" parent="Bloque" unique_id=686432359]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.109752655, 0.14328432, -41.251373)
 operation = 2
