@@ -986,7 +986,7 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 0.7554633, 0, 1, 0, -4.371139e-
 transform = Transform3D(0.39073107, 0, 0.92050487, 0, 1, 0, -0.92050487, 0, 0.39073107, 16.53471, -54.270096, -49.468708)
 
 [node name="PRINCIPALOFFICEshelf" parent="." unique_id=1947553268 instance=ExtResource("15_wsgbh")]
-transform = Transform3D(-3.6667412e-08, 0, -0.8982504, 0, 0.6827377, 0, 0.8388526, 0, -3.926377e-08, 12.3554, -54.104, -50.857033)
+transform = Transform3D(-3.6667412e-08, 0, -0.8982504, 0, 0.6827377, 0, 0.8388526, 0, -3.926377e-08, 12.493436, -54.104, -50.857033)
 
 [node name="PRINCIPALOFFICEnotebook" parent="." unique_id=4413120 instance=ExtResource("16_wsgbh")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 17.17576, -54.30499, -51.660793)
