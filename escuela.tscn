@@ -43,9 +43,9 @@ size = Vector3(0.3, 0.1, 0.3)
 script/source = "extends Node3D
 
 @export var modem_principal : Node3D 
-@export var limite_ancho_banda : float = 50.0 
+@export var limite_ancho_banda : float = 100.0 
 
-var ancho_banda_disponible : float = 50.0
+var ancho_banda_disponible : float = 100.0
 var usuarios_conectados : int = 0
 
 func _process(_delta: float) -> void:
@@ -60,7 +60,7 @@ func _process(_delta: float) -> void:
 	
 	if is_instance_valid(modem_principal):
 		var internet_global = modem_principal.obtener_ancho_banda_modem()
-		proporcion_activa = internet_global / 300.0
+		proporcion_activa = internet_global / 500.0
 				
 	var ancho_banda_real_router = limite_ancho_banda * proporcion_activa
 
@@ -164,6 +164,7 @@ material = ExtResource("11_4qkwh")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.398676, 0.12710804, -36.495274)
 script = ExtResource("15_wogku")
 antena_principal = NodePath("../../Antena/Antena_Principal")
+porcentaje_asignacion = 0.444
 
 [node name="Modem_Principal" type="MeshInstance3D" parent="Modems/Modem_principal" unique_id=1244574234]
 mesh = SubResource("BoxMesh_x3esv")
@@ -172,6 +173,7 @@ mesh = SubResource("BoxMesh_x3esv")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.61413, 0.12710804, -20.342026)
 script = ExtResource("15_wogku")
 antena_principal = NodePath("../../Antena/Antena_Principal")
+porcentaje_asignacion = 0.556
 
 [node name="Modem_secundario" type="MeshInstance3D" parent="Modems/Modem_secundario" unique_id=272390376]
 mesh = SubResource("BoxMesh_x3esv")
@@ -185,7 +187,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.0027103, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.908676, 0.017786026, -28.728266)
 script = SubResource("GDScript_4qkwh")
 modem_principal = NodePath("../../../Modems/Modem_secundario")
-limite_ancho_banda = 100.0
 
 [node name="Router1" type="MeshInstance3D" parent="Routers_Oeste/Routers_oeste/Repetidor1" unique_id=1809310275]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29029083, -0.0035955906, -0.107782364)
@@ -213,7 +214,6 @@ escala_actual = 8.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.887707, 0.017786026, -6.113819)
 script = SubResource("GDScript_4qkwh")
 modem_principal = NodePath("../../../Modems/Modem_secundario")
-limite_ancho_banda = 100.0
 
 [node name="Router2" type="MeshInstance3D" parent="Routers_Oeste/Routers_oeste/Repetidor2" unique_id=598639019]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29029083, -0.0035955906, -0.107782364)
@@ -241,7 +241,6 @@ escala_actual = 8.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.960526, 0.017786026, 14.183878)
 script = SubResource("GDScript_4qkwh")
 modem_principal = NodePath("../../../Modems/Modem_secundario")
-limite_ancho_banda = 100.0
 
 [node name="Router3" type="MeshInstance3D" parent="Routers_Oeste/Routers_oeste/Repetidor3" unique_id=870127881]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29029083, -0.0035955906, -0.107782364)
@@ -269,7 +268,6 @@ escala_actual = 8.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.04435, 0.017786026, 31.893602)
 script = SubResource("GDScript_4qkwh")
 modem_principal = NodePath("../../../Modems/Modem_secundario")
-limite_ancho_banda = 100.0
 
 [node name="Router4" type="MeshInstance3D" parent="Routers_Oeste/Routers_oeste/Repetidor4" unique_id=2081069075]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29029083, -0.0035955906, -0.107782364)
@@ -333,7 +331,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.0027103, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.908676, 0.017786026, -18.925379)
 script = SubResource("GDScript_4qkwh")
 modem_principal = NodePath("../../../Modems/Modem_principal")
-limite_ancho_banda = 100.0
 
 [node name="Router1" type="MeshInstance3D" parent="Routers_Sur/Routers_oeste/Repetidor1" unique_id=1323380618]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29029083, -0.0035955906, -0.107782364)
@@ -361,7 +358,6 @@ escala_actual = 8.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.842678, 0.017786026, -3.5978174)
 script = SubResource("GDScript_4qkwh")
 modem_principal = NodePath("../../../Modems/Modem_principal")
-limite_ancho_banda = 100.0
 
 [node name="Router2" type="MeshInstance3D" parent="Routers_Sur/Routers_oeste/Repetidor2" unique_id=917299666]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29029083, -0.0035955906, -0.107782364)
@@ -389,7 +385,6 @@ escala_actual = 8.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.574284, 0.017786026, 10.883476)
 script = SubResource("GDScript_4qkwh")
 modem_principal = NodePath("../../../Modems/Modem_principal")
-limite_ancho_banda = 100.0
 
 [node name="Router3" type="MeshInstance3D" parent="Routers_Sur/Routers_oeste/Repetidor3" unique_id=240511734]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29029083, -0.0035955906, -0.107782364)
@@ -417,7 +412,6 @@ escala_actual = 8.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.04435, 0.017786026, 33.146255)
 script = SubResource("GDScript_4qkwh")
 modem_principal = NodePath("../../../Modems/Modem_principal")
-limite_ancho_banda = 100.0
 
 [node name="Router4" type="MeshInstance3D" parent="Routers_Sur/Routers_oeste/Repetidor4" unique_id=641993841]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29029083, -0.0035955906, -0.107782364)
@@ -444,8 +438,7 @@ escala_actual = 8.0
 [node name="Repetidor5" type="Node3D" parent="Routers_Sur/Routers_oeste" unique_id=647278018 node_paths=PackedStringArray("modem_principal")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.04435, 0.017786026, 52.699196)
 script = SubResource("GDScript_4qkwh")
-modem_principal = NodePath("../../../Modems/Modem_principal")
-limite_ancho_banda = 100.0
+modem_principal = NodePath("../../../Modems/Modem_secundario")
 
 [node name="Router4" type="MeshInstance3D" parent="Routers_Sur/Routers_oeste/Repetidor5" unique_id=271879539]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29029083, -0.0035955906, -0.107782364)
@@ -514,6 +507,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.58249, -6.8175583, -33.454
 mesh = SubResource("CylinderMesh_ie88l")
 surface_material_override/0 = ExtResource("11_dt7fy")
 script = ExtResource("11_ie88l")
+ancho_banda = 500.0
 
 [node name="panel" type="MeshInstance3D" parent="Antena/Antena_Principal" unique_id=1830056418]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0.62402534)
