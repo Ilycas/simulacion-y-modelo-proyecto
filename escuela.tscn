@@ -13,7 +13,9 @@
 [ext_resource type="Material" uid="uid://bbh4tjblu7u7i" path="res://material_antena.tres" id="11_dt7fy"]
 [ext_resource type="Script" uid="uid://d11t2acqbsfl6" path="res://antena_principal.gd" id="11_ie88l"]
 [ext_resource type="Script" uid="uid://b430aew4ucqde" path="res://onda_wifi.gd" id="12_ie88l"]
+[ext_resource type="Script" uid="uid://650hdjasby3a" path="res://enlace_modem_repetidor.gd" id="12_x3esv"]
 [ext_resource type="Script" uid="uid://bwsvopgn6l3u8" path="res://enlace_visual.gd" id="14_bideo"]
+[ext_resource type="Script" uid="uid://bdfa7mnv1y528" path="res://modem_principal.gd" id="15_wogku"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mt2cc"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -34,47 +36,34 @@ height = 1.6
 radius = 0.3
 height = 1.6
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_ie88l"]
-bottom_radius = 0.1
-height = 8.0
-
-[sub_resource type="BoxMesh" id="BoxMesh_ie88l"]
-size = Vector3(0.8, 1.5, 0.3)
+[sub_resource type="BoxMesh" id="BoxMesh_x3esv"]
+size = Vector3(0.3, 0.1, 0.3)
 
 [sub_resource type="GDScript" id="GDScript_4qkwh"]
 script/source = "extends Node3D
 
-# --- ENLACES JERÁRQUICOS ---
-@export var antena_principal : Node # Aquí arrastraremos la Antena_Principal
-@export var limite_ancho_banda : float = 50.0 # Límite máximo para ESTE router individual
+@export var modem_principal : Node3D 
+@export var limite_ancho_banda : float = 50.0 
 
 var ancho_banda_disponible : float = 50.0
 var usuarios_conectados : int = 0
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	usuarios_conectados = 0
 	
-	# Contamos cuántos estudiantes/NPCs están enganchados a este router específico
 	var todos_usuarios = get_tree().get_nodes_in_group(\"usuarios_red\")
 	for usuario in todos_usuarios:
 		if \"router_conectado\" in usuario and usuario.router_conectado == self:
 			usuarios_conectados += 1
 			
-	# --- CÁLCULO DE AFECTACIÓN EN CASCADA ---
-	var proporcion_activa = 1.0 # 1.0 significa que la señal global está al 100%
+	var proporcion_activa = 1.0 
 	
-	if is_instance_valid(antena_principal):
-		var internet_global = antena_principal.obtener_ancho_banda_global()
-		var contrato_global = antena_principal.ancho_banda
-		
-		# Si el internet global cae (ej. de 300 Mbps a 150 Mbps), la proporción será 0.5
-		if contrato_global > 0:
-			proporcion_activa = internet_global / contrato_global
-			
-	# El router calcula su ancho de banda real actual basándose en la salud de la antena
+	if is_instance_valid(modem_principal):
+		var internet_global = modem_principal.obtener_ancho_banda_modem()
+		proporcion_activa = internet_global / 300.0
+				
 	var ancho_banda_real_router = limite_ancho_banda * proporcion_activa
 
-	# --- REPARTICIÓN EQUITATIVA (Saturación local) ---
 	if usuarios_conectados > 0:
 		ancho_banda_disponible = ancho_banda_real_router / float(usuarios_conectados)
 	else:
@@ -96,6 +85,15 @@ ring_segments = 31
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dt7fy"]
 transparency = 1
 
+[sub_resource type="BoxMesh" id="BoxMesh_j2u5w"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ie88l"]
+bottom_radius = 0.1
+height = 8.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_ie88l"]
+size = Vector3(0.8, 1.5, 0.3)
+
 [sub_resource type="BoxMesh" id="BoxMesh_wogku"]
 
 [node name="Escuela" type="Node3D" unique_id=479217386]
@@ -108,9 +106,9 @@ transform = Transform3D(-0.25, 0.86602545, 0.43301272, 0.8660256, -5.9604645e-08
 shadow_enabled = true
 
 [node name="Estudiante" type="CharacterBody3D" parent="." unique_id=2047578850 node_paths=PackedStringArray("lista_routers") groups=["player"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.3575, 0.9649887, -61.79018)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.064404, 10.323494, -45.817516)
 script = ExtResource("1_awtwk")
-lista_routers = [NodePath("../Router")]
+lista_routers = [NodePath("../Routers_Oeste/Routers_oeste/Repetidor1"), NodePath("../Routers_Oeste/Routers_oeste/Repetidor2"), NodePath("../Routers_Oeste/Routers_oeste/Repetidor3")]
 escena_paquete = ExtResource("3_wkv31")
 
 [node name="RayCast3D" type="RayCast3D" parent="Estudiante" unique_id=316226275]
@@ -160,54 +158,385 @@ transform = Transform3D(0.0044420734, 0.004010827, 0.99998206, -0.0009357907, 0.
 size = Vector3(55.717022, 0.43017578, 9.938615)
 material = ExtResource("11_4qkwh")
 
-[node name="Antena_Principal" type="MeshInstance3D" parent="." unique_id=229683432]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.58249, 6.1824417, -33.454254)
-mesh = SubResource("CylinderMesh_ie88l")
-surface_material_override/0 = ExtResource("11_dt7fy")
-script = ExtResource("11_ie88l")
+[node name="Modems" type="Node3D" parent="." unique_id=1938318624]
 
-[node name="panel" type="MeshInstance3D" parent="Antena_Principal" unique_id=1830056418]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0.62402534)
-mesh = SubResource("BoxMesh_ie88l")
+[node name="Modem_principal" type="Node3D" parent="Modems" unique_id=315181289 node_paths=PackedStringArray("antena_principal")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.398676, 0.12710804, -36.495274)
+script = ExtResource("15_wogku")
+antena_principal = NodePath("../../Antena/Antena_Principal")
 
-[node name="panel2" type="MeshInstance3D" parent="Antena_Principal" unique_id=419668463]
-transform = Transform3D(-0.50000006, 0, 0.8660254, 0, 1, 0, -0.8660254, 0, -0.50000006, 0.52928174, 4, -0.305581)
-mesh = SubResource("BoxMesh_ie88l")
+[node name="Modem_Principal" type="MeshInstance3D" parent="Modems/Modem_principal" unique_id=1244574234]
+mesh = SubResource("BoxMesh_x3esv")
 
-[node name="panel3" type="MeshInstance3D" parent="Antena_Principal" unique_id=827080602]
-transform = Transform3D(-0.4999999, 0, -0.86602545, 0, 1, 0, 0.86602545, 0, -0.4999999, -0.47528997, 4, -0.27440873)
-mesh = SubResource("BoxMesh_ie88l")
+[node name="Modem_secundario" type="Node3D" parent="Modems" unique_id=1679180156 node_paths=PackedStringArray("antena_principal")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.61413, 0.12710804, -20.342026)
+script = ExtResource("15_wogku")
+antena_principal = NodePath("../../Antena/Antena_Principal")
 
-[node name="Router" type="Node3D" parent="." unique_id=1684531925 node_paths=PackedStringArray("antena_principal")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.668327, 0.017786026, -28.728266)
+[node name="Modem_secundario" type="MeshInstance3D" parent="Modems/Modem_secundario" unique_id=272390376]
+mesh = SubResource("BoxMesh_x3esv")
+
+[node name="Routers_Oeste" type="Node3D" parent="." unique_id=1887293090]
+
+[node name="Routers_oeste" type="Node3D" parent="Routers_Oeste" unique_id=1485234463]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.0027103, 0, 0)
+
+[node name="Repetidor1" type="Node3D" parent="Routers_Oeste/Routers_oeste" unique_id=1684531925 node_paths=PackedStringArray("modem_principal")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.908676, 0.017786026, -28.728266)
 script = SubResource("GDScript_4qkwh")
-antena_principal = NodePath("../Antena_Principal")
+modem_principal = NodePath("../../../Modems/Modem_secundario")
 limite_ancho_banda = 100.0
 
-[node name="Router1" type="MeshInstance3D" parent="Router" unique_id=1809310275]
+[node name="Router1" type="MeshInstance3D" parent="Routers_Oeste/Routers_oeste/Repetidor1" unique_id=1809310275]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29029083, -0.0035955906, -0.107782364)
 mesh = SubResource("BoxMesh_4qkwh")
 
-[node name="ZonaCalorFuerte" type="MeshInstance3D" parent="Router/Router1" unique_id=1325505840]
+[node name="ZonaCalorFuerte" type="MeshInstance3D" parent="Routers_Oeste/Routers_oeste/Repetidor1/Router1" unique_id=1325505840]
 transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("TorusMesh_dt7fy")
 surface_material_override/0 = SubResource("StandardMaterial3D_dt7fy")
 script = ExtResource("12_ie88l")
 
-[node name="ZonaCalorPromedio" type="MeshInstance3D" parent="Router/Router1" unique_id=87933291]
+[node name="ZonaCalorPromedio" type="MeshInstance3D" parent="Routers_Oeste/Routers_oeste/Repetidor1/Router1" unique_id=87933291]
 transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("TorusMesh_dt7fy")
 script = ExtResource("12_ie88l")
 escala_actual = 4.0
 
-[node name="ZonaCalorDebil" type="MeshInstance3D" parent="Router/Router1" unique_id=320763857]
+[node name="ZonaCalorDebil" type="MeshInstance3D" parent="Routers_Oeste/Routers_oeste/Repetidor1/Router1" unique_id=320763857]
 transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("TorusMesh_dt7fy")
 script = ExtResource("12_ie88l")
 escala_actual = 8.0
 
-[node name="Enlace_antena_router" type="MeshInstance3D" parent="." unique_id=1074172153 node_paths=PackedStringArray("nodo_origen", "nodo_destino")]
+[node name="Repetidor2" type="Node3D" parent="Routers_Oeste/Routers_oeste" unique_id=439257965 node_paths=PackedStringArray("modem_principal")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.887707, 0.017786026, -6.113819)
+script = SubResource("GDScript_4qkwh")
+modem_principal = NodePath("../../../Modems/Modem_secundario")
+limite_ancho_banda = 100.0
+
+[node name="Router2" type="MeshInstance3D" parent="Routers_Oeste/Routers_oeste/Repetidor2" unique_id=598639019]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29029083, -0.0035955906, -0.107782364)
+mesh = SubResource("BoxMesh_4qkwh")
+
+[node name="ZonaCalorFuerte" type="MeshInstance3D" parent="Routers_Oeste/Routers_oeste/Repetidor2/Router2" unique_id=1957843027]
+transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_dt7fy")
+surface_material_override/0 = SubResource("StandardMaterial3D_dt7fy")
+script = ExtResource("12_ie88l")
+
+[node name="ZonaCalorPromedio" type="MeshInstance3D" parent="Routers_Oeste/Routers_oeste/Repetidor2/Router2" unique_id=747337510]
+transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_dt7fy")
+script = ExtResource("12_ie88l")
+escala_actual = 4.0
+
+[node name="ZonaCalorDebil" type="MeshInstance3D" parent="Routers_Oeste/Routers_oeste/Repetidor2/Router2" unique_id=503970716]
+transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_dt7fy")
+script = ExtResource("12_ie88l")
+escala_actual = 8.0
+
+[node name="Repetidor3" type="Node3D" parent="Routers_Oeste/Routers_oeste" unique_id=25244915 node_paths=PackedStringArray("modem_principal")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.960526, 0.017786026, 14.183878)
+script = SubResource("GDScript_4qkwh")
+modem_principal = NodePath("../../../Modems/Modem_secundario")
+limite_ancho_banda = 100.0
+
+[node name="Router3" type="MeshInstance3D" parent="Routers_Oeste/Routers_oeste/Repetidor3" unique_id=870127881]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29029083, -0.0035955906, -0.107782364)
+mesh = SubResource("BoxMesh_4qkwh")
+
+[node name="ZonaCalorFuerte" type="MeshInstance3D" parent="Routers_Oeste/Routers_oeste/Repetidor3/Router3" unique_id=1761832358]
+transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_dt7fy")
+surface_material_override/0 = SubResource("StandardMaterial3D_dt7fy")
+script = ExtResource("12_ie88l")
+
+[node name="ZonaCalorPromedio" type="MeshInstance3D" parent="Routers_Oeste/Routers_oeste/Repetidor3/Router3" unique_id=552353130]
+transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_dt7fy")
+script = ExtResource("12_ie88l")
+escala_actual = 4.0
+
+[node name="ZonaCalorDebil" type="MeshInstance3D" parent="Routers_Oeste/Routers_oeste/Repetidor3/Router3" unique_id=1340322185]
+transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_dt7fy")
+script = ExtResource("12_ie88l")
+escala_actual = 8.0
+
+[node name="Repetidor4" type="Node3D" parent="Routers_Oeste/Routers_oeste" unique_id=468202083 node_paths=PackedStringArray("modem_principal")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.04435, 0.017786026, 31.893602)
+script = SubResource("GDScript_4qkwh")
+modem_principal = NodePath("../../../Modems/Modem_secundario")
+limite_ancho_banda = 100.0
+
+[node name="Router4" type="MeshInstance3D" parent="Routers_Oeste/Routers_oeste/Repetidor4" unique_id=2081069075]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29029083, -0.0035955906, -0.107782364)
+mesh = SubResource("BoxMesh_4qkwh")
+
+[node name="ZonaCalorFuerte" type="MeshInstance3D" parent="Routers_Oeste/Routers_oeste/Repetidor4/Router4" unique_id=2106640195]
+transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_dt7fy")
+surface_material_override/0 = SubResource("StandardMaterial3D_dt7fy")
+script = ExtResource("12_ie88l")
+
+[node name="ZonaCalorPromedio" type="MeshInstance3D" parent="Routers_Oeste/Routers_oeste/Repetidor4/Router4" unique_id=625490784]
+transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_dt7fy")
+script = ExtResource("12_ie88l")
+escala_actual = 4.0
+
+[node name="ZonaCalorDebil" type="MeshInstance3D" parent="Routers_Oeste/Routers_oeste/Repetidor4/Router4" unique_id=997256962]
+transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_dt7fy")
+script = ExtResource("12_ie88l")
+escala_actual = 8.0
+
+[node name="Enlaces" type="Node3D" parent="Routers_Oeste/Routers_oeste" unique_id=417350917]
+
+[node name="Enlace_modem_repetidor" type="MeshInstance3D" parent="Routers_Oeste/Routers_oeste/Enlaces" unique_id=1594656042 node_paths=PackedStringArray("nodo_modem", "nodo_repetidor")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -22.928265, 0)
+mesh = SubResource("BoxMesh_j2u5w")
+script = ExtResource("12_x3esv")
+nodo_modem = NodePath("../../../../Modems/Modem_secundario")
+nodo_repetidor = NodePath("../../Repetidor1")
+
+[node name="Enlace_modem_repetidor2" type="MeshInstance3D" parent="Routers_Oeste/Routers_oeste/Enlaces" unique_id=2255598 node_paths=PackedStringArray("nodo_modem", "nodo_repetidor")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -22.928265, 0)
+mesh = SubResource("BoxMesh_j2u5w")
+script = ExtResource("12_x3esv")
+nodo_modem = NodePath("../../../../Modems/Modem_secundario")
+nodo_repetidor = NodePath("../../Repetidor2")
+
+[node name="Enlace_modem_repetidor3" type="MeshInstance3D" parent="Routers_Oeste/Routers_oeste/Enlaces" unique_id=1273182249 node_paths=PackedStringArray("nodo_modem", "nodo_repetidor")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -22.928265, 0)
+mesh = SubResource("BoxMesh_j2u5w")
+script = ExtResource("12_x3esv")
+nodo_modem = NodePath("../../../../Modems/Modem_secundario")
+nodo_repetidor = NodePath("../../Repetidor3")
+
+[node name="Enlace_modem_repetidor4" type="MeshInstance3D" parent="Routers_Oeste/Routers_oeste/Enlaces" unique_id=296675059 node_paths=PackedStringArray("nodo_modem", "nodo_repetidor")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -22.928265, 0)
+mesh = SubResource("BoxMesh_j2u5w")
+script = ExtResource("12_x3esv")
+nodo_modem = NodePath("../../../../Modems/Modem_secundario")
+nodo_repetidor = NodePath("../../Repetidor4")
+
+[node name="Routers_Sur" type="Node3D" parent="." unique_id=1783548633]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -17.240465, 0, 8.000412)
+
+[node name="Routers_oeste" type="Node3D" parent="Routers_Sur" unique_id=1554401038]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.0027103, 0, 0)
+
+[node name="Repetidor1" type="Node3D" parent="Routers_Sur/Routers_oeste" unique_id=2102849639 node_paths=PackedStringArray("modem_principal")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.908676, 0.017786026, -18.925379)
+script = SubResource("GDScript_4qkwh")
+modem_principal = NodePath("../../../Modems/Modem_principal")
+limite_ancho_banda = 100.0
+
+[node name="Router1" type="MeshInstance3D" parent="Routers_Sur/Routers_oeste/Repetidor1" unique_id=1323380618]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29029083, -0.0035955906, -0.107782364)
+mesh = SubResource("BoxMesh_4qkwh")
+
+[node name="ZonaCalorFuerte" type="MeshInstance3D" parent="Routers_Sur/Routers_oeste/Repetidor1/Router1" unique_id=1313867120]
+transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_dt7fy")
+surface_material_override/0 = SubResource("StandardMaterial3D_dt7fy")
+script = ExtResource("12_ie88l")
+
+[node name="ZonaCalorPromedio" type="MeshInstance3D" parent="Routers_Sur/Routers_oeste/Repetidor1/Router1" unique_id=1740464912]
+transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_dt7fy")
+script = ExtResource("12_ie88l")
+escala_actual = 4.0
+
+[node name="ZonaCalorDebil" type="MeshInstance3D" parent="Routers_Sur/Routers_oeste/Repetidor1/Router1" unique_id=1987137293]
+transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_dt7fy")
+script = ExtResource("12_ie88l")
+escala_actual = 8.0
+
+[node name="Repetidor2" type="Node3D" parent="Routers_Sur/Routers_oeste" unique_id=835684227 node_paths=PackedStringArray("modem_principal")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.842678, 0.017786026, -3.5978174)
+script = SubResource("GDScript_4qkwh")
+modem_principal = NodePath("../../../Modems/Modem_principal")
+limite_ancho_banda = 100.0
+
+[node name="Router2" type="MeshInstance3D" parent="Routers_Sur/Routers_oeste/Repetidor2" unique_id=917299666]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29029083, -0.0035955906, -0.107782364)
+mesh = SubResource("BoxMesh_4qkwh")
+
+[node name="ZonaCalorFuerte" type="MeshInstance3D" parent="Routers_Sur/Routers_oeste/Repetidor2/Router2" unique_id=972950490]
+transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_dt7fy")
+surface_material_override/0 = SubResource("StandardMaterial3D_dt7fy")
+script = ExtResource("12_ie88l")
+
+[node name="ZonaCalorPromedio" type="MeshInstance3D" parent="Routers_Sur/Routers_oeste/Repetidor2/Router2" unique_id=405804770]
+transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_dt7fy")
+script = ExtResource("12_ie88l")
+escala_actual = 4.0
+
+[node name="ZonaCalorDebil" type="MeshInstance3D" parent="Routers_Sur/Routers_oeste/Repetidor2/Router2" unique_id=1389747273]
+transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_dt7fy")
+script = ExtResource("12_ie88l")
+escala_actual = 8.0
+
+[node name="Repetidor3" type="Node3D" parent="Routers_Sur/Routers_oeste" unique_id=646342912 node_paths=PackedStringArray("modem_principal")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.574284, 0.017786026, 10.883476)
+script = SubResource("GDScript_4qkwh")
+modem_principal = NodePath("../../../Modems/Modem_principal")
+limite_ancho_banda = 100.0
+
+[node name="Router3" type="MeshInstance3D" parent="Routers_Sur/Routers_oeste/Repetidor3" unique_id=240511734]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29029083, -0.0035955906, -0.107782364)
+mesh = SubResource("BoxMesh_4qkwh")
+
+[node name="ZonaCalorFuerte" type="MeshInstance3D" parent="Routers_Sur/Routers_oeste/Repetidor3/Router3" unique_id=1055711803]
+transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_dt7fy")
+surface_material_override/0 = SubResource("StandardMaterial3D_dt7fy")
+script = ExtResource("12_ie88l")
+
+[node name="ZonaCalorPromedio" type="MeshInstance3D" parent="Routers_Sur/Routers_oeste/Repetidor3/Router3" unique_id=1919215773]
+transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_dt7fy")
+script = ExtResource("12_ie88l")
+escala_actual = 4.0
+
+[node name="ZonaCalorDebil" type="MeshInstance3D" parent="Routers_Sur/Routers_oeste/Repetidor3/Router3" unique_id=295944614]
+transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_dt7fy")
+script = ExtResource("12_ie88l")
+escala_actual = 8.0
+
+[node name="Repetidor4" type="Node3D" parent="Routers_Sur/Routers_oeste" unique_id=907388090 node_paths=PackedStringArray("modem_principal")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.04435, 0.017786026, 33.146255)
+script = SubResource("GDScript_4qkwh")
+modem_principal = NodePath("../../../Modems/Modem_principal")
+limite_ancho_banda = 100.0
+
+[node name="Router4" type="MeshInstance3D" parent="Routers_Sur/Routers_oeste/Repetidor4" unique_id=641993841]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29029083, -0.0035955906, -0.107782364)
+mesh = SubResource("BoxMesh_4qkwh")
+
+[node name="ZonaCalorFuerte" type="MeshInstance3D" parent="Routers_Sur/Routers_oeste/Repetidor4/Router4" unique_id=1440256736]
+transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_dt7fy")
+surface_material_override/0 = SubResource("StandardMaterial3D_dt7fy")
+script = ExtResource("12_ie88l")
+
+[node name="ZonaCalorPromedio" type="MeshInstance3D" parent="Routers_Sur/Routers_oeste/Repetidor4/Router4" unique_id=229734074]
+transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_dt7fy")
+script = ExtResource("12_ie88l")
+escala_actual = 4.0
+
+[node name="ZonaCalorDebil" type="MeshInstance3D" parent="Routers_Sur/Routers_oeste/Repetidor4/Router4" unique_id=1744890815]
+transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_dt7fy")
+script = ExtResource("12_ie88l")
+escala_actual = 8.0
+
+[node name="Repetidor5" type="Node3D" parent="Routers_Sur/Routers_oeste" unique_id=647278018 node_paths=PackedStringArray("modem_principal")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.04435, 0.017786026, 52.699196)
+script = SubResource("GDScript_4qkwh")
+modem_principal = NodePath("../../../Modems/Modem_principal")
+limite_ancho_banda = 100.0
+
+[node name="Router4" type="MeshInstance3D" parent="Routers_Sur/Routers_oeste/Repetidor5" unique_id=271879539]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29029083, -0.0035955906, -0.107782364)
+mesh = SubResource("BoxMesh_4qkwh")
+
+[node name="ZonaCalorFuerte" type="MeshInstance3D" parent="Routers_Sur/Routers_oeste/Repetidor5/Router4" unique_id=73078843]
+transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_dt7fy")
+surface_material_override/0 = SubResource("StandardMaterial3D_dt7fy")
+script = ExtResource("12_ie88l")
+
+[node name="ZonaCalorPromedio" type="MeshInstance3D" parent="Routers_Sur/Routers_oeste/Repetidor5/Router4" unique_id=376666267]
+transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_dt7fy")
+script = ExtResource("12_ie88l")
+escala_actual = 4.0
+
+[node name="ZonaCalorDebil" type="MeshInstance3D" parent="Routers_Sur/Routers_oeste/Repetidor5/Router4" unique_id=1955588081]
+transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_dt7fy")
+script = ExtResource("12_ie88l")
+escala_actual = 8.0
+
+[node name="Enlaces" type="Node3D" parent="Routers_Sur/Routers_oeste" unique_id=494343812]
+
+[node name="Enlace_modem_repetidor" type="MeshInstance3D" parent="Routers_Sur/Routers_oeste/Enlaces" unique_id=1244093511 node_paths=PackedStringArray("nodo_modem", "nodo_repetidor")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -22.928265, 0)
+mesh = SubResource("BoxMesh_j2u5w")
+script = ExtResource("12_x3esv")
+nodo_modem = NodePath("../../../../Modems/Modem_principal")
+nodo_repetidor = NodePath("../../Repetidor1")
+
+[node name="Enlace_modem_repetidor2" type="MeshInstance3D" parent="Routers_Sur/Routers_oeste/Enlaces" unique_id=1701356638 node_paths=PackedStringArray("nodo_modem", "nodo_repetidor")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -22.928265, 0)
+mesh = SubResource("BoxMesh_j2u5w")
+script = ExtResource("12_x3esv")
+nodo_modem = NodePath("../../../../Modems/Modem_principal")
+nodo_repetidor = NodePath("../../Repetidor2")
+
+[node name="Enlace_modem_repetidor3" type="MeshInstance3D" parent="Routers_Sur/Routers_oeste/Enlaces" unique_id=588382036 node_paths=PackedStringArray("nodo_modem", "nodo_repetidor")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -22.928265, 0)
+mesh = SubResource("BoxMesh_j2u5w")
+script = ExtResource("12_x3esv")
+nodo_modem = NodePath("../../../../Modems/Modem_principal")
+nodo_repetidor = NodePath("../../Repetidor3")
+
+[node name="Enlace_modem_repetidor4" type="MeshInstance3D" parent="Routers_Sur/Routers_oeste/Enlaces" unique_id=1536587476 node_paths=PackedStringArray("nodo_modem", "nodo_repetidor")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -22.928265, 0)
+mesh = SubResource("BoxMesh_j2u5w")
+script = ExtResource("12_x3esv")
+nodo_modem = NodePath("../../../../Modems/Modem_principal")
+nodo_repetidor = NodePath("../../Repetidor4")
+
+[node name="Enlace_modem_repetidor5" type="MeshInstance3D" parent="Routers_Sur/Routers_oeste/Enlaces" unique_id=1003797797 node_paths=PackedStringArray("nodo_modem", "nodo_repetidor")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -22.928265, 0)
+mesh = SubResource("BoxMesh_j2u5w")
+script = ExtResource("12_x3esv")
+nodo_modem = NodePath("../../../../Modems/Modem_secundario")
+nodo_repetidor = NodePath("../../Repetidor5")
+
+[node name="Antena" type="Node3D" parent="." unique_id=1432921047]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13, 0)
+
+[node name="Antena_Principal" type="MeshInstance3D" parent="Antena" unique_id=229683432]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.58249, -6.8175583, -33.454254)
+mesh = SubResource("CylinderMesh_ie88l")
+surface_material_override/0 = ExtResource("11_dt7fy")
+script = ExtResource("11_ie88l")
+
+[node name="panel" type="MeshInstance3D" parent="Antena/Antena_Principal" unique_id=1830056418]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0.62402534)
+mesh = SubResource("BoxMesh_ie88l")
+
+[node name="panel2" type="MeshInstance3D" parent="Antena/Antena_Principal" unique_id=419668463]
+transform = Transform3D(-0.50000006, 0, 0.8660254, 0, 1, 0, -0.8660254, 0, -0.50000006, 0.52928174, 4, -0.305581)
+mesh = SubResource("BoxMesh_ie88l")
+
+[node name="panel3" type="MeshInstance3D" parent="Antena/Antena_Principal" unique_id=827080602]
+transform = Transform3D(-0.4999999, 0, -0.86602545, 0, 1, 0, 0.86602545, 0, -0.4999999, -0.47528997, 4, -0.27440873)
+mesh = SubResource("BoxMesh_ie88l")
+
+[node name="Enlace_antena_modem" type="MeshInstance3D" parent="Antena" unique_id=1074172153 node_paths=PackedStringArray("nodo_origen", "nodo_destino")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -32.909607, 0)
 mesh = SubResource("BoxMesh_wogku")
 script = ExtResource("14_bideo")
 nodo_origen = NodePath("../Antena_Principal")
-nodo_destino = NodePath("../Router")
+nodo_destino = NodePath("../../Modems/Modem_principal")
+
+[node name="Enlace_antena_modem2" type="MeshInstance3D" parent="Antena" unique_id=505359016 node_paths=PackedStringArray("nodo_origen", "nodo_destino")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -32.909607, 0)
+mesh = SubResource("BoxMesh_wogku")
+script = ExtResource("14_bideo")
+nodo_origen = NodePath("../Antena_Principal")
+nodo_destino = NodePath("../../Modems/Modem_secundario")
