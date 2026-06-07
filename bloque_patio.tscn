@@ -2,7 +2,24 @@
 
 [ext_resource type="Texture2D" uid="uid://cv05xekd1v67i" path="res://FutsalPitch.png" id="1_1e1fs"]
 [ext_resource type="Material" uid="uid://r7pg12264wq3" path="res://Textura_Piso_Patio.tres" id="1_5b3jp"]
+[ext_resource type="Texture2D" uid="uid://bdbkt13tt5diu" path="res://Asset 4.png" id="1_p4pgq"]
 [ext_resource type="Texture2D" uid="uid://cqnto0nxap8d0" path="res://pavement_02_diff_1k.jpg" id="3_ov76v"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_73ve5"]
+albedo_texture = ExtResource("1_p4pgq")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y1nss"]
+albedo_texture = ExtResource("1_p4pgq")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vda44"]
+albedo_texture = ExtResource("1_p4pgq")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_83jle"]
+albedo_texture = ExtResource("1_p4pgq")
+uv1_triplanar = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p4pgq"]
 albedo_texture = ExtResource("3_ov76v")
@@ -12,8 +29,9 @@ uv1_scale = Vector3(5, 1, 1)
 use_collision = true
 
 [node name="Pared_Patio" type="CSGBox3D" parent="." unique_id=1237847820]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4464188, -0.30583835, -1.7742805)
-size = Vector3(81.05296, 2.5595703, 65.364655)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4464188, -0.30583835, -2.0432205)
+size = Vector3(81.05296, 2.5595703, 65.0876)
+material = SubResource("StandardMaterial3D_73ve5")
 
 [node name="Resta_Patio" type="CSGBox3D" parent="Pared_Patio" unique_id=702256518]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2930584, 1.1777489, 0.20217896)
@@ -43,14 +61,17 @@ size = Vector3(1.0264893, 1.3945179, 46.369347)
 [node name="Resta_Pared_Patio3" type="CSGBox3D" parent="." unique_id=1777062686]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 7.0194283, 1.3062862, 30.612593)
 size = Vector3(0.5762329, 3.4389327, 102.044716)
+material = SubResource("StandardMaterial3D_y1nss")
 
 [node name="Resta_Pared_Patio5" type="CSGBox3D" parent="." unique_id=1021037110]
 transform = Transform3D(-1, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, -1, -43.77286, 1.3062862, -1.7695677)
 size = Vector3(0.5762329, 3.4389327, 65.31467)
+material = SubResource("StandardMaterial3D_vda44")
 
 [node name="Resta_Pared_Patio6" type="CSGBox3D" parent="." unique_id=558261182]
 transform = Transform3D(7.351371e-08, 0, 1, 0, 1, 0, -1, 0, 7.351371e-08, -34.342117, 1.1042926, -34.210392)
 size = Vector3(0.5762329, 3.8361654, 19.438625)
+material = SubResource("StandardMaterial3D_83jle")
 
 [node name="Resta_Pared_Patio4" type="CSGBox3D" parent="." unique_id=445684687]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 57.7442, 0.82018614, 30.161995)

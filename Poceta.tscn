@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dn5r6issct2kj"]
+
+[ext_resource type="PackedScene" uid="uid://byv6dxt550h67" path="res://Assets/toiletbasictoilet.fbx" id="1_pil1w"]
+[ext_resource type="Texture2D" uid="uid://buqdlfvmkd3hx" path="res://Assets/toiletbasictoilet_0.png" id="2_wcreo"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6wdgl"]
+albedo_texture = ExtResource("2_wcreo")
+
+[node name="toiletbasictoilet" unique_id=1844027235 instance=ExtResource("1_pil1w")]
+
+[node name="toiletbasictoilet" parent="." index="0" unique_id=957966076]
+surface_material_override/0 = SubResource("StandardMaterial3D_6wdgl")
+
+[node name="toiletbasictoilet_1" parent="toiletbasictoilet" index="0" unique_id=2082643837]
+transform = Transform3D(1, 0, -1.0866892e-14, 0, 1, 0, 1.0866892e-14, 0, 1, 0, 0.17132673, -0.535497)

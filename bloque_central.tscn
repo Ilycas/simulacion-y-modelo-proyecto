@@ -1,10 +1,44 @@
 [gd_scene format=3 uid="uid://bylsoyawfw17x"]
 
+[ext_resource type="Texture2D" uid="uid://bdbkt13tt5diu" path="res://Asset 4.png" id="1_mq1vq"]
+[ext_resource type="Texture2D" uid="uid://dut5446mpxycr" path="res://WoodFloor005_1K-PNG_Color.png" id="2_hht8c"]
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_madera_central"]
 size = Vector3(10, 2.9, 0.4)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ventana_central"]
 size = Vector3(0.3, 1.796814, 16.420563)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hht8c"]
+albedo_texture = ExtResource("1_mq1vq")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tschq"]
+albedo_texture = ExtResource("2_hht8c")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ta6gh"]
+albedo_texture = ExtResource("1_mq1vq")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sq5bj"]
+albedo_texture = ExtResource("1_mq1vq")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eiugc"]
+albedo_texture = ExtResource("1_mq1vq")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qua02"]
+albedo_texture = ExtResource("1_mq1vq")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mthl6"]
+albedo_texture = ExtResource("1_mq1vq")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3f0sr"]
+albedo_texture = ExtResource("1_mq1vq")
+uv1_triplanar = true
 
 [node name="Bloque_Central" type="CSGCombiner3D" unique_id=1241290368]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.588, 0.909, -36.085)
@@ -70,36 +104,79 @@ shape = SubResource("BoxShape3D_ventana_central")
 [node name="Bloque" type="CSGBox3D" parent="." unique_id=1643083679]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.47727203, 0.7659426, -2.8616333)
 size = Vector3(10.436, 2.869629, 99.012)
+material = SubResource("StandardMaterial3D_hht8c")
+
+[node name="Piso_Bloque_Central" type="CSGBox3D" parent="Bloque" unique_id=1423423715]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09854126, -0.9018223, -41.24301)
+operation = 2
+size = Vector3(9.77124, 1, 15.683685)
+material = SubResource("StandardMaterial3D_tschq")
+
+[node name="Piso_Bloque_Central2" type="CSGBox3D" parent="Bloque" unique_id=1999273009]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09854126, -0.9018223, -25.187347)
+operation = 2
+size = Vector3(9.77124, 1, 15.597214)
+material = SubResource("StandardMaterial3D_tschq")
+
+[node name="Piso_Bloque_Central3" type="CSGBox3D" parent="Bloque" unique_id=65729858]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09854126, -0.9018223, -11.301132)
+operation = 2
+size = Vector3(9.77124, 1, 11.69265)
+material = SubResource("StandardMaterial3D_tschq")
+
+[node name="Piso_Bloque_Central4" type="CSGBox3D" parent="Bloque" unique_id=1601355550]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09854126, -0.9018223, 4.444626)
+operation = 2
+size = Vector3(9.77124, 1, 19.036877)
+material = SubResource("StandardMaterial3D_tschq")
+
+[node name="Piso_Bloque_Central5" type="CSGBox3D" parent="Bloque" unique_id=330975908]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09854126, -0.9018223, 22.85149)
+operation = 2
+size = Vector3(9.77124, 1, 17.14942)
+material = SubResource("StandardMaterial3D_tschq")
+
+[node name="Piso_Bloque_Central6" type="CSGBox3D" parent="Bloque" unique_id=1250602487]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09854126, -0.9018223, 40.604263)
+operation = 2
+size = Vector3(9.77124, 1, 17.384281)
+material = SubResource("StandardMaterial3D_tschq")
 
 [node name="Hueco_Aula8" type="CSGBox3D" parent="Bloque" unique_id=686432359]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.109752655, 0.14328432, -41.251373)
 operation = 2
 size = Vector3(9.799534, 3, 15.727615)
+material = SubResource("StandardMaterial3D_ta6gh")
 
 [node name="Hueco_Administracion" type="CSGBox3D" parent="Bloque" unique_id=148489703]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.111846924, 0.14328432, -25.194214)
 operation = 2
 size = Vector3(9.795342, 3, 15.727615)
+material = SubResource("StandardMaterial3D_sq5bj")
 
 [node name="Mantenimiento" type="CSGBox3D" parent="Bloque" unique_id=2010316591]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.109752655, 0.14328432, -11.289003)
 operation = 2
 size = Vector3(9.799534, 3, 11.7211075)
+material = SubResource("StandardMaterial3D_eiugc")
 
 [node name="Hueco_Aula4" type="CSGBox3D" parent="Bloque" unique_id=189441573]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.109752655, 0.14328432, 4.459401)
 operation = 2
 size = Vector3(9.799534, 3, 19.135822)
+material = SubResource("StandardMaterial3D_qua02")
 
 [node name="Hueco_Aula5" type="CSGBox3D" parent="Bloque" unique_id=1780561273]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.109752655, 0.14328432, 22.882412)
 operation = 2
 size = Vector3(9.799534, 3, 17.23112)
+material = SubResource("StandardMaterial3D_mthl6")
 
 [node name="Hueco_Aula6" type="CSGBox3D" parent="Bloque" unique_id=841411992]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.109752655, 0.14328432, 40.63696)
 operation = 2
 size = Vector3(9.799534, 3, 17.466022)
+material = SubResource("StandardMaterial3D_3f0sr")
 
 [node name="Puerta_Aula3" type="CSGBox3D" parent="Bloque" unique_id=1204090589]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.3711392e-08, -4.9158554, -0.06555557, -42.127674)

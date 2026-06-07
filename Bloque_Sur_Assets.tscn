@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://c1vxfne48ito3"]
+
+[ext_resource type="PackedScene" uid="uid://bm5l358t3wtff" path="res://Assets/blackboardbig.fbx" id="1_wa0b8"]
+
+[node name="Node3D" type="Node3D" unique_id=1123388815]
+transform = Transform3D(-6.556708e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.556708e-08, 0, 0, 0)
+
+[node name="blackboardbig" parent="." unique_id=1337712160 instance=ExtResource("1_wa0b8")]
+
+[node name="blackboardbig2" parent="." unique_id=1873963386 instance=ExtResource("1_wa0b8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.328838, 0, 0)

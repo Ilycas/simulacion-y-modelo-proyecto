@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cwacsfgq5qvbo" path="res://Puerta_Baño.tscn" id="2_okreg"]
 [ext_resource type="Material" uid="uid://dvd3fiygc3y75" path="res://Textura_Puerta.tres" id="3_mabxo"]
 [ext_resource type="Texture2D" uid="uid://bdbkt13tt5diu" path="res://Asset 4.png" id="4_mabxo"]
+[ext_resource type="PackedScene" uid="uid://dn5r6issct2kj" path="res://Poceta.tscn" id="6_1ffyo"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_uthnx"]
 load_path = "res://.godot/imported/WoodFloor005_1K-PNG_Color.png-ca06d8faefb3d72c5010f6424b562c47.s3tc.ctex"
@@ -69,3 +70,45 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9823112, 0, -5.287277)
 
 [node name="Base_Puerta2" parent="Base_Baño_Adolescentes" unique_id=630711346 instance=ExtResource("2_okreg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9521828, 0, -5.287277)
+
+[node name="toiletbasictoilet" parent="." unique_id=1844027235 instance=ExtResource("6_1ffyo")]
+transform = Transform3D(0.018400716, 0, -1.010708, 0, 0.9217945, 0, 1.024461, 0, 0.018153692, 39.428604, -0.03241974, 36.400654)
+
+[node name="toiletbasictoilet7" parent="." unique_id=2127731550 instance=ExtResource("6_1ffyo")]
+transform = Transform3D(0.018400716, 0, -1.010708, 0, 0.9217945, 0, 1.024461, 0, 0.018153692, 39.428604, -0.03241974, 36.400654)
+
+[node name="toiletbasictoilet2" parent="." unique_id=1701316783 instance=ExtResource("6_1ffyo")]
+transform = Transform3D(0.018400716, 0, -1.010708, 0, 0.9217945, 0, 1.024461, 0, 0.018153692, 39.428604, -0.03241974, 38.141903)
+
+[node name="toiletbasictoilet6" parent="." unique_id=1412251187 instance=ExtResource("6_1ffyo")]
+transform = Transform3D(0.018400716, 0, -1.010708, 0, 0.9217945, 0, 1.024461, 0, 0.018153692, 39.428604, -0.03241974, 39.946476)
+
+[node name="toiletbasictoilet3" parent="." unique_id=944567498 instance=ExtResource("6_1ffyo")]
+transform = Transform3D(0.018400716, 0, -1.010708, 0, 0.9217945, 0, 1.024461, 0, 0.018153692, 39.428604, -0.03241974, 42.03328)
+
+[node name="toiletbasictoilet4" parent="." unique_id=68841286 instance=ExtResource("6_1ffyo")]
+transform = Transform3D(0.018400716, 0, -1.010708, 0, 0.9217945, 0, 1.024461, 0, 0.018153692, 39.428604, -0.03241974, 43.850224)
+
+[node name="toiletbasictoilet5" parent="." unique_id=1684451639 instance=ExtResource("6_1ffyo")]
+transform = Transform3D(0.018400716, 0, -1.010708, 0, 0.9217945, 0, 1.024461, 0, 0.018153692, 39.428604, -0.03241974, 45.814888)
+
+[node name="toiletbasictoilet8" parent="." unique_id=1458057619 instance=ExtResource("6_1ffyo")]
+transform = Transform3D(0.018400716, 0, -1.010708, 0, 0.9217945, 0, 1.024461, 0, 0.018153692, 34.705597, -0.03241974, 36.400654)
+
+[node name="toiletbasictoilet9" parent="." unique_id=1775787928 instance=ExtResource("6_1ffyo")]
+transform = Transform3D(0.018400716, 0, -1.010708, 0, 0.9217945, 0, 1.024461, 0, 0.018153692, 34.705597, -0.03241974, 36.400654)
+
+[node name="toiletbasictoilet10" parent="." unique_id=1487134038 instance=ExtResource("6_1ffyo")]
+transform = Transform3D(0.018400716, 0, -1.010708, 0, 0.9217945, 0, 1.024461, 0, 0.018153692, 34.705597, -0.03241974, 38.141903)
+
+[node name="toiletbasictoilet11" parent="." unique_id=1464961894 instance=ExtResource("6_1ffyo")]
+transform = Transform3D(0.018400716, 0, -1.010708, 0, 0.9217945, 0, 1.024461, 0, 0.018153692, 34.705597, -0.03241974, 39.946476)
+
+[node name="toiletbasictoilet12" parent="." unique_id=1101236797 instance=ExtResource("6_1ffyo")]
+transform = Transform3D(0.018400716, 0, -1.010708, 0, 0.9217945, 0, 1.024461, 0, 0.018153692, 34.705597, -0.03241974, 42.03328)
+
+[node name="toiletbasictoilet13" parent="." unique_id=1451699755 instance=ExtResource("6_1ffyo")]
+transform = Transform3D(0.018400716, 0, -1.010708, 0, 0.9217945, 0, 1.024461, 0, 0.018153692, 34.705597, -0.03241974, 43.850224)
+
+[node name="toiletbasictoilet14" parent="." unique_id=1735108471 instance=ExtResource("6_1ffyo")]
+transform = Transform3D(0.018400716, 0, -1.010708, 0, 0.9217945, 0, 1.024461, 0, 0.018153692, 34.705597, -0.03241974, 45.814888)
