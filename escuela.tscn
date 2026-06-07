@@ -184,7 +184,7 @@ mesh = SubResource("BoxMesh_x3esv")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.0027103, 0, 0)
 
 [node name="Repetidor1" type="Node3D" parent="Routers_Oeste/Routers_oeste" unique_id=1684531925 node_paths=PackedStringArray("modem_principal")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.908676, 0.017786026, -28.728266)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.25442, 0.017786026, -28.728266)
 script = SubResource("GDScript_4qkwh")
 modem_principal = NodePath("../../../Modems/Modem_secundario")
 
@@ -211,7 +211,7 @@ script = ExtResource("12_ie88l")
 escala_actual = 8.0
 
 [node name="Repetidor2" type="Node3D" parent="Routers_Oeste/Routers_oeste" unique_id=439257965 node_paths=PackedStringArray("modem_principal")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.887707, 0.017786026, -6.113819)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.288395, 0.017786026, -6.113819)
 script = SubResource("GDScript_4qkwh")
 modem_principal = NodePath("../../../Modems/Modem_secundario")
 
@@ -238,7 +238,7 @@ script = ExtResource("12_ie88l")
 escala_actual = 8.0
 
 [node name="Repetidor3" type="Node3D" parent="Routers_Oeste/Routers_oeste" unique_id=25244915 node_paths=PackedStringArray("modem_principal")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.960526, 0.017786026, 14.183878)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.235924, 0.017786026, 14.183878)
 script = SubResource("GDScript_4qkwh")
 modem_principal = NodePath("../../../Modems/Modem_secundario")
 
@@ -265,7 +265,7 @@ script = ExtResource("12_ie88l")
 escala_actual = 8.0
 
 [node name="Repetidor4" type="Node3D" parent="Routers_Oeste/Routers_oeste" unique_id=468202083 node_paths=PackedStringArray("modem_principal")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.04435, 0.017786026, 31.893602)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.241344, 0.017786026, 31.893602)
 script = SubResource("GDScript_4qkwh")
 modem_principal = NodePath("../../../Modems/Modem_secundario")
 
@@ -328,7 +328,7 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -17.
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.0027103, 0, 0)
 
 [node name="Repetidor1" type="Node3D" parent="Routers_Sur/Routers_oeste" unique_id=2102849639 node_paths=PackedStringArray("modem_principal")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.908676, 0.017786026, -18.925379)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.908676, 0.017786026, -17.56943)
 script = SubResource("GDScript_4qkwh")
 modem_principal = NodePath("../../../Modems/Modem_principal")
 
@@ -382,7 +382,7 @@ script = ExtResource("12_ie88l")
 escala_actual = 8.0
 
 [node name="Repetidor3" type="Node3D" parent="Routers_Sur/Routers_oeste" unique_id=646342912 node_paths=PackedStringArray("modem_principal")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.574284, 0.017786026, 10.883476)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.574284, 0.017786026, 10.372172)
 script = SubResource("GDScript_4qkwh")
 modem_principal = NodePath("../../../Modems/Modem_principal")
 
@@ -409,7 +409,7 @@ script = ExtResource("12_ie88l")
 escala_actual = 8.0
 
 [node name="Repetidor4" type="Node3D" parent="Routers_Sur/Routers_oeste" unique_id=907388090 node_paths=PackedStringArray("modem_principal")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.04435, 0.017786026, 33.146255)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.49197, 0.017786026, 33.146255)
 script = SubResource("GDScript_4qkwh")
 modem_principal = NodePath("../../../Modems/Modem_principal")
 
@@ -436,7 +436,7 @@ script = ExtResource("12_ie88l")
 escala_actual = 8.0
 
 [node name="Repetidor5" type="Node3D" parent="Routers_Sur/Routers_oeste" unique_id=647278018 node_paths=PackedStringArray("modem_principal")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.04435, 0.017786026, 52.699196)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.58443, 0.017786026, 52.699196)
 script = SubResource("GDScript_4qkwh")
 modem_principal = NodePath("../../../Modems/Modem_secundario")
 
