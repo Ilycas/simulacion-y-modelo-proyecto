@@ -29,13 +29,6 @@ background_mode = 2
 sky = SubResource("Sky_dgm2e")
 tonemap_mode = 2
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_awtwk"]
-height = 1.6
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_awtwk"]
-radius = 0.3
-height = 1.6
-
 [sub_resource type="BoxMesh" id="BoxMesh_x3esv"]
 size = Vector3(0.3, 0.1, 0.3)
 
@@ -96,8 +89,15 @@ size = Vector3(0.8, 1.5, 0.3)
 
 [sub_resource type="BoxMesh" id="BoxMesh_wogku"]
 
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_awtwk"]
+height = 1.6
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_awtwk"]
+radius = 0.3
+height = 1.6
+
 [node name="Escuela" type="Node3D" unique_id=479217386]
-transform = Transform3D(0.759786, 0, 0, 0, 1, 0, 0, 0, 0.7970685, 0, -0.46422005, 0)
+transform = Transform3D(0.6848566, 0, 0, 0, 1, 0, 0, 0, 0.60286516, 0, -0.46422005, 0)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=802890740]
 environment = SubResource("Environment_nq0on")
@@ -105,24 +105,6 @@ environment = SubResource("Environment_nq0on")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2117702403]
 transform = Transform3D(-0.25, 0.86602545, 0.43301272, 0.8660256, -5.9604645e-08, 0.49999988, 0.43301266, 0.5000001, -0.7499999, -5.900272, 30.16484, 10.2195635)
 shadow_enabled = true
-
-[node name="Estudiante" type="CharacterBody3D" parent="." unique_id=2047578850 node_paths=PackedStringArray("lista_routers") groups=["player"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.985617, 0.39632463, -62.927322)
-script = ExtResource("1_awtwk")
-lista_routers = [NodePath("../Routers_Oeste/Routers_oeste/Repetidor1"), NodePath("../Routers_Oeste/Routers_oeste/Repetidor2"), NodePath("../Routers_Oeste/Routers_oeste/Repetidor3")]
-escena_paquete = ExtResource("3_wkv31")
-
-[node name="RayCast3D" type="RayCast3D" parent="Estudiante" unique_id=316226275]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Estudiante" unique_id=1037988441]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.33517587, 0)
-mesh = SubResource("CapsuleMesh_awtwk")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Estudiante" unique_id=1834572890]
-shape = SubResource("CapsuleShape3D_awtwk")
-
-[node name="Camera3D" type="Camera3D" parent="Estudiante" unique_id=304028374]
-transform = Transform3D(-0.99961126, 0.00607053, 0.027218036, 0.012683293, 0.96819663, 0.2498697, -0.02483556, 0.2501177, -0.9678973, -0.26994637, 5.100603, -1.8920897)
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=891488879]
 transform = Transform3D(-0.49274227, 6.5681137e-15, -7.8032976e-08, 3.5011444e-15, 1, -7.803299e-08, 4.307689e-08, -8.742278e-08, -0.8925933, -0.5622387, -0.7774402, -0.14211935)
@@ -549,3 +531,51 @@ size = Vector3(21.537231, 0.1, 12.533203)
 [node name="CSGBox3D2" type="CSGBox3D" parent="PatioFrontal" unique_id=872362458]
 transform = Transform3D(0.999952, 0, 0, 0, 0.9999635, 0, 0, 0, 0.9999998, -14.478109, -0.7534571, -58.03978)
 size = Vector3(63.430557, 0.1, 12.533203)
+
+[node name="Estudiante" type="CharacterBody3D" parent="." unique_id=466188460 node_paths=PackedStringArray("lista_routers") groups=["player"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.985617, 0.39632463, -62.927322)
+script = ExtResource("1_awtwk")
+lista_routers = [NodePath("../Routers_Oeste/Routers_oeste/Repetidor1"), NodePath("../Routers_Oeste/Routers_oeste/Repetidor2"), NodePath("../Routers_Oeste/Routers_oeste/Repetidor3")]
+escena_paquete = ExtResource("3_wkv31")
+
+[node name="RayCast3D" type="RayCast3D" parent="Estudiante" unique_id=1096785150]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Estudiante" unique_id=398892194]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.33517587, 0)
+mesh = SubResource("CapsuleMesh_awtwk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Estudiante" unique_id=889576528]
+shape = SubResource("CapsuleShape3D_awtwk")
+
+[node name="Camera3D" type="Camera3D" parent="Estudiante" unique_id=1431231153]
+transform = Transform3D(-0.99961126, 0.00607053, 0.027218036, 0.012683293, 0.96819663, 0.2498697, -0.02483556, 0.2501177, -0.9678973, -0.26994637, 5.100603, -1.8920897)
+
+[node name="Exterior" type="CSGCombiner3D" parent="." unique_id=1540722455]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Exterior" unique_id=716820306]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -14.396532, -0.2992096, -52.53968)
+size = Vector3(63.401123, 0.77835083, 0.29144287)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Exterior" unique_id=697907587]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -14.396532, 2.2606149, -52.73463)
+size = Vector3(63.401123, 0.53749084, 0.68136597)
+
+[node name="Pilar" type="CSGBox3D" parent="Exterior" unique_id=802262823]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 5.19079, 0.8138714, -52.555237)
+size = Vector3(1.5892029, 3.0519485, 0.68136597)
+
+[node name="Pilar2" type="CSGBox3D" parent="Exterior" unique_id=1052142161]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -7.9388657, 0.8138714, -52.555237)
+size = Vector3(1.5892029, 3.0519485, 0.68136597)
+
+[node name="Pilar3" type="CSGBox3D" parent="Exterior" unique_id=1699696709]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -21.181942, 0.8138714, -52.555237)
+size = Vector3(1.5892029, 3.0519485, 0.68136597)
+
+[node name="Pilar4" type="CSGBox3D" parent="Exterior" unique_id=510380912]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -34.60468, 0.8138714, -52.555237)
+size = Vector3(1.5892029, 3.0519485, 0.68136597)
+
+[node name="Pilar5" type="CSGBox3D" parent="Exterior" unique_id=30929071]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -47.26459, 0.8138714, -52.555237)
+size = Vector3(1.5892029, 3.0519485, 0.68136597)
