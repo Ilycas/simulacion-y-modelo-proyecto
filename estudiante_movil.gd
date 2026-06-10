@@ -8,23 +8,25 @@ var marker_actual: Marker3D = null
 var esperando: bool = false
 var tiempo_espera_restante: float = 0.0
 var todos_los_markers: Array[Marker3D] = []
-var markers_visitados: Array[Marker3D] = []
 var _debug_timer: float = 0.0
 var _trail_timer: float = 0.0
 
-@onready var nav_agent: NavigationAgent3D = $NavigationAgent3D
+var lista_routers: Array[Node3D] = []
+var radio_cobertura: float = 50.0
+var router_conectado: Node3D = null
+var calidad_red_actual: float = 0.0
+var _scan_timer: float = 0.0
+
+var _ubicacion_actual: String = ""
+var _cola_rutas: Array[String] = []
+var _ruta_actual_idx: int = 0
+var path_follow: PathFollow3D = null
+var _ultimos_visitados: Array[String] = []
 
 func _ready() -> void:
-	nav_agent.path_desired_distance = 0.3
-	nav_agent.target_desired_distance = 0.5
-	nav_agent.avoidance_enabled = false
-	nav_agent.radius = 0.4
-	nav_agent.height = 1.8
-	nav_agent.path_max_distance = 50.0
-	_aplicar_color()
-	for i in 10:
-		await get_tree().physics_frame
-	_elegir_siguiente_destino()
+	if path_follow == null and get_parent() is PathFollow3D:
+		path_follow = get_parent() as PathFollow3D
+	_actualizar_conexion()
 
 func _aplicar_color() -> void:
 	var mesh = get_node_or_null("MeshInstance3D")
@@ -33,52 +35,110 @@ func _aplicar_color() -> void:
 		mat.albedo_color = color_zona
 		mesh.material_override = mat
 	else:
-		push_warning("[%s] no se encontró MeshInstance3D" % name)
+		push_warning("[%s] no se encontro MeshInstance3D" % name)
 
-func asignar_color_por_zona(posicion: Vector3, router: Node3D, radio: float = 50.0) -> void:
-	if not router:
-		color_zona = Color(1.0, 0.0, 0.0)
-	else:
-		var dist = posicion.distance_to(router.global_position)
-		if dist > radio:
-			color_zona = Color(1.0, 0.0, 0.0)
+func _actualizar_conexion() -> void:
+	router_conectado = null
+	calidad_red_actual = 0.0
+	var mejor_calidad = 0.0
+	var mejor_router: Node3D = null
+
+	for router in lista_routers:
+		if not is_instance_valid(router):
+			continue
+		var dist = global_position.distance_to(router.global_position)
+		if dist > radio_cobertura:
+			continue
+		var calidad = 1.0 - (dist / radio_cobertura)
+		if calidad < 0.0:
+			calidad = 0.0
+		if calidad > mejor_calidad:
+			mejor_calidad = calidad
+			mejor_router = router
+
+	router_conectado = mejor_router
+	calidad_red_actual = mejor_calidad
+
+	if router_conectado:
+		if calidad_red_actual > 0.6:
+			color_zona = Color(0.0, 1.0, 0.0)
+		elif calidad_red_actual > 0.25:
+			color_zona = Color(1.0, 1.0, 0.0)
 		else:
-			var calidad = 1.0 - (dist / radio)
-			if calidad > 0.6:
-				color_zona = Color(0.0, 1.0, 0.0)
-			elif calidad > 0.25:
-				color_zona = Color(1.0, 1.0, 0.0)
-			else:
-				color_zona = Color(1.0, 0.0, 0.0)
-	if is_inside_tree():
-		_aplicar_color()
+			color_zona = Color(1.0, 0.0, 0.0)
+	else:
+		color_zona = Color(0.5, 0.5, 0.5)
+
+	_aplicar_color()
+
+func _registrar_visita(nombre: String) -> void:
+	_ultimos_visitados.append(nombre)
+	if _ultimos_visitados.size() > 2:
+		_ultimos_visitados.pop_front()
 
 func _elegir_siguiente_destino() -> void:
 	if todos_los_markers.is_empty():
 		return
-	if markers_visitados.size() >= todos_los_markers.size():
-		markers_visitados.clear()
-	var disponibles: Array[Marker3D] = []
-	for m in todos_los_markers:
-		if m in markers_visitados:
-			continue
-		if _marker_ocupado(m):
-			continue
-		disponibles.append(m)
-	if disponibles.is_empty():
-		await get_tree().create_timer(1.0).timeout
-		_elegir_siguiente_destino()
-		return
-	marker_actual = disponibles.pick_random()
-	markers_visitados.append(marker_actual)
-	nav_agent.target_position = marker_actual.global_position
-	print("[%s] destino: %s en %s" % [name, marker_actual.name, marker_actual.global_position])
 
-func _marker_ocupado(marker: Marker3D) -> bool:
-	var area = marker.get_node_or_null("Area3D")
-	if not area:
-		return false
-	return area.get_overlapping_bodies().size() > 0
+	var disponibles: Array[String] = []
+	for m in todos_los_markers:
+		if m.name != _ubicacion_actual:
+			disponibles.append(m.name)
+
+	if disponibles.is_empty():
+		return
+
+	var candidatos: Array[String] = []
+	for nombre in disponibles:
+		if nombre == "Entrada" or not nombre in _ultimos_visitados:
+			candidatos.append(nombre)
+
+	if candidatos.is_empty():
+		candidatos = disponibles
+
+	var nombre_destino: String = candidatos.pick_random()
+	_cola_rutas = RutaManager.obtener_cadena_rutas(_ubicacion_actual, nombre_destino)
+	_ruta_actual_idx = 0
+
+	if _cola_rutas.is_empty():
+		return
+
+	var marker_destino: Marker3D = null
+	for m in todos_los_markers:
+		if m.name == nombre_destino:
+			marker_destino = m
+			break
+
+	if marker_destino:
+		marker_actual = marker_destino
+
+	_iniciar_ruta_actual()
+	print("[%s] ruta: %s -> %s (cadena: %s) recientes=%s" % [name, _ubicacion_actual, nombre_destino, str(_cola_rutas), str(_ultimos_visitados)])
+
+func _iniciar_ruta_actual() -> void:
+	if _ruta_actual_idx >= _cola_rutas.size():
+		return
+	var nombre_ruta: String = _cola_rutas[_ruta_actual_idx]
+	var path: Path3D = RutaManager.obtener_ruta(
+		RutaManager.obtener_origen_de_ruta(nombre_ruta),
+		RutaManager.obtener_destino_de_ruta(nombre_ruta)
+	)
+	if path == null:
+		return
+	_mover_a_path(path)
+
+func _mover_a_path(path: Path3D) -> void:
+	if path_follow and is_instance_valid(path_follow):
+		path_follow.remove_child(self)
+		path_follow.queue_free()
+
+	var nuevo_pf = PathFollow3D.new()
+	nuevo_pf.loop = false
+	nuevo_pf.rotation_mode = 4
+	nuevo_pf.progress = 0.0
+	path.add_child(nuevo_pf)
+	nuevo_pf.add_child(self)
+	path_follow = nuevo_pf
 
 func _crear_marca_rastro() -> void:
 	var marca = MeshInstance3D.new()
@@ -94,19 +154,23 @@ func _crear_marca_rastro() -> void:
 	mat.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
 	marca.material_override = mat
 	marca.position = global_position + Vector3(0, -0.3, 0)
-	var padre = get_parent()
-	if padre:
-		padre.add_child(marca)
+	var scene = get_tree().current_scene
+	if scene:
+		scene.add_child(marca)
 		var tween = marca.create_tween()
 		tween.tween_property(mat, "albedo_color", Color(1.0, 0.0, 1.0, 0.0), 4.0)
 		tween.tween_callback(marca.queue_free)
 
 func _physics_process(delta: float) -> void:
+	if path_follow == null or not is_instance_valid(path_follow):
+		path_follow = get_parent() as PathFollow3D
+		if path_follow == null:
+			return
+
 	_debug_timer += delta
 	if _debug_timer >= 2.0:
 		_debug_timer = 0.0
-		var current_path = nav_agent.get_current_navigation_path()
-		print("[%s] pos=%s path_size=%d esperando=%s" % [name, global_position, current_path.size(), esperando])
+		print("[%s] pos=%s ubicacion=%s wp_ratio=%.2f esperando=%s cola=%d" % [name, global_position, _ubicacion_actual, path_follow.progress_ratio, esperando, _cola_rutas.size() - _ruta_actual_idx])
 
 	var indicador = get_node_or_null("IndicadorMovimiento")
 	if indicador:
@@ -119,29 +183,31 @@ func _physics_process(delta: float) -> void:
 			_elegir_siguiente_destino()
 		return
 
-	if marker_actual == null:
-		_elegir_siguiente_destino()
+	if path_follow == null or not is_instance_valid(path_follow):
 		return
 
-	var destino = marker_actual.global_position
-	destino.y = global_position.y
-	var distancia = global_position.distance_to(destino)
+	path_follow.progress += velocidad * delta
 
-	if distancia < 0.5:
+	if path_follow.progress_ratio >= 1.0:
+		if not _cola_rutas.is_empty() and _ruta_actual_idx < _cola_rutas.size():
+			_ubicacion_actual = RutaManager.obtener_destino_de_ruta(_cola_rutas[_ruta_actual_idx])
+			_ruta_actual_idx += 1
+			if _ruta_actual_idx < _cola_rutas.size():
+				_iniciar_ruta_actual()
+				return
+
+		_registrar_visita(_ubicacion_actual)
 		esperando = true
 		tiempo_espera_restante = tiempo_espera_en_destino
-		print("[%s] llegado a %s" % [name, marker_actual.name])
+		print("[%s] llegado a %s recientes=%s" % [name, _ubicacion_actual, str(_ultimos_visitados)])
 		return
 
-	var punto = destino
-	var current_path = nav_agent.get_current_navigation_path()
-	if not current_path.is_empty() and not nav_agent.is_navigation_finished():
-		punto = nav_agent.get_next_path_position()
+	_trail_timer += delta
+	if _trail_timer >= 0.3:
+		_trail_timer = 0.0
+		_crear_marca_rastro()
 
-	var direccion = (punto - global_position)
-	direccion.y = 0.0
-	if direccion.length() < 0.01:
-		return
-	direccion = direccion.normalized()
-	global_position += direccion * velocidad * delta
-	_crear_marca_rastro()
+	_scan_timer += delta
+	if _scan_timer >= 0.5:
+		_scan_timer = 0.0
+		_actualizar_conexion()

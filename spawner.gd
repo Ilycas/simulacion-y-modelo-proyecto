@@ -6,18 +6,74 @@ extends Node3D
 @export var y_spawn: float = 0.4
 
 func _ready() -> void:
-	NavigationServer3D.set_debug_enabled(true)
 	var markers = get_tree().get_nodes_in_group("destino")
-	var router = get_node_or_null("../Router")
 	if markers.is_empty():
 		push_warning("Spawner: no se encontraron marcadores en grupo 'destino'")
 		return
-	for i in num_moviles:
-		_spawn_movil(markers, router)
-	for i in num_estaticos:
-		_spawn_estatico(markers, router)
+	var routers: Array[Node3D] = []
+	for child in get_tree().current_scene.get_children():
+		if child is Node3D and "Router" in child.name:
+			routers.append(child)
 
-func _spawn_movil(markers: Array, router: Node3D) -> void:
+	call_deferred("_iniciar_rutas_y_spawn", markers, routers)
+
+func _iniciar_rutas_y_spawn(markers: Array, routers: Array[Node3D]) -> void:
+	RutaManager.registrar_rutas_existentes()
+
+	var markers_tipados: Array[Marker3D] = []
+	markers_tipados.assign(markers)
+
+	var rutas_hub: Array[Path3D] = []
+	var rutas_spoke: Array[Path3D] = []
+	for clave in RutaManager._rutas:
+		var p: Path3D = RutaManager._rutas[clave]
+		if clave.begins_with("Entrada->"):
+			rutas_hub.append(p)
+		else:
+			rutas_spoke.append(p)
+
+	var spawn_count: int = 0
+	var usar_hub: bool = true
+
+	for i in num_moviles:
+		if usar_hub and not rutas_hub.is_empty():
+			_spawn_en_ruta(rutas_hub[i % rutas_hub.size()], markers_tipados, routers)
+		elif not rutas_spoke.is_empty():
+			_spawn_en_ruta(rutas_spoke[i % rutas_spoke.size()], markers_tipados, routers)
+		elif not rutas_hub.is_empty():
+			_spawn_en_ruta(rutas_hub[i % rutas_hub.size()], markers_tipados, routers)
+		else:
+			break
+		usar_hub = not usar_hub
+		spawn_count += 1
+
+	for i in num_estaticos:
+		_spawn_estatico(markers_tipados, routers)
+
+func _spawn_en_ruta(path: Path3D, markers: Array[Marker3D], routers: Array[Node3D]) -> void:
+	var partes = path.name.split("->")
+	if partes.size() != 2:
+		return
+	var origen_nombre = partes[0]
+	var destino_nombre = partes[1]
+
+	var marker_origen: Marker3D = null
+	var marker_destino: Marker3D = null
+	for m in markers:
+		if m.name == origen_nombre:
+			marker_origen = m
+		elif m.name == destino_nombre:
+			marker_destino = m
+
+	if marker_origen == null or marker_destino == null:
+		return
+
+	var path_follow = PathFollow3D.new()
+	path_follow.name = "PathFollow_%s" % origen_nombre
+	path_follow.loop = false
+	path_follow.rotation_mode = 4
+	path.add_child(path_follow)
+
 	var est = CharacterBody3D.new()
 
 	var mesh = MeshInstance3D.new()
@@ -35,10 +91,6 @@ func _spawn_movil(markers: Array, router: Node3D) -> void:
 	shape.height = 1.8
 	col.shape = shape
 	est.add_child(col)
-
-	var nav = NavigationAgent3D.new()
-	nav.name = "NavigationAgent3D"
-	est.add_child(nav)
 
 	var indicador = MeshInstance3D.new()
 	indicador.name = "IndicadorMovimiento"
@@ -58,19 +110,18 @@ func _spawn_movil(markers: Array, router: Node3D) -> void:
 	est.add_child(indicador)
 
 	est.set_script(load("res://estudiante_movil.gd"))
+	path_follow.add_child(est)
 
-	var marker: Marker3D = markers.pick_random()
-	var pos = marker.global_position + Vector3(randf_range(-2.0, 2.0), 0.0, randf_range(-2.0, 2.0))
-	pos.y = y_spawn
-	est.position = pos
-	var markers_tipados: Array[Marker3D] = []
-	markers_tipados.assign(markers)
-	est.todos_los_markers = markers_tipados
-	est.asignar_color_por_zona(pos, router, radio_cobertura)
+	est.position = Vector3.ZERO
+	path_follow.progress = 0.0
 
-	add_child(est)
+	est.todos_los_markers = markers
+	est.lista_routers = routers
+	est.radio_cobertura = radio_cobertura
+	est.marker_actual = marker_destino
+	est._ubicacion_actual = origen_nombre
 
-func _spawn_estatico(markers: Array, router: Node3D) -> void:
+func _spawn_estatico(markers: Array, routers: Array[Node3D]) -> void:
 	var est = Node3D.new()
 
 	var mesh = MeshInstance3D.new()
@@ -87,6 +138,7 @@ func _spawn_estatico(markers: Array, router: Node3D) -> void:
 	var pos = marker.global_position + Vector3(randf_range(-3.0, 3.0), 0.0, randf_range(-3.0, 3.0))
 	pos.y = y_spawn
 	est.position = pos
-	est.asignar_color_por_zona(pos, router, radio_cobertura)
+	est.lista_routers = routers
+	est.radio_cobertura = radio_cobertura
 
 	add_child(est)
