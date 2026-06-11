@@ -28,6 +28,7 @@ sky_material = SubResource("ProceduralSkyMaterial_mt2cc")
 background_mode = 2
 sky = SubResource("Sky_dgm2e")
 tonemap_mode = 2
+glow_enabled = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_x3esv"]
 size = Vector3(0.3, 0.1, 0.3)
@@ -243,28 +244,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.0027103, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.720137, 0.017786026, -28.728266)
 script = SubResource("GDScript_4qkwh")
 modem_principal = NodePath("../../../Modems/Modem_secundario")
-
-[node name="Router1" type="MeshInstance3D" parent="Routers_Oeste/Routers_oeste/Repetidor1" unique_id=1809310275]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29029083, -0.0035955906, -0.107782364)
-mesh = SubResource("BoxMesh_4qkwh")
-
-[node name="ZonaCalorFuerte" type="MeshInstance3D" parent="Routers_Oeste/Routers_oeste/Repetidor1/Router1" unique_id=1325505840]
-transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
-mesh = SubResource("TorusMesh_dt7fy")
-surface_material_override/0 = SubResource("StandardMaterial3D_dt7fy")
-script = ExtResource("12_ie88l")
-
-[node name="ZonaCalorPromedio" type="MeshInstance3D" parent="Routers_Oeste/Routers_oeste/Repetidor1/Router1" unique_id=87933291]
-transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
-mesh = SubResource("TorusMesh_dt7fy")
-script = ExtResource("12_ie88l")
-escala_actual = 4.0
-
-[node name="ZonaCalorDebil" type="MeshInstance3D" parent="Routers_Oeste/Routers_oeste/Repetidor1/Router1" unique_id=320763857]
-transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
-mesh = SubResource("TorusMesh_dt7fy")
-script = ExtResource("12_ie88l")
-escala_actual = 8.0
 
 [node name="Repetidor2" type="Node3D" parent="Routers_Oeste/Routers_oeste" unique_id=439257965 node_paths=PackedStringArray("modem_principal") groups=["grupo_routers"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.75411, 0.017786026, -6.113819)
@@ -2644,7 +2623,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.1858206, -0.08346863)
 script = ExtResource("16_x3esv")
 
 [node name="Camera3D" type="Camera3D" parent="Pivote_camara" unique_id=278807889]
-transform = Transform3D(-1, -7.161255e-08, 5.0143647e-08, 0, 0.57357645, 0.81915206, -8.742278e-08, 0.81915206, -0.57357645, 6.2679387e-06, 7.536553, -71.19773)
+transform = Transform3D(-1, -7.161255e-08, 5.0143647e-08, 0, 0.57357645, 0.81915206, -8.742278e-08, 0.81915206, -0.57357645, 13.403446, 7.536553, -71.19773)
 
 [node name="Piso_general" type="CSGBox3D" parent="." unique_id=929889987]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -3.135686, -0.83213997, -3.8332677)

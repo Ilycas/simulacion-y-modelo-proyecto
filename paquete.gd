@@ -22,7 +22,7 @@ func _process(delta: float) -> void:
 		return
 
 	
-	var velocidad_dinamica = estudiante_ref.velocidad_paquete_actual if estudiante_ref.velocidad_paquete_actual > 0 else 15.0
+	var velocidad_dinamica = estudiante_ref.velocidad_paquete_actual
 	var direction = global_position.direction_to(destino)
 	global_position += direction * velocidad_dinamica * delta
 
