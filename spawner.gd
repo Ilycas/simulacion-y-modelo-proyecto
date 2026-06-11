@@ -75,7 +75,11 @@ func _spawn_en_ruta(path: Path3D, markers: Array[Marker3D], routers: Array[Node3
 	path.add_child(path_follow)
 
 	var est = CharacterBody3D.new()
-
+	est.set_script(load("res://estudiante_movil.gd"))
+	
+	est.add_to_group("grupo_estudiantes") 
+	
+	path_follow.add_child(est)
 	var mesh = MeshInstance3D.new()
 	mesh.name = "MeshInstance3D"
 	var capsule = CapsuleMesh.new()

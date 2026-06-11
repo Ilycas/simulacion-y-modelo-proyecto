@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://g3poiqlvhnt4" path="res://Assets/PRINCIPALOFFICEshelf.fbx" id="15_wsgbh"]
 [ext_resource type="PackedScene" uid="uid://cqrjddy3226nm" path="res://Assets/PRINCIPALOFFICEplant.fbx" id="16_0a0nl"]
 [ext_resource type="PackedScene" uid="uid://cwrvpf002prjo" path="res://Assets/PRINCIPALOFFICEnotebook.fbx" id="16_wsgbh"]
+[ext_resource type="PackedScene" uid="uid://cwacsfgq5qvbo" path="res://Puerta_Baño.tscn" id="17_0a0nl"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_madera_sur_x"]
 size = Vector3(0.3, 3, 32.4)
@@ -179,9 +180,9 @@ size = Vector3(24.203382, 3, 32.375)
 material = SubResource("StandardMaterial3D_f7j0d")
 
 [node name="Puerta_recepcion" type="CSGBox3D" parent="." unique_id=1376986176]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.05703, -54.24401, -57.736897)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.05703, -54.354034, -57.736897)
 operation = 2
-size = Vector3(4.079297, 2.1, 0.85388184)
+size = Vector3(4.079297, 1.879956, 0.85388184)
 
 [node name="Puerta_Aula5" type="CSGBox3D" parent="." unique_id=2126019366]
 transform = Transform3D(-4.3711392e-08, 0, -1, 0, 1, 0, 0.9999999, 0, -4.3711392e-08, 57.917942, -54.33132, -32.19225)
@@ -199,32 +200,32 @@ operation = 2
 size = Vector3(2, 2.1, 0.854)
 
 [node name="Puerta_Aula1" type="CSGBox3D" parent="." unique_id=241912659]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.3711392e-08, 28.765785, -54.24401, -25.599293)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 0.9643775, 0, 1, 0, -4.3711392e-08, 28.765785, -54.441307, -25.599293)
 operation = 2
 size = Vector3(2, 2.1, 2.5)
 
 [node name="Puerta_Aula2" type="CSGBox3D" parent="." unique_id=1329090247]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 0.99999994, 0, -4.3711392e-08, 8.509639, -54.24401, -25.599293)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 0.9643775, 0, 0.99999994, 0, -4.3711392e-08, 8.509639, -54.441307, -25.599293)
 operation = 2
 size = Vector3(2, 2.1, 2.5)
 
 [node name="Puerta_Aula3" type="CSGBox3D" parent="." unique_id=600460707]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 0.99999994, 0, -4.3711392e-08, -14.374019, -54.24401, -25.599295)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 0.9643775, 0, 0.99999994, 0, -4.3711392e-08, -14.374019, -54.441307, -25.599295)
 operation = 2
 size = Vector3(2, 2.1, 2.5)
 
 [node name="Puerta_Aula4" type="CSGBox3D" parent="." unique_id=901010825]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 0.99999994, 0, -4.3711392e-08, -38.778732, -54.24401, -25.599297)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 0.9643775, 0, 0.99999994, 0, -4.3711392e-08, -38.778732, -54.441307, -25.599297)
 operation = 2
 size = Vector3(2, 2.1, 2.5)
 
 [node name="Puerta_Aula7" type="CSGBox3D" parent="." unique_id=969238388]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 0.99999994, 0, -4.3711392e-08, -60.757496, -54.24401, -25.599298)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 0.9643775, 0, 0.99999994, 0, -4.3711392e-08, -60.757496, -54.441307, -25.599298)
 operation = 2
 size = Vector3(2, 2.1, 2.5)
 
 [node name="Puerta_recepcion2" type="CSGBox3D" parent="." unique_id=1465530856]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.168728, -54.24401, -24.903818)
+transform = Transform3D(1, 0, 0, 0, 0.9643775, 0, 0, 0, 1, 45.168728, -54.441307, -24.903818)
 operation = 2
 size = Vector3(4.079297, 2.1, 0.85388184)
 
@@ -1053,6 +1054,43 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.626072, -55.09092, -41.900
 [node name="PRINCIPALOFFICEplant2" parent="." unique_id=90334958 instance=ExtResource("16_0a0nl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.792793, -55.09092, -41.900124)
 
-[node name="Techo" type="CSGBox3D" parent="." unique_id=2063608668]
+[node name="Techo" type="CSGBox3D" parent="." unique_id=2063608668 groups=["grupo_techo"]]
 transform = Transform3D(-4.371139e-08, 0, 0.9999999, 0, 1, 0, -1, 0, -4.3711385e-08, -15.223452, -52.480038, -41.519463)
 size = Vector3(33.34035, 0.5343491, 146.7043)
+
+[node name="Base_Puerta3" parent="." unique_id=1107398468 instance=ExtResource("17_0a0nl")]
+transform = Transform3D(2.3036096, 0, 0, 0, 1.1251987, 0, -1.2551674e-14, 0, 1.4145122, -37.494865, -54.640778, -25.062523)
+
+[node name="Base_Puerta5" parent="." unique_id=1787797231 instance=ExtResource("17_0a0nl")]
+transform = Transform3D(2.3036096, 0, 0, 0, 1.1251987, 0, -1.2551674e-14, 0, 1.4145122, -13.0875635, -54.640778, -25.062523)
+
+[node name="Base_Puerta6" parent="." unique_id=948032915 instance=ExtResource("17_0a0nl")]
+transform = Transform3D(2.3036096, 0, 0, 0, 1.1251987, 0, -1.2551674e-14, 0, 1.4145122, 9.804166, -54.640778, -25.062523)
+
+[node name="Base_Puerta7" parent="." unique_id=782432318 instance=ExtResource("17_0a0nl")]
+transform = Transform3D(2.3036096, 0, 0, 0, 1.1251987, 0, -1.2551674e-14, 0, 1.4145122, 30.03582, -54.640778, -25.062523)
+
+[node name="Base_Puerta8" parent="." unique_id=1752904206 instance=ExtResource("17_0a0nl")]
+transform = Transform3D(-3.2068295, 0, 0.70725614, 0, 1.1251987, 0, -1.8514642, 0, -1.2250035, 47.21142, -54.640778, -25.062523)
+script = null
+
+[node name="Base_Puerta11" parent="." unique_id=1806775890 instance=ExtResource("17_0a0nl")]
+transform = Transform3D(-1.5060809, 0, -0.707256, 0, 1.1251987, 0, 0.8695361, 0, -1.2250035, 47.12246, -54.640778, -58.027977)
+script = null
+
+[node name="Base_Puerta12" parent="." unique_id=414436451 instance=ExtResource("17_0a0nl")]
+transform = Transform3D(-1.2242422, 0, 1.0002111, 0, 1.1251987, 0, -1.2242422, 0, -1.0002111, 41.74726, -54.640778, -59.45903)
+script = null
+
+[node name="Base_Puerta13" parent="." unique_id=1312761972 instance=ExtResource("17_0a0nl")]
+transform = Transform3D(0, 0, 1.4145122, 0, 1.1251987, 0, -1.8014822, 0, 0, 33.03025, -54.4502, -51.86029)
+script = null
+
+[node name="Base_Puerta4" parent="." unique_id=1818658888 instance=ExtResource("17_0a0nl")]
+transform = Transform3D(2.3036096, 0, 0, 0, 1.1251987, 0, -1.2551674e-14, 0, 1.4145122, -59.455894, -54.640778, -25.062523)
+
+[node name="Base_Puerta9" parent="." unique_id=1061824861 instance=ExtResource("17_0a0nl")]
+transform = Transform3D(-7.623154e-08, 0, -1.4145122, 0, 1.1620429, 0, 1.7439746, 0, -6.183029e-08, 58.042973, -54.520676, -49.63559)
+
+[node name="Base_Puerta10" parent="." unique_id=714092948 instance=ExtResource("17_0a0nl")]
+transform = Transform3D(-7.872844e-08, 0, -1.4145122, 0, 1.1620429, 0, 1.801097, 0, -6.183029e-08, 58.042973, -54.520676, -31.205633)

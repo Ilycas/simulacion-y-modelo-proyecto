@@ -66,10 +66,12 @@ size = Vector3(4.2620115, 2.7175283, 10.244153)
 material = SubResource("StandardMaterial3D_unmlh")
 
 [node name="Base_Puerta" parent="Base_Baño_Adolescentes" unique_id=1107398468 instance=ExtResource("2_okreg")]
-transform = Transform3D(1.2116582, 0, 0, 0, 1.2820003, 0, 0, 0, 1, -1.961422, 0, -5.287277)
+transform = Transform3D(-0.96498144, 0, 0.60475194, 0, 1.2820003, 0, -0.7327527, 0, -0.7964139, -3.2946625, 0, -5.287277)
+script = null
 
 [node name="Base_Puerta2" parent="Base_Baño_Adolescentes" unique_id=630711346 instance=ExtResource("2_okreg")]
-transform = Transform3D(0.96978617, 0, 0, 0, 1.1310458, 0, 0, 0, 0.97570556, 2.9521828, 0.13813072, -5.287277)
+transform = Transform3D(0.47756028, 0, 0.8492026, 0, 1.1310458, 0, -0.84405065, 0, 0.48047522, 1.9115219, 0.13813072, -5.287277)
+script = null
 
 [node name="toiletbasictoilet14" parent="." unique_id=1735108471 instance=ExtResource("6_1ffyo")]
 transform = Transform3D(-1.024461, 0, -0.018153647, 0, 0.8143921, 0, 0.018400671, 0, -1.010708, 32.051346, -0.13296196, 45.566177)
