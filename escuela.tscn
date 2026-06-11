@@ -558,6 +558,11 @@ size = Vector3(11.906778, 2.7835712, 0.29144287)
 transform = Transform3D(-4.3711395e-08, 0, -1.0000001, 0, 1, 0, 1.0000001, 0, -4.3712305e-08, -51.839592, 0.6096659, -58.329937)
 size = Vector3(11.906778, 2.7835712, 0.29144287)
 
+[node name="CSGBox3D3" type="CSGBox3D" parent="PatioFrontal" unique_id=1279672962]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -46.957222, 0, -64.033134)
+operation = 2
+size = Vector3(9.48822, 1, 1)
+
 [node name="PatioFrontal2" type="CSGCombiner3D" parent="." unique_id=341162371]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
 
@@ -612,7 +617,7 @@ radius = 0.44091797
 height = 3.0223465
 
 [node name="Pilar_de_reja11" type="CSGCylinder3D" parent="PatioFrontal2" unique_id=939862689]
-transform = Transform3D(-4.3711385e-08, -4.3711385e-08, 0.99999994, -4.371139e-08, 0.9999999, 4.371139e-08, -1.0000001, -4.3712934e-08, -4.371293e-08, 14.602572, 0.99627113, -63.92865)
+transform = Transform3D(-4.3711385e-08, -4.3711385e-08, 0.99999994, -4.371139e-08, 0.9999999, 4.371139e-08, -1.0000001, -4.3712934e-08, -4.371293e-08, 15.317972, 0.9962712, -63.92865)
 radius = 0.44091797
 height = 3.0223465
 
@@ -642,8 +647,8 @@ radius = 0.44091797
 height = 3.0223465
 
 [node name="Borde_De_Techo4" type="CSGBox3D" parent="PatioFrontal2" unique_id=1598142840]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -13.539692, 2.2606149, -63.86633)
-size = Vector3(69.046684, 0.53749084, 0.06484604)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -10.420844, 2.2606149, -63.86634)
+size = Vector3(62.808987, 0.53749084, 0.06484604)
 
 [node name="Borde_De_Techo5" type="CSGBox3D" parent="PatioFrontal2" unique_id=1649984342]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 40.94888, 2.2606149, -63.923466)
@@ -656,8 +661,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -15.391464, -0.299209
 size = Vector3(65.39099, 0.77835083, 0.29144287)
 
 [node name="Borde_De_Techo" type="CSGBox3D" parent="Exterior" unique_id=697907587]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 2.4758377, 2.2606149, -52.73463)
-size = Vector3(101.07774, 0.53749084, 0.68136597)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 2.4758377, 2.2606149, -53.21137)
+size = Vector3(101.07774, 0.53749084, 1.6348534)
 
 [node name="Borde_De_Techo2" type="CSGBox3D" parent="Exterior" unique_id=499722806]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 36.419598, 2.156334, -60.254387)
