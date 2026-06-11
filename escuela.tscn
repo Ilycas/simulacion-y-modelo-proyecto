@@ -1,8 +1,6 @@
 [gd_scene format=3 uid="uid://dlf5sdhwkuqdn"]
 
-[ext_resource type="Script" uid="uid://bhc3htsqyd8aw" path="res://estudiante.gd" id="1_awtwk"]
 [ext_resource type="PackedScene" uid="uid://c6tihpamj7gw2" path="res://Bloque_sur.tscn" id="3_jdjiw"]
-[ext_resource type="PackedScene" uid="uid://cvqiiw1vx312y" path="res://paquete.tscn" id="3_wkv31"]
 [ext_resource type="PackedScene" uid="uid://2w0tdp533ecb" path="res://bloque_oeste.tscn" id="4_oxlh1"]
 [ext_resource type="PackedScene" uid="uid://bylsoyawfw17x" path="res://bloque_central.tscn" id="5_mt2cc"]
 [ext_resource type="PackedScene" uid="uid://c6vm45srdiuqd" path="res://bloque_banos_patio.tscn" id="6_dgm2e"]
@@ -16,6 +14,8 @@
 [ext_resource type="Script" uid="uid://cd5qt4h4wycc3" path="res://spawner.gd" id="13_spawner"]
 [ext_resource type="Script" uid="uid://bwsvopgn6l3u8" path="res://enlace_visual.gd" id="14_bideo"]
 [ext_resource type="Script" uid="uid://bdfa7mnv1y528" path="res://modem_principal.gd" id="15_wogku"]
+[ext_resource type="Script" uid="uid://dafkee3ylp326" path="res://pivote_camara.gd" id="16_x3esv"]
+[ext_resource type="Script" uid="uid://d1j1ti1q1d3f" path="res://ui_control_red.gd" id="17_j2u5w"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mt2cc"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -28,14 +28,6 @@ sky_material = SubResource("ProceduralSkyMaterial_mt2cc")
 background_mode = 2
 sky = SubResource("Sky_dgm2e")
 tonemap_mode = 2
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_awtwk"]
-radius = 0.2755
-height = 0.551
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_awtwk"]
-radius = 0.3
-height = 0.6
 
 [sub_resource type="BoxMesh" id="BoxMesh_x3esv"]
 size = Vector3(0.3, 0.1, 0.3)
@@ -193,22 +185,6 @@ environment = SubResource("Environment_nq0on")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2117702403]
 transform = Transform3D(-0.25, 0.86602545, 0.43301272, 0.8660256, -5.9604645e-08, 0.49999988, 0.43301266, 0.5000001, -0.7499999, -5.900272, 30.16484, 10.2195635)
 shadow_enabled = true
-
-[node name="Estudiante1" type="CharacterBody3D" parent="." unique_id=2075333059]
-transform = Transform3D(-0.8660254, 0, 0.5, 0, 1, 0, -0.50000006, 0, -0.8660253, 24.753237, 0.53054523, 33.020306)
-script = ExtResource("1_awtwk")
-escena_paquete = ExtResource("3_wkv31")
-
-[node name="Camera3D" type="Camera3D" parent="Estudiante1" unique_id=956560710]
-transform = Transform3D(0.7071068, 0, 0.7071067, 0, 1, 0, -0.7071067, 0, 0.7071068, 0, 0, 0)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Estudiante1" unique_id=608763072]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.07420933, -0.24250364, -0.0673691)
-mesh = SubResource("CapsuleMesh_awtwk")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Estudiante1" unique_id=1263994945]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.101014614, -0.20983505, -0.07141573)
-shape = SubResource("CapsuleShape3D_awtwk")
 
 [node name="Bloque_sur" parent="." unique_id=1846529155 instance=ExtResource("3_jdjiw")]
 transform = Transform3D(0.57015145, 0, 0, 0, 1, 0, 0, 0, 0.9695643, -1.4780607, 54.86968, 4.016754)
@@ -2477,3 +2453,31 @@ height = 2.2045898
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.46889955, 0.968555, -0.042803526)
 radius = 0.051757813
 height = 2.2045898
+
+[node name="UI_control_red" type="CanvasLayer" parent="." unique_id=160759712 node_paths=PackedStringArray("antena_principal")]
+script = ExtResource("17_j2u5w")
+antena_principal = NodePath("../Antena/Antena_Principal")
+
+[node name="Panel" type="Panel" parent="UI_control_red" unique_id=85552297]
+offset_right = 77.0
+offset_bottom = 32.0
+
+[node name="HSlider" type="HSlider" parent="UI_control_red/Panel" unique_id=722910542]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 7.0
+offset_right = 68.0
+offset_bottom = 28.0
+
+[node name="Label" type="Label" parent="UI_control_red/Panel" unique_id=1150791148]
+layout_mode = 0
+offset_top = 32.0
+offset_right = 77.0
+offset_bottom = 55.0
+
+[node name="Pivote_camara" type="Node3D" parent="." unique_id=1781339083]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.1858206, -0.08346863)
+script = ExtResource("16_x3esv")
+
+[node name="Camera3D" type="Camera3D" parent="Pivote_camara" unique_id=278807889]
+transform = Transform3D(-1, -7.161255e-08, 5.0143647e-08, 0, 0.57357645, 0.81915206, -8.742278e-08, 0.81915206, -0.57357645, 6.828401e-06, 10.366474, -77.60868)
