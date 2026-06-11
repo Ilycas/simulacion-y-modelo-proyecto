@@ -79,7 +79,7 @@ func _spawn_en_ruta(path: Path3D, markers: Array[Marker3D], routers: Array[Node3
 	var mesh = MeshInstance3D.new()
 	mesh.name = "MeshInstance3D"
 	var capsule = CapsuleMesh.new()
-	capsule.height = 1.8
+	capsule.height = 0.8
 	capsule.radius = 0.4
 	mesh.mesh = capsule
 	est.add_child(mesh)
@@ -88,7 +88,7 @@ func _spawn_en_ruta(path: Path3D, markers: Array[Marker3D], routers: Array[Node3
 	col.name = "CollisionShape3D"
 	var shape = CapsuleShape3D.new()
 	shape.radius = 0.4
-	shape.height = 1.8
+	shape.height = 0.8
 	col.shape = shape
 	est.add_child(col)
 
@@ -127,7 +127,7 @@ func _spawn_estatico(markers: Array, routers: Array[Node3D]) -> void:
 	var mesh = MeshInstance3D.new()
 	mesh.name = "MeshInstance3D"
 	var capsule = CapsuleMesh.new()
-	capsule.height = 1.8
+	capsule.height = 0.8
 	capsule.radius = 0.4
 	mesh.mesh = capsule
 	est.add_child(mesh)

@@ -34,11 +34,11 @@ size = Vector3(0.3, 0.1, 0.3)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_awtwk"]
 radius = 0.2755
-height = 0.901
+height = 0.551
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_awtwk"]
 radius = 0.3
-height = 1.6
+height = 0.6
 
 [sub_resource type="GDScript" id="GDScript_4qkwh"]
 script/source = "extends Node3D
@@ -214,13 +214,6 @@ shape = SubResource("CapsuleShape3D_awtwk")
 [node name="Camera3D" type="Camera3D" parent="Estudiante" unique_id=304028374]
 transform = Transform3D(-0.99961114, -0.014953572, 0.023538508, 0.012683291, 0.5079338, 0.8613028, -0.024835555, 0.8612664, -0.5075466, -34.121445, 19.817642, 48.220413)
 fov = 85.4
-
-[node name="Sprite3D" type="Sprite3D" parent="." unique_id=891488879]
-transform = Transform3D(-0.49274227, 6.5681137e-15, -7.8032976e-08, 3.5011444e-15, 1, -7.803299e-08, 4.307689e-08, -8.742278e-08, -0.8925933, -0.6045952, -0.72933304, 0.24977213)
-offset = Vector2(0, -0.1)
-pixel_size = 0.201
-axis = 1
-texture = ExtResource("2_7pst4")
 
 [node name="Bloque_sur" parent="." unique_id=1846529155 instance=ExtResource("3_jdjiw")]
 transform = Transform3D(0.57015145, 0, 0, 0, 1, 0, 0, 0, 0.9695643, -1.4780607, 54.86968, 4.016754)
