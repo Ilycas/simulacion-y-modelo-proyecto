@@ -124,7 +124,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.207361, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.622911, -0.14500761, 23.710278)
 
 [node name="Piso_Pasillo1" type="CSGBox3D" parent="." unique_id=1827170110]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.2754, -0.79383063, -15.277748)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -9.275399, -0.79383063, -15.277748)
 size = Vector3(61.75869, 0.43017578, 9.6138)
 material = ExtResource("11_4qkwh")
 
@@ -542,6 +542,18 @@ size = Vector3(21.537231, 0.1, 12.533203)
 transform = Transform3D(0.999952, 0, 0, 0, 0.9999635, 0, 0, 0, 0.99999976, -17.353731, -0.75345707, -58.03978)
 size = Vector3(69.182076, 0.1, 12.533203)
 
+[node name="Borde_inferior" type="CSGBox3D" parent="PatioFrontal" unique_id=2063893809]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -13.424603, -0.34607697, -64.157364)
+size = Vector3(68.60219, 0.8720856, 0.29144287)
+
+[node name="Borde_inferior2" type="CSGBox3D" parent="PatioFrontal" unique_id=816845624]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 40.343407, -0.34607697, -64.157364)
+size = Vector3(25.249184, 0.8720856, 0.29144287)
+
+[node name="Borde_inferior3" type="CSGBox3D" parent="PatioFrontal" unique_id=2049311203]
+transform = Transform3D(-4.3711395e-08, 0, -1.0000001, 0, 1, 0, 1.0000001, 0, -4.37123e-08, 52.866196, 0.6096659, -58.329926)
+size = Vector3(11.906778, 2.7835712, 0.29144287)
+
 [node name="Exterior" type="CSGCombiner3D" parent="." unique_id=1540722455]
 
 [node name="Borde_inferior" type="CSGBox3D" parent="Exterior" unique_id=716820306]
@@ -549,12 +561,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -15.391464, -0.299209
 size = Vector3(65.39099, 0.77835083, 0.29144287)
 
 [node name="Borde_De_Techo" type="CSGBox3D" parent="Exterior" unique_id=697907587]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -7.909542, 2.2606149, -52.73463)
-size = Vector3(80.306984, 0.53749084, 0.68136597)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 2.4758377, 2.2606149, -52.73463)
+size = Vector3(101.07774, 0.53749084, 0.68136597)
+
+[node name="Borde_De_Techo2" type="CSGBox3D" parent="Exterior" unique_id=499722806]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 36.419598, 2.156334, -60.254387)
+size = Vector3(11.69325, 0.6076126, 0.68136597)
+
+[node name="Borde_De_Techo3" type="CSGBox3D" parent="Exterior" unique_id=686699944]
+transform = Transform3D(-4.371139e-08, 0, -0.9999999, 0, 1, 0, 0.9999999, 0, -4.371138e-08, 41.80725, 2.156334, -56.512318)
+size = Vector3(8.384508, 0.6076126, 0.68136597)
 
 [node name="Techo3" type="CSGBox3D" parent="Exterior" unique_id=571417245]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 36.4287, 2.2490582, -56.458466)
-size = Vector3(11.690021, 0.5143776, 8.958645)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 36.4287, 2.3549476, -56.455296)
+size = Vector3(11.690021, 0.30259895, 8.952308)
 
 [node name="Pilar" type="CSGBox3D" parent="Exterior" unique_id=802262823]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 5.19079, 0.8138714, -52.555237)
@@ -569,20 +589,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 31.43541, 0.8138714, 
 size = Vector3(1.5892029, 3.0519485, 0.68136597)
 
 [node name="Pilar8" type="CSGBox3D" parent="Exterior" unique_id=1339065543]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 31.231405, 0.8138714, -60.205513)
-size = Vector3(1.1811981, 3.0519485, 1.436821)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 31.059393, 0.8138714, -60.205513)
+size = Vector3(0.8371811, 3.0519485, 1.436821)
 
 [node name="Pilar11" type="CSGBox3D" parent="Exterior" unique_id=1550617234]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 17.376356, 0.8138714, -60.205513)
 size = Vector3(1.1811981, 3.0519485, 1.436821)
 
 [node name="Pilar9" type="CSGBox3D" parent="Exterior" unique_id=1323733702]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 36.160263, 0.8138714, -60.205513)
-size = Vector3(1.2667694, 3.0519485, 1.436821)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 36.080322, 0.8138714, -60.205513)
+size = Vector3(1.1068954, 3.0519485, 1.436821)
 
 [node name="Pilar10" type="CSGBox3D" parent="Exterior" unique_id=412591924]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 41.666317, 0.8138714, -60.205513)
-size = Vector3(1.186203, 3.0519485, 1.436821)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 41.788307, 0.8138714, -60.205513)
+size = Vector3(0.9422226, 3.0519485, 1.436821)
 
 [node name="Pilar2" type="CSGBox3D" parent="Exterior" unique_id=1052142161]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -7.9388657, 0.8138714, -52.555237)
@@ -644,16 +664,24 @@ transform = Transform3D(0.9999999, 0, -3.5527137e-15, 0, 1, 0, -3.5527133e-15, 0
 size = Vector3(100.945526, 1.3548317, 0.29144287)
 
 [node name="Techo3" type="CSGBox3D" parent="Exterior_central" unique_id=529349959]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -4.433727, -1.4188347, -14.745074)
-size = Vector3(71.34675, 0.29818392, 10.312819)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -4.433727, -1.4188347, -14.897826)
+size = Vector3(71.34675, 0.29818392, 10.618323)
 
 [node name="Techo4" type="CSGBox3D" parent="Exterior_central" unique_id=1674908758]
-transform = Transform3D(-4.371139e-08, 0, -0.9999999, 0, 1, 0, 0.9999999, 0, -4.371138e-08, 25.723831, -1.4188347, 13.334007)
-size = Vector3(46.161636, 0.29818392, 10.782508)
+transform = Transform3D(-4.371139e-08, 0, -0.9999999, 0, 1, 0, 0.9999999, 0, -4.371138e-08, 25.856575, -1.4188347, 13.334007)
+size = Vector3(46.161636, 0.29818392, 11.047993)
 
 [node name="Borde_De_Techo" type="CSGBox3D" parent="Exterior_central" unique_id=326957630]
 transform = Transform3D(-4.371139e-08, 0, -0.9999999, 0, 1, 0, 0.9999999, 0, -4.371138e-08, 21.018671, -1.5499654, 41.294716)
 size = Vector3(10.440351, 0.53749084, 1.3337936)
+
+[node name="Borde_De_Techo3" type="CSGBox3D" parent="Exterior_central" unique_id=1962288420]
+transform = Transform3D(-4.371139e-08, 0, -0.9999999, 0, 1, 0, 0.9999999, 0, -4.371138e-08, 20.957722, -1.8272433, 12.613567)
+size = Vector3(45.353477, 0.53749084, 0.9276309)
+
+[node name="Borde_De_Techo4" type="CSGBox3D" parent="Exterior_central" unique_id=1154781834]
+transform = Transform3D(-0.9999999, 0, 8.742276e-08, 0, 1, 0, -8.742276e-08, 0, -0.9999999, -9.447248, -1.8272433, -10.164341)
+size = Vector3(59.85571, 0.53749084, 0.8642061)
 
 [node name="Borde_De_Techo2" type="CSGBox3D" parent="Exterior_central" unique_id=1370981197]
 transform = Transform3D(0.9999999, 0, 3.5527137e-15, 0, 1, 0, 3.5527137e-15, 0, 0.9999999, 25.516403, -1.5499654, 47.1892)
