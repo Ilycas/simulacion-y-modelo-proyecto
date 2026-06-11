@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bdbkt13tt5diu" path="res://Asset 4.png" id="1_mq1vq"]
 [ext_resource type="Texture2D" uid="uid://dut5446mpxycr" path="res://WoodFloor005_1K-PNG_Color.png" id="2_hht8c"]
+[ext_resource type="PackedScene" uid="uid://cwacsfgq5qvbo" path="res://Puerta_Baño.tscn" id="3_eiugc"]
 [ext_resource type="PackedScene" uid="uid://cysfl0gl31gk2" path="res://Assets/blackboardbig_1.fbx" id="3_sq5bj"]
 [ext_resource type="PackedScene" uid="uid://c5j7e8ww3ihtm" path="res://Assets/chairtable.fbx" id="4_eiugc"]
 
@@ -203,6 +204,30 @@ size = Vector3(4.0337524, 1.5666015, 0.71487427)
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.3711392e-08, -4.9158554, -0.3288474, -24.341146)
 operation = 2
 size = Vector3(2.010254, 2.1, 0.71487427)
+
+[node name="Base_Puerta3" parent="Bloque" unique_id=1107398468 instance=ExtResource("3_eiugc")]
+transform = Transform3D(-1.297015, 0, 1.0002111, 0, 1.115795, 0, -1.297015, 0, -1.0002111, -5.0414248, -0.51968336, -41.121025)
+script = null
+
+[node name="Base_Puerta4" parent="Bloque" unique_id=1901160398 instance=ExtResource("3_eiugc")]
+transform = Transform3D(-1.297015, 0, 1.0002111, 0, 1.115795, 0, -1.297015, 0, -1.0002111, -5.0414257, -0.51968336, -23.28558)
+script = null
+
+[node name="Base_Puerta5" parent="Bloque" unique_id=1945195625 instance=ExtResource("3_eiugc")]
+transform = Transform3D(-1.297015, 0, 1.0002111, 0, 1.115795, 0, -1.297015, 0, -1.0002111, -5.041426, -0.51968336, -15.120235)
+script = null
+
+[node name="Base_Puerta6" parent="Bloque" unique_id=651693379 instance=ExtResource("3_eiugc")]
+transform = Transform3D(-1.297015, 0, 1.0002111, 0, 1.115795, 0, -1.297015, 0, -1.0002111, -5.0414276, -0.51968336, 11.007759)
+script = null
+
+[node name="Base_Puerta7" parent="Bloque" unique_id=60763875 instance=ExtResource("3_eiugc")]
+transform = Transform3D(-1.297015, 0, 1.0002111, 0, 1.115795, 0, -1.297015, 0, -1.0002111, -5.041428, -0.51968336, 28.693802)
+script = null
+
+[node name="Base_Puerta8" parent="Bloque" unique_id=898116627 instance=ExtResource("3_eiugc")]
+transform = Transform3D(-1.297015, 0, 1.0002111, 0, 1.115795, 0, -1.297015, 0, -1.0002111, -5.0414286, -0.51968336, 37.663612)
+script = null
 
 [node name="Puerta_Administracion2" type="CSGBox3D" parent="Bloque" unique_id=1676661982]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.3711392e-08, -4.915856, -0.3288474, -16.115759)
