@@ -37,9 +37,9 @@ size = Vector3(10.234, 2.2745342, 4.349365)
 material = SubResource("StandardMaterial3D_8t8c5")
 
 [node name="Resta_Baño2" type="CSGBox3D" parent="." unique_id=826302942]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.42547, 0.8414678, -17.686779)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.42547, 0.7857582, -17.686779)
 operation = 2
-size = Vector3(10.234, 2.2745342, 4.349365)
+size = Vector3(10.234, 2.480804, 4.349365)
 material = SubResource("StandardMaterial3D_u43yo")
 
 [node name="Puerta_Baño_Niña" type="CSGBox3D" parent="." unique_id=66203085]
@@ -53,7 +53,7 @@ operation = 2
 size = Vector3(1, 1.6676025, 0.9)
 
 [node name="Piso_Baño_Niños" type="CSGBox3D" parent="." unique_id=245975387]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -36.437664, -0.19748217, -13.051415)
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -36.437664, -0.26639605, -13.051415)
 size = Vector3(102.508606, 0.001, 43.268677)
 material = SubResource("StandardMaterial3D_aoo5m")
 
@@ -63,34 +63,16 @@ size = Vector3(103.106964, 0.001, 44.911804)
 material = SubResource("StandardMaterial3D_wbbsh")
 
 [node name="toiletbasictoilet" parent="." unique_id=1844027235 instance=ExtResource("4_aoo5m")]
-transform = Transform3D(-0.88089716, 0, -8.742278e-08, 0, 0.6169156, 0, 7.7010476e-08, 0, -1, -32.130547, 0.19317138, -11.528541)
-
-[node name="toiletbasictoilet2" parent="." unique_id=87236188 instance=ExtResource("4_aoo5m")]
-transform = Transform3D(-0.88089716, 0, -8.742278e-08, 0, 0.6169156, 0, 7.7010476e-08, 0, -1, -34.18128, 0.19317138, -11.528541)
-
-[node name="toiletbasictoilet3" parent="." unique_id=100735538 instance=ExtResource("4_aoo5m")]
-transform = Transform3D(-0.88089716, 0, -8.742278e-08, 0, 0.6169156, 0, 7.7010476e-08, 0, -1, -36.09474, 0.19317138, -11.528541)
+transform = Transform3D(-7.4505806e-08, 0, 0.99999994, 0, 0.6169156, 0, -0.88089716, 0, -1.1920929e-07, -40.559433, 0.34040618, -14.381757)
 
 [node name="toiletbasictoilet4" parent="." unique_id=459054569 instance=ExtResource("4_aoo5m")]
-transform = Transform3D(-0.88089716, 0, -8.742278e-08, 0, 0.6169156, 0, 7.7010476e-08, 0, -1, -38.145473, 0.19317138, -11.528541)
-
-[node name="toiletbasictoilet5" parent="." unique_id=1503015654 instance=ExtResource("4_aoo5m")]
-transform = Transform3D(-0.88089716, 0, -8.742278e-08, 0, 0.6169156, 0, 7.7010476e-08, 0, -1, -40.300373, 0.19317138, -11.528541)
-
-[node name="toiletbasictoilet6" parent="." unique_id=79315320 instance=ExtResource("4_aoo5m")]
-transform = Transform3D(-0.88089716, 0, -8.742278e-08, 0, 0.6169156, 0, 7.7010476e-08, 0, -1, -32.130547, 0.19317138, -16.142366)
-
-[node name="toiletbasictoilet7" parent="." unique_id=483381132 instance=ExtResource("4_aoo5m")]
-transform = Transform3D(-0.88089716, 0, -8.742278e-08, 0, 0.6169156, 0, 7.7010476e-08, 0, -1, -34.18128, 0.19317138, -16.142366)
-
-[node name="toiletbasictoilet8" parent="." unique_id=1083275099 instance=ExtResource("4_aoo5m")]
-transform = Transform3D(-0.88089716, 0, -8.742278e-08, 0, 0.6169156, 0, 7.7010476e-08, 0, -1, -36.09474, 0.19317138, -16.142366)
+transform = Transform3D(-3.8505238e-08, 0, 1, 0, 0.6169156, 0, -0.88089716, 0, -4.371139e-08, -40.835316, 0.19317138, -12.446183)
 
 [node name="toiletbasictoilet9" parent="." unique_id=1529932086 instance=ExtResource("4_aoo5m")]
-transform = Transform3D(-0.88089716, 0, -8.742278e-08, 0, 0.6169156, 0, 7.7010476e-08, 0, -1, -38.145473, 0.19317138, -16.142366)
+transform = Transform3D(-3.8505238e-08, 0, 1, 0, 0.6169156, 0, -0.88089716, 0, -4.371139e-08, -41.001038, 0.19317138, -16.433144)
 
 [node name="toiletbasictoilet10" parent="." unique_id=2128090405 instance=ExtResource("4_aoo5m")]
-transform = Transform3D(-0.88089716, 0, -8.742278e-08, 0, 0.6169156, 0, 7.7010476e-08, 0, -1, -40.300373, 0.19317138, -16.142366)
+transform = Transform3D(-3.8505238e-08, 0, 1, 0, 0.6169156, 0, -0.88089716, 0, -4.371139e-08, -40.899742, 0.19317138, -18.695723)
 
 [node name="Base_Puerta" parent="." unique_id=1107398468 instance=ExtResource("5_wbbsh")]
 transform = Transform3D(-3.7166583e-08, 0, -1.4145122, 0, 0.9112446, 0, 0.85027236, 0, -6.183029e-08, -31.115076, 0.42366672, -12.590151)
@@ -101,3 +83,49 @@ transform = Transform3D(-3.7166583e-08, 0, -1.4145122, 0, 0.9112446, 0, 0.850272
 [node name="Techo" type="CSGBox3D" parent="." unique_id=2048082073]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -36.49074, 2.1426806, -15.254168)
 size = Vector3(11.1129465, 0.537, 9.746153)
+
+[node name="Estante de baño" type="Node3D" parent="." unique_id=2105789585]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4.097659, 0.31863594, -42.1689)
+
+[node name="Pared2" type="CSGBox3D" parent="Estante de baño" unique_id=225558132]
+transform = Transform3D(-0.018153545, 0, 1.0244596, 0, 0.8143359, 0, -1.0107065, 0, -0.018400613, 28.931076, 0.3448657, 44.985935)
+size = Vector3(2.531128, 2.2322998, 0.0625)
+
+[node name="Pared5" type="CSGBox3D" parent="Estante de baño" unique_id=1425944041]
+transform = Transform3D(-0.018153545, 0, 1.0244596, 0, 0.8143359, 0, -1.0107065, 0, -0.018400613, 31.199986, 0.3703634, 44.945183)
+size = Vector3(2.531128, 2.2949219, 0.0625)
+
+[node name="Pared6" type="CSGBox3D" parent="Estante de baño" unique_id=1586215725]
+transform = Transform3D(-0.018153545, 0, 1.0244596, 0, 0.8143335, 0, -1.0107065, 0, -0.018400613, 26.994644, 0.16110645, 45.020718)
+size = Vector3(2.531128, 2.6628418, 0.0625)
+
+[node name="Pared3" type="CSGBox3D" parent="Estante de baño" unique_id=1304981645]
+transform = Transform3D(0.8962813, 0, -0.49650812, 0, 0.81425285, 0, 0.48941648, 0, 0.8844941, 30.287518, 0.30295652, 43.261677)
+size = Vector3(2.2140994, 1.6217651, 0.0625)
+
+[node name="Pared4" type="CSGBox3D" parent="Estante de baño" unique_id=1544450763]
+transform = Transform3D(0.7372385, 0, -0.71156543, 0, 0.81426746, 0, 0.7016646, 0, 0.7276866, 28.372105, 0.3029569, 43.549862)
+size = Vector3(1.6297741, 1.6217651, 0.0625)
+
+[node name="Estante de baño2" type="Node3D" parent="." unique_id=1976444399]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4.097659, 0.31863594, -46.674576)
+
+[node name="Pared2" type="CSGBox3D" parent="Estante de baño2" unique_id=1705995019]
+transform = Transform3D(-0.018153545, 0, 1.0244596, 0, 0.8143359, 0, -1.0107065, 0, -0.018400613, 28.931076, 0.3448657, 44.985935)
+size = Vector3(2.531128, 2.2322998, 0.0625)
+
+[node name="Pared5" type="CSGBox3D" parent="Estante de baño2" unique_id=1069466868]
+transform = Transform3D(-0.018153545, 0, 1.0244596, 0, 0.8143359, 0, -1.0107065, 0, -0.018400613, 31.199986, 0.3703634, 44.945183)
+size = Vector3(2.531128, 2.2949219, 0.0625)
+
+[node name="Pared6" type="CSGBox3D" parent="Estante de baño2" unique_id=419966456]
+transform = Transform3D(-0.018153545, 0, 1.0244596, 0, 0.8143335, 0, -1.0107065, 0, -0.018400613, 26.994644, 0.16110645, 45.020718)
+size = Vector3(2.531128, 2.6628418, 0.0625)
+
+[node name="Pared3" type="CSGBox3D" parent="Estante de baño2" unique_id=2112785055]
+transform = Transform3D(0.8962813, 0, -0.49650812, 0, 0.81425285, 0, 0.48941648, 0, 0.8844941, 30.287518, 0.30295652, 43.261677)
+size = Vector3(2.2140994, 1.6217651, 0.0625)
+
+[node name="Pared4" type="CSGBox3D" parent="Estante de baño2" unique_id=443685319]
+transform = Transform3D(0.7372385, 0, -0.71156543, 0, 0.81426746, 0, 0.7016646, 0, 0.7276866, 28.372105, 0.3029569, 43.549862)
+size = Vector3(1.6297741, 1.6217651, 0.0625)
