@@ -97,3 +97,7 @@ transform = Transform3D(-3.7166583e-08, 0, -1.4145122, 0, 0.9112446, 0, 0.850272
 
 [node name="Base_Puerta2" parent="." unique_id=270352792 instance=ExtResource("5_wbbsh")]
 transform = Transform3D(-3.7166583e-08, 0, -1.4145122, 0, 0.9112446, 0, 0.85027236, 0, -6.183029e-08, -31.128674, 0.42366672, -17.078259)
+
+[node name="Techo" type="CSGBox3D" parent="." unique_id=2048082073]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -36.49074, 2.1426806, -15.254168)
+size = Vector3(11.1129465, 0.537, 9.746153)

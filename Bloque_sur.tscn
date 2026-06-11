@@ -1002,3 +1002,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.626072, -55.09092, -41.900
 
 [node name="PRINCIPALOFFICEplant2" parent="." unique_id=90334958 instance=ExtResource("16_0a0nl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.792793, -55.09092, -41.900124)
+
+[node name="Techo" type="CSGBox3D" parent="." unique_id=2063608668]
+transform = Transform3D(-4.371139e-08, 0, 0.9999999, 0, 1, 0, -1, 0, -4.3711385e-08, -15.223452, -52.480038, -41.519463)
+size = Vector3(33.34035, 0.5343491, 146.7043)

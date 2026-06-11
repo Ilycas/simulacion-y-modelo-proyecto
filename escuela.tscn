@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://dlf5sdhwkuqdn"]
 
 [ext_resource type="Script" uid="uid://bhc3htsqyd8aw" path="res://estudiante.gd" id="1_awtwk"]
-[ext_resource type="Texture2D" uid="uid://b3lwrvtx1elab" path="res://Plano.png" id="2_7pst4"]
 [ext_resource type="PackedScene" uid="uid://c6tihpamj7gw2" path="res://Bloque_sur.tscn" id="3_jdjiw"]
 [ext_resource type="PackedScene" uid="uid://cvqiiw1vx312y" path="res://paquete.tscn" id="3_wkv31"]
 [ext_resource type="PackedScene" uid="uid://2w0tdp533ecb" path="res://bloque_oeste.tscn" id="4_oxlh1"]
@@ -97,7 +96,7 @@ radius = 0.3
 height = 1.6
 
 [node name="Escuela" type="Node3D" unique_id=479217386]
-transform = Transform3D(0.6848566, 0, 0, 0, 1, 0, 0, 0, 0.60286516, 0, -0.46422005, 0)
+transform = Transform3D(0.6848566, 0, 0, 0, 1, 0, 0, 0, 0.60286516, 0, 4.133135, 0)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=802890740]
 environment = SubResource("Environment_nq0on")
@@ -105,13 +104,6 @@ environment = SubResource("Environment_nq0on")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2117702403]
 transform = Transform3D(-0.25, 0.86602545, 0.43301272, 0.8660256, -5.9604645e-08, 0.49999988, 0.43301266, 0.5000001, -0.7499999, -5.900272, 30.16484, 10.2195635)
 shadow_enabled = true
-
-[node name="Sprite3D" type="Sprite3D" parent="." unique_id=891488879]
-transform = Transform3D(-0.49274227, 6.5681137e-15, -7.8032976e-08, 3.5011444e-15, 1, -7.803299e-08, 4.307689e-08, -8.742278e-08, -0.8925933, -0.5622387, -0.7774402, -0.14211935)
-offset = Vector2(0, -0.1)
-pixel_size = 0.201
-axis = 1
-texture = ExtResource("2_7pst4")
 
 [node name="Bloque_sur" parent="." unique_id=1846529155 instance=ExtResource("3_jdjiw")]
 transform = Transform3D(0.57015145, 0, 0, 0, 1, 0, 0, 0, 0.9695643, -1.4780607, 54.86968, 4.016754)
@@ -490,7 +482,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.58249, -6.8175583, -33.454
 mesh = SubResource("CylinderMesh_ie88l")
 surface_material_override/0 = ExtResource("11_dt7fy")
 script = ExtResource("11_ie88l")
-ancho_banda = 500.0
 
 [node name="panel" type="MeshInstance3D" parent="Antena/Antena_Principal" unique_id=1830056418]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0.62402534)
@@ -518,20 +509,6 @@ script = ExtResource("14_bideo")
 nodo_origen = NodePath("../Antena_Principal")
 nodo_destino = NodePath("../../Modems/Modem_secundario")
 
-[node name="PatioFrontal" type="CSGCombiner3D" parent="." unique_id=1060374696]
-
-[node name="Cera principal" type="CSGBox3D" parent="PatioFrontal" unique_id=1106848615]
-transform = Transform3D(0.9999672, 0, 0, 0, 0.9999751, 0, 0, 0, 0.9999998, 24.369417, -0.6295865, -58.33594)
-size = Vector3(14.214905, 0.33967894, 11.888458)
-
-[node name="CSGBox3D" type="CSGBox3D" parent="PatioFrontal" unique_id=1129105137]
-transform = Transform3D(0.9999667, 0, 0, 0, 0.99997467, 0, 0, 0, 0.9999998, 42.1923, -0.7534575, -58.03978)
-size = Vector3(21.537231, 0.1, 12.533203)
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="PatioFrontal" unique_id=872362458]
-transform = Transform3D(0.999952, 0, 0, 0, 0.9999635, 0, 0, 0, 0.9999998, -14.478109, -0.7534571, -58.03978)
-size = Vector3(63.430557, 0.1, 12.533203)
-
 [node name="Estudiante" type="CharacterBody3D" parent="." unique_id=466188460 node_paths=PackedStringArray("lista_routers") groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.985617, 0.39632463, -62.927322)
 script = ExtResource("1_awtwk")
@@ -550,19 +527,62 @@ shape = SubResource("CapsuleShape3D_awtwk")
 [node name="Camera3D" type="Camera3D" parent="Estudiante" unique_id=1431231153]
 transform = Transform3D(-0.99961126, 0.00607053, 0.027218036, 0.012683293, 0.96819663, 0.2498697, -0.02483556, 0.2501177, -0.9678973, -0.26994637, 5.100603, -1.8920897)
 
+[node name="PatioFrontal" type="CSGCombiner3D" parent="." unique_id=1060374696]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
+
+[node name="Cera principal" type="CSGBox3D" parent="PatioFrontal" unique_id=1106848615]
+transform = Transform3D(0.9999672, 0, 0, 0, 0.9999751, 0, 0, 0, 0.9999998, 24.369417, -0.6295865, -58.33594)
+size = Vector3(14.214905, 0.33967894, 11.888458)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="PatioFrontal" unique_id=1129105137]
+transform = Transform3D(0.9999667, 0, 0, 0, 0.99997467, 0, 0, 0, 0.9999998, 42.1923, -0.7534575, -58.03978)
+size = Vector3(21.537231, 0.1, 12.533203)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="PatioFrontal" unique_id=872362458]
+transform = Transform3D(0.999952, 0, 0, 0, 0.9999635, 0, 0, 0, 0.99999976, -17.353731, -0.75345707, -58.03978)
+size = Vector3(69.182076, 0.1, 12.533203)
+
 [node name="Exterior" type="CSGCombiner3D" parent="." unique_id=1540722455]
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Exterior" unique_id=716820306]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -14.396532, -0.2992096, -52.53968)
-size = Vector3(63.401123, 0.77835083, 0.29144287)
+[node name="Borde_inferior" type="CSGBox3D" parent="Exterior" unique_id=716820306]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -15.391464, -0.2992096, -52.53968)
+size = Vector3(65.39099, 0.77835083, 0.29144287)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="Exterior" unique_id=697907587]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -14.396532, 2.2606149, -52.73463)
-size = Vector3(63.401123, 0.53749084, 0.68136597)
+[node name="Borde_De_Techo" type="CSGBox3D" parent="Exterior" unique_id=697907587]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -7.909542, 2.2606149, -52.73463)
+size = Vector3(80.306984, 0.53749084, 0.68136597)
+
+[node name="Techo3" type="CSGBox3D" parent="Exterior" unique_id=571417245]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 36.4287, 2.2490582, -56.458466)
+size = Vector3(11.690021, 0.5143776, 8.958645)
 
 [node name="Pilar" type="CSGBox3D" parent="Exterior" unique_id=802262823]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 5.19079, 0.8138714, -52.555237)
 size = Vector3(1.5892029, 3.0519485, 0.68136597)
+
+[node name="Pilar6" type="CSGBox3D" parent="Exterior" unique_id=917431630]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 17.391327, 0.8138714, -52.555237)
+size = Vector3(1.5892029, 3.0519485, 0.68136597)
+
+[node name="Pilar7" type="CSGBox3D" parent="Exterior" unique_id=1899619986]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 31.43541, 0.8138714, -52.555237)
+size = Vector3(1.5892029, 3.0519485, 0.68136597)
+
+[node name="Pilar8" type="CSGBox3D" parent="Exterior" unique_id=1339065543]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 31.231405, 0.8138714, -60.205513)
+size = Vector3(1.1811981, 3.0519485, 1.436821)
+
+[node name="Pilar11" type="CSGBox3D" parent="Exterior" unique_id=1550617234]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 17.376356, 0.8138714, -60.205513)
+size = Vector3(1.1811981, 3.0519485, 1.436821)
+
+[node name="Pilar9" type="CSGBox3D" parent="Exterior" unique_id=1323733702]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 36.160263, 0.8138714, -60.205513)
+size = Vector3(1.2667694, 3.0519485, 1.436821)
+
+[node name="Pilar10" type="CSGBox3D" parent="Exterior" unique_id=412591924]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 41.666317, 0.8138714, -60.205513)
+size = Vector3(1.186203, 3.0519485, 1.436821)
 
 [node name="Pilar2" type="CSGBox3D" parent="Exterior" unique_id=1052142161]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -7.9388657, 0.8138714, -52.555237)
@@ -577,5 +597,64 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -34.60468, 0.8138714,
 size = Vector3(1.5892029, 3.0519485, 0.68136597)
 
 [node name="Pilar5" type="CSGBox3D" parent="Exterior" unique_id=30929071]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -47.26459, 0.8138714, -52.555237)
-size = Vector3(1.5892029, 3.0519485, 0.68136597)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -47.26459, 0.8138714, -52.645054)
+size = Vector3(1.5892029, 3.0519485, 0.8610153)
+
+[node name="Exterior_central" type="CSGCombiner3D" parent="." unique_id=545043957]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.7529573, 0)
+
+[node name="Pilar" type="CSGBox3D" parent="Exterior_central" unique_id=873018632]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 20.926836, -3.088295, -10.216306)
+size = Vector3(1.1388397, 3.0519485, 1.2433128)
+
+[node name="Pilar2" type="CSGBox3D" parent="Exterior_central" unique_id=417421627]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 20.926836, -3.088295, 5.9923143)
+size = Vector3(1.1388397, 3.0519485, 1.2433128)
+
+[node name="Pilar3" type="CSGBox3D" parent="Exterior_central" unique_id=858431939]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 20.926836, -3.088295, 20.881052)
+size = Vector3(1.1388397, 3.0519485, 1.2433128)
+
+[node name="Pilar4" type="CSGBox3D" parent="Exterior_central" unique_id=250184919]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 20.926836, -3.088295, 35.77058)
+size = Vector3(1.1388397, 3.0519485, 1.2433128)
+
+[node name="Pilar5" type="CSGBox3D" parent="Exterior_central" unique_id=840160856]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 3.019434, -3.088295, -10.216306)
+size = Vector3(1.1388397, 3.0519485, 1.2433128)
+
+[node name="Pilar6" type="CSGBox3D" parent="Exterior_central" unique_id=748325075]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -13.420231, -3.088295, -10.219272)
+size = Vector3(1.1388397, 3.0519485, 1.2433128)
+
+[node name="Pilar7" type="CSGBox3D" parent="Exterior_central" unique_id=127594563]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -28.167997, -3.088295, -10.231757)
+size = Vector3(1.1388397, 3.0519485, 1.2433128)
+
+[node name="Pilar8" type="CSGBox3D" parent="Exterior_central" unique_id=339419262]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -40.68332, -2.7443485, -10.231755)
+size = Vector3(1.1388397, 3.7398415, 1.2433128)
+
+[node name="Borde_inferior" type="CSGBox3D" parent="Exterior_central" unique_id=782933263]
+transform = Transform3D(-4.371139e-08, 0, 0.9999999, 0, 1, 0, -0.9999999, 0, -4.371138e-08, -58.822113, -3.6013021, 21.516579)
+size = Vector3(65.39099, 1.3548317, 0.29144287)
+
+[node name="Borde_inferior2" type="CSGBox3D" parent="Exterior_central" unique_id=2083726191]
+transform = Transform3D(0.9999999, 0, -3.5527137e-15, 0, 1, 0, -3.5527133e-15, 0, 0.9999999, -8.665642, -3.6013021, 54.015278)
+size = Vector3(100.945526, 1.3548317, 0.29144287)
+
+[node name="Techo3" type="CSGBox3D" parent="Exterior_central" unique_id=529349959]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -4.433727, -1.4188347, -14.745074)
+size = Vector3(71.34675, 0.29818392, 10.312819)
+
+[node name="Techo4" type="CSGBox3D" parent="Exterior_central" unique_id=1674908758]
+transform = Transform3D(-4.371139e-08, 0, -0.9999999, 0, 1, 0, 0.9999999, 0, -4.371138e-08, 25.723831, -1.4188347, 13.334007)
+size = Vector3(46.161636, 0.29818392, 10.782508)
+
+[node name="Borde_De_Techo" type="CSGBox3D" parent="Exterior_central" unique_id=326957630]
+transform = Transform3D(-4.371139e-08, 0, -0.9999999, 0, 1, 0, 0.9999999, 0, -4.371138e-08, 21.018671, -1.5499654, 41.294716)
+size = Vector3(10.440351, 0.53749084, 1.3337936)
+
+[node name="Borde_De_Techo2" type="CSGBox3D" parent="Exterior_central" unique_id=1370981197]
+transform = Transform3D(0.9999999, 0, 3.5527137e-15, 0, 1, 0, 3.5527137e-15, 0, 0.9999999, 25.516403, -1.5499654, 47.1892)
+size = Vector3(10.440351, 0.53749084, 1.3337936)

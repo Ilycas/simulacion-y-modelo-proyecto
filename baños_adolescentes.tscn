@@ -25,8 +25,8 @@ uv1_triplanar = true
 use_collision = true
 
 [node name="Base_Baño_Adolescentes" type="CSGBox3D" parent="." unique_id=1504780181]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.592545, 0.19090295, 41.124794)
-size = Vector3(9.790098, 2.6150265, 10.786316)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.592545, 0.6755129, 41.124794)
+size = Vector3(9.790098, 3.5842464, 10.786316)
 material = ExtResource("1_bnu1g")
 
 [node name="Piso_Baño_Adolescentes" type="CSGBox3D" parent="Base_Baño_Adolescentes" unique_id=1652361558]
