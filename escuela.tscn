@@ -13,7 +13,10 @@
 [ext_resource type="Script" uid="uid://650hdjasby3a" path="res://enlace_modem_repetidor.gd" id="12_x3esv"]
 [ext_resource type="Script" uid="uid://cd5qt4h4wycc3" path="res://spawner.gd" id="13_spawner"]
 [ext_resource type="Script" uid="uid://bwsvopgn6l3u8" path="res://enlace_visual.gd" id="14_bideo"]
+[ext_resource type="Texture2D" uid="uid://dv7wkxoa4p7aw" path="res://Assets/Grass_13-256x256.png" id="14_da7lx"]
+[ext_resource type="Texture2D" uid="uid://djirpvg8wm4lp" path="res://Assets/Grass_11-256x256.png" id="15_d7trm"]
 [ext_resource type="Script" uid="uid://bdfa7mnv1y528" path="res://modem_principal.gd" id="15_wogku"]
+[ext_resource type="Texture2D" uid="uid://k44mu7g3trn2" path="res://herringbone_brick_03_diff_1k.jpg" id="16_d8b5o"]
 [ext_resource type="Script" uid="uid://dafkee3ylp326" path="res://pivote_camara.gd" id="16_x3esv"]
 [ext_resource type="Script" uid="uid://d1j1ti1q1d3f" path="res://ui_control_red.gd" id="17_j2u5w"]
 
@@ -89,6 +92,38 @@ height = 8.0
 size = Vector3(0.8, 1.5, 0.3)
 
 [sub_resource type="BoxMesh" id="BoxMesh_wogku"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n0dn3"]
+albedo_texture = ExtResource("14_da7lx")
+uv1_scale = Vector3(5, 5, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r13oh"]
+albedo_texture = ExtResource("15_d7trm")
+uv1_scale = Vector3(1.332, 13.332, 4)
+uv1_triplanar_sharpness = 0.9659363
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lscaw"]
+albedo_color = Color(0.23443696, 0.2806671, 0.46821237, 1)
+roughness = 0.75
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7it8e"]
+albedo_color = Color(0.96152323, 0.39680377, 0.43721133, 1)
+metallic = 0.8
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i071b"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u8siq"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h6y43"]
+albedo_texture = ExtResource("16_d8b5o")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xjpmw"]
+albedo_texture = ExtResource("16_d8b5o")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uexxv"]
+albedo_texture = ExtResource("16_d8b5o")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_destino"]
 radius = 1.0
@@ -176,6 +211,12 @@ _data = {
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0)
 }
 point_count = 7
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0wif2"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_peeah"]
+albedo_color = Color(0, 0, 0, 1)
 
 [node name="Escuela" type="Node3D" unique_id=479217386]
 transform = Transform3D(0.6848566, 0, 0, 0, 1, 0, 0, 0, 0.60286516, 0, 4.133135, 0)
@@ -710,18 +751,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
 [node name="CSGBox3D" type="CSGBox3D" parent="PatioFrontal" unique_id=1129105137]
 transform = Transform3D(0.9999667, 0, 0, 0, 0.99997467, 0, 0, 0, 0.9999998, 42.1923, -0.7534575, -58.03978)
 size = Vector3(21.537231, 0.1, 12.533203)
+material = SubResource("StandardMaterial3D_n0dn3")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="PatioFrontal" unique_id=872362458]
-transform = Transform3D(0.999952, 0, 0, 0, 0.9999635, 0, 0, 0, 0.99999976, -17.353731, -0.75345707, -58.03978)
-size = Vector3(69.182076, 0.1, 12.533203)
+transform = Transform3D(0.9999521, 0, 0, 0, 0.9999635, 0, 0, 0, 1.0000001, -16.938091, -0.75345707, -58.039783)
+size = Vector3(70.0134, 0.1, 12.533203)
+material = SubResource("StandardMaterial3D_r13oh")
 
 [node name="Borde_inferior" type="CSGBox3D" parent="PatioFrontal" unique_id=2063893809]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -15.552054, -0.34607697, -63.988884)
 size = Vector3(72.857086, 0.8720856, 0.29144287)
+material = SubResource("StandardMaterial3D_lscaw")
 
 [node name="Borde_inferior2" type="CSGBox3D" parent="PatioFrontal" unique_id=816845624]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 40.87399, -0.34607697, -63.98347)
 size = Vector3(24.188028, 0.8720856, 0.29144287)
+material = SubResource("StandardMaterial3D_lscaw")
 
 [node name="Borde_inferior3" type="CSGBox3D" parent="PatioFrontal" unique_id=2049311203]
 transform = Transform3D(-4.3711395e-08, 0, -1.0000001, 0, 1, 0, 1.0000001, 0, -4.37123e-08, 52.866196, 0.6096659, -58.329926)
@@ -753,81 +798,97 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
 transform = Transform3D(-4.3711385e-08, -4.3711385e-08, 0.99999994, -4.371139e-08, 0.9999999, 4.371139e-08, -1.0000001, -4.371293e-08, -4.3712927e-08, 28.874113, 0.9962716, -63.928642)
 radius = 0.44091797
 height = 3.0223465
+material = SubResource("StandardMaterial3D_7it8e")
 
 [node name="Pilar_de_reja2" type="CSGCylinder3D" parent="PatioFrontal2" unique_id=1709709031]
 transform = Transform3D(-4.3711385e-08, -4.3711385e-08, 0.99999994, -4.371139e-08, 0.9999999, 4.371139e-08, -1.0000001, -4.371293e-08, -4.3712927e-08, 20.901678, 0.99627125, -63.928642)
 radius = 0.44091797
 height = 3.0223465
+material = SubResource("StandardMaterial3D_7it8e")
 
 [node name="Pilar_de_reja3" type="CSGCylinder3D" parent="PatioFrontal2" unique_id=528155887]
 transform = Transform3D(-4.3711385e-08, -4.3711385e-08, 0.99999994, -4.371139e-08, 0.9999999, 4.371139e-08, -1.0000001, -4.371293e-08, -4.3712927e-08, 35.676147, 0.9962719, -63.928642)
 radius = 0.44091797
 height = 3.0223465
+material = SubResource("StandardMaterial3D_7it8e")
 
 [node name="Pilar_de_reja4" type="CSGCylinder3D" parent="PatioFrontal2" unique_id=452606591]
 transform = Transform3D(-4.3711385e-08, -4.3711385e-08, 0.99999994, -4.371139e-08, 0.9999999, 4.371139e-08, -1.0000001, -4.3712934e-08, -4.371293e-08, 42.525635, 0.9962724, -63.92865)
 radius = 0.44091797
 height = 3.0223465
+material = SubResource("StandardMaterial3D_7it8e")
 
 [node name="Pilar_de_reja5" type="CSGCylinder3D" parent="PatioFrontal2" unique_id=1469596098]
 transform = Transform3D(-4.3711385e-08, -4.3711385e-08, 0.99999994, -4.371139e-08, 0.9999999, 4.371139e-08, -1.0000001, -4.3712934e-08, -4.371293e-08, 52.680614, 0.9962728, -63.92865)
 radius = 0.44091797
 height = 3.0223465
+material = SubResource("StandardMaterial3D_7it8e")
 
 [node name="Pilar_de_reja6" type="CSGCylinder3D" parent="PatioFrontal2" unique_id=1052067133]
 transform = Transform3D(-4.3711385e-08, -4.3711385e-08, 0.99999994, -4.371139e-08, 0.9999999, 4.371139e-08, -1.0000001, -4.3712934e-08, -4.371293e-08, 47.646782, 0.99627256, -63.92865)
 radius = 0.44091797
 height = 3.0223465
+material = SubResource("StandardMaterial3D_7it8e")
 
 [node name="Pilar_de_reja7" type="CSGCylinder3D" parent="PatioFrontal2" unique_id=1938039434]
 transform = Transform3D(-4.3711385e-08, -4.3711385e-08, 0.99999994, -4.371139e-08, 0.9999999, 4.371139e-08, -1.0000001, -4.371293e-08, -4.3712927e-08, -9.203929, 0.99626994, -63.928642)
 radius = 0.44091797
 height = 3.0223465
+material = SubResource("StandardMaterial3D_7it8e")
 
 [node name="Pilar_de_reja8" type="CSGCylinder3D" parent="PatioFrontal2" unique_id=1509644709]
 transform = Transform3D(-4.3711385e-08, -4.3711385e-08, 0.99999994, -4.371139e-08, 0.9999999, 4.371139e-08, -1.0000001, -4.371293e-08, -4.3712927e-08, -17.176365, 0.9962696, -63.928642)
 radius = 0.44091797
 height = 3.0223465
+material = SubResource("StandardMaterial3D_7it8e")
 
 [node name="Pilar_de_reja9" type="CSGCylinder3D" parent="PatioFrontal2" unique_id=381855284]
 transform = Transform3D(-4.3711385e-08, -4.3711385e-08, 0.99999994, -4.371139e-08, 0.9999999, 4.371139e-08, -1.0000001, -4.371293e-08, -4.3712927e-08, -2.401895, 0.99627024, -63.928642)
 radius = 0.44091797
 height = 3.0223465
+material = SubResource("StandardMaterial3D_7it8e")
 
 [node name="Pilar_de_reja10" type="CSGCylinder3D" parent="PatioFrontal2" unique_id=658268857]
 transform = Transform3D(-4.3711385e-08, -4.3711385e-08, 0.99999994, -4.371139e-08, 0.9999999, 4.371139e-08, -1.0000001, -4.3712934e-08, -4.371293e-08, 4.4475923, 0.9962707, -63.92865)
 radius = 0.44091797
 height = 3.0223465
+material = SubResource("StandardMaterial3D_7it8e")
 
 [node name="Pilar_de_reja11" type="CSGCylinder3D" parent="PatioFrontal2" unique_id=939862689]
 transform = Transform3D(-4.3711385e-08, -4.3711385e-08, 0.99999994, -4.371139e-08, 0.9999999, 4.371139e-08, -1.0000001, -4.3712934e-08, -4.371293e-08, 15.317972, 0.9962712, -63.92865)
 radius = 0.44091797
 height = 3.0223465
+material = SubResource("StandardMaterial3D_7it8e")
 
 [node name="Pilar_de_reja12" type="CSGCylinder3D" parent="PatioFrontal2" unique_id=543403709]
 transform = Transform3D(-4.3711385e-08, -4.3711385e-08, 0.99999994, -4.371139e-08, 0.9999999, 4.371139e-08, -1.0000001, -4.3712934e-08, -4.371293e-08, 9.56874, 0.9962709, -63.92865)
 radius = 0.44091797
 height = 3.0223465
+material = SubResource("StandardMaterial3D_7it8e")
 
 [node name="Pilar_de_reja13" type="CSGCylinder3D" parent="PatioFrontal2" unique_id=1891535613]
 transform = Transform3D(-4.3711385e-08, -4.3711385e-08, 0.99999994, -4.371139e-08, 0.9999999, 4.371139e-08, -1.0000001, -4.3712934e-08, -4.371293e-08, -41.657646, 0.99626845, -63.92865)
 radius = 0.44091797
 height = 3.0223465
+material = SubResource("StandardMaterial3D_7it8e")
 
 [node name="Pilar_de_reja14" type="CSGCylinder3D" parent="PatioFrontal2" unique_id=1628799262]
 transform = Transform3D(-4.3711385e-08, -4.3711385e-08, 0.99999994, -4.371139e-08, 0.9999999, 4.371139e-08, -1.0000001, -4.3712937e-08, -4.3712934e-08, -34.80816, 0.9962689, -63.928654)
 radius = 0.44091797
 height = 3.0223465
+material = SubResource("StandardMaterial3D_7it8e")
 
 [node name="Pilar_de_reja15" type="CSGCylinder3D" parent="PatioFrontal2" unique_id=2067766436]
 transform = Transform3D(-4.3711385e-08, -4.3711385e-08, 0.99999994, -4.371139e-08, 0.9999999, 4.371139e-08, -1.0000001, -4.3712937e-08, -4.3712934e-08, -24.65318, 0.9962694, -63.928654)
 radius = 0.44091797
 height = 3.0223465
+material = SubResource("StandardMaterial3D_7it8e")
 
 [node name="Pilar_de_reja16" type="CSGCylinder3D" parent="PatioFrontal2" unique_id=856446922]
 transform = Transform3D(-4.3711385e-08, -4.3711385e-08, 0.99999994, -4.371139e-08, 0.9999999, 4.371139e-08, -1.0000001, -4.3712937e-08, -4.3712934e-08, -29.687012, 0.9962694, -63.928654)
 radius = 0.44091797
 height = 3.0223465
+material = SubResource("StandardMaterial3D_7it8e")
 
 [node name="Borde_De_Techo4" type="CSGBox3D" parent="PatioFrontal2" unique_id=1598142840]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -10.420844, 2.2606149, -64.08517)
@@ -842,6 +903,7 @@ size = Vector3(24.133644, 0.53749084, 0.13503647)
 [node name="Borde_inferior" type="CSGBox3D" parent="Exterior" unique_id=716820306]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -15.391464, -0.2992096, -52.53968)
 size = Vector3(65.39099, 0.77835083, 0.29144287)
+material = ExtResource("11_4qkwh")
 
 [node name="Borde_De_Techo" type="CSGBox3D" parent="Exterior" unique_id=697907587]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 2.4758377, 2.2606149, -53.21137)
@@ -858,14 +920,17 @@ size = Vector3(8.384508, 0.6076126, 0.68136597)
 [node name="Techo3" type="CSGBox3D" parent="Exterior" unique_id=571417245 groups=["grupo_techo"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 35.445755, 2.3549476, -56.455296)
 size = Vector3(13.655901, 0.30259895, 8.952308)
+material = SubResource("StandardMaterial3D_i071b")
 
 [node name="Techo4" type="CSGBox3D" parent="Exterior" unique_id=1682425349]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 18.999895, 2.3549476, -56.455296)
 size = Vector3(4.483983, 0.30259895, 8.952308)
+material = SubResource("StandardMaterial3D_u8siq")
 
 [node name="Pilar" type="CSGBox3D" parent="Exterior" unique_id=802262823]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 5.19079, 0.8138714, -52.555237)
 size = Vector3(1.5892029, 3.0519485, 0.68136597)
+material = SubResource("StandardMaterial3D_h6y43")
 
 [node name="Pilar6" type="CSGBox3D" parent="Exterior" unique_id=917431630]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 17.391327, 0.8138714, -52.82169)
@@ -894,18 +959,22 @@ size = Vector3(0.9422226, 3.0519485, 1.436821)
 [node name="Pilar2" type="CSGBox3D" parent="Exterior" unique_id=1052142161]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -7.9388657, 0.8138714, -52.555237)
 size = Vector3(1.5892029, 3.0519485, 0.68136597)
+material = SubResource("StandardMaterial3D_xjpmw")
 
 [node name="Pilar3" type="CSGBox3D" parent="Exterior" unique_id=1699696709]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -21.181942, 0.8138714, -52.555237)
 size = Vector3(1.5892029, 3.0519485, 0.68136597)
+material = SubResource("StandardMaterial3D_xjpmw")
 
 [node name="Pilar4" type="CSGBox3D" parent="Exterior" unique_id=510380912]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -34.60468, 0.8138714, -52.555237)
 size = Vector3(1.5892029, 3.0519485, 0.68136597)
+material = SubResource("StandardMaterial3D_xjpmw")
 
 [node name="Pilar5" type="CSGBox3D" parent="Exterior" unique_id=30929071]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -47.26459, 0.8138714, -52.645054)
 size = Vector3(1.5892029, 3.0519485, 0.8610153)
+material = SubResource("StandardMaterial3D_uexxv")
 
 [node name="Exterior_central" type="CSGCombiner3D" parent="." unique_id=545043957]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.7529573, 0)
@@ -1144,12 +1213,14 @@ script = ExtResource("13_spawner")
 transform = Transform3D(-4.371138e-08, 4.371139e-08, 0.9999999, 1, 0, 4.3711385e-08, 0, 0.9999999, -4.371138e-08, 24.968859, 0.39209616, -58.153366)
 radius = 5.0
 height = 12.088501
+material = SubResource("StandardMaterial3D_0wif2")
 
 [node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Techo Curvado" unique_id=460016512 groups=["grupo_techo"]]
 transform = Transform3D(-4.371138e-08, 4.371139e-08, 0.9999999, 1, 0, 4.3711385e-08, 0, 0.9999999, -4.371138e-08, 24.91224, 0.9052625, -58.184074)
 operation = 2
 radius = 4.354492
 height = 12.072266
+material = SubResource("StandardMaterial3D_peeah")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Techo Curvado" unique_id=624317901 groups=["grupo_techo"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 23.499998, -1.0974121, -58.2896)
@@ -2626,5 +2697,5 @@ script = ExtResource("16_x3esv")
 transform = Transform3D(-1, -7.161255e-08, 5.0143647e-08, 0, 0.57357645, 0.81915206, -8.742278e-08, 0.81915206, -0.57357645, 13.403446, 7.536553, -71.19773)
 
 [node name="Piso_general" type="CSGBox3D" parent="." unique_id=929889987]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -3.135686, -0.83213997, -3.8332677)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -3.1767638, -0.8321395, -3.756662)
 size = Vector3(131.99013, 0.1, 125.62027)
