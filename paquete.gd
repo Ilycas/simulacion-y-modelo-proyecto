@@ -1,30 +1,31 @@
 extends Node3D
 
-var destino_final : Vector3
-var estudiante_emisor : Node3D
-var velocidad_vuelo : float = 8.0
+var destino : Vector3
+var estudiante_ref : Node3D
+var activo : bool = false
 
-# Esta función es la que llama el estudiante al presionar Espacio
-func disparar(destino: Vector3, emisor: Node3D) -> void:
-	destino_final = destino
-	estudiante_emisor = emisor
+func disparar(destino_pos: Vector3, estudiante: Node3D) -> void:
+	destino = destino_pos
+	estudiante_ref = estudiante
+	activo = true
 
 func _process(delta: float) -> void:
+	if not activo: return
+
 	# --- 1. VALIDACIÓN DE CONEXIÓN EN TIEMPO REAL ---
-	if is_instance_valid(estudiante_emisor):
-		# Si el estudiante se quedó sin router en pleno vuelo...
-		if estudiante_emisor.router_conectado == null:
-			print("❌ PAQUETE DESCARTADO: Se perdió la conexión en pleno tránsito.")
-			queue_free() # Destruye el paquete inmediatamente
-			return # Corta la ejecución para que no intente moverse
-			
-	# --- 2. MOVIMIENTO HACIA EL DESTINO ---
-	# Si seguimos conectados, el paquete vuela normalmente
-	var direccion = global_position.direction_to(destino_final)
-	global_position += direccion * velocidad_vuelo * delta
-	
+	if is_instance_valid(estudiante_ref):
+		if estudiante_ref.router_conectado == null:
+			queue_free()
+			return
+	else:
+		queue_free()
+		return
+
+	# --- 2. MOVIMIENTO HACIA EL DESTINO (velocidad dinámica) ---
+	var velocidad_dinamica = estudiante_ref.velocidad_paquete_actual if estudiante_ref.velocidad_paquete_actual > 0 else 15.0
+	var direction = global_position.direction_to(destino)
+	global_position += direction * velocidad_dinamica * delta
+
 	# --- 3. RECEPCIÓN EXITOSA ---
-	# Si el paquete llega a menos de medio metro del router, se consume
-	if global_position.distance_to(destino_final) < 0.5:
-		# Aquí podrías sumar puntos o estadísticas en el futuro
+	if global_position.distance_to(destino) < 0.2:
 		queue_free()

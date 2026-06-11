@@ -15,6 +15,7 @@
 [ext_resource type="Script" uid="uid://650hdjasby3a" path="res://enlace_modem_repetidor.gd" id="12_x3esv"]
 [ext_resource type="Script" uid="uid://bwsvopgn6l3u8" path="res://enlace_visual.gd" id="14_bideo"]
 [ext_resource type="Script" uid="uid://bdfa7mnv1y528" path="res://modem_principal.gd" id="15_wogku"]
+[ext_resource type="Script" uid="uid://cd5qt4h4wycc3" path="res://spawner.gd" id="13_spawner"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mt2cc"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -30,6 +31,14 @@ tonemap_mode = 2
 
 [sub_resource type="BoxMesh" id="BoxMesh_x3esv"]
 size = Vector3(0.3, 0.1, 0.3)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_awtwk"]
+radius = 0.2755
+height = 0.901
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_awtwk"]
+radius = 0.3
+height = 1.6
 
 [sub_resource type="GDScript" id="GDScript_4qkwh"]
 script/source = "extends Node3D
@@ -88,12 +97,92 @@ size = Vector3(0.8, 1.5, 0.3)
 
 [sub_resource type="BoxMesh" id="BoxMesh_wogku"]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_awtwk"]
-height = 1.6
+[sub_resource type="SphereShape3D" id="SphereShape3D_destino"]
+radius = 1.0
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_awtwk"]
-radius = 0.3
-height = 1.6
+[sub_resource type="Curve3D" id="Curve3D_dt7fy"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.12324524, -0.03955078, 0.074401855, 0, 0, 0, 0, 0, 0, 1.9553108, 0.8102801, 55.77285),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve3D" id="Curve3D_da7lx"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 1.9553108, 0.8102801, 55.77285, 0, 0, 0, 0, 0, 0, 0.12324524, -0.03955078, 0.074401855),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve3D" id="Curve3D_x3esv"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.123, 0.4, 0.074, 0, 0, 0, 0, 0, 0, 2.1314354, 0.4, 58.358818, 0, 0, 0, 0, 0, 0, 11.734821, 0.4, 59.29285),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="Curve3D" id="Curve3D_d7trm"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 11.734821, 0.4, 59.29285, 0, 0, 0, 0, 0, 0, 2.1314354, 0.4, 58.358818, 0, 0, 0, 0, 0, 0, 0.123, 0.4, 0.074),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="Curve3D" id="Curve3D_j2u5w"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.123, 0.4, 0.074, 0, 0, 0, 0, 0, 0, 0.6662998, 0.4, 8.544807, 0, 0, 0, 0, 0, 0, -33.830605, 0.4, 8.068001, 0, 0, 0, 0, 0, 0, -34.47, 0.4, -14.431),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+point_count = 4
+
+[sub_resource type="Curve3D" id="Curve3D_d8b5o"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -34.47, 0.4, -14.431, 0, 0, 0, 0, 0, 0, -33.830605, 0.4, 8.068001, 0, 0, 0, 0, 0, 0, 0.6662998, 0.4, 8.544807, 0, 0, 0, 0, 0, 0, 0.123, 0.4, 0.074),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+point_count = 4
+
+[sub_resource type="Curve3D" id="Curve3D_bideo"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.123, 0.4, 0.074, 0, 0, 0, 0, 0, 0, 0.44796753, 0.4, 9.341271, 0, 0, 0, 0, 0, 0, -62.7172, 0.4, 9.803876),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="Curve3D" id="Curve3D_n0dn3"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -62.7172, 0.4, 9.803876, 0, 0, 0, 0, 0, 0, 0.44796753, 0.4, 9.341271, 0, 0, 0, 0, 0, 0, 0.123, 0.4, 0.074),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="Curve3D" id="Curve3D_wogku"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.123, 0.4, 0.074, 0, 0, 0, 0, 0, 0, -0.15299988, 0.4, 50.680523, 0, 0, 0, 0, 0, 0, -12.823813, 0.4, 49.475235),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="Curve3D" id="Curve3D_r13oh"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -12.823813, 0.4, 49.475235, 0, 0, 0, 0, 0, 0, -0.15299988, 0.4, 50.680523, 0, 0, 0, 0, 0, 0, 0.123, 0.4, 0.074),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="Curve3D" id="Curve3D_r7fgt"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.123, 0.4, 0.074, 0, 0, 0, 0, 0, 0, -0.153, 0.4, 46.705, 0, 0, 0, 0, 0, 0, -14.251, 0.4, 45.233, 0, 0, 0, 0, 0, 0, -13.989295, 0.4, 75.68349, 0, 0, 0, 0, 0, 0, 19.509075, 0.4, 74.716736, 0, 0, 0, 0, 0, 0, 18.770401, 0.4, 49.60349, 0, 0, 0, 0, 0, 0, 26.725872, 0.4, 49.64901),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 7
+
+[sub_resource type="Curve3D" id="Curve3D_lscaw"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 26.725872, 0.4, 49.64901, 0, 0, 0, 0, 0, 0, 18.770401, 0.4, 49.60349, 0, 0, 0, 0, 0, 0, 19.509075, 0.4, 74.716736, 0, 0, 0, 0, 0, 0, -13.989295, 0.4, 75.68349, 0, 0, 0, 0, 0, 0, -14.251, 0.4, 45.233, 0, 0, 0, 0, 0, 0, -0.153, 0.4, 46.705, 0, 0, 0, 0, 0, 0, 0.123, 0.4, 0.074),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 7
 
 [node name="Escuela" type="Node3D" unique_id=479217386]
 transform = Transform3D(0.6848566, 0, 0, 0, 1, 0, 0, 0, 0.60286516, 0, 4.133135, 0)
@@ -104,6 +193,34 @@ environment = SubResource("Environment_nq0on")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2117702403]
 transform = Transform3D(-0.25, 0.86602545, 0.43301272, 0.8660256, -5.9604645e-08, 0.49999988, 0.43301266, 0.5000001, -0.7499999, -5.900272, 30.16484, 10.2195635)
 shadow_enabled = true
+
+[node name="Estudiante" type="CharacterBody3D" parent="." unique_id=2047578850 node_paths=PackedStringArray("lista_routers") groups=["player"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.3575, 0.9649887, -61.79018)
+script = ExtResource("1_awtwk")
+lista_routers = [NodePath("../Routers_Oeste/Routers_oeste/Repetidor1"), NodePath("../Routers_Oeste/Routers_oeste/Repetidor2"), NodePath("../Routers_Oeste/Routers_oeste/Repetidor3")]
+escena_paquete = ExtResource("3_wkv31")
+
+[node name="RayCast3D" type="RayCast3D" parent="Estudiante" unique_id=316226275]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.240108, 0.09267235, 13.911766)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Estudiante" unique_id=1037988441]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.240108, -0.24250364, 13.911766)
+mesh = SubResource("CapsuleMesh_awtwk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Estudiante" unique_id=1834572890]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.240108, 0.09267235, 13.911766)
+shape = SubResource("CapsuleShape3D_awtwk")
+
+[node name="Camera3D" type="Camera3D" parent="Estudiante" unique_id=304028374]
+transform = Transform3D(-0.99961114, -0.014953572, 0.023538508, 0.012683291, 0.5079338, 0.8613028, -0.024835555, 0.8612664, -0.5075466, -34.121445, 19.817642, 48.220413)
+fov = 85.4
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=891488879]
+transform = Transform3D(-0.49274227, 6.5681137e-15, -7.8032976e-08, 3.5011444e-15, 1, -7.803299e-08, 4.307689e-08, -8.742278e-08, -0.8925933, -0.6045952, -0.72933304, 0.24977213)
+offset = Vector2(0, -0.1)
+pixel_size = 0.201
+axis = 1
+texture = ExtResource("2_7pst4")
 
 [node name="Bloque_sur" parent="." unique_id=1846529155 instance=ExtResource("3_jdjiw")]
 transform = Transform3D(0.57015145, 0, 0, 0, 1, 0, 0, 0, 0.9695643, -1.4780607, 54.86968, 4.016754)
@@ -509,24 +626,6 @@ script = ExtResource("14_bideo")
 nodo_origen = NodePath("../Antena_Principal")
 nodo_destino = NodePath("../../Modems/Modem_secundario")
 
-[node name="Estudiante" type="CharacterBody3D" parent="." unique_id=466188460 node_paths=PackedStringArray("lista_routers") groups=["player"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.985617, 0.39632463, -62.927322)
-script = ExtResource("1_awtwk")
-lista_routers = [NodePath("../Routers_Oeste/Routers_oeste/Repetidor1"), NodePath("../Routers_Oeste/Routers_oeste/Repetidor2"), NodePath("../Routers_Oeste/Routers_oeste/Repetidor3")]
-escena_paquete = ExtResource("3_wkv31")
-
-[node name="RayCast3D" type="RayCast3D" parent="Estudiante" unique_id=1096785150]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Estudiante" unique_id=398892194]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.33517587, 0)
-mesh = SubResource("CapsuleMesh_awtwk")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Estudiante" unique_id=889576528]
-shape = SubResource("CapsuleShape3D_awtwk")
-
-[node name="Camera3D" type="Camera3D" parent="Estudiante" unique_id=1431231153]
-transform = Transform3D(-0.99961126, 0.00607053, 0.027218036, 0.012683293, 0.96819663, 0.2498697, -0.02483556, 0.2501177, -0.9678973, -0.26994637, 5.100603, -1.8920897)
-
 [node name="PatioFrontal" type="CSGCombiner3D" parent="." unique_id=1060374696]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
 
@@ -658,3 +757,163 @@ size = Vector3(10.440351, 0.53749084, 1.3337936)
 [node name="Borde_De_Techo2" type="CSGBox3D" parent="Exterior_central" unique_id=1370981197]
 transform = Transform3D(0.9999999, 0, 3.5527137e-15, 0, 1, 0, 3.5527137e-15, 0, 0.9999999, 25.516403, -1.5499654, 47.1892)
 size = Vector3(10.440351, 0.53749084, 1.3337936)
+
+[node name="Pisos_Nav" type="Node3D" parent="." unique_id=-1294967286]
+
+[node name="Piso_Patio" type="CSGBox3D" parent="Pisos_Nav" unique_id=-1294967285]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.94, -0.55, 21.9)
+visible = false
+cast_shadow = 0
+size = Vector3(80.57, 0.1, 65.2)
+
+[node name="Piso_Banos_Ninios" type="CSGBox3D" parent="Pisos_Nav" unique_id=-1294967284]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.7, -0.55, -15.25)
+visible = false
+cast_shadow = 0
+size = Vector3(11.13, 0.1, 9.76)
+
+[node name="Piso_Banos_Adolescentes" type="CSGBox3D" parent="Pisos_Nav" unique_id=-1294967283]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.38, -0.55, 41.12)
+visible = false
+cast_shadow = 0
+size = Vector3(9.79, 0.1, 10.79)
+
+[node name="Piso_Aulas_Central" type="CSGBox3D" parent="Pisos_Nav" unique_id=-1294967282]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.48, -0.55, -2.86)
+visible = false
+cast_shadow = 0
+size = Vector3(10.44, 0.1, 99.01)
+
+[node name="Piso_Aulas_Oeste" type="CSGBox3D" parent="Pisos_Nav" unique_id=-1294967281]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.06, -0.55, 0.65)
+visible = false
+cast_shadow = 0
+size = Vector3(12.82, 0.1, 106.02)
+
+[node name="Piso_Aulas_Sur" type="CSGBox3D" parent="Pisos_Nav" unique_id=-1294967280]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.16, -0.55, -36.23)
+visible = false
+cast_shadow = 0
+size = Vector3(83.64, 0.1, 32.3)
+
+[node name="Piso_Pasillo_Bloque_Oeste" type="CSGBox3D" parent="Pisos_Nav" unique_id=-1294967279]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 32.14, -0.55, 50.65)
+visible = false
+cast_shadow = 0
+size = Vector3(8.08, 0.1, 21.72)
+
+[node name="Destinos" type="Node3D" parent="." unique_id=-1294967276]
+
+[node name="Entrada" type="Marker3D" parent="Destinos" unique_id=-1294967275 groups=["destino"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.615894, 0, -34.89274)
+
+[node name="Area3D" type="Area3D" parent="Destinos/Entrada" unique_id=-1294967274]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Destinos/Entrada/Area3D" unique_id=-1294967273]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.49710083, 0, -0.029895782)
+shape = SubResource("SphereShape3D_destino")
+
+[node name="Patio" type="Marker3D" parent="Destinos" unique_id=-1294967272 groups=["destino"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.251327, -12.147298, 23.851137)
+
+[node name="Area3D" type="Area3D" parent="Destinos/Patio" unique_id=-1294967271]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Destinos/Patio/Area3D" unique_id=-1294967270]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.966755, 0)
+shape = SubResource("SphereShape3D_destino")
+
+[node name="Bano2" type="Marker3D" parent="Destinos" unique_id=-1294967269 groups=["destino"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.527756, 0, -15.25)
+
+[node name="Area3D" type="Area3D" parent="Destinos/Bano2" unique_id=-1294967268]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Destinos/Bano2/Area3D" unique_id=-1294967267]
+shape = SubResource("SphereShape3D_destino")
+
+[node name="AulaCentral" type="Marker3D" parent="Destinos" unique_id=-1294967266 groups=["destino"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.48, 0, 15.362742)
+
+[node name="Area3D" type="Area3D" parent="Destinos/AulaCentral" unique_id=-1294967265]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Destinos/AulaCentral/Area3D" unique_id=-1294967264]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 17.542316)
+shape = SubResource("SphereShape3D_destino")
+
+[node name="AulaOeste" type="Marker3D" parent="Destinos" unique_id=-1294967263 groups=["destino"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.849453, 0, 25.819052)
+
+[node name="Area3D" type="Area3D" parent="Destinos/AulaOeste" unique_id=-1294967262]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Destinos/AulaOeste/Area3D" unique_id=-1294967261]
+shape = SubResource("SphereShape3D_destino")
+
+[node name="AulaSur" type="Marker3D" parent="Destinos" unique_id=-1294967260 groups=["destino"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.16, 0, -34.436783)
+
+[node name="Area3D" type="Area3D" parent="Destinos/AulaSur" unique_id=-1294967259]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Destinos/AulaSur/Area3D" unique_id=-1294967258]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6604071, 0, -5.5039825)
+shape = SubResource("SphereShape3D_destino")
+
+[node name="Bano" type="Marker3D" parent="Destinos" unique_id=-1294967257 groups=["destino"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.819887, 0.29611683, 33.05599)
+
+[node name="Area3D" type="Area3D" parent="Destinos/Bano" unique_id=-1294967256]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Destinos/Bano/Area3D" unique_id=-1294967255]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.31515503, 0, -1.7233429)
+shape = SubResource("SphereShape3D_destino")
+
+[node name="Rutas" type="Node3D" parent="." unique_id=658674821]
+
+[node name="Entrada->Bano" type="Path3D" parent="Rutas" unique_id=413277696]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.152405, 0, -25.194336)
+curve = SubResource("Curve3D_dt7fy")
+
+[node name="Bano->Entrada" type="Path3D" parent="Rutas" unique_id=1626250815]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.152405, 0, -25.194336)
+curve = SubResource("Curve3D_da7lx")
+
+[node name="Entrada->AulaCentral" type="Path3D" parent="Rutas" unique_id=1302375103]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.152405, 0, -25.194336)
+curve = SubResource("Curve3D_x3esv")
+
+[node name="AulaCentral->Entrada" type="Path3D" parent="Rutas" unique_id=1712972904]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.152405, 0, -25.194336)
+curve = SubResource("Curve3D_d7trm")
+
+[node name="Entrada->AulaSur" type="Path3D" parent="Rutas" unique_id=1329727565]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.152405, 0, -25.194336)
+curve = SubResource("Curve3D_j2u5w")
+
+[node name="AulaSur->Entrada" type="Path3D" parent="Rutas" unique_id=210567387]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.152405, 0, -25.194336)
+curve = SubResource("Curve3D_d8b5o")
+
+[node name="Entrada->Bano2" type="Path3D" parent="Rutas" unique_id=1107130819]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.152405, 0, -25.194336)
+curve = SubResource("Curve3D_bideo")
+
+[node name="Bano2->Entrada" type="Path3D" parent="Rutas" unique_id=1809314823]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.152405, 0, -25.194336)
+curve = SubResource("Curve3D_n0dn3")
+
+[node name="Entrada->Patio" type="Path3D" parent="Rutas" unique_id=873514447]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.152405, 0, -25.194336)
+curve = SubResource("Curve3D_wogku")
+
+[node name="Patio->Entrada" type="Path3D" parent="Rutas" unique_id=580873832]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.152405, 0, -25.194336)
+curve = SubResource("Curve3D_r13oh")
+
+[node name="Entrada->AulaOeste" type="Path3D" parent="Rutas" unique_id=1081803133]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.152405, 0, -25.194336)
+curve = SubResource("Curve3D_r7fgt")
+
+[node name="AulaOeste->Entrada" type="Path3D" parent="Rutas" unique_id=997664077]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.152405, 0, -25.194336)
+curve = SubResource("Curve3D_lscaw")
+
+[node name="Spawner" type="Node3D" parent="." unique_id=-1294967246]
+script = ExtResource("13_spawner")

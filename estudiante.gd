@@ -3,17 +3,21 @@ extends Node3D
 @export var lista_routers : Array[Node3D]
 @export var escena_paquete : PackedScene
 @export var radio_cobertura : float = 12.0
-@export var velocidad_movimiento : float = 3.5
+@export var velocidad_movimiento : float = 5.0
 
 # --- VARIABLES REQUERIDAS POR EL ROUTER ---
 var router_conectado : Node3D = null
 var calidad_red_actual : float = 0.0
 var velocidad_paquete_actual : float = 0.0
 var cooldown_red : float = 0.0
+var _material_mesh : StandardMaterial3D = null
 
 func _ready() -> void:
-	# ¡Crucial! Esto permite que el router te meta en la división de megabytes
 	add_to_group("usuarios_red")
+	var mesh = get_node_or_null("MeshInstance3D")
+	if mesh and mesh.mesh:
+		_material_mesh = StandardMaterial3D.new()
+		mesh.material_override = _material_mesh
 
 func _process(delta: float) -> void:
 	# --- 1. CONTROLES DE MOVIMIENTO BÁSICO (WASD / Flechas) ---
@@ -53,6 +57,7 @@ func _process(delta: float) -> void:
 	# --- 3. CONEXIÓN AL ROUTER ---
 	router_conectado = mejor_router
 	calidad_red_actual = mejor_calidad
+	_actualizar_visual_conexion()
 
 	# --- 4. ENVÍO DE DATOS (AL PRESIONAR ESPACIO) ---
 	if Input.is_physical_key_pressed(KEY_SPACE) and cooldown_red <= 0.0:
@@ -92,3 +97,14 @@ func _process(delta: float) -> void:
 					nuevo_paquete.disparar(destino_elevado, self)
 			else:
 				print("❌ PÉRDIDA DE PAQUETE: La red está demasiado saturada.")
+
+func _actualizar_visual_conexion() -> void:
+	if not _material_mesh: return
+	if router_conectado == null:
+		_material_mesh.albedo_color = Color(0.8, 0.8, 0.8)
+	elif calidad_red_actual > 0.6:
+		_material_mesh.albedo_color = Color(0, 1, 0)
+	elif calidad_red_actual > 0.25:
+		_material_mesh.albedo_color = Color(1, 1, 0)
+	else:
+		_material_mesh.albedo_color = Color(1, 0, 0)
