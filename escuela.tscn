@@ -13,9 +13,9 @@
 [ext_resource type="Script" uid="uid://d11t2acqbsfl6" path="res://antena_principal.gd" id="11_ie88l"]
 [ext_resource type="Script" uid="uid://b430aew4ucqde" path="res://onda_wifi.gd" id="12_ie88l"]
 [ext_resource type="Script" uid="uid://650hdjasby3a" path="res://enlace_modem_repetidor.gd" id="12_x3esv"]
+[ext_resource type="Script" uid="uid://cd5qt4h4wycc3" path="res://spawner.gd" id="13_spawner"]
 [ext_resource type="Script" uid="uid://bwsvopgn6l3u8" path="res://enlace_visual.gd" id="14_bideo"]
 [ext_resource type="Script" uid="uid://bdfa7mnv1y528" path="res://modem_principal.gd" id="15_wogku"]
-[ext_resource type="Script" uid="uid://cd5qt4h4wycc3" path="res://spawner.gd" id="13_spawner"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mt2cc"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -29,9 +29,6 @@ background_mode = 2
 sky = SubResource("Sky_dgm2e")
 tonemap_mode = 2
 
-[sub_resource type="BoxMesh" id="BoxMesh_x3esv"]
-size = Vector3(0.3, 0.1, 0.3)
-
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_awtwk"]
 radius = 0.2755
 height = 0.551
@@ -39,6 +36,9 @@ height = 0.551
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_awtwk"]
 radius = 0.3
 height = 0.6
+
+[sub_resource type="BoxMesh" id="BoxMesh_x3esv"]
+size = Vector3(0.3, 0.1, 0.3)
 
 [sub_resource type="GDScript" id="GDScript_4qkwh"]
 script/source = "extends Node3D
@@ -618,7 +618,6 @@ mesh = SubResource("BoxMesh_wogku")
 script = ExtResource("14_bideo")
 nodo_origen = NodePath("../Antena_Principal")
 nodo_destino = NodePath("../../Modems/Modem_secundario")
-
 
 [node name="PatioFrontal" type="CSGCombiner3D" parent="." unique_id=1060374696]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
