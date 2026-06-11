@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://k44mu7g3trn2" path="res://herringbone_brick_03_diff_1k.jpg" id="16_d8b5o"]
 [ext_resource type="Script" uid="uid://dafkee3ylp326" path="res://pivote_camara.gd" id="16_x3esv"]
 [ext_resource type="Script" uid="uid://d1j1ti1q1d3f" path="res://ui_control_red.gd" id="17_j2u5w"]
+[ext_resource type="Script" uid="uid://dp45nwq3een7w" path="res://camera_3d.gd" id="20_d7trm"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mt2cc"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -2695,6 +2696,7 @@ script = ExtResource("16_x3esv")
 
 [node name="Camera3D" type="Camera3D" parent="Pivote_camara" unique_id=278807889]
 transform = Transform3D(-1, -7.161255e-08, 5.0143647e-08, 0, 0.57357645, 0.81915206, -8.742278e-08, 0.81915206, -0.57357645, 13.403446, 7.536553, -71.19773)
+script = ExtResource("20_d7trm")
 
 [node name="Piso_general" type="CSGBox3D" parent="." unique_id=929889987]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -3.1767638, -0.8321395, -3.756662)
