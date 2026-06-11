@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bhc3htsqyd8aw" path="res://estudiante.gd" id="1_awtwk"]
 [ext_resource type="PackedScene" uid="uid://c6tihpamj7gw2" path="res://Bloque_sur.tscn" id="3_jdjiw"]
+[ext_resource type="PackedScene" uid="uid://cvqiiw1vx312y" path="res://paquete.tscn" id="3_wkv31"]
 [ext_resource type="PackedScene" uid="uid://2w0tdp533ecb" path="res://bloque_oeste.tscn" id="4_oxlh1"]
 [ext_resource type="PackedScene" uid="uid://bylsoyawfw17x" path="res://bloque_central.tscn" id="5_mt2cc"]
 [ext_resource type="PackedScene" uid="uid://c6vm45srdiuqd" path="res://bloque_banos_patio.tscn" id="6_dgm2e"]
@@ -194,8 +195,9 @@ transform = Transform3D(-0.25, 0.86602545, 0.43301272, 0.8660256, -5.9604645e-08
 shadow_enabled = true
 
 [node name="Estudiante1" type="CharacterBody3D" parent="." unique_id=2075333059]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 24.753237, 0.53054523, 33.020306)
+transform = Transform3D(-0.8660254, 0, 0.5, 0, 1, 0, -0.50000006, 0, -0.8660253, 24.753237, 0.53054523, 33.020306)
 script = ExtResource("1_awtwk")
+escena_paquete = ExtResource("3_wkv31")
 
 [node name="Camera3D" type="Camera3D" parent="Estudiante1" unique_id=956560710]
 transform = Transform3D(0.7071068, 0, 0.7071067, 0, 1, 0, -0.7071067, 0, 0.7071068, 0, 0, 0)

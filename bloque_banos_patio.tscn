@@ -42,43 +42,43 @@ operation = 2
 size = Vector3(10.234, 2.480804, 4.349365)
 material = SubResource("StandardMaterial3D_u43yo")
 
-[node name="Puerta_Baño_Niña" type="CSGBox3D" parent="." unique_id=66203085]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.229002, 0.6014455, -13.036)
-operation = 2
-size = Vector3(1, 1.6748047, 0.9)
-
 [node name="Puertas_Baño_Niño" type="CSGBox3D" parent="." unique_id=1121974236]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.229002, 0.5817012, -17.556425)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.229002, 0.3140462, -17.82122)
 operation = 2
-size = Vector3(1, 1.6676025, 0.9)
+size = Vector3(1, 1.6676025, 1.4295899)
+
+[node name="Puertas_Baño_Niño2" type="CSGBox3D" parent="." unique_id=1799904443]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.229002, 0.3140462, -12.933018)
+operation = 2
+size = Vector3(1, 1.6676025, 1.4295899)
 
 [node name="Piso_Baño_Niños" type="CSGBox3D" parent="." unique_id=245975387]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -36.437664, -0.26639605, -13.051415)
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -36.437664, -0.2951734, -13.051415)
 size = Vector3(102.508606, 0.001, 43.268677)
 material = SubResource("StandardMaterial3D_aoo5m")
 
 [node name="Piso_Baño_Niños2" type="CSGBox3D" parent="." unique_id=1688760063]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -36.407745, -0.19748217, -17.704323)
-size = Vector3(103.106964, 0.001, 44.911804)
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -36.436195, -0.44926816, -17.704323)
+size = Vector3(102.53798, 0.001, 44.911804)
 material = SubResource("StandardMaterial3D_wbbsh")
 
 [node name="toiletbasictoilet" parent="." unique_id=1844027235 instance=ExtResource("4_aoo5m")]
-transform = Transform3D(-7.4505806e-08, 0, 0.99999994, 0, 0.6169156, 0, -0.88089716, 0, -1.1920929e-07, -40.559433, 0.34040618, -14.381757)
+transform = Transform3D(-7.4505806e-08, 0, 0.99999994, 0, 0.6169156, 0, -0.88089716, 0, -1.1920929e-07, -40.559433, 0.1007698, -14.381757)
 
 [node name="toiletbasictoilet4" parent="." unique_id=459054569 instance=ExtResource("4_aoo5m")]
-transform = Transform3D(-3.8505238e-08, 0, 1, 0, 0.6169156, 0, -0.88089716, 0, -4.371139e-08, -40.835316, 0.19317138, -12.446183)
+transform = Transform3D(-3.8505238e-08, 0, 1, 0, 0.6169156, 0, -0.88089716, 0, -4.371139e-08, -40.835316, 0.12897873, -12.446183)
 
 [node name="toiletbasictoilet9" parent="." unique_id=1529932086 instance=ExtResource("4_aoo5m")]
-transform = Transform3D(-3.8505238e-08, 0, 1, 0, 0.6169156, 0, -0.88089716, 0, -4.371139e-08, -41.001038, 0.19317138, -16.433144)
+transform = Transform3D(-3.8505238e-08, 0, 1, 0, 0.6169156, 0, -0.88089716, 0, -4.371139e-08, -41.001038, -0.05615285, -16.433144)
 
 [node name="toiletbasictoilet10" parent="." unique_id=2128090405 instance=ExtResource("4_aoo5m")]
-transform = Transform3D(-3.8505238e-08, 0, 1, 0, 0.6169156, 0, -0.88089716, 0, -4.371139e-08, -40.899742, 0.19317138, -18.695723)
-
-[node name="Base_Puerta" parent="." unique_id=1107398468 instance=ExtResource("5_wbbsh")]
-transform = Transform3D(-3.7166583e-08, 0, -1.4145122, 0, 0.9112446, 0, 0.85027236, 0, -6.183029e-08, -31.115076, 0.42366672, -12.590151)
+transform = Transform3D(-3.8505238e-08, 0, 1, 0, 0.6169156, 0, -0.88089716, 0, -4.371139e-08, -40.899742, -0.024948105, -18.695723)
 
 [node name="Base_Puerta2" parent="." unique_id=270352792 instance=ExtResource("5_wbbsh")]
-transform = Transform3D(-3.7166583e-08, 0, -1.4145122, 0, 0.9112446, 0, 0.85027236, 0, -6.183029e-08, -31.128674, 0.42366672, -17.078259)
+transform = Transform3D(-5.700225e-08, 0, -1.4145122, 0, 0.9112446, 0, 1.3040596, 0, -6.183029e-08, -31.128674, 0.15064275, -17.116703)
+
+[node name="Base_Puerta3" parent="." unique_id=1107398468 instance=ExtResource("5_wbbsh")]
+transform = Transform3D(-5.700225e-08, 0, -1.4145122, 0, 0.9112446, 0, 1.3040596, 0, -6.183029e-08, -31.128674, 0.15064275, -12.210672)
 
 [node name="Techo" type="CSGBox3D" parent="." unique_id=2048082073]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -36.49074, 2.1426806, -15.254168)
