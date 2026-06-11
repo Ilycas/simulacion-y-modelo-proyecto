@@ -15,6 +15,7 @@
 [ext_resource type="Script" uid="uid://650hdjasby3a" path="res://enlace_modem_repetidor.gd" id="12_x3esv"]
 [ext_resource type="Script" uid="uid://bwsvopgn6l3u8" path="res://enlace_visual.gd" id="14_bideo"]
 [ext_resource type="Script" uid="uid://bdfa7mnv1y528" path="res://modem_principal.gd" id="15_wogku"]
+[ext_resource type="PackedScene" uid="uid://7c24p1udk8xl" path="res://Assets/lamp.fbx" id="16_x3esv"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mt2cc"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -686,3 +687,6 @@ size = Vector3(59.85571, 0.53749084, 0.8642061)
 [node name="Borde_De_Techo2" type="CSGBox3D" parent="Exterior_central" unique_id=1370981197]
 transform = Transform3D(0.9999999, 0, 3.5527137e-15, 0, 1, 0, 3.5527137e-15, 0, 0.9999999, 25.516403, -1.5499654, 47.1892)
 size = Vector3(10.440351, 0.53749084, 1.3337936)
+
+[node name="lamp" parent="." unique_id=98909785 instance=ExtResource("16_x3esv")]
+transform = Transform3D(-6.38256e-08, 0, 1.6587454, 0, 1, 0, -1.4601594, 0, -7.2506054e-08, 8.049916, 2.0697284, -45.117416)

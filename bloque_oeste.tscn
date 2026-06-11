@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dut5446mpxycr" path="res://WoodFloor005_1K-PNG_Color.png" id="2_ijlh2"]
 [ext_resource type="PackedScene" uid="uid://cysfl0gl31gk2" path="res://Assets/blackboardbig_1.fbx" id="3_pk4t3"]
 [ext_resource type="PackedScene" uid="uid://c5j7e8ww3ihtm" path="res://Assets/chairtable.fbx" id="4_gom2m"]
+[ext_resource type="PackedScene" uid="uid://7c24p1udk8xl" path="res://Assets/lamp.fbx" id="5_gom2m"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_madera_oeste"]
 size = Vector3(8.757065, 2.5497253, 0.31019288)
@@ -410,3 +411,147 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.57669, -0.41802832, 32.135
 [node name="Techo" type="CSGBox3D" parent="." unique_id=492028247]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 47.99305, 2.064631, 0.81614685)
 size = Vector3(12.995259, 0.53749084, 106.01974)
+
+[node name="lamp" parent="." unique_id=98909785 instance=ExtResource("5_gom2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.553802, 1.7310553, 49.215843)
+
+[node name="lamp2" parent="." unique_id=646205598 instance=ExtResource("5_gom2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.553802, 1.7310553, 45.484573)
+
+[node name="lamp3" parent="." unique_id=1962574884 instance=ExtResource("5_gom2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.553802, 1.7310553, 42.46662)
+
+[node name="lamp4" parent="." unique_id=1314439639 instance=ExtResource("5_gom2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.553802, 1.7310553, 39.020645)
+
+[node name="lamp5" parent="." unique_id=950120231 instance=ExtResource("5_gom2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.553802, 1.7310553, 35.815277)
+
+[node name="lamp6" parent="." unique_id=507031614 instance=ExtResource("5_gom2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.553802, 1.7310553, 32.441196)
+
+[node name="lamp7" parent="." unique_id=1095664554 instance=ExtResource("5_gom2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.892456, 1.7310553, 49.215843)
+
+[node name="lamp8" parent="." unique_id=2059353083 instance=ExtResource("5_gom2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.892456, 1.7310553, 45.484573)
+
+[node name="lamp9" parent="." unique_id=978274826 instance=ExtResource("5_gom2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.892456, 1.7310553, 42.46662)
+
+[node name="lamp10" parent="." unique_id=659541198 instance=ExtResource("5_gom2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.892456, 1.7310553, 39.020645)
+
+[node name="lamp11" parent="." unique_id=1518083661 instance=ExtResource("5_gom2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.892456, 1.7310553, 35.815277)
+
+[node name="lamp12" parent="." unique_id=2003784763 instance=ExtResource("5_gom2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.892456, 1.7310553, 32.441196)
+
+[node name="lamp13" parent="." unique_id=1078499977 instance=ExtResource("5_gom2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.553802, 1.7310553, 24.563084)
+
+[node name="lamp14" parent="." unique_id=1055933464 instance=ExtResource("5_gom2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.553802, 1.7310553, 20.831814)
+
+[node name="lamp15" parent="." unique_id=839030125 instance=ExtResource("5_gom2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.553802, 1.7310553, 17.813862)
+
+[node name="lamp16" parent="." unique_id=1310968925 instance=ExtResource("5_gom2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.553802, 1.7310553, 14.367886)
+
+[node name="lamp17" parent="." unique_id=1609021011 instance=ExtResource("5_gom2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.553802, 1.7310553, 11.162518)
+
+[node name="lamp18" parent="." unique_id=1494102619 instance=ExtResource("5_gom2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.553802, 1.7310553, 7.788437)
+
+[node name="lamp19" parent="." unique_id=415133462 instance=ExtResource("5_gom2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.892456, 1.7310553, 24.563084)
+
+[node name="lamp20" parent="." unique_id=440903566 instance=ExtResource("5_gom2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.892456, 1.7310553, 20.831814)
+
+[node name="lamp21" parent="." unique_id=1512359424 instance=ExtResource("5_gom2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.892456, 1.7310553, 17.813862)
+
+[node name="lamp22" parent="." unique_id=921651845 instance=ExtResource("5_gom2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.892456, 1.7310553, 14.367886)
+
+[node name="lamp23" parent="." unique_id=1029935163 instance=ExtResource("5_gom2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.892456, 1.7310553, 11.162518)
+
+[node name="lamp24" parent="." unique_id=1090752435 instance=ExtResource("5_gom2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.892456, 1.7310553, 7.788437)
+
+[node name="lamp25" parent="." unique_id=387524608 instance=ExtResource("5_gom2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.553802, 1.7310553, -4.1199284)
+
+[node name="lamp26" parent="." unique_id=1460051968 instance=ExtResource("5_gom2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.553802, 1.7310553, -7.851198)
+
+[node name="lamp27" parent="." unique_id=542809835 instance=ExtResource("5_gom2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.553802, 1.7310553, -10.86915)
+
+[node name="lamp28" parent="." unique_id=419719204 instance=ExtResource("5_gom2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.553802, 1.7310553, -14.315126)
+
+[node name="lamp29" parent="." unique_id=305751563 instance=ExtResource("5_gom2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.553802, 1.7310553, -17.520494)
+
+[node name="lamp30" parent="." unique_id=1226378973 instance=ExtResource("5_gom2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.553802, 1.7310553, -20.894575)
+
+[node name="lamp31" parent="." unique_id=284638477 instance=ExtResource("5_gom2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.892456, 1.7310553, -4.1199284)
+
+[node name="lamp32" parent="." unique_id=1344216746 instance=ExtResource("5_gom2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.892456, 1.7310553, -7.851198)
+
+[node name="lamp33" parent="." unique_id=909658677 instance=ExtResource("5_gom2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.892456, 1.7310553, -10.86915)
+
+[node name="lamp34" parent="." unique_id=1270738681 instance=ExtResource("5_gom2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.892456, 1.7310553, -14.315126)
+
+[node name="lamp35" parent="." unique_id=1119361484 instance=ExtResource("5_gom2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.892456, 1.7310553, -17.520494)
+
+[node name="lamp36" parent="." unique_id=1456031735 instance=ExtResource("5_gom2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.892456, 1.7310553, -20.894575)
+
+[node name="lamp37" parent="." unique_id=2094939710 instance=ExtResource("5_gom2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.553802, 1.7310553, -32.449844)
+
+[node name="lamp38" parent="." unique_id=20912658 instance=ExtResource("5_gom2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.553802, 1.7310553, -36.18111)
+
+[node name="lamp39" parent="." unique_id=985889000 instance=ExtResource("5_gom2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.553802, 1.7310553, -39.199062)
+
+[node name="lamp40" parent="." unique_id=2007606482 instance=ExtResource("5_gom2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.553802, 1.7310553, -42.64504)
+
+[node name="lamp41" parent="." unique_id=1358462638 instance=ExtResource("5_gom2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.553802, 1.7310553, -45.850407)
+
+[node name="lamp42" parent="." unique_id=730812754 instance=ExtResource("5_gom2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.553802, 1.7310553, -49.22449)
+
+[node name="lamp43" parent="." unique_id=684446201 instance=ExtResource("5_gom2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.892456, 1.7310553, -32.449844)
+
+[node name="lamp44" parent="." unique_id=84128047 instance=ExtResource("5_gom2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.892456, 1.7310553, -36.18111)
+
+[node name="lamp45" parent="." unique_id=1629914713 instance=ExtResource("5_gom2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.892456, 1.7310553, -39.199062)
+
+[node name="lamp46" parent="." unique_id=862091813 instance=ExtResource("5_gom2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.892456, 1.7310553, -42.64504)
+
+[node name="lamp47" parent="." unique_id=1705658184 instance=ExtResource("5_gom2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.892456, 1.7310553, -45.850407)
+
+[node name="lamp48" parent="." unique_id=1141805726 instance=ExtResource("5_gom2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.892456, 1.7310553, -49.22449)
