@@ -593,10 +593,6 @@ nodo_destino = NodePath("../../Modems/Modem_secundario")
 [node name="PatioFrontal" type="CSGCombiner3D" parent="." unique_id=1060374696]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
 
-[node name="Cera principal" type="CSGBox3D" parent="PatioFrontal" unique_id=1106848615]
-transform = Transform3D(0.9999672, 0, 0, 0, 0.9999751, 0, 0, 0, 0.9999998, 24.369417, -0.6295865, -58.33594)
-size = Vector3(14.214905, 0.33967894, 11.888458)
-
 [node name="CSGBox3D" type="CSGBox3D" parent="PatioFrontal" unique_id=1129105137]
 transform = Transform3D(0.9999667, 0, 0, 0, 0.99997467, 0, 0, 0, 0.9999998, 42.1923, -0.7534575, -58.03978)
 size = Vector3(21.537231, 0.1, 12.533203)
@@ -625,6 +621,16 @@ size = Vector3(11.906778, 2.7835712, 0.29144287)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -46.957222, 0, -64.033134)
 operation = 2
 size = Vector3(9.48822, 1, 1)
+
+[node name="CeraPrincipal" type="CSGBox3D" parent="PatioFrontal" unique_id=1273557614]
+transform = Transform3D(0.0044420743, 0.004010827, 0.99998236, -0.0009357907, 0.99999154, -0.004006704, -0.999993, -0.000917959, 0.004445793, 24.778807, -0.87481976, -59.325405)
+size = Vector3(14.763784, 0.43017578, 13.537666)
+material = ExtResource("11_4qkwh")
+
+[node name="CeraPrincipal2" type="CSGBox3D" parent="PatioFrontal" unique_id=393288216]
+transform = Transform3D(0.9999856, 0.004010827, -0.004442121, -0.004006735, 0.99999154, 0.0009357792, 0.004445834, -0.000917959, 0.99999297, 38.911423, -0.8733581, -56.421494)
+size = Vector3(14.763784, 0.43017578, 7.9339943)
+material = ExtResource("11_4qkwh")
 
 [node name="PatioFrontal2" type="CSGCombiner3D" parent="." unique_id=341162371]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
@@ -735,7 +741,7 @@ size = Vector3(11.69325, 0.6076126, 0.68136597)
 transform = Transform3D(-4.371139e-08, 0, -0.9999999, 0, 1, 0, 0.9999999, 0, -4.371138e-08, 41.80725, 2.156334, -56.512318)
 size = Vector3(8.384508, 0.6076126, 0.68136597)
 
-[node name="Techo3" type="CSGBox3D" parent="Exterior" unique_id=571417245]
+[node name="Techo3" type="CSGBox3D" parent="Exterior" unique_id=571417245 groups=["grupo_techo"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 35.445755, 2.3549476, -56.455296)
 size = Vector3(13.655901, 0.30259895, 8.952308)
 
@@ -834,11 +840,11 @@ size = Vector3(65.39099, 1.3548317, 0.29144287)
 transform = Transform3D(0.9999999, 0, -3.5527137e-15, 0, 1, 0, -3.5527133e-15, 0, 0.9999999, -8.665642, -3.6013021, 54.015278)
 size = Vector3(100.945526, 1.3548317, 0.29144287)
 
-[node name="Techo3" type="CSGBox3D" parent="Exterior_central" unique_id=529349959]
+[node name="Techo3" type="CSGBox3D" parent="Exterior_central" unique_id=529349959 groups=["grupo_techo"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -4.433727, -1.4188347, -14.897826)
 size = Vector3(71.34675, 0.29818392, 10.618323)
 
-[node name="Techo4" type="CSGBox3D" parent="Exterior_central" unique_id=1674908758]
+[node name="Techo4" type="CSGBox3D" parent="Exterior_central" unique_id=1674908758 groups=["grupo_techo"]]
 transform = Transform3D(-4.371139e-08, 0, -0.9999999, 0, 1, 0, 0.9999999, 0, -4.371138e-08, 25.856575, -1.4188347, 13.334007)
 size = Vector3(46.161636, 0.29818392, 11.047993)
 
@@ -1015,23 +1021,23 @@ curve = SubResource("Curve3D_r7fgt")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.152405, 0, -25.194336)
 curve = SubResource("Curve3D_lscaw")
 
-[node name="Spawner" type="Node3D" parent="." unique_id=-1294967246]
+[node name="Spawner" type="Node3D" parent="." unique_id=-1294967246 groups=["grupo_estudiantes"]]
 script = ExtResource("13_spawner")
 
 [node name="Techo Curvado" type="CSGCombiner3D" parent="." unique_id=1518140690]
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Techo Curvado" unique_id=778435783]
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Techo Curvado" unique_id=778435783 groups=["grupo_techo"]]
 transform = Transform3D(-4.371138e-08, 4.371139e-08, 0.9999999, 1, 0, 4.3711385e-08, 0, 0.9999999, -4.371138e-08, 24.968859, 0.39209616, -58.153366)
 radius = 5.0
 height = 12.088501
 
-[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Techo Curvado" unique_id=460016512]
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Techo Curvado" unique_id=460016512 groups=["grupo_techo"]]
 transform = Transform3D(-4.371138e-08, 4.371139e-08, 0.9999999, 1, 0, 4.3711385e-08, 0, 0.9999999, -4.371138e-08, 24.91224, 0.9052625, -58.184074)
 operation = 2
 radius = 4.354492
 height = 12.072266
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Techo Curvado" unique_id=624317901]
+[node name="CSGBox3D" type="CSGBox3D" parent="Techo Curvado" unique_id=624317901 groups=["grupo_techo"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 23.499998, -1.0974121, -58.2896)
 operation = 2
 size = Vector3(14, 7.194824, 12.420776)
@@ -2459,14 +2465,16 @@ script = ExtResource("17_j2u5w")
 antena_principal = NodePath("../Antena/Antena_Principal")
 
 [node name="Panel" type="Panel" parent="UI_control_red" unique_id=85552297]
-offset_right = 77.0
-offset_bottom = 32.0
+offset_left = -1.0
+offset_top = 542.0
+offset_right = 149.0
+offset_bottom = 647.0
 
 [node name="HSlider" type="HSlider" parent="UI_control_red/Panel" unique_id=722910542]
 layout_mode = 0
 offset_left = 6.0
 offset_top = 7.0
-offset_right = 68.0
+offset_right = 137.0
 offset_bottom = 28.0
 
 [node name="Label" type="Label" parent="UI_control_red/Panel" unique_id=1150791148]
@@ -2475,9 +2483,26 @@ offset_top = 32.0
 offset_right = 77.0
 offset_bottom = 55.0
 
+[node name="CheckButton" type="CheckButton" parent="UI_control_red/Panel" unique_id=1903832748]
+layout_mode = 0
+offset_top = 55.0
+offset_right = 44.0
+offset_bottom = 79.0
+
+[node name="Label2" type="Label" parent="UI_control_red/Panel" unique_id=1034495778]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 83.0
+offset_right = 80.0
+offset_bottom = 106.0
+
 [node name="Pivote_camara" type="Node3D" parent="." unique_id=1781339083]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.1858206, -0.08346863)
 script = ExtResource("16_x3esv")
 
 [node name="Camera3D" type="Camera3D" parent="Pivote_camara" unique_id=278807889]
-transform = Transform3D(-1, -7.161255e-08, 5.0143647e-08, 0, 0.57357645, 0.81915206, -8.742278e-08, 0.81915206, -0.57357645, 6.828401e-06, 10.366474, -77.60868)
+transform = Transform3D(-1, -7.161255e-08, 5.0143647e-08, 0, 0.57357645, 0.81915206, -8.742278e-08, 0.81915206, -0.57357645, 6.8428376e-06, 9.498201, -77.77381)
+
+[node name="Piso_general" type="CSGBox3D" parent="." unique_id=929889987]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -3.135686, -0.83213997, -3.8332677)
+size = Vector3(131.99013, 0.1, 125.62027)

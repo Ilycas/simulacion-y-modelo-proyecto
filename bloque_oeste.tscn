@@ -408,7 +408,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52.196487, -0.41802832, 32.13
 [node name="chairtable48" parent="." unique_id=434930749 instance=ExtResource("4_gom2m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.57669, -0.41802832, 32.135067)
 
-[node name="Techo" type="CSGBox3D" parent="." unique_id=492028247]
+[node name="Techo" type="CSGBox3D" parent="." unique_id=492028247 groups=["grupo_techo"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 47.99305, 2.064631, 0.81614685)
 size = Vector3(12.995259, 0.53749084, 106.01974)
 

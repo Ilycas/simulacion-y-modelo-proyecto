@@ -22,6 +22,8 @@ RutaManager="*res://RutaManager.gd"
 [global_group]
 
 player=""
+grupo_techo=""
+grupo_estudiantes=""
 
 [physics]
 
