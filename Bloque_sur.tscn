@@ -170,9 +170,9 @@ size = Vector3(24.203382, 3, 32.375)
 material = SubResource("StandardMaterial3D_f7j0d")
 
 [node name="Puerta_recepcion" type="CSGBox3D" parent="." unique_id=1376986176]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.05703, -54.24401, -57.736897)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.05703, -54.354034, -57.736897)
 operation = 2
-size = Vector3(4.079297, 2.1, 0.85388184)
+size = Vector3(4.079297, 1.879956, 0.85388184)
 
 [node name="Puerta_Aula5" type="CSGBox3D" parent="." unique_id=2126019366]
 transform = Transform3D(-4.3711392e-08, 0, -1, 0, 1, 0, 0.9999999, 0, -4.3711392e-08, 57.917942, -54.33132, -32.19225)
@@ -1022,6 +1022,18 @@ transform = Transform3D(2.3036096, 0, 0, 0, 1.1251987, 0, -1.2551674e-14, 0, 1.4
 
 [node name="Base_Puerta8" parent="." unique_id=1752904206 instance=ExtResource("17_0a0nl")]
 transform = Transform3D(-3.2068295, 0, 0.70725614, 0, 1.1251987, 0, -1.8514642, 0, -1.2250035, 47.21142, -54.640778, -25.062523)
+script = null
+
+[node name="Base_Puerta11" parent="." unique_id=1806775890 instance=ExtResource("17_0a0nl")]
+transform = Transform3D(-1.5060809, 0, -0.707256, 0, 1.1251987, 0, 0.8695361, 0, -1.2250035, 47.12246, -54.640778, -58.027977)
+script = null
+
+[node name="Base_Puerta12" parent="." unique_id=414436451 instance=ExtResource("17_0a0nl")]
+transform = Transform3D(-1.2242422, 0, 1.0002111, 0, 1.1251987, 0, -1.2242422, 0, -1.0002111, 41.74726, -54.640778, -59.45903)
+script = null
+
+[node name="Base_Puerta13" parent="." unique_id=1312761972 instance=ExtResource("17_0a0nl")]
+transform = Transform3D(0, 0, 1.4145122, 0, 1.1251987, 0, -1.8014822, 0, 0, 33.03025, -54.4502, -51.86029)
 script = null
 
 [node name="Base_Puerta4" parent="." unique_id=1818658888 instance=ExtResource("17_0a0nl")]
