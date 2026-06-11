@@ -686,3 +686,16 @@ size = Vector3(59.85571, 0.53749084, 0.8642061)
 [node name="Borde_De_Techo2" type="CSGBox3D" parent="Exterior_central" unique_id=1370981197]
 transform = Transform3D(0.9999999, 0, 3.5527137e-15, 0, 1, 0, 3.5527137e-15, 0, 0.9999999, 25.516403, -1.5499654, 47.1892)
 size = Vector3(10.440351, 0.53749084, 1.3337936)
+
+[node name="Techo Curvado" type="CSGCombiner3D" parent="." unique_id=1518140690]
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Techo Curvado" unique_id=778435783]
+transform = Transform3D(-4.371138e-08, 4.371139e-08, 0.9999999, 1, 0, 4.3711385e-08, 0, 0.9999999, -4.371138e-08, 24.968859, 2.8715224, -57.895737)
+radius = 0.5029297
+height = 10.942236
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Techo Curvado" unique_id=460016512]
+transform = Transform3D(-4.371138e-08, 4.371139e-08, 0.9999999, 1, 0, 4.3711385e-08, 0, 0.9999999, -4.371138e-08, 24.968859, 2.761889, -58.319828)
+operation = 2
+radius = 0.5029297
+height = 10.50137
