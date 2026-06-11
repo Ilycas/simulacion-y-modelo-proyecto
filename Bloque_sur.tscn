@@ -214,7 +214,7 @@ operation = 2
 size = Vector3(2, 2.1, 2.5)
 
 [node name="Puerta_recepcion2" type="CSGBox3D" parent="." unique_id=1465530856]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.05703, -54.24401, -24.903818)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.679024, -54.24401, -24.903818)
 operation = 2
 size = Vector3(4.079297, 2.1, 0.85388184)
 
