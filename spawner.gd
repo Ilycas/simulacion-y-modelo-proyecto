@@ -11,9 +11,10 @@ func _ready() -> void:
 		push_warning("Spawner: no se encontraron marcadores en grupo 'destino'")
 		return
 	var routers: Array[Node3D] = []
-	for child in get_tree().current_scene.get_children():
-		if child is Node3D and "Router" in child.name:
-			routers.append(child)
+	var nodos_encontrados = get_tree().get_nodes_in_group("grupo_routers")
+	for nodo in nodos_encontrados:
+		if nodo is Node3D:
+			routers.append(nodo)
 
 	call_deferred("_iniciar_rutas_y_spawn", markers, routers)
 

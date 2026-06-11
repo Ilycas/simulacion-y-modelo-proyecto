@@ -23,6 +23,8 @@ var _ruta_actual_idx: int = 0
 var path_follow: PathFollow3D = null
 var _ultimos_visitados: Array[String] = []
 
+var velocidad_paquete_actual: float = 15.0
+
 func _ready() -> void:
 	if path_follow == null and get_parent() is PathFollow3D:
 		path_follow = get_parent() as PathFollow3D
@@ -211,3 +213,44 @@ func _physics_process(delta: float) -> void:
 	if _scan_timer >= 0.5:
 		_scan_timer = 0.0
 		_actualizar_conexion()
+		
+
+var simulacion_activa: bool = false
+var tiempo_entre_paquetes: float = 0.8 # 
+
+
+func empezar_envio_datos() -> void:
+	
+	if simulacion_activa:
+		return
+		
+	simulacion_activa = true
+	
+	
+	while simulacion_activa:
+		_instanciar_un_paquete()
+		
+		
+		await get_tree().create_timer(tiempo_entre_paquetes).timeout
+
+
+func _instanciar_un_paquete() -> void:
+	var distancia_minima: float = radio_cobertura
+	router_conectado = null 
+	
+	for router in lista_routers:
+		if is_instance_valid(router):
+			var dist = global_position.distance_to(router.global_position)
+			if dist < distancia_minima:
+				distancia_minima = dist
+				router_conectado = router
+
+	if router_conectado != null:
+		var paquete_escena = load("res://paquete.tscn") 
+		if paquete_escena:
+			var paquete = paquete_escena.instantiate()
+			get_tree().current_scene.add_child(paquete)
+			paquete.global_position = global_position
+			
+			if paquete.has_method("disparar"):
+				paquete.disparar(router_conectado.global_position, self)

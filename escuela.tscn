@@ -239,8 +239,8 @@ mesh = SubResource("BoxMesh_x3esv")
 [node name="Routers_oeste" type="Node3D" parent="Routers_Oeste" unique_id=1485234463]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.0027103, 0, 0)
 
-[node name="Repetidor1" type="Node3D" parent="Routers_Oeste/Routers_oeste" unique_id=1684531925 node_paths=PackedStringArray("modem_principal")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.25442, 0.017786026, -28.728266)
+[node name="Repetidor1" type="Node3D" parent="Routers_Oeste/Routers_oeste" unique_id=1684531925 node_paths=PackedStringArray("modem_principal") groups=["grupo_routers"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.720137, 0.017786026, -28.728266)
 script = SubResource("GDScript_4qkwh")
 modem_principal = NodePath("../../../Modems/Modem_secundario")
 
@@ -266,8 +266,8 @@ mesh = SubResource("TorusMesh_dt7fy")
 script = ExtResource("12_ie88l")
 escala_actual = 8.0
 
-[node name="Repetidor2" type="Node3D" parent="Routers_Oeste/Routers_oeste" unique_id=439257965 node_paths=PackedStringArray("modem_principal")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.288395, 0.017786026, -6.113819)
+[node name="Repetidor2" type="Node3D" parent="Routers_Oeste/Routers_oeste" unique_id=439257965 node_paths=PackedStringArray("modem_principal") groups=["grupo_routers"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.75411, 0.017786026, -6.113819)
 script = SubResource("GDScript_4qkwh")
 modem_principal = NodePath("../../../Modems/Modem_secundario")
 
@@ -293,8 +293,8 @@ mesh = SubResource("TorusMesh_dt7fy")
 script = ExtResource("12_ie88l")
 escala_actual = 8.0
 
-[node name="Repetidor3" type="Node3D" parent="Routers_Oeste/Routers_oeste" unique_id=25244915 node_paths=PackedStringArray("modem_principal")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.235924, 0.017786026, 14.183878)
+[node name="Repetidor3" type="Node3D" parent="Routers_Oeste/Routers_oeste" unique_id=25244915 node_paths=PackedStringArray("modem_principal") groups=["grupo_routers"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.70164, 0.017786026, 14.183878)
 script = SubResource("GDScript_4qkwh")
 modem_principal = NodePath("../../../Modems/Modem_secundario")
 
@@ -320,8 +320,8 @@ mesh = SubResource("TorusMesh_dt7fy")
 script = ExtResource("12_ie88l")
 escala_actual = 8.0
 
-[node name="Repetidor4" type="Node3D" parent="Routers_Oeste/Routers_oeste" unique_id=468202083 node_paths=PackedStringArray("modem_principal")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.241344, 0.017786026, 31.893602)
+[node name="Repetidor4" type="Node3D" parent="Routers_Oeste/Routers_oeste" unique_id=468202083 node_paths=PackedStringArray("modem_principal") groups=["grupo_routers"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.70706, 0.017786026, 31.893602)
 script = SubResource("GDScript_4qkwh")
 modem_principal = NodePath("../../../Modems/Modem_secundario")
 
@@ -383,8 +383,8 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -17.
 [node name="Routers_oeste" type="Node3D" parent="Routers_Sur" unique_id=1554401038]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.0027103, 0, 0)
 
-[node name="Repetidor1" type="Node3D" parent="Routers_Sur/Routers_oeste" unique_id=2102849639 node_paths=PackedStringArray("modem_principal")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.908676, 0.017786026, -17.56943)
+[node name="Repetidor1" type="Node3D" parent="Routers_Sur/Routers_oeste" unique_id=2102849639 node_paths=PackedStringArray("modem_principal") groups=["grupo_routers"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.210665, 0.017786026, -17.56943)
 script = SubResource("GDScript_4qkwh")
 modem_principal = NodePath("../../../Modems/Modem_principal")
 
@@ -410,8 +410,143 @@ mesh = SubResource("TorusMesh_dt7fy")
 script = ExtResource("12_ie88l")
 escala_actual = 8.0
 
-[node name="Repetidor2" type="Node3D" parent="Routers_Sur/Routers_oeste" unique_id=835684227 node_paths=PackedStringArray("modem_principal")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.842678, 0.017786026, -3.5978174)
+[node name="Repetidor6" type="Node3D" parent="Routers_Sur/Routers_oeste" unique_id=7587466 node_paths=PackedStringArray("modem_principal") groups=["grupo_routers"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.529673, 0.017786026, -11.028251)
+script = SubResource("GDScript_4qkwh")
+modem_principal = NodePath("../../../Modems/Modem_principal")
+
+[node name="Router1" type="MeshInstance3D" parent="Routers_Sur/Routers_oeste/Repetidor6" unique_id=135161823]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29029083, -0.0035955906, -0.107782364)
+mesh = SubResource("BoxMesh_4qkwh")
+
+[node name="ZonaCalorFuerte" type="MeshInstance3D" parent="Routers_Sur/Routers_oeste/Repetidor6/Router1" unique_id=759081087]
+transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_dt7fy")
+surface_material_override/0 = SubResource("StandardMaterial3D_dt7fy")
+script = ExtResource("12_ie88l")
+
+[node name="ZonaCalorPromedio" type="MeshInstance3D" parent="Routers_Sur/Routers_oeste/Repetidor6/Router1" unique_id=1743685966]
+transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_dt7fy")
+script = ExtResource("12_ie88l")
+escala_actual = 4.0
+
+[node name="ZonaCalorDebil" type="MeshInstance3D" parent="Routers_Sur/Routers_oeste/Repetidor6/Router1" unique_id=546222963]
+transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_dt7fy")
+script = ExtResource("12_ie88l")
+escala_actual = 8.0
+
+[node name="Repetidor7" type="Node3D" parent="Routers_Sur/Routers_oeste" unique_id=1198985155 node_paths=PackedStringArray("modem_principal") groups=["grupo_routers"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.529673, 0.017786026, 19.753555)
+script = SubResource("GDScript_4qkwh")
+modem_principal = NodePath("../../../Modems/Modem_principal")
+
+[node name="Router1" type="MeshInstance3D" parent="Routers_Sur/Routers_oeste/Repetidor7" unique_id=817483917]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29029083, -0.0035955906, -0.107782364)
+mesh = SubResource("BoxMesh_4qkwh")
+
+[node name="ZonaCalorFuerte" type="MeshInstance3D" parent="Routers_Sur/Routers_oeste/Repetidor7/Router1" unique_id=1875911352]
+transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_dt7fy")
+surface_material_override/0 = SubResource("StandardMaterial3D_dt7fy")
+script = ExtResource("12_ie88l")
+
+[node name="ZonaCalorPromedio" type="MeshInstance3D" parent="Routers_Sur/Routers_oeste/Repetidor7/Router1" unique_id=1655922509]
+transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_dt7fy")
+script = ExtResource("12_ie88l")
+escala_actual = 4.0
+
+[node name="ZonaCalorDebil" type="MeshInstance3D" parent="Routers_Sur/Routers_oeste/Repetidor7/Router1" unique_id=783735516]
+transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_dt7fy")
+script = ExtResource("12_ie88l")
+escala_actual = 8.0
+
+[node name="Repetidor8" type="Node3D" parent="Routers_Sur/Routers_oeste" unique_id=868330986 node_paths=PackedStringArray("modem_principal") groups=["grupo_routers"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.589449, 0.017786026, 36.285988)
+script = SubResource("GDScript_4qkwh")
+modem_principal = NodePath("../../../Modems/Modem_principal")
+
+[node name="Router1" type="MeshInstance3D" parent="Routers_Sur/Routers_oeste/Repetidor8" unique_id=1474137700]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29029083, -0.0035955906, -0.107782364)
+mesh = SubResource("BoxMesh_4qkwh")
+
+[node name="ZonaCalorFuerte" type="MeshInstance3D" parent="Routers_Sur/Routers_oeste/Repetidor8/Router1" unique_id=403685032]
+transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_dt7fy")
+surface_material_override/0 = SubResource("StandardMaterial3D_dt7fy")
+script = ExtResource("12_ie88l")
+
+[node name="ZonaCalorPromedio" type="MeshInstance3D" parent="Routers_Sur/Routers_oeste/Repetidor8/Router1" unique_id=1525866489]
+transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_dt7fy")
+script = ExtResource("12_ie88l")
+escala_actual = 4.0
+
+[node name="ZonaCalorDebil" type="MeshInstance3D" parent="Routers_Sur/Routers_oeste/Repetidor8/Router1" unique_id=374322530]
+transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_dt7fy")
+script = ExtResource("12_ie88l")
+escala_actual = 8.0
+
+[node name="Repetidor9" type="Node3D" parent="Routers_Sur/Routers_oeste" unique_id=1174322314 node_paths=PackedStringArray("modem_principal") groups=["grupo_routers"]]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 1, -43.618973, 0.017786026, 36.285988)
+script = SubResource("GDScript_4qkwh")
+modem_principal = NodePath("../../../Modems/Modem_principal")
+
+[node name="Router1" type="MeshInstance3D" parent="Routers_Sur/Routers_oeste/Repetidor9" unique_id=235139931]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29029083, -0.0035955906, -0.107782364)
+mesh = SubResource("BoxMesh_4qkwh")
+
+[node name="ZonaCalorFuerte" type="MeshInstance3D" parent="Routers_Sur/Routers_oeste/Repetidor9/Router1" unique_id=1708486639]
+transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_dt7fy")
+surface_material_override/0 = SubResource("StandardMaterial3D_dt7fy")
+script = ExtResource("12_ie88l")
+
+[node name="ZonaCalorPromedio" type="MeshInstance3D" parent="Routers_Sur/Routers_oeste/Repetidor9/Router1" unique_id=1518338085]
+transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_dt7fy")
+script = ExtResource("12_ie88l")
+escala_actual = 4.0
+
+[node name="ZonaCalorDebil" type="MeshInstance3D" parent="Routers_Sur/Routers_oeste/Repetidor9/Router1" unique_id=337746983]
+transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_dt7fy")
+script = ExtResource("12_ie88l")
+escala_actual = 8.0
+
+[node name="Repetidor10" type="Node3D" parent="Routers_Sur/Routers_oeste" unique_id=118762907 node_paths=PackedStringArray("modem_principal") groups=["grupo_routers"]]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 1, -43.618973, 0.017786026, 62.683975)
+script = SubResource("GDScript_4qkwh")
+modem_principal = NodePath("../../../Modems/Modem_principal")
+
+[node name="Router1" type="MeshInstance3D" parent="Routers_Sur/Routers_oeste/Repetidor10" unique_id=249270636]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29029083, -0.0035955906, -0.107782364)
+mesh = SubResource("BoxMesh_4qkwh")
+
+[node name="ZonaCalorFuerte" type="MeshInstance3D" parent="Routers_Sur/Routers_oeste/Repetidor10/Router1" unique_id=1000045970]
+transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_dt7fy")
+surface_material_override/0 = SubResource("StandardMaterial3D_dt7fy")
+script = ExtResource("12_ie88l")
+
+[node name="ZonaCalorPromedio" type="MeshInstance3D" parent="Routers_Sur/Routers_oeste/Repetidor10/Router1" unique_id=178039696]
+transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_dt7fy")
+script = ExtResource("12_ie88l")
+escala_actual = 4.0
+
+[node name="ZonaCalorDebil" type="MeshInstance3D" parent="Routers_Sur/Routers_oeste/Repetidor10/Router1" unique_id=1808440167]
+transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_dt7fy")
+script = ExtResource("12_ie88l")
+escala_actual = 8.0
+
+[node name="Repetidor2" type="Node3D" parent="Routers_Sur/Routers_oeste" unique_id=835684227 node_paths=PackedStringArray("modem_principal") groups=["grupo_routers"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.144665, 0.017786026, -3.5978174)
 script = SubResource("GDScript_4qkwh")
 modem_principal = NodePath("../../../Modems/Modem_principal")
 
@@ -437,8 +572,8 @@ mesh = SubResource("TorusMesh_dt7fy")
 script = ExtResource("12_ie88l")
 escala_actual = 8.0
 
-[node name="Repetidor3" type="Node3D" parent="Routers_Sur/Routers_oeste" unique_id=646342912 node_paths=PackedStringArray("modem_principal")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.574284, 0.017786026, 10.372172)
+[node name="Repetidor3" type="Node3D" parent="Routers_Sur/Routers_oeste" unique_id=646342912 node_paths=PackedStringArray("modem_principal") groups=["grupo_routers"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.876272, 0.017786026, 10.372172)
 script = SubResource("GDScript_4qkwh")
 modem_principal = NodePath("../../../Modems/Modem_principal")
 
@@ -464,8 +599,8 @@ mesh = SubResource("TorusMesh_dt7fy")
 script = ExtResource("12_ie88l")
 escala_actual = 8.0
 
-[node name="Repetidor4" type="Node3D" parent="Routers_Sur/Routers_oeste" unique_id=907388090 node_paths=PackedStringArray("modem_principal")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.49197, 0.017786026, 33.146255)
+[node name="Repetidor4" type="Node3D" parent="Routers_Sur/Routers_oeste" unique_id=907388090 node_paths=PackedStringArray("modem_principal") groups=["grupo_routers"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.793959, 0.017786026, 33.146255)
 script = SubResource("GDScript_4qkwh")
 modem_principal = NodePath("../../../Modems/Modem_principal")
 
@@ -491,8 +626,8 @@ mesh = SubResource("TorusMesh_dt7fy")
 script = ExtResource("12_ie88l")
 escala_actual = 8.0
 
-[node name="Repetidor5" type="Node3D" parent="Routers_Sur/Routers_oeste" unique_id=647278018 node_paths=PackedStringArray("modem_principal")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.58443, 0.017786026, 52.699196)
+[node name="Repetidor5" type="Node3D" parent="Routers_Sur/Routers_oeste" unique_id=647278018 node_paths=PackedStringArray("modem_principal") groups=["grupo_routers"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.88642, 0.017786026, 52.699196)
 script = SubResource("GDScript_4qkwh")
 modem_principal = NodePath("../../../Modems/Modem_secundario")
 
@@ -2496,12 +2631,20 @@ offset_top = 83.0
 offset_right = 80.0
 offset_bottom = 106.0
 
+[node name="ButtonIniciar" type="Button" parent="UI_control_red/Panel" unique_id=1606149413]
+layout_mode = 0
+offset_left = 505.0
+offset_top = -541.0
+offset_right = 651.0
+offset_bottom = -508.0
+text = "Iniciar Simulación"
+
 [node name="Pivote_camara" type="Node3D" parent="." unique_id=1781339083]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.1858206, -0.08346863)
 script = ExtResource("16_x3esv")
 
 [node name="Camera3D" type="Camera3D" parent="Pivote_camara" unique_id=278807889]
-transform = Transform3D(-1, -7.161255e-08, 5.0143647e-08, 0, 0.57357645, 0.81915206, -8.742278e-08, 0.81915206, -0.57357645, 6.8428376e-06, 9.498201, -77.77381)
+transform = Transform3D(-1, -7.161255e-08, 5.0143647e-08, 0, 0.57357645, 0.81915206, -8.742278e-08, 0.81915206, -0.57357645, 6.2679387e-06, 7.536553, -71.19773)
 
 [node name="Piso_general" type="CSGBox3D" parent="." unique_id=929889987]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -3.135686, -0.83213997, -3.8332677)

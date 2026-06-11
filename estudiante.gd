@@ -5,6 +5,7 @@ extends Node3D
 @export var radio_cobertura : float = 12.0
 @export var velocidad_movimiento : float = 5.0
 
+
 var router_conectado : Node3D = null
 var calidad_red_actual : float = 0.0
 var velocidad_paquete_actual : float = 0.0
