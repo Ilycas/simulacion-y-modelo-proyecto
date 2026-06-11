@@ -51,6 +51,16 @@ uv1_triplanar = true
 albedo_texture = ExtResource("3_moti2")
 uv1_triplanar = true
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wsgbh"]
+transparency = 1
+albedo_color = Color(0.6666667, 0.8666667, 1, 0.47058824)
+roughness = 0.1
+refraction_enabled = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_vohvi"]
+material = SubResource("StandardMaterial3D_wsgbh")
+size = Vector3(7.7, 1.48, 0.1)
+
 [node name="Bloque_Sur" type="CSGCombiner3D" unique_id=1846529155]
 use_collision = true
 
@@ -223,50 +233,90 @@ transform = Transform3D(1, 0, -3.5527137e-15, 0, 1, 0, 0, 0, 1, 27.084642, -54.0
 operation = 2
 size = Vector3(7.7158203, 1.5, 1.809021)
 
-[node name="Ventana2" type="CSGBox3D" parent="." unique_id=1268255294]
-transform = Transform3D(1, 0, -3.5527137e-15, 0, 1, 0, 0, 0, 1, 17.8763, -54.017822, -57.76794)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ventana1" unique_id=852483507]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.015054703, 0.0028686523, -0.04694748)
+mesh = SubResource("BoxMesh_vohvi")
+
+[node name="Ventana2" type="CSGBox3D" parent="." unique_id=1211086681]
+transform = Transform3D(1, 0, -3.5527137e-15, 0, 1, 0, 0, 0, 1, 17.86738, -54.017822, -57.76794)
 operation = 2
 size = Vector3(7.7158203, 1.5, 1.809021)
 
-[node name="Ventana3" type="CSGBox3D" parent="." unique_id=1343850036]
-transform = Transform3D(1, 0, -3.5527137e-15, 0, 1, 0, 0, 0, 1, 5.1161137, -54.017822, -57.76794)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ventana2" unique_id=333305641]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.015054703, 0.0028686523, -0.04694748)
+mesh = SubResource("BoxMesh_vohvi")
+
+[node name="Ventana3" type="CSGBox3D" parent="." unique_id=1112123134]
+transform = Transform3D(1, 0, -3.5527137e-15, 0, 1, 0, 0, 0, 1, 5.1358194, -54.017822, -57.76794)
 operation = 2
 size = Vector3(7.7158203, 1.5, 1.809021)
 
-[node name="Ventana4" type="CSGBox3D" parent="." unique_id=1710357487]
-transform = Transform3D(1, 0, -3.5527137e-15, 0, 1, 0, 0, 0, 1, -4.092228, -54.017822, -57.76794)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ventana3" unique_id=1819628535]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.015054703, 0.0028686523, -0.04694748)
+mesh = SubResource("BoxMesh_vohvi")
+
+[node name="Ventana4" type="CSGBox3D" parent="." unique_id=646431248]
+transform = Transform3D(1, 0, -3.5527137e-15, 0, 1, 0, 0, 0, 1, -4.090252, -54.017822, -57.76794)
 operation = 2
 size = Vector3(7.7158203, 1.5, 1.809021)
 
-[node name="Ventana5" type="CSGBox3D" parent="." unique_id=1634956651]
-transform = Transform3D(1, 0, -3.5527137e-15, 0, 1, 0, 0, 0, 1, -18.265997, -54.017822, -57.76794)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ventana4" unique_id=1660977554]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.015054703, 0.0028686523, -0.04694748)
+mesh = SubResource("BoxMesh_vohvi")
+
+[node name="Ventana5" type="CSGBox3D" parent="." unique_id=142274103]
+transform = Transform3D(1, 0, -3.5527137e-15, 0, 1, 0, 0, 0, 1, -18.230062, -54.017822, -57.76794)
 operation = 2
 size = Vector3(7.7158203, 1.5, 1.809021)
 
-[node name="Ventana6" type="CSGBox3D" parent="." unique_id=147164535]
-transform = Transform3D(1, 0, -3.5527137e-15, 0, 1, 0, 0, 0, 1, -27.474339, -54.017822, -57.76794)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ventana5" unique_id=635387389]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.015054703, 0.0028686523, -0.04694748)
+mesh = SubResource("BoxMesh_vohvi")
+
+[node name="Ventana6" type="CSGBox3D" parent="." unique_id=1123443755]
+transform = Transform3D(1, 0, -3.5527137e-15, 0, 1, 0, 0, 0, 1, -27.456135, -54.017822, -57.76794)
 operation = 2
 size = Vector3(7.7158203, 1.5, 1.809021)
 
-[node name="Ventana7" type="CSGBox3D" parent="." unique_id=801326189]
-transform = Transform3D(1, 0, -3.5527137e-15, 0, 1, 0, 0, 0, 1, -40.742355, -53.877373, -57.76794)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ventana6" unique_id=1238167491]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.015054703, 0.0028686523, -0.04694748)
+mesh = SubResource("BoxMesh_vohvi")
+
+[node name="Ventana7" type="CSGBox3D" parent="." unique_id=1458955739]
+transform = Transform3D(1, 0, -3.5527137e-15, 0, 1, 0, 0, 0, 1, -40.75588, -54.018, -57.76794)
 operation = 2
 size = Vector3(7.7158203, 1.5, 1.809021)
 
-[node name="Ventana8" type="CSGBox3D" parent="." unique_id=1319682237]
-transform = Transform3D(1, 0, -3.5527137e-15, 0, 1, 0, 0, 0, 1, -51.1711, -53.85177, -57.76794)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ventana7" unique_id=160954215]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.015054703, 0.0028686523, -0.04694748)
+mesh = SubResource("BoxMesh_vohvi")
+
+[node name="Ventana8" type="CSGBox3D" parent="." unique_id=1969856771]
+transform = Transform3D(1, 0, -3.5527137e-15, 0, 1, 0, 0, 0, 1, -51.167683, -54.018, -57.76794)
 operation = 2
 size = Vector3(7.7158203, 1.5, 1.809021)
 
-[node name="Ventana9" type="CSGBox3D" parent="." unique_id=2097744225]
-transform = Transform3D(1, 0, -3.5527137e-15, 0, 1, 0, 0, 0, 1, -64.21605, -53.877373, -57.76794)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ventana8" unique_id=634447248]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.015054703, 0.0028686523, -0.04694748)
+mesh = SubResource("BoxMesh_vohvi")
+
+[node name="Ventana9" type="CSGBox3D" parent="." unique_id=1669568185]
+transform = Transform3D(1, 0, -3.5527137e-15, 0, 1, 0, 0, 0, 1, -64.21089, -54.018, -57.76794)
 operation = 2
 size = Vector3(7.7158203, 1.5, 1.809021)
 
-[node name="Ventana10" type="CSGBox3D" parent="." unique_id=1864583940]
-transform = Transform3D(1, 0, -3.5527137e-15, 0, 1, 0, 0, 0, 1, -74.64479, -53.85177, -57.76794)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ventana9" unique_id=2017857384]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.015054703, 0.0028686523, -0.04694748)
+mesh = SubResource("BoxMesh_vohvi")
+
+[node name="Ventana10" type="CSGBox3D" parent="." unique_id=286011962]
+transform = Transform3D(1, 0, -3.5527137e-15, 0, 1, 0, 0, 0, 1, -74.622696, -54.018, -57.76794)
 operation = 2
 size = Vector3(7.7158203, 1.5, 1.809021)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ventana10" unique_id=355238742]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.015054703, 0.0028686523, -0.04694748)
+mesh = SubResource("BoxMesh_vohvi")
 
 [node name="Node3D" parent="." unique_id=1123388815 instance=ExtResource("4_pv3yv")]
 transform = Transform3D(-6.556708e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.556708e-08, -79.74211, -53.790337, -35.269653)

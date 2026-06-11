@@ -212,7 +212,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.240108, 0.09267235, 13.91
 shape = SubResource("CapsuleShape3D_awtwk")
 
 [node name="Camera3D" type="Camera3D" parent="Estudiante" unique_id=304028374]
-transform = Transform3D(-0.99961114, -0.014953572, 0.023538508, 0.012683291, 0.5079338, 0.8613028, -0.024835555, 0.8612664, -0.5075466, -34.121445, 19.817642, 48.220413)
+transform = Transform3D(-1.4595603, -0.0039244513, 0.041651018, 0.018519228, 0.69905454, 0.7148285, -0.036263082, 1.1861082, -1.158995, -38.166496, 0.89238167, 4.060253)
 fov = 85.4
 
 [node name="Bloque_sur" parent="." unique_id=1846529155 instance=ExtResource("3_jdjiw")]

@@ -35,6 +35,14 @@ uv1_triplanar = true
 albedo_texture = ExtResource("1_esgtk")
 uv1_triplanar = true
 
+[sub_resource type="BoxMesh" id="BoxMesh_pk4t3"]
+size = Vector3(0.1, 1.499, 7.096)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_awrk4"]
+transparency = 1
+albedo_color = Color(0.6666667, 0.8666667, 1, 0.47058824)
+roughness = 0.1
+
 [node name="Bloque_Oeste" type="CSGCombiner3D" unique_id=1846418678]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.72, 0.836, 28.554)
 use_collision = true
@@ -196,45 +204,77 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 45.2
 operation = 2
 size = Vector3(0.7105713, 2.1, 1.2524414)
 
-[node name="Ventana Aula 8" type="CSGBox3D" parent="." unique_id=1232064127]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 45.24849, 0.6434192, 35.112312)
-operation = 2
-size = Vector3(0.7105713, 1.4987304, 7.0959473)
-
 [node name="Ventana Aula 9" type="CSGBox3D" parent="." unique_id=1003054234]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 45.25509, 0.66153663, 43.69709)
 operation = 2
 size = Vector3(0.7105713, 1.4987304, 7.0959473)
 
-[node name="Ventana Aula 10" type="CSGBox3D" parent="." unique_id=1959803595]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 45.24849, 0.6434192, 7.288101)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ventana Aula 9" unique_id=1028526779]
+mesh = SubResource("BoxMesh_pk4t3")
+surface_material_override/0 = SubResource("StandardMaterial3D_awrk4")
+
+[node name="Ventana Aula 8" type="CSGBox3D" parent="." unique_id=2085163661]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 45.25509, 0.66153663, 35.11238)
 operation = 2
 size = Vector3(0.7105713, 1.4987304, 7.0959473)
 
-[node name="Ventana Aula 11" type="CSGBox3D" parent="." unique_id=1333465422]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 45.25509, 0.66153663, 15.872879)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ventana Aula 8" unique_id=2040887866]
+mesh = SubResource("BoxMesh_pk4t3")
+surface_material_override/0 = SubResource("StandardMaterial3D_awrk4")
+
+[node name="Ventana Aula 10" type="CSGBox3D" parent="." unique_id=1742728578]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 45.25509, 0.66153663, 15.87907)
 operation = 2
 size = Vector3(0.7105713, 1.4987304, 7.0959473)
 
-[node name="Ventana Aula 12" type="CSGBox3D" parent="." unique_id=1270996217]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 45.24849, 0.6434192, -17.650427)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ventana Aula 10" unique_id=306660640]
+mesh = SubResource("BoxMesh_pk4t3")
+surface_material_override/0 = SubResource("StandardMaterial3D_awrk4")
+
+[node name="Ventana Aula 11" type="CSGBox3D" parent="." unique_id=2088223744]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 45.25509, 0.66153663, 7.294361)
 operation = 2
 size = Vector3(0.7105713, 1.4987304, 7.0959473)
 
-[node name="Ventana Aula 13" type="CSGBox3D" parent="." unique_id=2094287361]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 45.25509, 0.66153663, -9.065649)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ventana Aula 11" unique_id=341699120]
+mesh = SubResource("BoxMesh_pk4t3")
+surface_material_override/0 = SubResource("StandardMaterial3D_awrk4")
+
+[node name="Ventana Aula 12" type="CSGBox3D" parent="." unique_id=304049056]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 45.25509, 0.66153663, -9.052238)
 operation = 2
 size = Vector3(0.7105713, 1.4987304, 7.0959473)
 
-[node name="Salon 10 Hueco Ventana 1" type="CSGBox3D" parent="." unique_id=1834214208]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 45.24849, 0.6434192, -44.98552)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ventana Aula 12" unique_id=907797897]
+mesh = SubResource("BoxMesh_pk4t3")
+surface_material_override/0 = SubResource("StandardMaterial3D_awrk4")
+
+[node name="Ventana Aula 13" type="CSGBox3D" parent="." unique_id=1158042805]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 45.25509, 0.66153663, -17.636948)
 operation = 2
 size = Vector3(0.7105713, 1.4987304, 7.0959473)
 
-[node name="Salon 10 Hueco Ventana 2" type="CSGBox3D" parent="." unique_id=1193448479]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 45.25509, 0.66153663, -36.40074)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ventana Aula 13" unique_id=1985459918]
+mesh = SubResource("BoxMesh_pk4t3")
+surface_material_override/0 = SubResource("StandardMaterial3D_awrk4")
+
+[node name="Ventana Aula 14" type="CSGBox3D" parent="." unique_id=1596791824]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 45.25509, 0.66153663, -36.392624)
 operation = 2
 size = Vector3(0.7105713, 1.4987304, 7.0959473)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ventana Aula 14" unique_id=436922619]
+mesh = SubResource("BoxMesh_pk4t3")
+surface_material_override/0 = SubResource("StandardMaterial3D_awrk4")
+
+[node name="Ventana Aula 15" type="CSGBox3D" parent="." unique_id=1404394364]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 45.25509, 0.66153663, -44.977333)
+operation = 2
+size = Vector3(0.7105713, 1.4987304, 7.0959473)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ventana Aula 15" unique_id=652072446]
+mesh = SubResource("BoxMesh_pk4t3")
+surface_material_override/0 = SubResource("StandardMaterial3D_awrk4")
 
 [node name="Entrada Aula7" type="CSGBox3D" parent="." unique_id=1807663131]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 45.25508, 0.33883423, 51.20015)
