@@ -303,7 +303,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5392992, -0.37590736, -41.4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14145035, -0.37590736, -41.47285)
 
 [node name="blackboardbig_2" parent="." unique_id=36460855 instance=ExtResource("4_8p0q7")]
-transform = Transform3D(1.2442852, 0, 0, 0, 1.4536896, 0, 0, 0, 1, 1.0943239, 0.7173655, 19.961971)
+transform = Transform3D(1.2442852, 0, 0, 0, 1.4536896, 0, 0, 0, 1, 1.0943239, 0.7173655, 10.972761)
 
 [node name="chairtable9" parent="." unique_id=1963289849 instance=ExtResource("5_ubsyr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5392992, -0.37590736, 15.614216)
