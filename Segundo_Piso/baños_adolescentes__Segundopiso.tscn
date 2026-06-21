@@ -1,0 +1,140 @@
+[gd_scene format=3 uid="uid://bupnk7xbncn4q"]
+
+[ext_resource type="Material" uid="uid://bssw4dufxr2kg" path="res://Textura_Pared1.tres" id="1_m3bny"]
+[ext_resource type="Material" uid="uid://ctj3kcfj0gvjy" path="res://Textura_Piso.tres" id="2_5gxgg"]
+[ext_resource type="Material" uid="uid://dvd3fiygc3y75" path="res://Textura_Puerta.tres" id="3_6jwoo"]
+[ext_resource type="Texture2D" uid="uid://bdbkt13tt5diu" path="res://Asset 4.png" id="4_b7kkl"]
+[ext_resource type="PackedScene" uid="uid://cwacsfgq5qvbo" path="res://Puerta_Baño.tscn" id="5_7f8y0"]
+[ext_resource type="PackedScene" uid="uid://dn5r6issct2kj" path="res://Poceta.tscn" id="6_w8fi7"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_uthnx"]
+load_path = "res://.godot/imported/WoodFloor005_1K-PNG_Color.png-ca06d8faefb3d72c5010f6424b562c47.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1ffyo"]
+albedo_texture = SubResource("CompressedTexture2D_uthnx")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d7lyb"]
+albedo_texture = ExtResource("4_b7kkl")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_unmlh"]
+albedo_texture = ExtResource("4_b7kkl")
+uv1_triplanar = true
+
+[node name="Baños_Adolescentes" type="CSGCombiner3D" unique_id=242204458]
+use_collision = true
+
+[node name="Base_Baño_Adolescentes" type="CSGBox3D" parent="." unique_id=1504780181]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.30900192, 0.884141, 0.63488007)
+size = Vector3(9.790098, 4.621713, 10.786316)
+material = ExtResource("1_m3bny")
+
+[node name="Piso_Baño_Adolescentes" type="CSGBox3D" parent="Base_Baño_Adolescentes" unique_id=1652361558]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 2.404232, -1.9611537, -0.007915497)
+operation = 2
+size = Vector3(42.22321, 3.0058594, 101.67288)
+material = ExtResource("2_5gxgg")
+
+[node name="Piso_Baño_Adolescentes2" type="CSGBox3D" parent="Base_Baño_Adolescentes" unique_id=744394957]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -2.3754425, -1.9611537, -0.027729034)
+operation = 2
+size = Vector3(41.804962, 3.0058594, 102.06911)
+material = ExtResource("2_5gxgg")
+
+[node name="Puerta_Baño_Adolescente2" type="CSGBox3D" parent="Base_Baño_Adolescentes" unique_id=1740501427]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4250336, -0.98923016, -5.467865)
+material_override = SubResource("StandardMaterial3D_1ffyo")
+operation = 2
+size = Vector3(1, 2.1, 1)
+
+[node name="Puerta_Baño_Adolescente" type="CSGBox3D" parent="Base_Baño_Adolescentes" unique_id=1878975258]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6096725, -0.98729265, -5.467865)
+operation = 2
+size = Vector3(1.253, 2.1, 1)
+material = ExtResource("3_6jwoo")
+
+[node name="Resta_Baño_Adolescente" type="CSGBox3D" parent="Base_Baño_Adolescentes" unique_id=520390372]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3810043, -0.47501105, -0.028316498)
+operation = 2
+size = Vector3(4.2620115, 3.2525175, 10.244153)
+material = SubResource("StandardMaterial3D_d7lyb")
+
+[node name="Resta_Baño_Adolescente2" type="CSGBox3D" parent="Base_Baño_Adolescentes" unique_id=1972688624]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4026184, -0.48563832, -0.028316498)
+operation = 2
+size = Vector3(4.2620115, 3.236511, 10.244153)
+material = SubResource("StandardMaterial3D_unmlh")
+
+[node name="Base_Puerta" parent="Base_Baño_Adolescentes" unique_id=1107398468 instance=ExtResource("5_7f8y0")]
+transform = Transform3D(-0.96498144, 0, 0.60475194, 0, 1.2820003, 0, -0.7327527, 0, -0.7964139, -3.2946625, -1.1019958, -5.287277)
+script = null
+
+[node name="Base_Puerta2" parent="Base_Baño_Adolescentes" unique_id=630711346 instance=ExtResource("5_7f8y0")]
+transform = Transform3D(0.47756028, 0, 0.8492026, 0, 1.1310458, 0, -0.84405065, 0, 0.48047522, 1.9115219, -1.1895108, -5.287277)
+script = null
+
+[node name="Estante de baño" type="Node3D" parent="." unique_id=2118652728]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5497742, -0.4064107, 5.0686455)
+
+[node name="Pared7" type="CSGBox3D" parent="Estante de baño" unique_id=849080212]
+transform = Transform3D(-0.018153545, 0, 1.0244596, 0, 0.8143359, 0, -1.0107065, 0, -0.018400613, -0.014360428, 0.3448657, -0.4034233)
+size = Vector3(2.531128, 2.2322998, 0.0625)
+
+[node name="Pared8" type="CSGBox3D" parent="Estante de baño" unique_id=750853466]
+transform = Transform3D(-0.018153545, 0, 1.0244596, 0, 0.8143359, 0, -1.0107065, 0, -0.018400613, 2.254549, 0.3703634, -0.44417572)
+size = Vector3(2.531128, 2.2949219, 0.0625)
+
+[node name="Pared9" type="CSGBox3D" parent="Estante de baño" unique_id=288799927]
+transform = Transform3D(-0.018153545, 0, 1.0244596, 0, 0.8143335, 0, -1.0107065, 0, -0.018400613, -1.9507923, 0.16110645, -0.3686409)
+size = Vector3(2.531128, 2.6628418, 0.0625)
+
+[node name="Pared10" type="CSGBox3D" parent="Estante de baño" unique_id=66885823]
+transform = Transform3D(0.8962813, 0, -0.49650812, 0, 0.81425285, 0, 0.48941648, 0, 0.8844941, 1.3420811, 0.30295652, -2.1276817)
+size = Vector3(2.2140994, 1.6217651, 0.0625)
+
+[node name="Pared11" type="CSGBox3D" parent="Estante de baño" unique_id=129584411]
+transform = Transform3D(0.7372385, 0, -0.71156543, 0, 0.81426746, 0, 0.7016646, 0, 0.7276866, -0.57333183, 0.3029569, -1.8394966)
+size = Vector3(1.6297741, 1.6217651, 0.0625)
+
+[node name="toiletbasictoilet16" parent="Estante de baño" unique_id=1844027235 instance=ExtResource("6_w8fi7")]
+transform = Transform3D(-1.024461, 0, -0.018153647, 0, 0.8143921, 0, 0.018400671, 0, -1.010708, -0.93808746, -0.13296196, -0.07938385)
+
+[node name="toiletbasictoilet17" parent="Estante de baño" unique_id=1029504719 instance=ExtResource("6_w8fi7")]
+transform = Transform3D(-1.024461, 0, -0.018153647, 0, 0.8143921, 0, 0.018400671, 0, -1.010708, 1.3186684, -0.13296196, -0.11991882)
+
+[node name="Estante de baño2" type="Node3D" parent="." unique_id=989265744]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2129097, -0.4064107, 5.0686455)
+
+[node name="Pared7" type="CSGBox3D" parent="Estante de baño2" unique_id=266485591]
+transform = Transform3D(-0.018153545, 0, 1.0244596, 0, 0.8143359, 0, -1.0107065, 0, -0.018400613, -0.014360428, 0.3448657, -0.4034233)
+size = Vector3(2.531128, 2.2322998, 0.0625)
+
+[node name="Pared8" type="CSGBox3D" parent="Estante de baño2" unique_id=1434891187]
+transform = Transform3D(-0.018153545, 0, 1.0244596, 0, 0.8143359, 0, -1.0107065, 0, -0.018400613, 2.254549, 0.3703634, -0.44417572)
+size = Vector3(2.531128, 2.2949219, 0.0625)
+
+[node name="Pared9" type="CSGBox3D" parent="Estante de baño2" unique_id=1377869783]
+transform = Transform3D(-0.018153545, 0, 1.0244596, 0, 0.8143335, 0, -1.0107065, 0, -0.018400613, -1.9507923, 0.16110645, -0.3686409)
+size = Vector3(2.531128, 2.6628418, 0.0625)
+
+[node name="Pared10" type="CSGBox3D" parent="Estante de baño2" unique_id=147612518]
+transform = Transform3D(0.8962813, 0, -0.49650812, 0, 0.81425285, 0, 0.48941648, 0, 0.8844941, 1.3420811, 0.30295652, -2.1276817)
+size = Vector3(2.2140994, 1.6217651, 0.0625)
+
+[node name="Pared11" type="CSGBox3D" parent="Estante de baño2" unique_id=1262086718]
+transform = Transform3D(0.7372385, 0, -0.71156543, 0, 0.81426746, 0, 0.7016646, 0, 0.7276866, -0.57333183, 0.3029569, -1.8394966)
+size = Vector3(1.6297741, 1.6217651, 0.0625)
+
+[node name="toiletbasictoilet14" parent="Estante de baño2" unique_id=1735108471 instance=ExtResource("6_w8fi7")]
+transform = Transform3D(-1.024461, 0, -0.018153647, 0, 0.8143921, 0, 0.018400671, 0, -1.010708, -1.0192871, -0.13296196, 0.0076179504)
+
+[node name="toiletbasictoilet15" parent="Estante de baño2" unique_id=666109991 instance=ExtResource("6_w8fi7")]
+transform = Transform3D(-1.024461, 0, -0.018153647, 0, 0.8143921, 0, 0.018400671, 0, -1.010708, 1.1748161, -0.13296196, -0.031791687)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=598650197]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4021454, -0.72746277, -3.1459694)
+size = Vector3(1, 1, 2.802246)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=1388327332]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3945656, -0.6243582, -3.1459694)
+size = Vector3(1, 1, 2.802246)

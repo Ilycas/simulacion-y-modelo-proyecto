@@ -449,8 +449,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52.196487, -0.41802832, 32.13
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.57669, -0.41802832, 32.135067)
 
 [node name="Techo" type="CSGBox3D" parent="." unique_id=492028247 groups=["grupo_techo"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 47.99305, 2.064631, 0.81614685)
-size = Vector3(12.995259, 0.53749084, 106.01974)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 47.99305, 2.064631, -2.8513222)
+size = Vector3(12.995259, 0.53749084, 98.6848)
+
+[node name="Techo2" type="CSGBox3D" parent="." unique_id=764842124 groups=["grupo_techo"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 49.71672, 2.064631, 49.956238)
+size = Vector3(9.547922, 0.53749084, 7.724058)
 
 [node name="Base_Puerta3" parent="." unique_id=1107398468 instance=ExtResource("5_gom2m")]
 transform = Transform3D(-7.754451e-08, 0, -1.4145122, 0, 1.0550019, 0, 1.7740119, 0, -6.183029e-08, 45.20129, 0.020361185, -0.77743053)

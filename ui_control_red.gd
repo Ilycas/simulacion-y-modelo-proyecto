@@ -5,7 +5,9 @@ extends CanvasLayer
 @onready var slider = $Panel/HSlider
 @onready var label = $Panel/Label
 @onready var btn_techos = $Panel/CheckButton
+@onready var btn_piso2 = $Panel/CheckButton2
 @onready var btn_simulacion = $Panel/ButtonIniciar
+
 
 func _ready() -> void:
 	if is_instance_valid(slider):
@@ -21,6 +23,12 @@ func _ready() -> void:
 		btn_techos.button_pressed = true
 		btn_techos.text = "Techos Visibles"
 		btn_techos.toggled.connect(_on_btn_techos_toggled)
+		
+	# Configuración del interruptor del Segundo Piso
+	if is_instance_valid(btn_piso2):
+		btn_piso2.button_pressed = true
+		btn_piso2.text = "Piso 2 Visible"
+		btn_piso2.toggled.connect(_on_btn_piso2_toggled)
 		
 	# Configuración del nuevo botón de simulación
 	if is_instance_valid(btn_simulacion):
@@ -58,6 +66,12 @@ func _on_btn_techos_toggled(button_pressed: bool) -> void:
 	for techo in techos:
 		if is_instance_valid(techo):
 			techo.visible = button_pressed
+
+func _on_btn_piso2_toggled(button_pressed: bool) -> void:
+	var elementos_piso2 = get_tree().get_nodes_in_group("grupo_piso2")
+	for elemento in elementos_piso2:
+		if is_instance_valid(elemento):
+			elemento.visible = button_pressed
 
 func _on_btn_simulacion_pressed() -> void:
 	# El botón recopila a todos los NPCs estudiantes de la institución

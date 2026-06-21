@@ -1,9 +1,15 @@
 [gd_scene format=3 uid="uid://dlf5sdhwkuqdn"]
 
+[ext_resource type="PackedScene" uid="uid://c5nkcxraoqakm" path="res://Segundo_Piso/bloque_banos_patio_segundo_pis.tscn" id="2_7it8e"]
+[ext_resource type="PackedScene" uid="uid://d2ebtl1motsh0" path="res://Segundo_Piso/Bloque_sur_Segundopiso.tscn" id="2_d8b5o"]
+[ext_resource type="PackedScene" uid="uid://bupnk7xbncn4q" path="res://Segundo_Piso/baños_adolescentes__Segundopiso.tscn" id="2_lscaw"]
+[ext_resource type="PackedScene" uid="uid://cu0ke5n073jlj" path="res://Segundo_Piso/bloque_oeste_Segundopiso.tscn" id="2_n0dn3"]
 [ext_resource type="PackedScene" uid="uid://c6tihpamj7gw2" path="res://Bloque_sur.tscn" id="3_jdjiw"]
 [ext_resource type="PackedScene" uid="uid://2w0tdp533ecb" path="res://bloque_oeste.tscn" id="4_oxlh1"]
+[ext_resource type="PackedScene" uid="uid://cdft2n7m77bem" path="res://Segundo_Piso/bloque_central_Segundopiso.tscn" id="4_r13oh"]
 [ext_resource type="PackedScene" uid="uid://bylsoyawfw17x" path="res://bloque_central.tscn" id="5_mt2cc"]
 [ext_resource type="PackedScene" uid="uid://c6vm45srdiuqd" path="res://bloque_banos_patio.tscn" id="6_dgm2e"]
+[ext_resource type="Texture2D" uid="uid://bdbkt13tt5diu" path="res://Asset 4.png" id="7_i071b"]
 [ext_resource type="PackedScene" uid="uid://b110raehnfrfs" path="res://baños_adolescentes.tscn" id="7_nq0on"]
 [ext_resource type="PackedScene" uid="uid://ue6f1tepnr4d" path="res://bloque_patio.tscn" id="8_lmequ"]
 [ext_resource type="Material" uid="uid://b74hesk0ogrpg" path="res://Textura_Piso_Pasillo.tres" id="11_4qkwh"]
@@ -20,6 +26,9 @@
 [ext_resource type="Script" uid="uid://dafkee3ylp326" path="res://pivote_camara.gd" id="16_x3esv"]
 [ext_resource type="Script" uid="uid://d1j1ti1q1d3f" path="res://ui_control_red.gd" id="17_j2u5w"]
 [ext_resource type="Script" uid="uid://dp45nwq3een7w" path="res://camera_3d.gd" id="20_d7trm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2np1n"]
+albedo_texture = ExtResource("7_i071b")
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mt2cc"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -220,7 +229,1403 @@ albedo_color = Color(0, 0, 0, 1)
 albedo_color = Color(0, 0, 0, 1)
 
 [node name="Escuela" type="Node3D" unique_id=479217386]
-transform = Transform3D(0.6848566, 0, 0, 0, 1, 0, 0, 0, 0.60286516, 0, 4.133135, 0)
+transform = Transform3D(0.9040108, 0, 0, 0, 1, 0, 0, 0, 0.7307499, 0, 4.133135, 0)
+
+[node name="Segundo_piso" type="Node3D" parent="." unique_id=1713195960 groups=["grupo_piso2"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, -0.23797464, 0)
+
+[node name="Techo3" type="CSGBox3D" parent="Segundo_piso" unique_id=370213670 groups=["grupo_piso", "grupo_techo"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 3.0464962, 5.91546, -15.1072235)
+size = Vector3(57.54218, 0.75069344, 14.435658)
+
+[node name="Techo4" type="CSGBox3D" parent="Segundo_piso" unique_id=1860609700 groups=["grupo_piso", "grupo_techo"]]
+transform = Transform3D(-4.3711395e-08, 0, -1.0000001, 0, 1, 0, 1.0000001, 0, -4.371185e-08, 26.024113, 5.956302, 18.516453)
+size = Vector3(58.505096, 0.832378, 11.3506975)
+
+[node name="Baños_Niño_Niña" parent="Segundo_piso" unique_id=1743570536 groups=["grupo_piso"] instance=ExtResource("2_7it8e")]
+transform = Transform3D(-3.335585e-08, 0, 1.1265349, 0, 1, 0, -0.7630928, 0, -4.9242406e-08, -18.88452, 3.5707102, -12.199227)
+
+[node name="Baños_Adolescentes" parent="Segundo_piso" unique_id=242204458 groups=["grupo_piso"] instance=ExtResource("2_lscaw")]
+transform = Transform3D(0.9862802, 0, 0, 0, 0.7501817, 0, 0, 0, 1, 26.587109, 3.9429817, 40.311314)
+
+[node name="Bloque_Oeste" parent="Segundo_piso" unique_id=1846418678 groups=["grupo_piso"] instance=ExtResource("2_n0dn3")]
+transform = Transform3D(0.99998224, 0.004010827, -0.004442121, -0.0040067267, 0.99999154, 0.0009357773, 0.0044458336, -0.00091795746, 0.9999898, 47.38776, 3.4941325, -0.2525684)
+
+[node name="Bloque_Central" parent="Segundo_piso" unique_id=1241290368 groups=["grupo_piso"] instance=ExtResource("4_r13oh")]
+transform = Transform3D(0.9518917, 0.0034906515, 0, -0.0033227424, 0.9999939, 0, 0, 0, 1.0074846, 36.546646, 3.3550198, 0.30188578)
+
+[node name="Bloque_Sur" parent="Segundo_piso" unique_id=1846529155 groups=["grupo_piso"] instance=ExtResource("2_d8b5o")]
+transform = Transform3D(0.57405335, 0, 0, 0, 1, 0, 0, 0, 0.9, 3.192542, 3.8641276, -38.492294)
+smoothing_angle = 64.5
+
+[node name="Pasillo1" type="Node3D" parent="Segundo_piso" unique_id=1227849627 groups=["grupo_piso"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.417582, 3.4575524, -15.255943)
+
+[node name="Piso_Pasillo1" type="CSGBox3D" parent="Segundo_piso/Pasillo1" unique_id=446142789]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.573149, -0.76583767, -1.1918488)
+size = Vector3(47.51902, 0.33374023, 11.953873)
+material = ExtResource("11_4qkwh")
+
+[node name="Borde_inferior" type="CSGBox3D" parent="Segundo_piso/Pasillo1" unique_id=599658974]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -21.716263, -0.36913967, 4.7581043)
+size = Vector3(33.95338, 1.0008278, 0.29144287)
+
+[node name="Rejas" type="Node3D" parent="Segundo_piso/Pasillo1" unique_id=246218496]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.606245, 0, 4.8748302)
+
+[node name="Rejas" type="Node3D" parent="Segundo_piso/Pasillo1/Rejas" unique_id=77040370]
+transform = Transform3D(1, 0, 0, 0, 0.77304435, 0, 0, 0, 1, -15.086109, 0.1464963, -0.09453583)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas" unique_id=1202490250]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 3.1949837, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas" unique_id=2084227969]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 2.9234383, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas" unique_id=1200482409]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 2.6060326, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas" unique_id=258984166]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 2.2773545, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D5" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas" unique_id=18431152]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.9624435, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D6" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas" unique_id=659540625]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.6025115, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D7" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas" unique_id=181026562]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.2443496, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D8" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas" unique_id=470748202]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0.7958366, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D9" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas" unique_id=704932045]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0.3606903, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D10" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas" unique_id=455091118]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.08375625, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D11" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas" unique_id=831892837]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.46889955, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D12" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas" unique_id=1937393638]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.46889955, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="Rejas2" type="Node3D" parent="Segundo_piso/Pasillo1/Rejas" unique_id=1217011906]
+transform = Transform3D(1, 0, 0, 0, 0.77304435, 0, 0, 0, 1, -11.323551, 0.1464963, -0.09453583)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas2" unique_id=1396397206]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 3.1949837, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas2" unique_id=1355612584]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 2.9234383, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas2" unique_id=650288064]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 2.6060326, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas2" unique_id=1021752102]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 2.2773545, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D5" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas2" unique_id=434352597]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.9624435, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D6" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas2" unique_id=1038694328]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.6025115, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D7" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas2" unique_id=755499081]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.2443496, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D8" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas2" unique_id=1410384891]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0.7958366, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D9" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas2" unique_id=1381229159]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0.3606903, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D10" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas2" unique_id=167478881]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.08375625, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D11" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas2" unique_id=371081181]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.46889955, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D12" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas2" unique_id=1609817555]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.46889955, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="Rejas3" type="Node3D" parent="Segundo_piso/Pasillo1/Rejas" unique_id=795831228]
+transform = Transform3D(1, 0, 0, 0, 0.77304435, 0, 0, 0, 1, -7.625822, 0.1464963, -0.09453583)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas3" unique_id=1745117437]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 3.1949837, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas3" unique_id=1109501346]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 2.9234383, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas3" unique_id=1512021184]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 2.6060326, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas3" unique_id=868057054]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 2.2773545, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D5" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas3" unique_id=1809834715]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.9624435, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D6" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas3" unique_id=1926962882]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.6025115, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D7" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas3" unique_id=1630096306]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.2443496, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D8" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas3" unique_id=1170250338]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0.7958366, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D9" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas3" unique_id=662307077]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0.3606903, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D10" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas3" unique_id=948772009]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.08375625, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D11" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas3" unique_id=513328605]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.46889955, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D12" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas3" unique_id=1209260572]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.46889955, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="Rejas4" type="Node3D" parent="Segundo_piso/Pasillo1/Rejas" unique_id=815549316]
+transform = Transform3D(1, 0, 0, 0, 0.77304435, 0, 0, 0, 1, -3.69898, 0.1464963, -0.09453583)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas4" unique_id=755547362]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 3.1949837, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas4" unique_id=216724746]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 2.9234383, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas4" unique_id=1417434317]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 2.6060326, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas4" unique_id=1317235799]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 2.2773545, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D5" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas4" unique_id=680331116]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.9624435, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D6" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas4" unique_id=999070920]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.6025115, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D7" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas4" unique_id=728895056]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.2443496, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D8" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas4" unique_id=2056345848]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0.7958366, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D9" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas4" unique_id=243267274]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0.3606903, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D10" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas4" unique_id=1478176077]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.08375625, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D11" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas4" unique_id=53348270]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.46889955, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D12" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas4" unique_id=1018757802]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.46889955, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="Rejas5" type="Node3D" parent="Segundo_piso/Pasillo1/Rejas" unique_id=346628316]
+transform = Transform3D(1, 0, 0, 0, 0.77304435, 0, 0, 0, 1, 1.1934233, 0.1464963, -0.09453583)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas5" unique_id=59903652]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 3.1949837, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas5" unique_id=1972971951]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 2.9234383, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas5" unique_id=254251858]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 2.6060326, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas5" unique_id=964727886]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 2.2773545, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D5" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas5" unique_id=1832719316]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.9624435, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D6" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas5" unique_id=1742679849]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.6025115, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D7" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas5" unique_id=742781185]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.2443496, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D8" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas5" unique_id=1447785357]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0.7958366, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D9" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas5" unique_id=870043216]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0.3606903, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D10" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas5" unique_id=356773041]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.08375625, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D11" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas5" unique_id=2146092235]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.46889955, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D12" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas5" unique_id=539104917]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.46889955, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="Rejas6" type="Node3D" parent="Segundo_piso/Pasillo1/Rejas" unique_id=1076689861]
+transform = Transform3D(1, 0, 0, 0, 0.77304435, 0, 0, 0, 1, 4.8917418, 0.1464963, -0.09453583)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas6" unique_id=1348907821]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 3.1949837, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas6" unique_id=1190939835]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 2.9234383, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas6" unique_id=1534301481]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 2.6060326, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas6" unique_id=235959133]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 2.2773545, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D5" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas6" unique_id=2094430227]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.9624435, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D6" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas6" unique_id=566342952]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.6025115, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D7" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas6" unique_id=220432470]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.2443496, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D8" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas6" unique_id=894222953]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0.7958366, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D9" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas6" unique_id=1916392569]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0.3606903, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D10" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas6" unique_id=1432965531]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.08375625, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D11" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas6" unique_id=1290390046]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.46889955, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D12" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas6" unique_id=1769168963]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.46889955, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="Rejas7" type="Node3D" parent="Segundo_piso/Pasillo1/Rejas" unique_id=894328381]
+transform = Transform3D(1, 0, 0, 0, 0.77304435, 0, 0, 0, 1, 8.595644, 0.1464963, -0.09453583)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas7" unique_id=205050542]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 3.1949837, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas7" unique_id=683949157]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 2.9234383, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas7" unique_id=1412732129]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 2.6060326, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas7" unique_id=692783981]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 2.2773545, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D5" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas7" unique_id=1483407641]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.9624435, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D6" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas7" unique_id=1898178502]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.6025115, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D7" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas7" unique_id=216071079]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.2443496, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D8" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas7" unique_id=611727428]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0.7958366, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D9" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas7" unique_id=746815895]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0.3606903, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D10" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas7" unique_id=710367083]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.08375625, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D11" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas7" unique_id=1091549252]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.46889955, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D12" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas7" unique_id=1909904124]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.46889955, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="Rejas8" type="Node3D" parent="Segundo_piso/Pasillo1/Rejas" unique_id=1641158035]
+transform = Transform3D(1, 0, 0, 0, 0.77304435, 0, 0, 0, 1, 12.306675, 0.1464963, -0.09453583)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas8" unique_id=764632040]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 3.1949837, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas8" unique_id=943801099]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 2.9234383, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas8" unique_id=30914116]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 2.6060326, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas8" unique_id=1605703728]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 2.2773545, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D5" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas8" unique_id=1923469330]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.9624435, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D6" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas8" unique_id=1751909965]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.6025115, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D7" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas8" unique_id=471293894]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.2443496, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D8" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas8" unique_id=1597581972]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0.7958366, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D9" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas8" unique_id=1700660213]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0.3606903, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D10" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas8" unique_id=1137459249]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.08375625, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D11" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas8" unique_id=101322055]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.46889955, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D12" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas8" unique_id=1989281556]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.46889955, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="Rejas9" type="Node3D" parent="Segundo_piso/Pasillo1/Rejas" unique_id=1765979170]
+transform = Transform3D(1, 0, 0, 0, 0.77304435, 0, 0, 0, 1, 15.926115, 0.1464963, -0.09453583)
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas9" unique_id=1720032492]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 2.6060326, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas9" unique_id=545989181]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 2.2773545, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D5" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas9" unique_id=819095152]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.9624435, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D6" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas9" unique_id=1546715609]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.6025115, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D7" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas9" unique_id=1284265766]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.2443496, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D8" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas9" unique_id=99867999]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0.7958366, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D9" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas9" unique_id=542810844]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0.3606903, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D10" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas9" unique_id=1589317015]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.08375625, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D11" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas9" unique_id=951385094]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.46889955, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D12" type="CSGCylinder3D" parent="Segundo_piso/Pasillo1/Rejas/Rejas9" unique_id=695410794]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.46889955, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="Pasillo2" type="Node3D" parent="Segundo_piso" unique_id=131576437 groups=["grupo_piso"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.417582, 3.4575524, -15.255943)
+
+[node name="Piso_Pasillo2" type="CSGBox3D" parent="Segundo_piso/Pasillo2" unique_id=1303650878]
+transform = Transform3D(0.0044420743, 0.004010827, 0.99998236, -0.0009357907, 0.99999154, -0.004006704, -0.999993, -0.000917959, 0.004445793, 0.8767872, -0.7430496, 23.043762)
+size = Vector3(55.60748, 0.43017578, 9.938615)
+material = ExtResource("11_4qkwh")
+
+[node name="Borde_inferior2" type="CSGBox3D" parent="Segundo_piso/Pasillo2" unique_id=12917550]
+transform = Transform3D(-4.3711395e-08, 0, -1.0000001, 0, 1, 0, 1.0000001, 0, -4.3711847e-08, -4.1719456, -0.41491604, 27.99371)
+size = Vector3(47.015755, 1.1016579, 0.29144287)
+
+[node name="Rejas2" type="Node3D" parent="Segundo_piso/Pasillo2" unique_id=1525539461]
+transform = Transform3D(-4.371139e-08, 0.7071067, -0.7071069, 0, 0.7071068, 0.70710677, 1, 3.090862e-08, -3.0908623e-08, -5.125006, 0.91529405, 20.95071)
+
+[node name="Rejas" type="Node3D" parent="Segundo_piso/Pasillo2/Rejas2" unique_id=1169249799]
+transform = Transform3D(1, 0, 0, 0, 0.5466249, -0.70710677, 0, 0.5466249, 0.70710677, -15.115139, -0.16044138, -1.1626751)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas" unique_id=1117402934]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 3.1949837, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas" unique_id=2048104931]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 2.9234383, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas" unique_id=1558743845]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 2.6060326, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas" unique_id=436707057]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 2.2773545, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D5" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas" unique_id=1688089810]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.9624435, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D6" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas" unique_id=1677585903]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.6025115, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D7" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas" unique_id=1600956200]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.2443496, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D8" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas" unique_id=1031206657]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0.7958366, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D9" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas" unique_id=1571357070]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0.3606903, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D10" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas" unique_id=1263871810]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.08375625, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D11" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas" unique_id=1029677977]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.46889955, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D12" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas" unique_id=208666992]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.46889955, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="Rejas2" type="Node3D" parent="Segundo_piso/Pasillo2/Rejas2" unique_id=1135282169]
+transform = Transform3D(1, 0, 0, 0, 0.5466249, -0.70710677, 0, 0.5466249, 0.70710677, -11.352581, -0.16044138, -1.1626751)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas2" unique_id=1224690498]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 3.1949837, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas2" unique_id=1807640239]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 2.9234383, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas2" unique_id=1244923715]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 2.6060326, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas2" unique_id=1334201648]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 2.2773545, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D5" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas2" unique_id=470088880]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.9624435, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D6" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas2" unique_id=2113625101]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.6025115, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D7" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas2" unique_id=564315153]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.2443496, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D8" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas2" unique_id=624693727]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0.7958366, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D9" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas2" unique_id=1593421280]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0.3606903, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D10" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas2" unique_id=438001643]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.08375625, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D11" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas2" unique_id=276828322]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.46889955, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D12" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas2" unique_id=2140920287]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.46889955, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="Rejas3" type="Node3D" parent="Segundo_piso/Pasillo2/Rejas2" unique_id=468183782]
+transform = Transform3D(1, 0, 0, 0, 0.5466249, -0.70710677, 0, 0.5466249, 0.70710677, -7.6548514, -0.16044138, -1.1626751)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas3" unique_id=691344181]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 3.1949837, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas3" unique_id=1077401594]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 2.9234383, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas3" unique_id=1402357271]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 2.6060326, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas3" unique_id=2016764791]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 2.2773545, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D5" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas3" unique_id=1383050245]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.9624435, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D6" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas3" unique_id=628408218]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.6025115, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D7" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas3" unique_id=1838806794]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.2443496, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D8" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas3" unique_id=1251107182]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0.7958366, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D9" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas3" unique_id=364535520]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0.3606903, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D10" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas3" unique_id=240623422]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.08375625, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D11" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas3" unique_id=21469769]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.46889955, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D12" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas3" unique_id=981471091]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.46889955, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="Rejas4" type="Node3D" parent="Segundo_piso/Pasillo2/Rejas2" unique_id=2121515929]
+transform = Transform3D(1, 0, 0, 0, 0.5466249, -0.70710677, 0, 0.5466249, 0.70710677, -3.7280097, -0.16044138, -1.1626751)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas4" unique_id=1619523770]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 3.1949837, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas4" unique_id=1339995442]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 2.9234383, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas4" unique_id=1785565964]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 2.6060326, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas4" unique_id=326377304]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 2.2773545, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D5" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas4" unique_id=2030377261]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.9624435, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D6" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas4" unique_id=1245774159]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.6025115, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D7" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas4" unique_id=1953747968]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.2443496, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D8" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas4" unique_id=851788528]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0.7958366, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D9" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas4" unique_id=1669989725]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0.3606903, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D10" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas4" unique_id=153444359]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.08375625, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D11" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas4" unique_id=639464790]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.46889955, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D12" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas4" unique_id=891957704]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.46889955, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="Rejas5" type="Node3D" parent="Segundo_piso/Pasillo2/Rejas2" unique_id=1442247126]
+transform = Transform3D(1, 0, 0, 0, 0.5466249, -0.70710677, 0, 0.5466249, 0.70710677, 1.1643938, -0.16044138, -1.1626751)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas5" unique_id=1727229624]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 3.1949837, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas5" unique_id=1541358139]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 2.9234383, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas5" unique_id=736815396]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 2.6060326, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas5" unique_id=873565676]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 2.2773545, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D5" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas5" unique_id=1730922452]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.9624435, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D6" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas5" unique_id=1161463151]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.6025115, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D7" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas5" unique_id=332966765]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.2443496, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D8" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas5" unique_id=2120691674]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0.7958366, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D9" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas5" unique_id=1874925208]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0.3606903, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D10" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas5" unique_id=373334062]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.08375625, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D11" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas5" unique_id=2061002758]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.46889955, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D12" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas5" unique_id=600395830]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.46889955, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="Rejas6" type="Node3D" parent="Segundo_piso/Pasillo2/Rejas2" unique_id=2005284846]
+transform = Transform3D(1, 0, 0, 0, 0.5466249, -0.70710677, 0, 0.5466249, 0.70710677, 4.8627124, -0.16044138, -1.1626751)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas6" unique_id=638431752]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 3.1949837, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas6" unique_id=742850260]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 2.9234383, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas6" unique_id=987458146]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 2.6060326, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas6" unique_id=1750392946]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 2.2773545, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D5" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas6" unique_id=1947767983]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.9624435, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D6" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas6" unique_id=584020498]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.6025115, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D7" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas6" unique_id=334269933]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.2443496, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D8" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas6" unique_id=1793232076]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0.7958366, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D9" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas6" unique_id=129285207]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0.3606903, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D10" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas6" unique_id=306995387]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.08375625, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D11" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas6" unique_id=727733958]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.46889955, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D12" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas6" unique_id=252116345]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.46889955, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="Rejas7" type="Node3D" parent="Segundo_piso/Pasillo2/Rejas2" unique_id=652637983]
+transform = Transform3D(1, 0, 0, 0, 0.5466249, -0.70710677, 0, 0.5466249, 0.70710677, 8.566614, -0.16044138, -1.1626751)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas7" unique_id=11679083]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 3.1949837, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas7" unique_id=1598625356]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 2.9234383, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas7" unique_id=1738970059]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 2.6060326, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas7" unique_id=1924881721]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 2.2773545, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D5" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas7" unique_id=1467842553]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.9624435, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D6" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas7" unique_id=1607571181]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.6025115, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D7" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas7" unique_id=625302430]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.2443496, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D8" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas7" unique_id=67923421]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0.7958366, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D9" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas7" unique_id=1697509777]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0.3606903, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D10" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas7" unique_id=58120256]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.08375625, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D11" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas7" unique_id=107831756]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.46889955, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D12" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas7" unique_id=382205831]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.46889955, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="Rejas8" type="Node3D" parent="Segundo_piso/Pasillo2/Rejas2" unique_id=1865994191]
+transform = Transform3D(1, 0, 0, 0, 0.5466249, -0.70710677, 0, 0.5466249, 0.70710677, 12.277645, -0.16044138, -1.1626751)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas8" unique_id=1001474632]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 3.1949837, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas8" unique_id=1831206853]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 2.9234383, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas8" unique_id=15859727]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 2.6060326, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas8" unique_id=2146956570]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 2.2773545, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D5" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas8" unique_id=870675196]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.9624435, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D6" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas8" unique_id=963990266]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.6025115, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D7" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas8" unique_id=715182100]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.2443496, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D8" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas8" unique_id=752450748]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0.7958366, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D9" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas8" unique_id=330831377]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0.3606903, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D10" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas8" unique_id=780398951]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.08375625, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D11" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas8" unique_id=683360030]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.46889955, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D12" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas8" unique_id=2068759894]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.46889955, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="Rejas9" type="Node3D" parent="Segundo_piso/Pasillo2/Rejas2" unique_id=2084544463]
+transform = Transform3D(1, 0, 0, 0, 0.5466249, -0.70710677, 0, 0.5466249, 0.70710677, 15.897084, -0.16044138, -1.1626751)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas9" unique_id=1027904112]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 3.1949837, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas9" unique_id=1725351827]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 2.9234383, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas9" unique_id=440749264]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 2.6060326, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas9" unique_id=1100455417]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 2.2773545, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D5" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas9" unique_id=1908526088]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.9624435, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D6" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas9" unique_id=275270211]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.6025115, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D7" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas9" unique_id=720380800]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.2443496, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D8" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas9" unique_id=1011825608]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0.7958366, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D9" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas9" unique_id=638381263]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0.3606903, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D10" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas9" unique_id=1031744545]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.08375625, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D11" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas9" unique_id=159181085]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.46889955, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D12" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas9" unique_id=424045074]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.46889955, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="Rejas10" type="Node3D" parent="Segundo_piso/Pasillo2/Rejas2" unique_id=1504914872]
+transform = Transform3D(1, 0, 0, 0, 0.5466249, -0.70710677, 0, 0.5466249, 0.70710677, 19.599445, -0.16044138, -1.1626751)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas10" unique_id=1762663603]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 3.1949837, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas10" unique_id=1782337558]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 2.9234383, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas10" unique_id=1456232386]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 2.6060326, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas10" unique_id=417977433]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 2.2773545, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D5" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas10" unique_id=331234716]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.9624435, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D6" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas10" unique_id=606224188]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.6025115, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D7" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas10" unique_id=411769175]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.2443496, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D8" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas10" unique_id=1191026883]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0.7958366, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D9" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas10" unique_id=1443068108]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0.3606903, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D10" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas10" unique_id=1249694357]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.08375625, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D11" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas10" unique_id=1414639731]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.46889955, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D12" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas10" unique_id=237600432]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.46889955, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="Rejas11" type="Node3D" parent="Segundo_piso/Pasillo2/Rejas2" unique_id=44995225]
+transform = Transform3D(1, 0, 0, 0, 0.5466249, -0.70710677, 0, 0.5466249, 0.70710677, 23.227104, -0.16044138, -1.1626751)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas11" unique_id=418268082]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 3.1949837, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas11" unique_id=1210933349]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 2.9234383, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas11" unique_id=584852295]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 2.6060326, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas11" unique_id=838968895]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 2.2773545, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D5" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas11" unique_id=1852752063]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.9624435, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D6" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas11" unique_id=1696543339]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.6025115, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D7" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas11" unique_id=1448899837]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.2443496, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D8" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas11" unique_id=1819924168]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0.7958366, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D9" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas11" unique_id=1236863489]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0.3606903, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D10" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas11" unique_id=1526823631]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.08375625, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D11" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas11" unique_id=1748652173]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.46889955, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D12" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas11" unique_id=113292911]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.46889955, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="Rejas12" type="Node3D" parent="Segundo_piso/Pasillo2/Rejas2" unique_id=508168138]
+transform = Transform3D(1, 0, 0, 0, 0.5466249, -0.70710677, 0, 0.5466249, 0.70710677, 26.892412, -0.16044138, -1.1626751)
+
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas12" unique_id=561116021]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 2.2773545, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D5" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas12" unique_id=1046255175]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.9624435, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D6" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas12" unique_id=647855608]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.6025115, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D7" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas12" unique_id=1907166335]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.2443496, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D8" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas12" unique_id=280522924]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0.7958366, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D9" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas12" unique_id=299049218]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0.3606903, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D10" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas12" unique_id=1965156261]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.08375625, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D11" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas12" unique_id=1716864328]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.46889955, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="CSGCylinder3D12" type="CSGCylinder3D" parent="Segundo_piso/Pasillo2/Rejas2/Rejas12" unique_id=1433902088]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.46889955, 0.968555, -0.042803526)
+radius = 0.051757813
+height = 2.2045898
+
+[node name="Pared" type="CSGBox3D" parent="Segundo_piso" unique_id=1071268085]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -25.82701, 3.9165125, -16.427834)
+size = Vector3(0.19799805, 2.8044574, 12.001055)
+material = SubResource("StandardMaterial3D_2np1n")
+
+[node name="Pared2" type="CSGBox3D" parent="Segundo_piso" unique_id=867108135]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -24.89932, 3.9165125, -10.553442)
+size = Vector3(0.19799805, 2.8044574, 1.6620581)
+material = SubResource("StandardMaterial3D_2np1n")
+
+[node name="Primer_piso" type="Node3D" parent="." unique_id=1006584278]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
+
+[node name="Bloque_sur" parent="Primer_piso" unique_id=1048359971 instance=ExtResource("3_jdjiw")]
+transform = Transform3D(0.57015145, 0, 0, 0, 1, 0, 0, 0, 0.96956444, -1.4780594, 54.869675, 4.016758)
+
+[node name="Bloque_Oeste" parent="Primer_piso" unique_id=135706836 instance=ExtResource("4_oxlh1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.17840767, -0.1729126)
+
+[node name="Bloque_Central" parent="Primer_piso" unique_id=304343756 instance=ExtResource("5_mt2cc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.00224, 0, 0)
+
+[node name="Baños_Niño_Niña" parent="Primer_piso" unique_id=629782413 instance=ExtResource("6_dgm2e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.2494775, -18.72117, 0.19895744, -14.188381)
+
+[node name="Baños_Adolescentes" parent="Primer_piso" unique_id=605274980 instance=ExtResource("7_nq0on")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.207361, 0, 0)
+
+[node name="Bloque_Patio" parent="Primer_piso" unique_id=456839349 instance=ExtResource("8_lmequ")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.622911, -0.14500761, 23.710278)
+
+[node name="Piso_Pasillo1" type="CSGBox3D" parent="Primer_piso" unique_id=1063666182]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 4.019446, -0.79383063, -15.277764)
+size = Vector3(35.169003, 0.43017578, 9.6138)
+material = ExtResource("11_4qkwh")
+
+[node name="Piso_Pasillo2" type="CSGBox3D" parent="Primer_piso" unique_id=673982509]
+transform = Transform3D(0.0044420734, 0.004010827, 0.99998206, -0.0009357907, 0.99999154, -0.004006704, -0.9999896, -0.00091795746, 0.004445793, 26.279953, -0.8191785, 7.845841)
+size = Vector3(55.717022, 0.43017578, 9.938615)
+material = ExtResource("11_4qkwh")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=802890740]
 environment = SubResource("Environment_nq0on")
@@ -228,34 +1633,6 @@ environment = SubResource("Environment_nq0on")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2117702403]
 transform = Transform3D(-0.25, 0.86602545, 0.43301272, 0.8660256, -5.9604645e-08, 0.49999988, 0.43301266, 0.5000001, -0.7499999, -5.900272, 30.16484, 10.2195635)
 shadow_enabled = true
-
-[node name="Bloque_sur" parent="." unique_id=1846529155 instance=ExtResource("3_jdjiw")]
-transform = Transform3D(0.57015145, 0, 0, 0, 1, 0, 0, 0, 0.9695643, -1.4780607, 54.86968, 4.016754)
-
-[node name="Bloque_Oeste" parent="." unique_id=1846418678 instance=ExtResource("4_oxlh1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.17840767, -0.1729126)
-
-[node name="Bloque_Central" parent="." unique_id=1241290368 instance=ExtResource("5_mt2cc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.00224, 0, 0)
-
-[node name="Baños_Niño_Niña" parent="." unique_id=1743570536 instance=ExtResource("6_dgm2e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.207361, 0, 0)
-
-[node name="Baños_Adolescentes" parent="." unique_id=242204458 instance=ExtResource("7_nq0on")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.207361, 0, 0)
-
-[node name="Bloque_Patio" parent="." unique_id=456839349 instance=ExtResource("8_lmequ")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.622911, -0.14500761, 23.710278)
-
-[node name="Piso_Pasillo1" type="CSGBox3D" parent="." unique_id=1827170110]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -9.275399, -0.79383063, -15.277748)
-size = Vector3(61.75869, 0.43017578, 9.6138)
-material = ExtResource("11_4qkwh")
-
-[node name="Piso_Pasillo2" type="CSGBox3D" parent="." unique_id=669832686]
-transform = Transform3D(0.0044420734, 0.004010827, 0.99998206, -0.0009357907, 0.99999154, -0.004006704, -0.9999896, -0.00091795746, 0.004445793, 26.279953, -0.8191785, 7.845841)
-size = Vector3(55.717022, 0.43017578, 9.938615)
-material = ExtResource("11_4qkwh")
 
 [node name="Modems" type="Node3D" parent="." unique_id=1938318624]
 
@@ -405,7 +1782,7 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -17.
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.0027103, 0, 0)
 
 [node name="Repetidor1" type="Node3D" parent="Routers_Sur/Routers_oeste" unique_id=2102849639 node_paths=PackedStringArray("modem_principal") groups=["grupo_routers"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.210665, 0.017786026, -17.56943)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.210665, 0.017786026, -16.568813)
 script = SubResource("GDScript_4qkwh")
 modem_principal = NodePath("../../../Modems/Modem_principal")
 
@@ -426,33 +1803,6 @@ script = ExtResource("12_ie88l")
 escala_actual = 4.0
 
 [node name="ZonaCalorDebil" type="MeshInstance3D" parent="Routers_Sur/Routers_oeste/Repetidor1/Router1" unique_id=1987137293]
-transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
-mesh = SubResource("TorusMesh_dt7fy")
-script = ExtResource("12_ie88l")
-escala_actual = 8.0
-
-[node name="Repetidor6" type="Node3D" parent="Routers_Sur/Routers_oeste" unique_id=7587466 node_paths=PackedStringArray("modem_principal") groups=["grupo_routers"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.529673, 0.017786026, -11.028251)
-script = SubResource("GDScript_4qkwh")
-modem_principal = NodePath("../../../Modems/Modem_principal")
-
-[node name="Router1" type="MeshInstance3D" parent="Routers_Sur/Routers_oeste/Repetidor6" unique_id=135161823]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29029083, -0.0035955906, -0.107782364)
-mesh = SubResource("BoxMesh_4qkwh")
-
-[node name="ZonaCalorFuerte" type="MeshInstance3D" parent="Routers_Sur/Routers_oeste/Repetidor6/Router1" unique_id=759081087]
-transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
-mesh = SubResource("TorusMesh_dt7fy")
-surface_material_override/0 = SubResource("StandardMaterial3D_dt7fy")
-script = ExtResource("12_ie88l")
-
-[node name="ZonaCalorPromedio" type="MeshInstance3D" parent="Routers_Sur/Routers_oeste/Repetidor6/Router1" unique_id=1743685966]
-transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
-mesh = SubResource("TorusMesh_dt7fy")
-script = ExtResource("12_ie88l")
-escala_actual = 4.0
-
-[node name="ZonaCalorDebil" type="MeshInstance3D" parent="Routers_Sur/Routers_oeste/Repetidor6/Router1" unique_id=546222963]
 transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("TorusMesh_dt7fy")
 script = ExtResource("12_ie88l")
@@ -711,11 +2061,440 @@ script = ExtResource("12_x3esv")
 nodo_modem = NodePath("../../../../Modems/Modem_secundario")
 nodo_repetidor = NodePath("../../Repetidor5")
 
+[node name="Modems2" type="Node3D" parent="." unique_id=1125575545]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.4486532, 0)
+
+[node name="Modem_principal" type="Node3D" parent="Modems2" unique_id=2087798095 node_paths=PackedStringArray("antena_principal")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.398676, 0.12710804, -36.495274)
+script = ExtResource("15_wogku")
+antena_principal = NodePath("../../Antena/Antena_Principal")
+porcentaje_asignacion = 0.444
+
+[node name="Modem_Principal" type="MeshInstance3D" parent="Modems2/Modem_principal" unique_id=1599672206]
+mesh = SubResource("BoxMesh_x3esv")
+
+[node name="Modem_secundario" type="Node3D" parent="Modems2" unique_id=570611633 node_paths=PackedStringArray("antena_principal")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.61413, 0.12710804, -20.342026)
+script = ExtResource("15_wogku")
+antena_principal = NodePath("../../Antena/Antena_Principal")
+porcentaje_asignacion = 0.556
+
+[node name="Modem_secundario" type="MeshInstance3D" parent="Modems2/Modem_secundario" unique_id=554420890]
+mesh = SubResource("BoxMesh_x3esv")
+
+[node name="Routers_Oeste2" type="Node3D" parent="." unique_id=1214113202]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.4486532, 0)
+
+[node name="Routers_oeste" type="Node3D" parent="Routers_Oeste2" unique_id=56388297]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.0027103, 0, 0)
+
+[node name="Repetidor1" type="Node3D" parent="Routers_Oeste2/Routers_oeste" unique_id=503373090 node_paths=PackedStringArray("modem_principal") groups=["grupo_routers"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.720137, 0.017786026, -28.728266)
+script = SubResource("GDScript_4qkwh")
+modem_principal = NodePath("../../../Modems/Modem_secundario")
+
+[node name="Repetidor2" type="Node3D" parent="Routers_Oeste2/Routers_oeste" unique_id=728463632 node_paths=PackedStringArray("modem_principal") groups=["grupo_routers"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.75411, 0.017786026, -6.113819)
+script = SubResource("GDScript_4qkwh")
+modem_principal = NodePath("../../../Modems/Modem_secundario")
+
+[node name="Router2" type="MeshInstance3D" parent="Routers_Oeste2/Routers_oeste/Repetidor2" unique_id=850156425]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29029083, -0.0035955906, -0.107782364)
+mesh = SubResource("BoxMesh_4qkwh")
+
+[node name="ZonaCalorFuerte" type="MeshInstance3D" parent="Routers_Oeste2/Routers_oeste/Repetidor2/Router2" unique_id=120439858]
+transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_dt7fy")
+surface_material_override/0 = SubResource("StandardMaterial3D_dt7fy")
+script = ExtResource("12_ie88l")
+
+[node name="ZonaCalorPromedio" type="MeshInstance3D" parent="Routers_Oeste2/Routers_oeste/Repetidor2/Router2" unique_id=462978134]
+transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_dt7fy")
+script = ExtResource("12_ie88l")
+escala_actual = 4.0
+
+[node name="ZonaCalorDebil" type="MeshInstance3D" parent="Routers_Oeste2/Routers_oeste/Repetidor2/Router2" unique_id=531960963]
+transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_dt7fy")
+script = ExtResource("12_ie88l")
+escala_actual = 8.0
+
+[node name="Repetidor3" type="Node3D" parent="Routers_Oeste2/Routers_oeste" unique_id=959763740 node_paths=PackedStringArray("modem_principal") groups=["grupo_routers"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.70164, 0.017786026, 14.183878)
+script = SubResource("GDScript_4qkwh")
+modem_principal = NodePath("../../../Modems/Modem_secundario")
+
+[node name="Router3" type="MeshInstance3D" parent="Routers_Oeste2/Routers_oeste/Repetidor3" unique_id=94337955]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29029083, -0.0035955906, -0.107782364)
+mesh = SubResource("BoxMesh_4qkwh")
+
+[node name="ZonaCalorFuerte" type="MeshInstance3D" parent="Routers_Oeste2/Routers_oeste/Repetidor3/Router3" unique_id=325558709]
+transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_dt7fy")
+surface_material_override/0 = SubResource("StandardMaterial3D_dt7fy")
+script = ExtResource("12_ie88l")
+
+[node name="ZonaCalorPromedio" type="MeshInstance3D" parent="Routers_Oeste2/Routers_oeste/Repetidor3/Router3" unique_id=1047631181]
+transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_dt7fy")
+script = ExtResource("12_ie88l")
+escala_actual = 4.0
+
+[node name="ZonaCalorDebil" type="MeshInstance3D" parent="Routers_Oeste2/Routers_oeste/Repetidor3/Router3" unique_id=2079576779]
+transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_dt7fy")
+script = ExtResource("12_ie88l")
+escala_actual = 8.0
+
+[node name="Repetidor4" type="Node3D" parent="Routers_Oeste2/Routers_oeste" unique_id=1264927086 node_paths=PackedStringArray("modem_principal") groups=["grupo_routers"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.70706, 0.017786026, 31.893602)
+script = SubResource("GDScript_4qkwh")
+modem_principal = NodePath("../../../Modems/Modem_secundario")
+
+[node name="Router4" type="MeshInstance3D" parent="Routers_Oeste2/Routers_oeste/Repetidor4" unique_id=984605270]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29029083, -0.0035955906, -0.107782364)
+mesh = SubResource("BoxMesh_4qkwh")
+
+[node name="ZonaCalorFuerte" type="MeshInstance3D" parent="Routers_Oeste2/Routers_oeste/Repetidor4/Router4" unique_id=35954731]
+transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_dt7fy")
+surface_material_override/0 = SubResource("StandardMaterial3D_dt7fy")
+script = ExtResource("12_ie88l")
+
+[node name="ZonaCalorPromedio" type="MeshInstance3D" parent="Routers_Oeste2/Routers_oeste/Repetidor4/Router4" unique_id=655637394]
+transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_dt7fy")
+script = ExtResource("12_ie88l")
+escala_actual = 4.0
+
+[node name="ZonaCalorDebil" type="MeshInstance3D" parent="Routers_Oeste2/Routers_oeste/Repetidor4/Router4" unique_id=649568753]
+transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_dt7fy")
+script = ExtResource("12_ie88l")
+escala_actual = 8.0
+
+[node name="Enlaces" type="Node3D" parent="Routers_Oeste2/Routers_oeste" unique_id=1131742527]
+
+[node name="Enlace_modem_repetidor" type="MeshInstance3D" parent="Routers_Oeste2/Routers_oeste/Enlaces" unique_id=624718885 node_paths=PackedStringArray("nodo_modem", "nodo_repetidor")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -22.928265, 0)
+mesh = SubResource("BoxMesh_j2u5w")
+script = ExtResource("12_x3esv")
+nodo_modem = NodePath("../../../../Modems/Modem_secundario")
+nodo_repetidor = NodePath("../../Repetidor1")
+
+[node name="Enlace_modem_repetidor2" type="MeshInstance3D" parent="Routers_Oeste2/Routers_oeste/Enlaces" unique_id=1662039183 node_paths=PackedStringArray("nodo_modem", "nodo_repetidor")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -22.928265, 0)
+mesh = SubResource("BoxMesh_j2u5w")
+script = ExtResource("12_x3esv")
+nodo_modem = NodePath("../../../../Modems/Modem_secundario")
+nodo_repetidor = NodePath("../../Repetidor2")
+
+[node name="Enlace_modem_repetidor3" type="MeshInstance3D" parent="Routers_Oeste2/Routers_oeste/Enlaces" unique_id=1508013936 node_paths=PackedStringArray("nodo_modem", "nodo_repetidor")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -22.928265, 0)
+mesh = SubResource("BoxMesh_j2u5w")
+script = ExtResource("12_x3esv")
+nodo_modem = NodePath("../../../../Modems/Modem_secundario")
+nodo_repetidor = NodePath("../../Repetidor3")
+
+[node name="Enlace_modem_repetidor4" type="MeshInstance3D" parent="Routers_Oeste2/Routers_oeste/Enlaces" unique_id=540808101 node_paths=PackedStringArray("nodo_modem", "nodo_repetidor")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -22.928265, 0)
+mesh = SubResource("BoxMesh_j2u5w")
+script = ExtResource("12_x3esv")
+nodo_modem = NodePath("../../../../Modems/Modem_secundario")
+nodo_repetidor = NodePath("../../Repetidor4")
+
+[node name="Routers_Sur2" type="Node3D" parent="." unique_id=2105153958]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -17.240465, 3.4486532, 8.000412)
+
+[node name="Routers_oeste" type="Node3D" parent="Routers_Sur2" unique_id=1111377205]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.0027103, 0, 0)
+
+[node name="Repetidor1" type="Node3D" parent="Routers_Sur2/Routers_oeste" unique_id=1661824992 node_paths=PackedStringArray("modem_principal") groups=["grupo_routers"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.210665, 0.017786026, -16.568813)
+script = SubResource("GDScript_4qkwh")
+modem_principal = NodePath("../../../Modems/Modem_principal")
+
+[node name="Router1" type="MeshInstance3D" parent="Routers_Sur2/Routers_oeste/Repetidor1" unique_id=1455379249]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29029083, -0.0035955906, -0.107782364)
+mesh = SubResource("BoxMesh_4qkwh")
+
+[node name="ZonaCalorFuerte" type="MeshInstance3D" parent="Routers_Sur2/Routers_oeste/Repetidor1/Router1" unique_id=1933276513]
+transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_dt7fy")
+surface_material_override/0 = SubResource("StandardMaterial3D_dt7fy")
+script = ExtResource("12_ie88l")
+
+[node name="ZonaCalorPromedio" type="MeshInstance3D" parent="Routers_Sur2/Routers_oeste/Repetidor1/Router1" unique_id=1410410692]
+transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_dt7fy")
+script = ExtResource("12_ie88l")
+escala_actual = 4.0
+
+[node name="ZonaCalorDebil" type="MeshInstance3D" parent="Routers_Sur2/Routers_oeste/Repetidor1/Router1" unique_id=2046773442]
+transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_dt7fy")
+script = ExtResource("12_ie88l")
+escala_actual = 8.0
+
+[node name="Repetidor7" type="Node3D" parent="Routers_Sur2/Routers_oeste" unique_id=2088638467 node_paths=PackedStringArray("modem_principal") groups=["grupo_routers"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.529673, 0.017786026, 19.753555)
+script = SubResource("GDScript_4qkwh")
+modem_principal = NodePath("../../../Modems/Modem_principal")
+
+[node name="Router1" type="MeshInstance3D" parent="Routers_Sur2/Routers_oeste/Repetidor7" unique_id=1716376124]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29029083, -0.0035955906, -0.107782364)
+mesh = SubResource("BoxMesh_4qkwh")
+
+[node name="ZonaCalorFuerte" type="MeshInstance3D" parent="Routers_Sur2/Routers_oeste/Repetidor7/Router1" unique_id=1001683965]
+transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_dt7fy")
+surface_material_override/0 = SubResource("StandardMaterial3D_dt7fy")
+script = ExtResource("12_ie88l")
+
+[node name="ZonaCalorPromedio" type="MeshInstance3D" parent="Routers_Sur2/Routers_oeste/Repetidor7/Router1" unique_id=1504586136]
+transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_dt7fy")
+script = ExtResource("12_ie88l")
+escala_actual = 4.0
+
+[node name="ZonaCalorDebil" type="MeshInstance3D" parent="Routers_Sur2/Routers_oeste/Repetidor7/Router1" unique_id=750150004]
+transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_dt7fy")
+script = ExtResource("12_ie88l")
+escala_actual = 8.0
+
+[node name="Repetidor8" type="Node3D" parent="Routers_Sur2/Routers_oeste" unique_id=1643402216 node_paths=PackedStringArray("modem_principal") groups=["grupo_routers"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.589449, 0.017786026, 36.285988)
+script = SubResource("GDScript_4qkwh")
+modem_principal = NodePath("../../../Modems/Modem_principal")
+
+[node name="Router1" type="MeshInstance3D" parent="Routers_Sur2/Routers_oeste/Repetidor8" unique_id=553545018]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29029083, -0.0035955906, -0.107782364)
+mesh = SubResource("BoxMesh_4qkwh")
+
+[node name="ZonaCalorFuerte" type="MeshInstance3D" parent="Routers_Sur2/Routers_oeste/Repetidor8/Router1" unique_id=1474159519]
+transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_dt7fy")
+surface_material_override/0 = SubResource("StandardMaterial3D_dt7fy")
+script = ExtResource("12_ie88l")
+
+[node name="ZonaCalorPromedio" type="MeshInstance3D" parent="Routers_Sur2/Routers_oeste/Repetidor8/Router1" unique_id=912433758]
+transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_dt7fy")
+script = ExtResource("12_ie88l")
+escala_actual = 4.0
+
+[node name="ZonaCalorDebil" type="MeshInstance3D" parent="Routers_Sur2/Routers_oeste/Repetidor8/Router1" unique_id=8150540]
+transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_dt7fy")
+script = ExtResource("12_ie88l")
+escala_actual = 8.0
+
+[node name="Repetidor9" type="Node3D" parent="Routers_Sur2/Routers_oeste" unique_id=406673257 node_paths=PackedStringArray("modem_principal") groups=["grupo_routers"]]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 1, -43.618973, 0.017786026, 36.285988)
+script = SubResource("GDScript_4qkwh")
+modem_principal = NodePath("../../../Modems/Modem_principal")
+
+[node name="Router1" type="MeshInstance3D" parent="Routers_Sur2/Routers_oeste/Repetidor9" unique_id=1856923684]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29029083, -0.0035955906, -0.107782364)
+mesh = SubResource("BoxMesh_4qkwh")
+
+[node name="ZonaCalorFuerte" type="MeshInstance3D" parent="Routers_Sur2/Routers_oeste/Repetidor9/Router1" unique_id=879458582]
+transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_dt7fy")
+surface_material_override/0 = SubResource("StandardMaterial3D_dt7fy")
+script = ExtResource("12_ie88l")
+
+[node name="ZonaCalorPromedio" type="MeshInstance3D" parent="Routers_Sur2/Routers_oeste/Repetidor9/Router1" unique_id=1864536334]
+transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_dt7fy")
+script = ExtResource("12_ie88l")
+escala_actual = 4.0
+
+[node name="ZonaCalorDebil" type="MeshInstance3D" parent="Routers_Sur2/Routers_oeste/Repetidor9/Router1" unique_id=788340751]
+transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_dt7fy")
+script = ExtResource("12_ie88l")
+escala_actual = 8.0
+
+[node name="Repetidor10" type="Node3D" parent="Routers_Sur2/Routers_oeste" unique_id=2038961218 node_paths=PackedStringArray("modem_principal") groups=["grupo_routers"]]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 1, -43.618973, 0.017786026, 62.683975)
+script = SubResource("GDScript_4qkwh")
+modem_principal = NodePath("../../../Modems/Modem_principal")
+
+[node name="Router1" type="MeshInstance3D" parent="Routers_Sur2/Routers_oeste/Repetidor10" unique_id=1314202456]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29029083, -0.0035955906, -0.107782364)
+mesh = SubResource("BoxMesh_4qkwh")
+
+[node name="ZonaCalorFuerte" type="MeshInstance3D" parent="Routers_Sur2/Routers_oeste/Repetidor10/Router1" unique_id=1896258999]
+transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_dt7fy")
+surface_material_override/0 = SubResource("StandardMaterial3D_dt7fy")
+script = ExtResource("12_ie88l")
+
+[node name="ZonaCalorPromedio" type="MeshInstance3D" parent="Routers_Sur2/Routers_oeste/Repetidor10/Router1" unique_id=1221297580]
+transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_dt7fy")
+script = ExtResource("12_ie88l")
+escala_actual = 4.0
+
+[node name="ZonaCalorDebil" type="MeshInstance3D" parent="Routers_Sur2/Routers_oeste/Repetidor10/Router1" unique_id=1979959544]
+transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_dt7fy")
+script = ExtResource("12_ie88l")
+escala_actual = 8.0
+
+[node name="Repetidor2" type="Node3D" parent="Routers_Sur2/Routers_oeste" unique_id=464252878 node_paths=PackedStringArray("modem_principal") groups=["grupo_routers"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.144665, 0.017786026, -3.5978174)
+script = SubResource("GDScript_4qkwh")
+modem_principal = NodePath("../../../Modems/Modem_principal")
+
+[node name="Router2" type="MeshInstance3D" parent="Routers_Sur2/Routers_oeste/Repetidor2" unique_id=1389781657]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29029083, -0.0035955906, -0.107782364)
+mesh = SubResource("BoxMesh_4qkwh")
+
+[node name="ZonaCalorFuerte" type="MeshInstance3D" parent="Routers_Sur2/Routers_oeste/Repetidor2/Router2" unique_id=915202332]
+transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_dt7fy")
+surface_material_override/0 = SubResource("StandardMaterial3D_dt7fy")
+script = ExtResource("12_ie88l")
+
+[node name="ZonaCalorPromedio" type="MeshInstance3D" parent="Routers_Sur2/Routers_oeste/Repetidor2/Router2" unique_id=1839741878]
+transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_dt7fy")
+script = ExtResource("12_ie88l")
+escala_actual = 4.0
+
+[node name="ZonaCalorDebil" type="MeshInstance3D" parent="Routers_Sur2/Routers_oeste/Repetidor2/Router2" unique_id=1933588185]
+transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_dt7fy")
+script = ExtResource("12_ie88l")
+escala_actual = 8.0
+
+[node name="Repetidor3" type="Node3D" parent="Routers_Sur2/Routers_oeste" unique_id=700942673 node_paths=PackedStringArray("modem_principal") groups=["grupo_routers"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.876272, 0.017786026, 10.372172)
+script = SubResource("GDScript_4qkwh")
+modem_principal = NodePath("../../../Modems/Modem_principal")
+
+[node name="Router3" type="MeshInstance3D" parent="Routers_Sur2/Routers_oeste/Repetidor3" unique_id=1631168212]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29029083, -0.0035955906, -0.107782364)
+mesh = SubResource("BoxMesh_4qkwh")
+
+[node name="ZonaCalorFuerte" type="MeshInstance3D" parent="Routers_Sur2/Routers_oeste/Repetidor3/Router3" unique_id=262721522]
+transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_dt7fy")
+surface_material_override/0 = SubResource("StandardMaterial3D_dt7fy")
+script = ExtResource("12_ie88l")
+
+[node name="ZonaCalorPromedio" type="MeshInstance3D" parent="Routers_Sur2/Routers_oeste/Repetidor3/Router3" unique_id=1847116362]
+transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_dt7fy")
+script = ExtResource("12_ie88l")
+escala_actual = 4.0
+
+[node name="ZonaCalorDebil" type="MeshInstance3D" parent="Routers_Sur2/Routers_oeste/Repetidor3/Router3" unique_id=1237424373]
+transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_dt7fy")
+script = ExtResource("12_ie88l")
+escala_actual = 8.0
+
+[node name="Repetidor4" type="Node3D" parent="Routers_Sur2/Routers_oeste" unique_id=1112937150 node_paths=PackedStringArray("modem_principal") groups=["grupo_routers"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.793959, 0.017786026, 33.146255)
+script = SubResource("GDScript_4qkwh")
+modem_principal = NodePath("../../../Modems/Modem_principal")
+
+[node name="Router4" type="MeshInstance3D" parent="Routers_Sur2/Routers_oeste/Repetidor4" unique_id=1427961116]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29029083, -0.0035955906, -0.107782364)
+mesh = SubResource("BoxMesh_4qkwh")
+
+[node name="ZonaCalorFuerte" type="MeshInstance3D" parent="Routers_Sur2/Routers_oeste/Repetidor4/Router4" unique_id=700708145]
+transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_dt7fy")
+surface_material_override/0 = SubResource("StandardMaterial3D_dt7fy")
+script = ExtResource("12_ie88l")
+
+[node name="ZonaCalorPromedio" type="MeshInstance3D" parent="Routers_Sur2/Routers_oeste/Repetidor4/Router4" unique_id=129658162]
+transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_dt7fy")
+script = ExtResource("12_ie88l")
+escala_actual = 4.0
+
+[node name="ZonaCalorDebil" type="MeshInstance3D" parent="Routers_Sur2/Routers_oeste/Repetidor4/Router4" unique_id=1064449937]
+transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_dt7fy")
+script = ExtResource("12_ie88l")
+escala_actual = 8.0
+
+[node name="Repetidor5" type="Node3D" parent="Routers_Sur2/Routers_oeste" unique_id=1926492604 node_paths=PackedStringArray("modem_principal") groups=["grupo_routers"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.88642, 0.017786026, 52.699196)
+script = SubResource("GDScript_4qkwh")
+modem_principal = NodePath("../../../Modems/Modem_secundario")
+
+[node name="Router4" type="MeshInstance3D" parent="Routers_Sur2/Routers_oeste/Repetidor5" unique_id=1700499166]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29029083, -0.0035955906, -0.107782364)
+mesh = SubResource("BoxMesh_4qkwh")
+
+[node name="ZonaCalorFuerte" type="MeshInstance3D" parent="Routers_Sur2/Routers_oeste/Repetidor5/Router4" unique_id=31044194]
+transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_dt7fy")
+surface_material_override/0 = SubResource("StandardMaterial3D_dt7fy")
+script = ExtResource("12_ie88l")
+
+[node name="ZonaCalorPromedio" type="MeshInstance3D" parent="Routers_Sur2/Routers_oeste/Repetidor5/Router4" unique_id=1912804921]
+transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_dt7fy")
+script = ExtResource("12_ie88l")
+escala_actual = 4.0
+
+[node name="ZonaCalorDebil" type="MeshInstance3D" parent="Routers_Sur2/Routers_oeste/Repetidor5/Router4" unique_id=266806199]
+transform = Transform3D(1, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_dt7fy")
+script = ExtResource("12_ie88l")
+escala_actual = 8.0
+
+[node name="Enlaces" type="Node3D" parent="Routers_Sur2/Routers_oeste" unique_id=2026039772]
+
+[node name="Enlace_modem_repetidor" type="MeshInstance3D" parent="Routers_Sur2/Routers_oeste/Enlaces" unique_id=1054534767 node_paths=PackedStringArray("nodo_modem", "nodo_repetidor")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -22.928265, 0)
+mesh = SubResource("BoxMesh_j2u5w")
+script = ExtResource("12_x3esv")
+nodo_modem = NodePath("../../../../Modems/Modem_principal")
+nodo_repetidor = NodePath("../../Repetidor1")
+
+[node name="Enlace_modem_repetidor2" type="MeshInstance3D" parent="Routers_Sur2/Routers_oeste/Enlaces" unique_id=22519566 node_paths=PackedStringArray("nodo_modem", "nodo_repetidor")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -22.928265, 0)
+mesh = SubResource("BoxMesh_j2u5w")
+script = ExtResource("12_x3esv")
+nodo_modem = NodePath("../../../../Modems/Modem_principal")
+nodo_repetidor = NodePath("../../Repetidor2")
+
+[node name="Enlace_modem_repetidor3" type="MeshInstance3D" parent="Routers_Sur2/Routers_oeste/Enlaces" unique_id=202166299 node_paths=PackedStringArray("nodo_modem", "nodo_repetidor")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -22.928265, 0)
+mesh = SubResource("BoxMesh_j2u5w")
+script = ExtResource("12_x3esv")
+nodo_modem = NodePath("../../../../Modems/Modem_principal")
+nodo_repetidor = NodePath("../../Repetidor3")
+
+[node name="Enlace_modem_repetidor4" type="MeshInstance3D" parent="Routers_Sur2/Routers_oeste/Enlaces" unique_id=641033879 node_paths=PackedStringArray("nodo_modem", "nodo_repetidor")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -22.928265, 0)
+mesh = SubResource("BoxMesh_j2u5w")
+script = ExtResource("12_x3esv")
+nodo_modem = NodePath("../../../../Modems/Modem_principal")
+nodo_repetidor = NodePath("../../Repetidor4")
+
+[node name="Enlace_modem_repetidor5" type="MeshInstance3D" parent="Routers_Sur2/Routers_oeste/Enlaces" unique_id=910619352 node_paths=PackedStringArray("nodo_modem", "nodo_repetidor")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -22.928265, 0)
+mesh = SubResource("BoxMesh_j2u5w")
+script = ExtResource("12_x3esv")
+nodo_modem = NodePath("../../../../Modems/Modem_secundario")
+nodo_repetidor = NodePath("../../Repetidor5")
+
 [node name="Antena" type="Node3D" parent="." unique_id=1432921047]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13, 0)
 
 [node name="Antena_Principal" type="MeshInstance3D" parent="Antena" unique_id=229683432]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.58249, -6.8175583, -33.454254)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.316414, -2.779602, -33.454254)
 mesh = SubResource("CylinderMesh_ie88l")
 surface_material_override/0 = ExtResource("11_dt7fy")
 script = ExtResource("11_ie88l")
@@ -755,13 +2534,13 @@ size = Vector3(21.537231, 0.1, 12.533203)
 material = SubResource("StandardMaterial3D_n0dn3")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="PatioFrontal" unique_id=872362458]
-transform = Transform3D(0.9999521, 0, 0, 0, 0.9999635, 0, 0, 0, 1.0000001, -16.938091, -0.75345707, -58.039783)
-size = Vector3(70.0134, 0.1, 12.533203)
+transform = Transform3D(0.9999521, 0, 0, 0, 0.9999635, 0, 0, 0, 1.0000001, -8.866805, -0.75345707, -58.039783)
+size = Vector3(53.87005, 0.1, 12.533203)
 material = SubResource("StandardMaterial3D_r13oh")
 
 [node name="Borde_inferior" type="CSGBox3D" parent="PatioFrontal" unique_id=2063893809]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -15.552054, -0.34607697, -63.988884)
-size = Vector3(72.857086, 0.8720856, 0.29144287)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.21644446, -0.34607697, -63.988895)
+size = Vector3(42.185867, 0.8720856, 0.29144287)
 material = SubResource("StandardMaterial3D_lscaw")
 
 [node name="Borde_inferior2" type="CSGBox3D" parent="PatioFrontal" unique_id=816845624]
@@ -770,17 +2549,24 @@ size = Vector3(24.188028, 0.8720856, 0.29144287)
 material = SubResource("StandardMaterial3D_lscaw")
 
 [node name="Borde_inferior3" type="CSGBox3D" parent="PatioFrontal" unique_id=2049311203]
-transform = Transform3D(-4.3711395e-08, 0, -1.0000001, 0, 1, 0, 1.0000001, 0, -4.37123e-08, 52.866196, 0.6096659, -58.329926)
+transform = Transform3D(-4.3711395e-08, 0, -1.0000001, 0, 1, 0, 1.0000001, 0, -4.3712426e-08, 52.866196, 0.6096659, -58.329933)
 size = Vector3(11.906778, 2.7835712, 0.29144287)
+
+[node name="Borde_inferior5" type="CSGBox3D" parent="PatioFrontal" unique_id=1948925746]
+transform = Transform3D(-1.6680586e-07, 0, -1.0000001, 0, 1, 0, 3.8160818, 0, -4.3713055e-08, 56.15175, 0.6096659, 0.56295556)
+size = Vector3(27.817566, 2.7835712, 0.29144287)
+
+[node name="Borde_inferior6" type="CSGBox3D" parent="PatioFrontal" unique_id=809841776]
+transform = Transform3D(1.0000001, 0, -1.0338398e-12, 0, 1, 0, 3.552714e-15, 0, 1.0000001, 55.377182, 0.6096659, -52.38035)
+size = Vector3(1.7271218, 2.7835712, 0.29144287)
+
+[node name="Borde_inferior7" type="CSGBox3D" parent="PatioFrontal" unique_id=1071225042]
+transform = Transform3D(1.0000001, 0, -1.0338398e-12, 0, 1, 0, 3.552714e-15, 0, 1.0000001, 55.377182, 0.6096659, 53.484142)
+size = Vector3(1.7271218, 2.7835712, 0.29144287)
 
 [node name="Borde_inferior4" type="CSGBox3D" parent="PatioFrontal" unique_id=1042241722]
-transform = Transform3D(-4.3711395e-08, 0, -1.0000001, 0, 1, 0, 1.0000001, 0, -4.3712305e-08, -51.839592, 0.6096659, -58.329937)
-size = Vector3(11.906778, 2.7835712, 0.29144287)
-
-[node name="CSGBox3D3" type="CSGBox3D" parent="PatioFrontal" unique_id=1279672962]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -46.957222, 0, -64.033134)
-operation = 2
-size = Vector3(9.48822, 1, 1)
+transform = Transform3D(-4.3711395e-08, 0, -1.0000001, 0, 1, 0, 1.0000001, 0, -4.3714287e-08, -35.915897, 1.0522766, -37.400673)
+size = Vector3(53.765366, 3.6687932, 0.24042892)
 
 [node name="CeraPrincipal" type="CSGBox3D" parent="PatioFrontal" unique_id=1273557614]
 transform = Transform3D(0.0044420743, 0.004010827, 0.99998236, -0.0009357907, 0.99999154, -0.004006704, -0.999993, -0.000917959, 0.004445793, 24.778807, -0.87481976, -59.325405)
@@ -796,119 +2582,127 @@ material = ExtResource("11_4qkwh")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
 
 [node name="Pilar_de_reja" type="CSGCylinder3D" parent="PatioFrontal2" unique_id=150841041]
-transform = Transform3D(-4.3711385e-08, -4.3711385e-08, 0.99999994, -4.371139e-08, 0.9999999, 4.371139e-08, -1.0000001, -4.371293e-08, -4.3712927e-08, 28.874113, 0.9962716, -63.928642)
+transform = Transform3D(-4.3711385e-08, -4.3711385e-08, 0.99999994, -4.371139e-08, 0.9999999, 4.371139e-08, -1.0000001, -4.371293e-08, -4.3712927e-08, 28.874113, 0.5895829, -63.928642)
 radius = 0.44091797
 height = 3.0223465
 material = SubResource("StandardMaterial3D_7it8e")
 
 [node name="Pilar_de_reja2" type="CSGCylinder3D" parent="PatioFrontal2" unique_id=1709709031]
-transform = Transform3D(-4.3711385e-08, -4.3711385e-08, 0.99999994, -4.371139e-08, 0.9999999, 4.371139e-08, -1.0000001, -4.371293e-08, -4.3712927e-08, 20.901678, 0.99627125, -63.928642)
+transform = Transform3D(-4.3711385e-08, -4.3711385e-08, 0.99999994, -4.371139e-08, 0.9999999, 4.371139e-08, -1.0000001, -4.371293e-08, -4.3712927e-08, 20.901678, 0.58958256, -63.928642)
 radius = 0.44091797
 height = 3.0223465
 material = SubResource("StandardMaterial3D_7it8e")
 
 [node name="Pilar_de_reja3" type="CSGCylinder3D" parent="PatioFrontal2" unique_id=528155887]
-transform = Transform3D(-4.3711385e-08, -4.3711385e-08, 0.99999994, -4.371139e-08, 0.9999999, 4.371139e-08, -1.0000001, -4.371293e-08, -4.3712927e-08, 35.676147, 0.9962719, -63.928642)
+transform = Transform3D(-4.3711385e-08, -4.3711385e-08, 0.99999994, -4.371139e-08, 0.9999999, 4.371139e-08, -1.0000001, -4.371293e-08, -4.3712927e-08, 35.676147, 0.5895833, -63.928642)
 radius = 0.44091797
 height = 3.0223465
 material = SubResource("StandardMaterial3D_7it8e")
 
 [node name="Pilar_de_reja4" type="CSGCylinder3D" parent="PatioFrontal2" unique_id=452606591]
-transform = Transform3D(-4.3711385e-08, -4.3711385e-08, 0.99999994, -4.371139e-08, 0.9999999, 4.371139e-08, -1.0000001, -4.3712934e-08, -4.371293e-08, 42.525635, 0.9962724, -63.92865)
+transform = Transform3D(-4.3711385e-08, -4.3711385e-08, 0.99999994, -4.371139e-08, 0.9999999, 4.371139e-08, -1.0000001, -4.3712934e-08, -4.371293e-08, 42.525635, 0.58958375, -63.92865)
 radius = 0.44091797
 height = 3.0223465
 material = SubResource("StandardMaterial3D_7it8e")
 
 [node name="Pilar_de_reja5" type="CSGCylinder3D" parent="PatioFrontal2" unique_id=1469596098]
-transform = Transform3D(-4.3711385e-08, -4.3711385e-08, 0.99999994, -4.371139e-08, 0.9999999, 4.371139e-08, -1.0000001, -4.3712934e-08, -4.371293e-08, 52.680614, 0.9962728, -63.92865)
+transform = Transform3D(-4.3711385e-08, -4.3711385e-08, 0.99999994, -4.371139e-08, 0.9999999, 4.371139e-08, -1.0000001, -4.3712934e-08, -4.371293e-08, 52.680614, 0.5895841, -63.92865)
 radius = 0.44091797
 height = 3.0223465
 material = SubResource("StandardMaterial3D_7it8e")
 
 [node name="Pilar_de_reja6" type="CSGCylinder3D" parent="PatioFrontal2" unique_id=1052067133]
-transform = Transform3D(-4.3711385e-08, -4.3711385e-08, 0.99999994, -4.371139e-08, 0.9999999, 4.371139e-08, -1.0000001, -4.3712934e-08, -4.371293e-08, 47.646782, 0.99627256, -63.92865)
+transform = Transform3D(-4.3711385e-08, -4.3711385e-08, 0.99999994, -4.371139e-08, 0.9999999, 4.371139e-08, -1.0000001, -4.3712934e-08, -4.371293e-08, 47.646782, 0.5895839, -63.92865)
 radius = 0.44091797
 height = 3.0223465
 material = SubResource("StandardMaterial3D_7it8e")
 
 [node name="Pilar_de_reja7" type="CSGCylinder3D" parent="PatioFrontal2" unique_id=1938039434]
-transform = Transform3D(-4.3711385e-08, -4.3711385e-08, 0.99999994, -4.371139e-08, 0.9999999, 4.371139e-08, -1.0000001, -4.371293e-08, -4.3712927e-08, -9.203929, 0.99626994, -63.928642)
+transform = Transform3D(-4.3711385e-08, -4.3711385e-08, 0.99999994, -4.371139e-08, 0.9999999, 4.371139e-08, -1.0000001, -4.371293e-08, -4.3712927e-08, -9.203929, 0.58958125, -63.928642)
 radius = 0.44091797
 height = 3.0223465
 material = SubResource("StandardMaterial3D_7it8e")
 
 [node name="Pilar_de_reja8" type="CSGCylinder3D" parent="PatioFrontal2" unique_id=1509644709]
-transform = Transform3D(-4.3711385e-08, -4.3711385e-08, 0.99999994, -4.371139e-08, 0.9999999, 4.371139e-08, -1.0000001, -4.371293e-08, -4.3712927e-08, -17.176365, 0.9962696, -63.928642)
+transform = Transform3D(-4.3711385e-08, -4.3711385e-08, 0.99999994, -4.371139e-08, 0.9999999, 4.371139e-08, -1.0000001, -4.371293e-08, -4.3712927e-08, -17.176365, 0.5895809, -63.928642)
 radius = 0.44091797
 height = 3.0223465
 material = SubResource("StandardMaterial3D_7it8e")
 
 [node name="Pilar_de_reja9" type="CSGCylinder3D" parent="PatioFrontal2" unique_id=381855284]
-transform = Transform3D(-4.3711385e-08, -4.3711385e-08, 0.99999994, -4.371139e-08, 0.9999999, 4.371139e-08, -1.0000001, -4.371293e-08, -4.3712927e-08, -2.401895, 0.99627024, -63.928642)
+transform = Transform3D(-4.3711385e-08, -4.3711385e-08, 0.99999994, -4.371139e-08, 0.9999999, 4.371139e-08, -1.0000001, -4.371293e-08, -4.3712927e-08, -2.401895, 0.5895816, -63.928642)
 radius = 0.44091797
 height = 3.0223465
 material = SubResource("StandardMaterial3D_7it8e")
 
 [node name="Pilar_de_reja10" type="CSGCylinder3D" parent="PatioFrontal2" unique_id=658268857]
-transform = Transform3D(-4.3711385e-08, -4.3711385e-08, 0.99999994, -4.371139e-08, 0.9999999, 4.371139e-08, -1.0000001, -4.3712934e-08, -4.371293e-08, 4.4475923, 0.9962707, -63.92865)
+transform = Transform3D(-4.3711385e-08, -4.3711385e-08, 0.99999994, -4.371139e-08, 0.9999999, 4.371139e-08, -1.0000001, -4.3712934e-08, -4.371293e-08, 4.4475923, 0.5895821, -63.92865)
 radius = 0.44091797
 height = 3.0223465
 material = SubResource("StandardMaterial3D_7it8e")
 
 [node name="Pilar_de_reja11" type="CSGCylinder3D" parent="PatioFrontal2" unique_id=939862689]
-transform = Transform3D(-4.3711385e-08, -4.3711385e-08, 0.99999994, -4.371139e-08, 0.9999999, 4.371139e-08, -1.0000001, -4.3712934e-08, -4.371293e-08, 15.317972, 0.9962712, -63.92865)
+transform = Transform3D(-4.3711385e-08, -4.3711385e-08, 0.99999994, -4.371139e-08, 0.9999999, 4.371139e-08, -1.0000001, -4.3712934e-08, -4.371293e-08, 15.317972, 0.58958256, -63.92865)
 radius = 0.44091797
 height = 3.0223465
 material = SubResource("StandardMaterial3D_7it8e")
 
 [node name="Pilar_de_reja12" type="CSGCylinder3D" parent="PatioFrontal2" unique_id=543403709]
-transform = Transform3D(-4.3711385e-08, -4.3711385e-08, 0.99999994, -4.371139e-08, 0.9999999, 4.371139e-08, -1.0000001, -4.3712934e-08, -4.371293e-08, 9.56874, 0.9962709, -63.92865)
-radius = 0.44091797
-height = 3.0223465
-material = SubResource("StandardMaterial3D_7it8e")
-
-[node name="Pilar_de_reja13" type="CSGCylinder3D" parent="PatioFrontal2" unique_id=1891535613]
-transform = Transform3D(-4.3711385e-08, -4.3711385e-08, 0.99999994, -4.371139e-08, 0.9999999, 4.371139e-08, -1.0000001, -4.3712934e-08, -4.371293e-08, -41.657646, 0.99626845, -63.92865)
-radius = 0.44091797
-height = 3.0223465
-material = SubResource("StandardMaterial3D_7it8e")
-
-[node name="Pilar_de_reja14" type="CSGCylinder3D" parent="PatioFrontal2" unique_id=1628799262]
-transform = Transform3D(-4.3711385e-08, -4.3711385e-08, 0.99999994, -4.371139e-08, 0.9999999, 4.371139e-08, -1.0000001, -4.3712937e-08, -4.3712934e-08, -34.80816, 0.9962689, -63.928654)
+transform = Transform3D(-4.3711385e-08, -4.3711385e-08, 0.99999994, -4.371139e-08, 0.9999999, 4.371139e-08, -1.0000001, -4.3712934e-08, -4.371293e-08, 9.56874, 0.5895822, -63.92865)
 radius = 0.44091797
 height = 3.0223465
 material = SubResource("StandardMaterial3D_7it8e")
 
 [node name="Pilar_de_reja15" type="CSGCylinder3D" parent="PatioFrontal2" unique_id=2067766436]
-transform = Transform3D(-4.3711385e-08, -4.3711385e-08, 0.99999994, -4.371139e-08, 0.9999999, 4.371139e-08, -1.0000001, -4.3712937e-08, -4.3712934e-08, -24.65318, 0.9962694, -63.928654)
-radius = 0.44091797
-height = 3.0223465
-material = SubResource("StandardMaterial3D_7it8e")
-
-[node name="Pilar_de_reja16" type="CSGCylinder3D" parent="PatioFrontal2" unique_id=856446922]
-transform = Transform3D(-4.3711385e-08, -4.3711385e-08, 0.99999994, -4.371139e-08, 0.9999999, 4.371139e-08, -1.0000001, -4.3712937e-08, -4.3712934e-08, -29.687012, 0.9962694, -63.928654)
+transform = Transform3D(-4.3711385e-08, -4.3711385e-08, 0.99999994, -4.371139e-08, 0.9999999, 4.371139e-08, -1.0000001, -4.3712937e-08, -4.3712934e-08, -21.51416, 0.5895809, -63.928654)
 radius = 0.44091797
 height = 3.0223465
 material = SubResource("StandardMaterial3D_7it8e")
 
 [node name="Borde_De_Techo4" type="CSGBox3D" parent="PatioFrontal2" unique_id=1598142840]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -10.420844, 2.2606149, -64.08517)
-size = Vector3(62.808987, 0.53749084, 0.06484604)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.185975, 1.9892068, -64.08519)
+size = Vector3(42.81246, 0.53749084, 0.06484604)
 
 [node name="Borde_De_Techo5" type="CSGBox3D" parent="PatioFrontal2" unique_id=1649984342]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 40.94888, 2.2606149, -64.00527)
-size = Vector3(24.133644, 0.53749084, 0.13503647)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 40.7904, 2.2606149, -64.00528)
+size = Vector3(24.450611, 0.53749084, 0.13503647)
 
 [node name="Exterior" type="CSGCombiner3D" parent="." unique_id=1540722455]
 
 [node name="Borde_inferior" type="CSGBox3D" parent="Exterior" unique_id=716820306]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -15.391464, -0.2992096, -52.53968)
-size = Vector3(65.39099, 0.77835083, 0.29144287)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -2.1139817, -0.2992096, -52.53968)
+size = Vector3(38.83603, 0.77835083, 0.29144287)
+material = ExtResource("11_4qkwh")
+
+[node name="Borde_inferior2" type="CSGBox3D" parent="Exterior" unique_id=1044050443]
+transform = Transform3D(-4.371139e-08, 0, 0.9999999, 0, 1, 0, -0.9999999, 0, -4.371138e-08, -21.769442, -0.2992096, -45.412754)
+size = Vector3(14.388348, 0.77835083, 0.29144287)
+material = ExtResource("11_4qkwh")
+
+[node name="Borde_inferior3" type="CSGBox3D" parent="Exterior" unique_id=2102446274]
+transform = Transform3D(0.9999999, 0, -3.5527137e-15, 0, 1, 0, -3.5527133e-15, 0, 0.9999999, -28.188292, -0.2992096, -39.15468)
+size = Vector3(13.733806, 0.77835083, 0.29144287)
 material = ExtResource("11_4qkwh")
 
 [node name="Borde_De_Techo" type="CSGBox3D" parent="Exterior" unique_id=697907587]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 2.4758377, 2.2606149, -53.21137)
-size = Vector3(101.07774, 0.53749084, 1.6348534)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 15.467491, 2.2606149, -53.21137)
+size = Vector3(75.09444, 0.53749084, 1.6348534)
+
+[node name="Borde_De_Techo6" type="CSGBox3D" parent="Exterior" unique_id=58431820 groups=["grupo_piso2"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -1.0160843, 5.563896, -53.21137)
+size = Vector3(40.820423, 0.53749084, 1.6348534)
+
+[node name="Borde_De_Techo7" type="CSGBox3D" parent="Exterior" unique_id=285024744 groups=["grupo_piso2"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 45.816048, 5.563896, -53.21137)
+size = Vector3(17.650967, 0.53749084, 1.6348534)
+
+[node name="Borde_De_Techo4" type="CSGBox3D" parent="Exterior" unique_id=480336557]
+transform = Transform3D(-4.371139e-08, 0, 0.9999999, 0, 1, 0, -0.9999999, 0, -4.371138e-08, -21.764626, 2.2606149, -46.05365)
+size = Vector3(15.956034, 0.53749084, 1.1968212)
+
+[node name="Borde_De_Techo5" type="CSGBox3D" parent="Exterior" unique_id=147047390]
+transform = Transform3D(0.9999999, 0, -3.5527137e-15, 0, 1, 0, -3.5527133e-15, 0, 0.9999999, -28.696217, 2.2606149, -39.056396)
+size = Vector3(14.665463, 0.53749084, 1.1296606)
 
 [node name="Borde_De_Techo2" type="CSGBox3D" parent="Exterior" unique_id=499722806]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 36.419598, 2.156334, -60.254387)
@@ -963,90 +2757,99 @@ size = Vector3(1.5892029, 3.0519485, 0.68136597)
 material = SubResource("StandardMaterial3D_xjpmw")
 
 [node name="Pilar3" type="CSGBox3D" parent="Exterior" unique_id=1699696709]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -21.181942, 0.8138714, -52.555237)
-size = Vector3(1.5892029, 3.0519485, 0.68136597)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -21.221146, 0.8138714, -52.242725)
+size = Vector3(1.4176865, 3.0519485, 1.3063812)
 material = SubResource("StandardMaterial3D_xjpmw")
 
-[node name="Pilar4" type="CSGBox3D" parent="Exterior" unique_id=510380912]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -34.60468, 0.8138714, -52.555237)
-size = Vector3(1.5892029, 3.0519485, 0.68136597)
-material = SubResource("StandardMaterial3D_xjpmw")
+[node name="Pilar12" type="CSGBox3D" parent="Exterior" unique_id=1901645414]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -21.771873, 0.8138714, -39.336254)
+size = Vector3(0.87667084, 3.0519485, 0.8610153)
+material = SubResource("StandardMaterial3D_uexxv")
 
-[node name="Pilar5" type="CSGBox3D" parent="Exterior" unique_id=30929071]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -47.26459, 0.8138714, -52.645054)
-size = Vector3(1.5892029, 3.0519485, 0.8610153)
+[node name="Pilar13" type="CSGBox3D" parent="Exterior" unique_id=640200232]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -28.40511, 0.8138714, -39.174732)
+size = Vector3(0.9913788, 3.0519485, 0.8610153)
+material = SubResource("StandardMaterial3D_uexxv")
+
+[node name="Pilar14" type="CSGBox3D" parent="Exterior" unique_id=422958706]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -35.3218, 0.8138714, -39.161873)
+size = Vector3(0.9913788, 3.0519485, 0.7038231)
 material = SubResource("StandardMaterial3D_uexxv")
 
 [node name="Exterior_central" type="CSGCombiner3D" parent="." unique_id=545043957]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.7529573, 0)
 
-[node name="Pilar" type="CSGBox3D" parent="Exterior_central" unique_id=873018632]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 20.926836, -3.088295, -10.216306)
-size = Vector3(1.1388397, 3.0519485, 1.2433128)
+[node name="Pilar" type="CSGBox3D" parent="Exterior_central" unique_id=873018632 groups=["grupo_piso2"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 20.926836, -1.2429447, -10.216306)
+size = Vector3(1.1388397, 6.742649, 1.2433128)
 
-[node name="Pilar2" type="CSGBox3D" parent="Exterior_central" unique_id=417421627]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 20.926836, -3.088295, 5.9923143)
-size = Vector3(1.1388397, 3.0519485, 1.2433128)
+[node name="Pilar2" type="CSGBox3D" parent="Exterior_central" unique_id=417421627 groups=["grupo_piso2"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 20.926836, -1.214014, 5.9923143)
+size = Vector3(1.1388397, 6.8005104, 1.2433128)
 
-[node name="Pilar3" type="CSGBox3D" parent="Exterior_central" unique_id=858431939]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 20.926836, -3.088295, 20.881052)
-size = Vector3(1.1388397, 3.0519485, 1.2433128)
+[node name="Pilar3" type="CSGBox3D" parent="Exterior_central" unique_id=858431939 groups=["grupo_piso2"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 20.926836, -1.2092533, 20.881052)
+size = Vector3(1.1388397, 6.810032, 1.2433128)
 
-[node name="Pilar4" type="CSGBox3D" parent="Exterior_central" unique_id=250184919]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 20.926836, -3.088295, 35.77058)
-size = Vector3(1.1388397, 3.0519485, 1.2433128)
+[node name="Pilar4" type="CSGBox3D" parent="Exterior_central" unique_id=250184919 groups=["grupo_piso2"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.218359, -1.2997684, 35.770584)
+size = Vector3(1.7218857, 6.6290016, 1.2433128)
 
-[node name="Pilar9" type="CSGBox3D" parent="Exterior_central" unique_id=1978819014]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 20.926836, -3.088295, 47.06982)
-size = Vector3(1.1388397, 3.0519485, 1.2433128)
+[node name="Pilar9" type="CSGBox3D" parent="Exterior_central" unique_id=1978819014 groups=["grupo_piso2"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 20.926836, -1.321558, 47.069817)
+size = Vector3(1.1388397, 6.5854225, 1.2433128)
 
-[node name="Pilar5" type="CSGBox3D" parent="Exterior_central" unique_id=840160856]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 3.019434, -3.088295, -10.216306)
-size = Vector3(1.1388397, 3.0519485, 1.2433128)
+[node name="Pilar5" type="CSGBox3D" parent="Exterior_central" unique_id=840160856 groups=["grupo_piso2"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 3.0194337, -1.3312626, -10.216306)
+size = Vector3(1.1388397, 6.5660133, 1.2433128)
 
-[node name="Pilar6" type="CSGBox3D" parent="Exterior_central" unique_id=748325075]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -13.420231, -3.088295, -10.219272)
-size = Vector3(1.1388397, 3.0519485, 1.2433128)
+[node name="Pilar6" type="CSGBox3D" parent="Exterior_central" unique_id=748325075 groups=["grupo_piso2"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -13.42023, -1.2478275, -10.219272)
+size = Vector3(1.1388397, 6.7328835, 1.2433128)
 
-[node name="Pilar7" type="CSGBox3D" parent="Exterior_central" unique_id=127594563]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -28.167997, -3.088295, -10.231757)
-size = Vector3(1.1388397, 3.0519485, 1.2433128)
-
-[node name="Pilar8" type="CSGBox3D" parent="Exterior_central" unique_id=339419262]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -40.68332, -2.7443485, -10.231755)
-size = Vector3(1.1388397, 3.7398415, 1.2433128)
+[node name="Pilar7" type="CSGBox3D" parent="Exterior_central" unique_id=1470489509 groups=["grupo_piso2"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.37112, 0.14243793, -9.1739645)
+size = Vector3(1.58358, 9.513414, 2.6559582)
 
 [node name="Borde_inferior" type="CSGBox3D" parent="Exterior_central" unique_id=782933263]
-transform = Transform3D(-4.371139e-08, 0, 0.9999999, 0, 1, 0, -0.9999999, 0, -4.371138e-08, -58.822113, -3.6013021, 21.516579)
+transform = Transform3D(-4.371139e-08, 0, 0.9999999, 0, 1, 0, -0.9999999, 0, -4.371138e-08, -35.68096, -3.6013021, 21.516577)
 size = Vector3(65.39099, 1.3548317, 0.29144287)
 
 [node name="Borde_inferior2" type="CSGBox3D" parent="Exterior_central" unique_id=2083726191]
-transform = Transform3D(0.9999999, 0, -3.5527137e-15, 0, 1, 0, -3.5527133e-15, 0, 0.9999999, -8.665642, -3.6013021, 54.015278)
-size = Vector3(100.945526, 1.3548317, 0.29144287)
+transform = Transform3D(0.9999999, 0, -3.5527137e-15, 0, 1, 0, -3.5527133e-15, 0, 0.9999999, 2.820006, -3.6013021, 54.015278)
+size = Vector3(77.97423, 1.3548317, 0.29144287)
 
 [node name="Techo3" type="CSGBox3D" parent="Exterior_central" unique_id=529349959 groups=["grupo_techo"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -4.433727, -1.4188347, -14.897826)
-size = Vector3(71.34675, 0.29818392, 10.618323)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5480542, -1.4188347, -14.897828)
+size = Vector3(57.383186, 0.29818392, 10.618323)
 
 [node name="Techo4" type="CSGBox3D" parent="Exterior_central" unique_id=1674908758 groups=["grupo_techo"]]
 transform = Transform3D(-4.371139e-08, 0, -0.9999999, 0, 1, 0, 0.9999999, 0, -4.371138e-08, 25.856575, -1.4188347, 13.334007)
 size = Vector3(46.161636, 0.29818392, 11.047993)
 
 [node name="Borde_De_Techo" type="CSGBox3D" parent="Exterior_central" unique_id=326957630]
-transform = Transform3D(-4.371139e-08, 0, -0.9999999, 0, 1, 0, 0.9999999, 0, -4.371138e-08, 21.018671, -1.5499654, 41.294716)
-size = Vector3(10.440351, 0.53749084, 1.3337936)
+transform = Transform3D(-4.371139e-08, 0, -0.9999999, 0, 1, 0, 0.9999999, 0, -4.371138e-08, 21.704319, -1.4114499, 41.294716)
+size = Vector3(10.440351, 0.8145218, 1.3337936)
 
 [node name="Borde_De_Techo3" type="CSGBox3D" parent="Exterior_central" unique_id=1962288420]
-transform = Transform3D(-4.371139e-08, 0, -0.9999999, 0, 1, 0, 0.9999999, 0, -4.371138e-08, 20.957722, -1.8272433, 12.613567)
-size = Vector3(45.353477, 0.53749084, 0.9276309)
+transform = Transform3D(-4.371139e-08, 0, -0.9999999, 0, 1, 0, 0.9999999, 0, -4.371138e-08, 20.41082, -1.8272433, 12.613567)
+size = Vector3(45.353477, 0.53749084, 2.0214326)
 
 [node name="Borde_De_Techo4" type="CSGBox3D" parent="Exterior_central" unique_id=1154781834]
-transform = Transform3D(-0.9999999, 0, 8.742276e-08, 0, 1, 0, -8.742276e-08, 0, -0.9999999, -9.447248, -1.8272433, -10.164341)
-size = Vector3(59.85571, 0.53749084, 0.8642061)
+transform = Transform3D(-0.9999999, 0, 8.742276e-08, 0, 1, 0, -8.742276e-08, 0, -0.9999999, 3.7340846, -1.8272433, -9.5154)
+size = Vector3(33.493042, 0.53749084, 2.1620836)
+
+[node name="Borde_De_Techo5" type="CSGBox3D" parent="Exterior_central" unique_id=878037034 groups=["grupo_piso2"]]
+transform = Transform3D(-0.9999999, 0, 8.742276e-08, 0, 1, 0, -8.742276e-08, 0, -0.9999999, 3.7340846, 1.3302805, -10.16434)
+size = Vector3(33.493042, 0.53749084, 0.8642061)
+
+[node name="Borde_De_Techo6" type="CSGBox3D" parent="Exterior_central" unique_id=798981000 groups=["grupo_piso2"]]
+transform = Transform3D(1.3113414e-07, 0, 0.9999999, 0, 1, 0, -0.9999999, 0, 1.3113414e-07, 21.498203, 1.3302803, 12.750443)
+size = Vector3(46.438416, 0.53749084, 0.8642061)
 
 [node name="Borde_De_Techo2" type="CSGBox3D" parent="Exterior_central" unique_id=1370981197]
-transform = Transform3D(0.9999999, 0, 3.5527137e-15, 0, 1, 0, 3.5527133e-15, 0, 0.9999999, 30.895706, -1.5499654, 47.10959)
-size = Vector3(21.198956, 0.53749084, 1.1745872)
+transform = Transform3D(0.9999999, 0, 3.5527137e-15, 0, 1, 0, 3.5527133e-15, 0, 0.9999999, 31.124775, -1.4454265, 47.10959)
+size = Vector3(21.657095, 0.7465687, 1.1745872)
 
 [node name="Pisos_Nav" type="Node3D" parent="." unique_id=-1294967286]
 
@@ -1113,7 +2916,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.966755, 0)
 shape = SubResource("SphereShape3D_destino")
 
 [node name="Bano2" type="Marker3D" parent="Destinos" unique_id=-1294967269 groups=["destino"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.527756, 0, -15.25)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.809866, 0, -15.25)
 
 [node name="Area3D" type="Area3D" parent="Destinos/Bano2" unique_id=-1294967268]
 
@@ -1211,7 +3014,7 @@ script = ExtResource("13_spawner")
 [node name="Techo Curvado" type="CSGCombiner3D" parent="." unique_id=1518140690]
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="Techo Curvado" unique_id=778435783 groups=["grupo_techo"]]
-transform = Transform3D(-4.371138e-08, 4.371139e-08, 0.9999999, 1, 0, 4.3711385e-08, 0, 0.9999999, -4.371138e-08, 24.968859, 0.39209616, -58.153366)
+transform = Transform3D(-4.371138e-08, 4.371139e-08, 0.9999999, 1, 0, 4.3711385e-08, 0, 0.9999999, -4.371138e-08, 24.968859, 0.31044912, -58.140724)
 radius = 5.0
 height = 12.088501
 material = SubResource("StandardMaterial3D_0wif2")
@@ -1227,6 +3030,11 @@ material = SubResource("StandardMaterial3D_peeah")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 23.499998, -1.0974121, -58.2896)
 operation = 2
 size = Vector3(14, 7.194824, 12.420776)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Techo Curvado" unique_id=1525172787 groups=["grupo_techo"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 23.93235, 3.549313, -52.458427)
+operation = 2
+size = Vector3(5.772461, 2.2268066, 0.9619258)
 
 [node name="Rejas frontales" type="CSGCombiner3D" parent="." unique_id=164569469]
 
@@ -2291,370 +4099,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.6025115, 0.968555, 
 radius = 0.051757813
 height = 2.2045898
 
-[node name="CSGCylinder3D7" type="CSGCylinder3D" parent="Rejas frontales/Rejas17" unique_id=1214419249]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.2443496, 0.968555, -0.042803526)
-radius = 0.051757813
-height = 2.2045898
-
-[node name="CSGCylinder3D8" type="CSGCylinder3D" parent="Rejas frontales/Rejas17" unique_id=1811602724]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0.7958366, 0.968555, -0.042803526)
-radius = 0.051757813
-height = 2.2045898
-
-[node name="CSGCylinder3D9" type="CSGCylinder3D" parent="Rejas frontales/Rejas17" unique_id=1052717380]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0.3606903, 0.968555, -0.042803526)
-radius = 0.051757813
-height = 2.2045898
-
-[node name="CSGCylinder3D10" type="CSGCylinder3D" parent="Rejas frontales/Rejas17" unique_id=1022478790]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.08375625, 0.968555, -0.042803526)
-radius = 0.051757813
-height = 2.2045898
-
-[node name="CSGCylinder3D11" type="CSGCylinder3D" parent="Rejas frontales/Rejas17" unique_id=1603412825]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.46889955, 0.968555, -0.042803526)
-radius = 0.051757813
-height = 2.2045898
-
-[node name="CSGCylinder3D12" type="CSGCylinder3D" parent="Rejas frontales/Rejas17" unique_id=563501457]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.46889955, 0.968555, -0.042803526)
-radius = 0.051757813
-height = 2.2045898
-
 [node name="Rejas18" type="Node3D" parent="Rejas frontales" unique_id=2048834158]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -25.150568, 0.15586042, -64.00867)
-
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Rejas frontales/Rejas18" unique_id=480550044]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 3.1949837, 0.968555, -0.042803526)
-radius = 0.051757813
-height = 2.2045898
-
-[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Rejas frontales/Rejas18" unique_id=1390570040]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 2.9234383, 0.968555, -0.042803526)
-radius = 0.051757813
-height = 2.2045898
-
-[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Rejas frontales/Rejas18" unique_id=1999815237]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 2.6060326, 0.968555, -0.042803526)
-radius = 0.051757813
-height = 2.2045898
-
-[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="Rejas frontales/Rejas18" unique_id=386500998]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 2.2773545, 0.968555, -0.042803526)
-radius = 0.051757813
-height = 2.2045898
-
-[node name="CSGCylinder3D5" type="CSGCylinder3D" parent="Rejas frontales/Rejas18" unique_id=539323740]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.9624435, 0.968555, -0.042803526)
-radius = 0.051757813
-height = 2.2045898
-
-[node name="CSGCylinder3D6" type="CSGCylinder3D" parent="Rejas frontales/Rejas18" unique_id=890383134]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.6025115, 0.968555, -0.042803526)
-radius = 0.051757813
-height = 2.2045898
-
-[node name="CSGCylinder3D7" type="CSGCylinder3D" parent="Rejas frontales/Rejas18" unique_id=992727945]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.2443496, 0.968555, -0.042803526)
-radius = 0.051757813
-height = 2.2045898
-
-[node name="CSGCylinder3D8" type="CSGCylinder3D" parent="Rejas frontales/Rejas18" unique_id=2087847469]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0.7958366, 0.968555, -0.042803526)
-radius = 0.051757813
-height = 2.2045898
-
-[node name="CSGCylinder3D9" type="CSGCylinder3D" parent="Rejas frontales/Rejas18" unique_id=1598635579]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0.3606903, 0.968555, -0.042803526)
-radius = 0.051757813
-height = 2.2045898
-
-[node name="CSGCylinder3D10" type="CSGCylinder3D" parent="Rejas frontales/Rejas18" unique_id=432954306]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.08375625, 0.968555, -0.042803526)
-radius = 0.051757813
-height = 2.2045898
-
-[node name="CSGCylinder3D11" type="CSGCylinder3D" parent="Rejas frontales/Rejas18" unique_id=1240169567]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.46889955, 0.968555, -0.042803526)
-radius = 0.051757813
-height = 2.2045898
-
-[node name="CSGCylinder3D12" type="CSGCylinder3D" parent="Rejas frontales/Rejas18" unique_id=1955264205]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.46889955, 0.968555, -0.042803526)
-radius = 0.051757813
-height = 2.2045898
-
-[node name="Rejas19" type="Node3D" parent="Rejas frontales" unique_id=1954433511]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -28.289295, 0.15586042, -63.965874)
-
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Rejas frontales/Rejas19" unique_id=1475018116]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 3.1949837, 0.968555, -0.042803526)
-radius = 0.051757813
-height = 2.2045898
-
-[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Rejas frontales/Rejas19" unique_id=688971002]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 2.9234383, 0.968555, -0.042803526)
-radius = 0.051757813
-height = 2.2045898
-
-[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Rejas frontales/Rejas19" unique_id=226804062]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 2.6060326, 0.968555, -0.042803526)
-radius = 0.051757813
-height = 2.2045898
-
-[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="Rejas frontales/Rejas19" unique_id=163488514]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 2.2773545, 0.968555, -0.042803526)
-radius = 0.051757813
-height = 2.2045898
-
-[node name="CSGCylinder3D5" type="CSGCylinder3D" parent="Rejas frontales/Rejas19" unique_id=1482035078]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.9624435, 0.968555, -0.042803526)
-radius = 0.051757813
-height = 2.2045898
-
-[node name="CSGCylinder3D6" type="CSGCylinder3D" parent="Rejas frontales/Rejas19" unique_id=1506930133]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.6025115, 0.968555, -0.042803526)
-radius = 0.051757813
-height = 2.2045898
-
-[node name="CSGCylinder3D7" type="CSGCylinder3D" parent="Rejas frontales/Rejas19" unique_id=670235647]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.2443496, 0.968555, -0.042803526)
-radius = 0.051757813
-height = 2.2045898
-
-[node name="CSGCylinder3D8" type="CSGCylinder3D" parent="Rejas frontales/Rejas19" unique_id=1326191117]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0.7958366, 0.968555, -0.042803526)
-radius = 0.051757813
-height = 2.2045898
-
-[node name="CSGCylinder3D9" type="CSGCylinder3D" parent="Rejas frontales/Rejas19" unique_id=1588128382]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0.3606903, 0.968555, -0.042803526)
-radius = 0.051757813
-height = 2.2045898
-
-[node name="CSGCylinder3D10" type="CSGCylinder3D" parent="Rejas frontales/Rejas19" unique_id=1061350602]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.08375625, 0.968555, -0.042803526)
-radius = 0.051757813
-height = 2.2045898
-
-[node name="CSGCylinder3D11" type="CSGCylinder3D" parent="Rejas frontales/Rejas19" unique_id=1058955688]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.46889955, 0.968555, -0.042803526)
-radius = 0.051757813
-height = 2.2045898
-
-[node name="CSGCylinder3D12" type="CSGCylinder3D" parent="Rejas frontales/Rejas19" unique_id=2084374193]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.46889955, 0.968555, -0.042803526)
-radius = 0.051757813
-height = 2.2045898
-
-[node name="CSGCylinder3D13" type="CSGCylinder3D" parent="Rejas frontales/Rejas19" unique_id=66024170]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.9588886, 0.968555, -0.042803526)
-radius = 0.051757813
-height = 2.2045898
-
-[node name="Rejas20" type="Node3D" parent="Rejas frontales" unique_id=1909303475]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -33.46111, 0.15586042, -63.965874)
-
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Rejas frontales/Rejas20" unique_id=1091468307]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 3.1949837, 0.968555, -0.042803526)
-radius = 0.051757813
-height = 2.2045898
-
-[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Rejas frontales/Rejas20" unique_id=1300262688]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 2.9234383, 0.968555, -0.042803526)
-radius = 0.051757813
-height = 2.2045898
-
-[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Rejas frontales/Rejas20" unique_id=562695104]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 2.6060326, 0.968555, -0.042803526)
-radius = 0.051757813
-height = 2.2045898
-
-[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="Rejas frontales/Rejas20" unique_id=1048748377]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 2.2773545, 0.968555, -0.042803526)
-radius = 0.051757813
-height = 2.2045898
-
-[node name="CSGCylinder3D5" type="CSGCylinder3D" parent="Rejas frontales/Rejas20" unique_id=2106786102]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.9624435, 0.968555, -0.042803526)
-radius = 0.051757813
-height = 2.2045898
-
-[node name="CSGCylinder3D6" type="CSGCylinder3D" parent="Rejas frontales/Rejas20" unique_id=1946223936]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.6025115, 0.968555, -0.042803526)
-radius = 0.051757813
-height = 2.2045898
-
-[node name="CSGCylinder3D7" type="CSGCylinder3D" parent="Rejas frontales/Rejas20" unique_id=1183974089]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.2443496, 0.968555, -0.042803526)
-radius = 0.051757813
-height = 2.2045898
-
-[node name="CSGCylinder3D13" type="CSGCylinder3D" parent="Rejas frontales/Rejas20" unique_id=1986916155]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -1.1115018, 0.968555, -0.042803526)
-radius = 0.051757813
-height = 2.2045898
-
-[node name="CSGCylinder3D8" type="CSGCylinder3D" parent="Rejas frontales/Rejas20" unique_id=2003318950]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0.7958366, 0.968555, -0.042803526)
-radius = 0.051757813
-height = 2.2045898
-
-[node name="CSGCylinder3D9" type="CSGCylinder3D" parent="Rejas frontales/Rejas20" unique_id=21319641]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0.3606903, 0.968555, -0.042803526)
-radius = 0.051757813
-height = 2.2045898
-
-[node name="CSGCylinder3D10" type="CSGCylinder3D" parent="Rejas frontales/Rejas20" unique_id=2046937698]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.08375625, 0.968555, -0.042803526)
-radius = 0.051757813
-height = 2.2045898
-
-[node name="CSGCylinder3D11" type="CSGCylinder3D" parent="Rejas frontales/Rejas20" unique_id=1736542497]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.46889955, 0.968555, -0.042803526)
-radius = 0.051757813
-height = 2.2045898
-
-[node name="CSGCylinder3D12" type="CSGCylinder3D" parent="Rejas frontales/Rejas20" unique_id=202766543]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.46889955, 0.968555, -0.042803526)
-radius = 0.051757813
-height = 2.2045898
-
-[node name="Rejas21" type="Node3D" parent="Rejas frontales" unique_id=861254076]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -38.341644, 0.15586042, -63.965874)
-
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Rejas frontales/Rejas21" unique_id=431497205]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 3.1949837, 0.968555, -0.042803526)
-radius = 0.051757813
-height = 2.2045898
-
-[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Rejas frontales/Rejas21" unique_id=853748232]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 2.9234383, 0.968555, -0.042803526)
-radius = 0.051757813
-height = 2.2045898
-
-[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Rejas frontales/Rejas21" unique_id=1975896670]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 2.6060326, 0.968555, -0.042803526)
-radius = 0.051757813
-height = 2.2045898
-
-[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="Rejas frontales/Rejas21" unique_id=1282714816]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 2.2773545, 0.968555, -0.042803526)
-radius = 0.051757813
-height = 2.2045898
-
-[node name="CSGCylinder3D5" type="CSGCylinder3D" parent="Rejas frontales/Rejas21" unique_id=160848722]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.9624435, 0.968555, -0.042803526)
-radius = 0.051757813
-height = 2.2045898
-
-[node name="CSGCylinder3D6" type="CSGCylinder3D" parent="Rejas frontales/Rejas21" unique_id=554128159]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.6025115, 0.968555, -0.042803526)
-radius = 0.051757813
-height = 2.2045898
-
-[node name="CSGCylinder3D7" type="CSGCylinder3D" parent="Rejas frontales/Rejas21" unique_id=869712055]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.2443496, 0.968555, -0.042803526)
-radius = 0.051757813
-height = 2.2045898
-
-[node name="CSGCylinder3D8" type="CSGCylinder3D" parent="Rejas frontales/Rejas21" unique_id=1200332237]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0.7958366, 0.968555, -0.042803526)
-radius = 0.051757813
-height = 2.2045898
-
-[node name="CSGCylinder3D9" type="CSGCylinder3D" parent="Rejas frontales/Rejas21" unique_id=323018254]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0.3606903, 0.968555, -0.042803526)
-radius = 0.051757813
-height = 2.2045898
-
-[node name="CSGCylinder3D10" type="CSGCylinder3D" parent="Rejas frontales/Rejas21" unique_id=1705542387]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.08375625, 0.968555, -0.042803526)
-radius = 0.051757813
-height = 2.2045898
-
-[node name="CSGCylinder3D11" type="CSGCylinder3D" parent="Rejas frontales/Rejas21" unique_id=221905791]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.46889955, 0.968555, -0.042803526)
-radius = 0.051757813
-height = 2.2045898
-
-[node name="CSGCylinder3D12" type="CSGCylinder3D" parent="Rejas frontales/Rejas21" unique_id=1510741876]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.46889955, 0.968555, -0.042803526)
-radius = 0.051757813
-height = 2.2045898
-
-[node name="Rejas22" type="Node3D" parent="Rejas frontales" unique_id=1013986237]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -40.66356, 0.15586042, -63.965874)
-
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Rejas frontales/Rejas22" unique_id=525074013]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 3.1949837, 0.968555, -0.042803526)
-radius = 0.051757813
-height = 2.2045898
-
-[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Rejas frontales/Rejas22" unique_id=300300768]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 2.9234383, 0.968555, -0.042803526)
-radius = 0.051757813
-height = 2.2045898
-
-[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Rejas frontales/Rejas22" unique_id=544966698]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 2.6060326, 0.968555, -0.042803526)
-radius = 0.051757813
-height = 2.2045898
-
-[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="Rejas frontales/Rejas22" unique_id=971959272]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 2.2773545, 0.968555, -0.042803526)
-radius = 0.051757813
-height = 2.2045898
-
-[node name="CSGCylinder3D5" type="CSGCylinder3D" parent="Rejas frontales/Rejas22" unique_id=893654305]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.9624435, 0.968555, -0.042803526)
-radius = 0.051757813
-height = 2.2045898
-
-[node name="CSGCylinder3D6" type="CSGCylinder3D" parent="Rejas frontales/Rejas22" unique_id=637584109]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.6025115, 0.968555, -0.042803526)
-radius = 0.051757813
-height = 2.2045898
-
-[node name="CSGCylinder3D7" type="CSGCylinder3D" parent="Rejas frontales/Rejas22" unique_id=934020471]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.2443496, 0.968555, -0.042803526)
-radius = 0.051757813
-height = 2.2045898
-
-[node name="CSGCylinder3D8" type="CSGCylinder3D" parent="Rejas frontales/Rejas22" unique_id=643037089]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0.7958366, 0.968555, -0.042803526)
-radius = 0.051757813
-height = 2.2045898
-
-[node name="CSGCylinder3D9" type="CSGCylinder3D" parent="Rejas frontales/Rejas22" unique_id=538030364]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0.3606903, 0.968555, -0.042803526)
-radius = 0.051757813
-height = 2.2045898
-
-[node name="CSGCylinder3D10" type="CSGCylinder3D" parent="Rejas frontales/Rejas22" unique_id=744958828]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.08375625, 0.968555, -0.042803526)
-radius = 0.051757813
-height = 2.2045898
-
-[node name="CSGCylinder3D11" type="CSGCylinder3D" parent="Rejas frontales/Rejas22" unique_id=1163015343]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.46889955, 0.968555, -0.042803526)
-radius = 0.051757813
-height = 2.2045898
-
-[node name="CSGCylinder3D12" type="CSGCylinder3D" parent="Rejas frontales/Rejas22" unique_id=85311898]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.46889955, 0.968555, -0.042803526)
-radius = 0.051757813
-height = 2.2045898
 
 [node name="UI_control_red" type="CanvasLayer" parent="." unique_id=160759712 node_paths=PackedStringArray("antena_principal")]
 script = ExtResource("17_j2u5w")
 antena_principal = NodePath("../Antena/Antena_Principal")
 
 [node name="Panel" type="Panel" parent="UI_control_red" unique_id=85552297]
-offset_left = -1.0
-offset_top = 542.0
-offset_right = 149.0
-offset_bottom = 647.0
+offset_top = 489.0
+offset_right = 150.0
+offset_bottom = 648.0
 
 [node name="HSlider" type="HSlider" parent="UI_control_red/Panel" unique_id=722910542]
 layout_mode = 0
@@ -2682,22 +4137,35 @@ offset_top = 83.0
 offset_right = 80.0
 offset_bottom = 106.0
 
+[node name="CheckButton2" type="CheckButton" parent="UI_control_red/Panel" unique_id=2020197586]
+layout_mode = 0
+offset_top = 101.0
+offset_right = 44.0
+offset_bottom = 125.0
+
+[node name="Label3" type="Label" parent="UI_control_red/Panel" unique_id=1021914474]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 129.0
+offset_right = 80.0
+offset_bottom = 152.0
+
 [node name="ButtonIniciar" type="Button" parent="UI_control_red/Panel" unique_id=1606149413]
 layout_mode = 0
-offset_left = 505.0
-offset_top = -541.0
-offset_right = 651.0
-offset_bottom = -508.0
+offset_left = 468.0
+offset_top = -490.0
+offset_right = 614.0
+offset_bottom = -457.0
 text = "Iniciar Simulación"
 
 [node name="Pivote_camara" type="Node3D" parent="." unique_id=1781339083]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.1858206, -0.08346863)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.116337, 5.1858206, 5.8901033)
 script = ExtResource("16_x3esv")
 
 [node name="Camera3D" type="Camera3D" parent="Pivote_camara" unique_id=278807889]
-transform = Transform3D(-1, -7.161255e-08, 5.0143647e-08, 0, 0.57357645, 0.81915206, -8.742278e-08, 0.81915206, -0.57357645, 13.403446, 7.536553, -71.19773)
+transform = Transform3D(-1, -5.6194278e-08, 6.696973e-08, 0, 0.7660445, 0.6427876, -8.742278e-08, 0.6427876, -0.7660445, 24.24342, 8.362187, -73.75287)
 script = ExtResource("20_d7trm")
 
 [node name="Piso_general" type="CSGBox3D" parent="." unique_id=929889987]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -3.1767638, -0.8321395, -3.756662)
-size = Vector3(131.99013, 0.1, 125.62027)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 11.433183, -0.8321395, -3.7566617)
+size = Vector3(102.77023, 0.1, 125.62027)
